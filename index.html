@@ -1,11 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Galería Coahuilteca</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería Coahuilteca</title>
+
+<style>
+body{
+margin:0;
+font-family: Helvetica, Arial, sans-serif;
+background:#f7f4ef;
+color:#111;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:30px;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #ddd;
+padding-bottom:20px;
+}
+
+header img{
+height:40px;
+}
+
+nav a{
+margin-left:20px;
+font-size:13px;
+letter-spacing:.1em;
+color:#555;
+text-decoration:none;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+padding:80px 0;
+}
+
+.hero h1{
+font-family: Georgia, serif;
+font-size:60px;
+line-height:1;
+}
+
+.hero p{
+color:#666;
+font-size:18px;
+}
+
+.button{
+display:inline-block;
+margin-top:20px;
+padding:15px 25px;
+border-radius:30px;
+background:black;
+color:white;
+text-decoration:none;
+}
+
+.hero img{
+width:100%;
+border-radius:20px;
+}
+
+.section{
+padding:60px 0;
+border-top:1px solid #ddd;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card img{
+width:100%;
+border-radius:15px;
+}
+
+.card h3{
+margin:10px 0;
+}
+
+.dark{
+background:#111;
+color:white;
+padding:60px 30px;
+}
+
+.dark p{
+color:#aaa;
+}
+
+.visit{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.visit-box{
+border:1px solid #ddd;
+padding:30px;
+border-radius:20px;
+background:white;
+}
+
+footer{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #ddd;
+font-size:12px;
+color:#666;
+}
+
+@media(max-width:800px){
+.hero, .grid, .visit{
+grid-template-columns:1fr;
+}
+}
+</style>
+
 </head>
+
 <body>
-  <h1>Galería Coahuilteca</h1>
-  <p>Original art from San Miguel de Allende — easy to collect, easy to take home.</p>
-  <a href="https://wa.me/524152169737">Ask on WhatsApp</a>
+
+<div class="container">
+
+<header>
+<img src="logo.png">
+<nav>
+<a href="#artists">Artists</a>
+<a href="#experiences">Experiences</a>
+<a href="#visit">Visit</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Original art, ready to travel.</h1>
+<p>A working gallery in San Miguel de Allende presenting painting, drawing and ceramics by local artists.</p>
+
+<a class="button" href="https://wa.me/524152169737?text=Hi%2C%20I%27m%20visiting%20San%20Miguel%20and%20would%20like%20information%20about%20artworks%20or%20workshops." target="_blank">
+Ask on WhatsApp
+</a>
+
+</div>
+
+<img src="ceramica.jpg">
+</section>
+
+<section class="section" id="artists">
+<h2>Artists & work</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="amarillo.jpg">
+<h3>Fermigrante</h3>
+<p>Conceptual painting exploring movement and human presence.</p>
+</div>
+
+<div class="card">
+<img src="pared.jpg">
+<h3>Indhira</h3>
+<p>Drawing and painting focused on identity and the body.</p>
+</div>
+
+<div class="card">
+<img src="ceramica.jpg">
+<h3>Venus Ceramista</h3>
+<p>Handmade ceramics designed for daily use and collecting.</p>
+</div>
+
+</div>
+</section>
+
+<section class="dark" id="experiences">
+<h2>Create inside a working gallery</h2>
+<p>Private sessions for visitors and collectors.</p>
+
+<ul>
+<li>Paint your own Parroquia</li>
+<li>Draw your partner</li>
+<li>Watercolor, charcoal, acrylic</li>
+</ul>
+
+<a class="button" style="background:white;color:black;" href="https://wa.me/524152169737">
+Reserve by WhatsApp
+</a>
+
+</section>
+
+<section class="section" id="visit">
+
+<div class="visit">
+
+<div class="visit-box">
+<h2>Visit us</h2>
+<p>Codo & Tenerías<br>San Miguel de Allende</p>
+<p>10:00 AM – 6:00 PM</p>
+</div>
+
+<div class="visit-box">
+<img src="fachada.jpg" style="width:100%; border-radius:15px;">
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Galería Coahuilteca · San Miguel de Allende
+</footer>
+
+</div>
+
 </body>
 </html>
