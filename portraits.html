@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portraits in Oil | Indhira · Galería Coahuilteca</title>
-
-<meta name="description" content="Commissioned oil portraits by Indhira in San Miguel de Allende. Venetian technique, painted over time.">
+<meta name="description" content="Commissioned oil portraits by Indhira at Galería Coahuilteca in San Miguel de Allende. Venetian technique, painted over time from photographic references.">
 
 <style>
-
 body{
   margin:0;
   font-family: Helvetica, Arial, sans-serif;
@@ -17,173 +15,255 @@ body{
   color:#111;
 }
 
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px;
+}
+
 header{
-  position:absolute;
-  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:30px 60px;
-  z-index:10;
-  color:white;
+  border-bottom:1px solid #ddd;
+  padding-bottom:20px;
 }
 
-header img{height:45px;}
+header img{height:40px;}
 
 nav a{
-  margin-left:25px;
+  margin-left:20px;
+  font-size:13px;
+  letter-spacing:.1em;
+  color:#555;
   text-decoration:none;
-  color:white;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
 }
 
 nav a.contact{
-  border:1px solid white;
-  padding:12px 22px;
+  border:1px solid #111;
+  padding:12px 20px;
+  color:#111;
 }
 
 .hero{
-  display:grid;
-  grid-template-columns:1fr 1.3fr;
   min-height:620px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
   background:#111;
   color:white;
+  margin-top:30px;
+  overflow:hidden;
 }
 
-.hero-text{
-  padding:150px 70px 100px 110px;
+.hero-content{
+  padding:70px;
+  max-width:560px;
 }
 
-.kicker{
-  letter-spacing:.4em;
-  font-size:12px;
-  margin-bottom:20px;
+.hero-kicker{
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:22px;
 }
 
 .hero h1{
   font-family:Georgia, serif;
-  font-size:80px;
-  line-height:.9;
+  font-size:72px;
+  line-height:.95;
+  font-weight:400;
   margin:0;
 }
 
-.line{
-  width:80px;
+.hero-line{
+  width:160px;
   height:1px;
   background:white;
-  margin:25px 0;
+  margin:30px 0;
+  opacity:.7;
 }
 
 .hero p{
-  font-size:20px;
-  color:rgba(255,255,255,.85);
+  font-size:21px;
+  line-height:1.45;
+  max-width:520px;
+  color:rgba(255,255,255,.88);
+}
+
+.hero-image{
+  height:100%;
+  min-height:620px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.05)),
+    url('retrato-4.jpg');
+  background-size:cover;
+  background-position:center;
 }
 
 .button{
   display:inline-block;
-  margin-top:25px;
-  padding:15px 30px;
-  border:1px solid white;
+  margin-top:20px;
+  padding:15px 25px;
+  border-radius:30px;
+  background:black;
   color:white;
   text-decoration:none;
-  font-size:12px;
-  letter-spacing:.12em;
 }
 
-.hero-image{
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.1)),
-    url('retrato-4.jpg');
-  background-size:cover;
-  background-position:right center;
+.hero .button{
+  background:transparent;
+  color:white;
+  border:1px solid white;
+  border-radius:0;
+  padding:16px 34px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:13px;
 }
 
 .section{
-  padding:80px 100px;
+  padding:60px 0;
+  border-top:1px solid #ddd;
 }
 
-.process{
+.two-grid{
   display:grid;
-  grid-template-columns:1fr 1.3fr;
-  gap:60px;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
   align-items:center;
-  border-bottom:1px solid #ddd;
 }
 
-.process img{
+.two-grid img{
   width:100%;
-  height:380px;
+  height:400px;
   object-fit:cover;
+  border-radius:20px;
 }
 
-.process h2{
+.text-block h2{
   font-family:Georgia, serif;
-  font-size:42px;
-  margin-bottom:20px;
+  font-size:44px;
+  line-height:1;
+  font-weight:400;
+  margin:0 0 24px;
 }
 
-.process p{
-  color:#444;
+.text-block p{
+  color:#666;
   line-height:1.7;
 }
 
 .formats{
   display:grid;
-  grid-template-columns:.8fr 1fr 1fr 1fr;
-  gap:40px;
-  border-bottom:1px solid #ddd;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .format-box{
-  border-left:1px solid #ddd;
-  padding-left:30px;
+  border:1px solid #ddd;
+  padding:30px;
+  border-radius:20px;
+  background:white;
 }
 
 .format-box h3{
   font-family:Georgia, serif;
-  font-size:28px;
+  font-size:34px;
+  font-weight:400;
+  margin:0 0 15px;
 }
 
 .price{
-  font-size:24px;
   font-family:Georgia, serif;
+  font-size:26px;
+  color:#111;
 }
 
 .cta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:60px 100px;
+  border:1px solid #ddd;
   padding:40px;
-  border:1px solid #aaa;
+  border-radius:20px;
+  background:white;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
+  align-items:center;
 }
 
 .cta h2{
   font-family:Georgia, serif;
+  font-size:38px;
+  font-weight:400;
+  margin:0 0 10px;
 }
 
 footer{
-  padding:40px 100px;
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #ddd;
   font-size:12px;
   color:#666;
 }
 
 @media(max-width:800px){
-  .hero{grid-template-columns:1fr;}
-  .process{grid-template-columns:1fr;}
-  .formats{grid-template-columns:1fr;}
-  .cta{flex-direction:column; gap:20px;}
-}
+  .container{
+    padding:22px;
+  }
 
+  header{
+    display:block;
+  }
+
+  nav{
+    margin-top:18px;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:0 14px 12px 0;
+    font-size:12px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+
+  .hero-image{
+    min-height:420px;
+    order:-1;
+  }
+
+  .hero-content{
+    padding:45px 28px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .two-grid,
+  .formats,
+  .cta{
+    grid-template-columns:1fr;
+  }
+
+  .two-grid img{
+    height:auto;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
-  <img src="logo.png">
+  <a href="index.html">
+    <img src="logo.png" alt="Galería Coahuilteca">
+  </a>
 
   <nav>
     <a href="index.html">Home</a>
@@ -191,115 +271,115 @@ footer{
     <a href="portraits.html">Portraits</a>
     <a href="experiences.html">Experiences</a>
     <a href="visit.html">Visit</a>
-    <a class="contact" href="https://wa.me/524152169737" target="_blank">Contact</a>
+    <a class="contact" href="https://wa.me/524152169737?text=Hello%2C%20I%20am%20interested%20in%20a%20commissioned%20portrait." target="_blank">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-text">
-
-    <div class="kicker">COMMISSIONED WORK</div>
+  <div class="hero-content">
+    <div class="hero-kicker">Commissioned Work</div>
 
     <h1>Portraits<br>in Oil</h1>
 
-    <div class="line"></div>
+    <div class="hero-line"></div>
 
     <p>
       A painted portrait in a digital world.<br>
       Not captured. Constructed.
     </p>
 
-    <a class="button" href="https://wa.me/524152169737" target="_blank">
-      REQUEST A PORTRAIT
+    <a class="button" href="https://wa.me/524152169737?text=Hello%2C%20I%20am%20interested%20in%20a%20commissioned%20portrait." target="_blank">
+      Request a Portrait
     </a>
-
   </div>
 
   <div class="hero-image"></div>
 </section>
 
-<section class="section process">
+<section class="section">
+  <div class="two-grid">
+    <div class="text-block">
+      <h2>A portrait painted over time</h2>
 
-  <div>
-    <h2>A portrait painted over time</h2>
+      <p>
+        Each portrait is developed from photographic references and built through layers of oil paint using a traditional Venetian technique.
+      </p>
 
-    <p>
-      Each portrait is developed from photographic references and built through layers of oil paint using a traditional Venetian technique.
-    </p>
+      <p>
+        The process includes compositional decisions, pencil studies, and multiple painting sessions.
+      </p>
 
-    <p>
-      The process includes compositional decisions, pencil studies, and multiple painting sessions.
-    </p>
+      <p><strong>The result is depth, presence, and permanence.</strong></p>
+    </div>
 
-    <p><strong>The result is depth, presence, and permanence.</strong></p>
+    <img src="retrato-3.jpg" alt="Oil portrait by Indhira">
   </div>
-
-  <img src="retrato-3.jpg">
-
 </section>
 
-<section class="section process">
+<section class="section">
+  <div class="two-grid">
+    <img src="alejandra.jpg" alt="Oil portrait commission by Indhira">
 
-  <img src="alejandra.jpg">
+    <div class="text-block">
+      <h2>Built from image, memory and time</h2>
 
-  <div>
-    <h2>Built from image,<br>memory and time</h2>
+      <p>
+        Each work begins with photographic references and evolves through drawing and oil painting.
+      </p>
 
-    <p>
-      Each work begins with photographic references and evolves through drawing and oil painting.
-    </p>
-
-    <p>
-      These portraits are constructed slowly, creating a physical presence beyond digital imagery.
-    </p>
+      <p>
+        These portraits are constructed slowly, creating a physical presence beyond digital imagery.
+      </p>
+    </div>
   </div>
-
 </section>
 
-<section class="section formats">
+<section class="section">
+  <h2 style="font-family:Georgia, serif; font-size:44px; font-weight:400; margin-top:0;">
+    Commission Options
+  </h2>
 
-  <div>
-    <div class="kicker">FORMATS</div>
-    <h2>Commission Options</h2>
+  <div class="formats">
+    <div class="format-box">
+      <h3>40 × 50 cm</h3>
+      <p>Oil on canvas · Venetian technique</p>
+      <p class="price">25,000 MXN</p>
+      <p>Approx. 2 months</p>
+    </div>
+
+    <div class="format-box">
+      <h3>90 × 120 cm</h3>
+      <p>Oil on canvas · Venetian technique</p>
+      <p class="price">80,000 MXN</p>
+      <p>4–6 months</p>
+    </div>
+
+    <div class="format-box">
+      <h3>Included</h3>
+      <p>Pencil studies are included as part of the process.</p>
+      <p>Only a limited number of portraits are accepted each year.</p>
+    </div>
   </div>
-
-  <div class="format-box">
-    <h3>40 × 50 cm</h3>
-    <p>Oil on canvas · Venetian technique</p>
-    <p class="price">25,000 MXN</p>
-    <p>Approx. 2 months</p>
-  </div>
-
-  <div class="format-box">
-    <h3>90 × 120 cm</h3>
-    <p>Oil on canvas · Venetian technique</p>
-    <p class="price">80,000 MXN</p>
-    <p>4–6 months</p>
-  </div>
-
-  <div>
-    <p>Pencil studies included.</p>
-    <p>Limited commissions per year.</p>
-  </div>
-
 </section>
 
-<section class="cta">
+<section class="section">
+  <div class="cta">
+    <div>
+      <h2>Let’s begin your portrait</h2>
+      <p>Contact the gallery to discuss references, formats, timing and availability.</p>
+    </div>
 
-  <div>
-    <h2>Let’s begin your portrait</h2>
-    <p>Contact the gallery to discuss your commission.</p>
+    <a class="button" href="https://wa.me/524152169737?text=Hello%2C%20I%20am%20interested%20in%20a%20commissioned%20portrait." target="_blank">
+      Start by WhatsApp
+    </a>
   </div>
-
-  <a class="button" href="https://wa.me/524152169737" target="_blank">
-    START BY WHATSAPP
-  </a>
-
 </section>
 
 <footer>
   Galería Coahuilteca · San Miguel de Allende
 </footer>
+
+</div>
 
 </body>
 </html>
