@@ -39,28 +39,79 @@ nav a{
 }
 
 .hero{
-  min-height:520px;
+  min-height:560px;
   display:flex;
   align-items:center;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.2)),
+    linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.24)),
     url('experiencia.jpg');
   background-size:cover;
   background-position:center;
   color:white;
-  padding:80px 60px;
+  padding:80px 70px;
   margin-top:30px;
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero-kicker{
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:22px;
 }
 
 .hero h1{
   font-family:Georgia, serif;
-  font-size:64px;
+  font-size:70px;
+  line-height:.95;
+  font-weight:400;
   margin:0;
+}
+
+.hero-line{
+  width:160px;
+  height:1px;
+  background:white;
+  margin:30px 0;
+}
+
+.hero p{
+  font-size:21px;
+  line-height:1.45;
+  color:rgba(255,255,255,.9);
+}
+
+.button{
+  display:inline-block;
+  margin-top:20px;
+  padding:15px 25px;
+  border-radius:30px;
+  background:black;
+  color:white;
+  text-decoration:none;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:13px;
+}
+
+.hero .button{
+  background:white;
+  color:#111;
 }
 
 .section{
   padding:60px 0;
   border-top:1px solid #ddd;
+}
+
+.section h2{
+  font-family:Georgia, serif;
+  font-size:44px;
+  font-weight:400;
+  margin:0 0 30px;
 }
 
 .grid{
@@ -69,30 +120,159 @@ nav a{
   gap:20px;
 }
 
+.card{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:20px;
+  overflow:hidden;
+}
+
 .card img{
   width:100%;
-  height:260px;
+  height:280px;
   object-fit:cover;
-  border-radius:12px;
+  display:block;
+}
+
+.card div{
+  padding:24px;
 }
 
 .card h3{
   font-family:Georgia, serif;
+  font-size:28px;
   font-weight:400;
+  margin:0 0 12px;
 }
 
-.button{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 22px;
-  background:black;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
+.card p{
+  color:#666;
+  line-height:1.6;
+}
+
+.price-box{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.price-card{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:20px;
+  padding:28px;
+}
+
+.price-card h3{
+  font-family:Georgia, serif;
+  font-size:28px;
+  font-weight:400;
+  margin:0 0 10px;
+}
+
+.price-card p{
+  color:#666;
+  line-height:1.5;
+}
+
+.price{
+  font-size:22px;
+  color:#111 !important;
+  font-family:Georgia, serif;
+}
+
+.two-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.two-grid img{
+  width:100%;
+  border-radius:20px;
+}
+
+.text-box{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:20px;
+  padding:36px;
+}
+
+.text-box p,
+.text-box li{
+  color:#666;
+  line-height:1.7;
+}
+
+.booking-box{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:20px;
+  padding:45px;
+}
+
+.booking-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:25px;
+}
+
+.booking-card{
+  border:1px solid #ddd;
+  border-radius:18px;
+  padding:28px;
+  background:#f7f4ef;
+}
+
+.booking-card h3{
+  font-family:Georgia, serif;
+  font-size:28px;
+  font-weight:400;
+  margin:0 0 12px;
+}
+
+.booking-card p{
+  color:#666;
+  line-height:1.6;
+}
+
+footer{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  font-size:12px;
+  color:#666;
 }
 
 @media(max-width:800px){
-  .grid{grid-template-columns:1fr;}
+  .container{padding:22px;}
+
+  header{display:block;}
+
+  nav{margin-top:18px;}
+
+  nav a{
+    display:inline-block;
+    margin:0 14px 12px 0;
+    font-size:12px;
+  }
+
+  .hero{
+    min-height:500px;
+    padding:55px 28px;
+  }
+
+  .hero h1{font-size:48px;}
+
+  .grid,
+  .price-box,
+  .two-grid,
+  .booking-options{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -103,7 +283,7 @@ nav a{
 
 <header>
   <a href="index.html">
-    <img src="logo.png">
+    <img src="logo.png" alt="Galería Coahuilteca">
   </a>
 
   <nav>
@@ -111,45 +291,173 @@ nav a{
     <a href="gallery.html">Gallery</a>
     <a href="portraits.html">Portraits</a>
     <a href="experiences.html">Experiences</a>
+    <a href="visit.html">Visit</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div>
-    <h1>Art Experiences</h1>
-    <p>Create your own artwork inside a working gallery.</p>
+  <div class="hero-content">
+    <div class="hero-kicker">Art Experiences</div>
 
-    <a class="button" href="https://wa.me/524152169737" target="_blank">
-      Book now
+    <h1>Create inside<br>a working gallery.</h1>
+
+    <div class="hero-line"></div>
+
+    <p>
+      Private 2-hour art sessions in San Miguel de Allende. Choose your technique, create your own artwork, and take it home.
+    </p>
+
+    <p>
+      From $800 MXN per person.
+    </p>
+
+    <a class="button" href="https://www.airbnb.mx/experiences/6132122" target="_blank">
+      Book on Airbnb
     </a>
   </div>
 </section>
 
 <section class="section">
+  <h2>Featured Experiences</h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="card">
+      <img src="experiencia.jpg" alt="Paint and wine art experience">
+      <div>
+        <h3>Paint & Wine</h3>
+        <p>A relaxed private session creating art while enjoying a glass of local wine.</p>
+      </div>
+    </div>
 
-<div class="card">
-<img src="experiencia.jpg">
-<h3>Paint & Wine</h3>
-<p>Relaxed session with wine and painting.</p>
-</div>
+    <div class="card">
+      <img src="experienciaenpareja.jpg" alt="Draw your partner art experience">
+      <div>
+        <h3>Draw Your Partner</h3>
+        <p>A playful guided portrait session for couples, friends or families.</p>
+      </div>
+    </div>
 
-<div class="card">
-<img src="experienciaenpareja.jpg">
-<h3>Draw Your Partner</h3>
-<p>Fun guided portrait session.</p>
-</div>
-
-<div class="card">
-<img src="experiencia airbnb.jpg">
-<h3>San Miguel Scene</h3>
-<p>Paint local architecture.</p>
-</div>
-
-</div>
-
+    <div class="card">
+      <img src="parroquia.jpg" alt="Colors of San Miguel art experience">
+      <div>
+        <h3>Colors of San Miguel</h3>
+        <p>Paint the architecture and colors of San Miguel using your preferred technique.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section">
+  <h2>Prices</h2>
+
+  <div class="price-box">
+    <div class="price-card">
+      <h3>Individual</h3>
+      <p>Private 2-hour session</p>
+      <p class="price">$1,200 MXN</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Couple</h3>
+      <p>2-hour session for two</p>
+      <p class="price">$2,000 MXN</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Group</h3>
+      <p>3–4 people</p>
+      <p class="price">$800 MXN per person</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Ongoing Workshop</h3>
+      <p>One class per week · 4 flexible classes</p>
+      <p class="price">$2,000 MXN per month</p>
+    </div>
+  </div>
+
+  <p style="color:#666; margin-top:25px;">
+    Includes materials, bilingual guidance and one finished artwork to take home.
+  </p>
+</section>
+
+<section class="section">
+  <div class="two-grid">
+    <img src="tecnicas.jpg" alt="Art techniques in the gallery">
+
+    <div class="text-box">
+      <h2>Choose your technique</h2>
+      <ul>
+        <li><strong>Acrylic:</strong> vibrant color and expressive texture.</li>
+        <li><strong>Watercolor:</strong> transparent washes and delicate atmospheres.</li>
+        <li><strong>Oil Pastels:</strong> rich, creamy color for expressive strokes.</li>
+        <li><strong>Soft Pastels:</strong> bright pigment and painterly effects.</li>
+        <li><strong>Charcoal:</strong> dramatic contrast and strong tonal composition.</li>
+        <li><strong>Graphite:</strong> precise line, shading and studies.</li>
+        <li><strong>Mixed Media:</strong> texture, layers and creative experimentation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="two-grid">
+    <div class="text-box">
+      <h2>Studio Exclusive</h2>
+      <p>
+        Ceramics, printmaking and oil painting are offered exclusively in the private studio in Corralejo, a short drive from downtown San Miguel de Allende.
+      </p>
+    </div>
+
+    <img src="principiantes.jpg" alt="Private art class in San Miguel de Allende">
+  </div>
+</section>
+
+<section class="section">
+  <div class="booking-box">
+    <h2>Booking & direct reservation</h2>
+
+    <p style="color:#666; line-height:1.7;">
+      You can book through Airbnb, or reserve directly with Galería Coahuilteca by WhatsApp. 
+      For direct bookings, send your preferred date, time, number of guests and chosen experience. We will confirm availability personally.
+    </p>
+
+    <div class="booking-options">
+
+      <div class="booking-card">
+        <h3>Book on Airbnb</h3>
+        <p>
+          Best option if you prefer platform booking, Airbnb calendar, and Airbnb payment.
+        </p>
+
+        <a class="button" href="https://www.airbnb.mx/experiences/6132122" target="_blank">
+          Open Airbnb
+        </a>
+      </div>
+
+      <div class="booking-card">
+        <h3>Reserve directly</h3>
+        <p>
+          Best option for flexible times, private groups, couples, families, or custom sessions.
+        </p>
+
+        <a class="button" href="https://wa.me/524152169737?text=Hello%2C%20I%20would%20like%20to%20reserve%20an%20art%20experience.%20Preferred%20date%3A%20%0ATime%3A%20%0ANumber%20of%20guests%3A%20%0AExperience%3A%20" target="_blank">
+          Reserve by WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <p style="color:#666; line-height:1.7; margin-top:30px;">
+      Direct reservations may be paid by PayPal or bank transfer after availability is confirmed. 
+      Please do not send card information by WhatsApp.
+    </p>
+  </div>
+</section>
+
+<footer>
+  Galería Coahuilteca · Tenerías & Codo · Centro, San Miguel de Allende · 2026
+</footer>
 
 </div>
 
