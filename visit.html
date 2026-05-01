@@ -7,7 +7,6 @@
 <title>Visit | Galería Coahuilteca</title>
 
 <style>
-
 body{
 margin:0;
 font-family: Helvetica, Arial, sans-serif;
@@ -48,33 +47,35 @@ color:#111;
 }
 
 .hero{
+position:relative;
 height:520px;
+overflow:hidden;
+margin-top:30px;
+}
+
+.hero img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
 display:flex;
 align-items:center;
-background:
-linear-gradient(90deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.3) 45%, rgba(0,0,0,0) 100%),
-url("fachadacoahuilteca.jpg");
-background-size:cover;
-background-position:center;
+background:linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 100%);
 }
 
-.hero-content{
-max-width:1100px;
-margin:auto;
-padding:30px;
-color:white;
-}
-
-.hero h1{
+.overlay h1{
+color:#fff;
 font-size:60px;
+margin-left:50px;
 font-family:Georgia, serif;
-margin:0;
-}
-
-.hero p{
-margin-top:10px;
-font-size:16px;
-opacity:.9;
+font-weight:400;
 }
 
 .info{
@@ -86,7 +87,8 @@ padding:80px 0;
 
 .info h2{
 font-family:Georgia, serif;
-font-size:28px;
+font-size:32px;
+font-weight:400;
 margin-bottom:20px;
 }
 
@@ -99,7 +101,8 @@ line-height:1.6;
 margin-top:30px;
 border:0;
 width:100%;
-height:320px;
+height:380px;
+border-radius:20px;
 }
 
 .cta{
@@ -109,6 +112,7 @@ margin-top:30px;
 .cta a{
 display:inline-block;
 margin-right:15px;
+margin-bottom:12px;
 padding:14px 24px;
 border:1px solid #111;
 text-decoration:none;
@@ -122,17 +126,44 @@ background:#111;
 color:white;
 }
 
+footer{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #ddd;
+font-size:12px;
+color:#666;
+}
+
 @media(max-width:800px){
+header{
+display:block;
+}
+
+nav{
+margin-top:18px;
+}
+
+nav a{
+display:inline-block;
+margin:0 14px 12px 0;
+font-size:12px;
+}
+
 .info{
 grid-template-columns:1fr;
+padding:55px 0;
 }
-.hero h1{
+
+.overlay h1{
 font-size:40px;
-}
+margin-left:30px;
 }
 
+.hero{
+height:430px;
+}
+}
 </style>
-
 </head>
 
 <body>
@@ -141,7 +172,7 @@ font-size:40px;
 
 <header>
 <a href="index.html">
-<img src="logo.png">
+<img src="logo.png" alt="Galería Coahuilteca">
 </a>
 
 <nav>
@@ -152,18 +183,15 @@ font-size:40px;
 <a href="visit.html">Visit</a>
 <a class="contact-link" href="https://wa.me/524152169737" target="_blank">Contact</a>
 </nav>
-
 </header>
 
-</div>
-
 <section class="hero">
-  <img src="fachada.jpg" alt="Galería Coahuilteca">
-  <div class="overlay">
-    <h1>Visit</h1>
-  </div>
+<img src="fachadacoahuilteca.jpg" alt="Galería Coahuilteca exterior">
+
+<div class="overlay">
+<h1>Visit</h1>
+</div>
 </section>
-<div class="container">
 
 <section class="info">
 
@@ -176,11 +204,21 @@ A working gallery located in the historic center of San Miguel de Allende.
 </p>
 
 <p>
-📍 Tenerías & Codo, Centro
+Discover original paintings, drawings, ceramics, commissioned portraits and private art experiences in an intimate space where art is created and exhibited.
+</p>
+
+<p>
+📍 Tenerías & Codo, Centro<br>
+San Miguel de Allende, Guanajuato
+</p>
+
+<p>
+🕒 Open daily<br>
+10:00 AM — 6:00 PM
 </p>
 
 <div class="cta">
-<a class="primary" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.9115952,-100.7458325" target="_blank">
+<a class="primary" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
 Get Directions
 </a>
 
@@ -189,33 +227,21 @@ WhatsApp
 </a>
 </div>
 
-<iframe class="map"
-src="https://www.google.com/maps?q=Galería+Coahuilteca&output=embed">
-</iframe>
-
 </div>
 
 <div>
 
-<h2>Private Studio</h2>
-
-<p>
-Located in a rural community just 15 minutes from downtown.
-</p>
-
-<div class="cta">
-<a class="primary" href="https://maps.app.goo.gl/4pzq4JvtVhqvnGKn7" target="_blank">
-Get Directions
-</a>
-</div>
-
 <iframe class="map"
-src="https://www.google.com/maps?q=Corralejo+de+Arriba+San+Miguel+de+Allende&output=embed">
+src="https://www.google.com/maps?q=Galería+Coahuilteca+San+Miguel+de+Allende&output=embed">
 </iframe>
 
 </div>
 
 </section>
+
+<footer>
+Galería Coahuilteca · Tenerías & Codo · Centro, San Miguel de Allende · 2026
+</footer>
 
 </div>
 
