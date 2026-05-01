@@ -1,401 +1,132 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Galería Coahuilteca</title>
+
+<style>
+body{
+margin:0;
+font-family: Helvetica, Arial, sans-serif;
+background:#f7f4ef;
+color:#111;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:30px;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #ddd;
+padding-bottom:20px;
+}
+
+header img{height:40px;}
+
+nav a{
+margin-left:20px;
+font-size:13px;
+letter-spacing:.1em;
+color:#555;
+text-decoration:none;
+}
+
+.section{
+padding:60px 0;
+border-top:1px solid #ddd;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:30px;
+}
+
+.art-link{
+display:block;
+overflow:hidden;
+border-radius:20px;
+}
+
+.art-link img{
+width:100%;
+transition:.4s;
+}
+
+.art-link:hover img{
+transform:scale(1.03);
+opacity:.9;
+}
+
+.caption{
+font-size:12px;
+color:#666;
+margin-top:10px;
+text-transform:uppercase;
+}
+
+@media(max-width:800px){
+.gallery-grid{
+grid-template-columns:1fr;
+}
+}
+</style>
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="Generator" content="Cocoa HTML Writer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="CocoaVersion" content="2299.5"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style type="text/css"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;html lang="en"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;head&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;meta charset="UTF-8"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;title&amp;gt;Selected Works | Galería Coahuilteca&amp;lt;/title&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;meta name="description" content="Selected original works by Fermigrante and Indhira at Galería Coahuilteca in San Miguel de Allende."&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;style&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;body{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-family: Helvetica, Arial, sans-serif;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background:#f7f4ef;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#111;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.container{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;max-width:1200px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:auto;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding:30px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;header{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:flex;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;justify-content:space-between;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;align-items:center;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-bottom:1px solid #ddd;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding-bottom:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;header img{height:40px;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;nav a{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-left:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:13px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;letter-spacing:.1em;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#555;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-decoration:none;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.section{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding:60px 0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-top:1px solid #ddd;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.hero{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;min-height:520px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:flex;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;align-items:center;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background:&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;linear-gradient(90deg, rgba(0,0,0,.68), rgba(0,0,0,.25)),&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;url('fermigrante1.jpg');&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background-size:cover;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background-position:center;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:white;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding:80px 70px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-top:30px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.hero-content{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;max-width:620px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.hero-kicker{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:13px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;letter-spacing:.18em;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-transform:uppercase;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-bottom:22px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.hero h1{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-family:Georgia, serif;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:72px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;line-height:.95;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-weight:400;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.hero-line{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;width:160px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;height:1px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background:white;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:30px 0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;opacity:.7;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.hero p{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:21px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;line-height:1.45;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;max-width:560px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:rgba(255,255,255,.88);&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.section h2{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-family:Georgia, serif;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:44px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-weight:400;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.artist-group{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-top:60px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding-top:40px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-top:1px solid #ddd;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.artist-title{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:flex;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;justify-content:space-between;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;align-items:center;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-bottom:25px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.artist-title h3{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-family:Georgia, serif;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:38px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-weight:400;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.artist-title a{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#111;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-decoration:none;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-bottom:1px solid #aaa;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding-bottom:4px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:13px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;letter-spacing:.08em;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.gallery-grid{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:grid;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;grid-template-columns:1fr 1fr;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;gap:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.art-link{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;overflow:hidden;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-radius:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-top:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.art-link img{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;width:100%;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-radius:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;transition:transform .45s ease, opacity .45s ease;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.art-link:hover img{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;transform:scale(1.025);&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;opacity:.88;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.caption{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:12px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#666;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;letter-spacing:.08em;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-top:10px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-transform:uppercase;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.statement{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;max-width:760px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:70px auto 0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-align:center;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#555;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:18px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;line-height:1.7;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.cta{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border:1px solid #ddd;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding:40px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-radius:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background:white;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:grid;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;grid-template-columns:1fr auto;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;gap:30px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;align-items:center;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.cta h2{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-family:Georgia, serif;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:38px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-weight:400;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:0 0 10px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.cta p{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#666;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin:0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;.button{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;display:inline-block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding:15px 25px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-radius:30px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;background:black;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:white;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-decoration:none;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;letter-spacing:.12em;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;text-transform:uppercase;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:13px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;footer{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;margin-top:40px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;padding-top:20px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;border-top:1px solid #ddd;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;font-size:12px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;color:#666;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;@media(max-width:800px){&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.container{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;padding:22px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;header{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;display:block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;nav{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;margin-top:18px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;nav a{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;display:inline-block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;margin:0 14px 12px 0;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;font-size:12px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.hero{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;min-height:460px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;padding:55px 28px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.hero h1{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;font-size:48px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.artist-title{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;display:block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.artist-title a{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;display:inline-block;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;margin-top:12px;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.gallery-grid,&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;.cta{&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;grid-template-columns:1fr;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;}&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/style&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/head&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;body&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;div class="container"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;header&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;a href="index.html"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;img src="logo.png" alt="Galería Coahuilteca"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;nav&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="index.html"&amp;gt;Home&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="gallery.html"&amp;gt;Gallery&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="portraits.html"&amp;gt;Portraits&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="experiences.html"&amp;gt;Experiences&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="visit.html"&amp;gt;Visit&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/nav&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/header&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;section class="hero"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="hero-content"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="hero-kicker"&amp;gt;Selected Works&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;h1&amp;gt;Original art,&amp;lt;br&amp;gt;locally made.&amp;lt;/h1&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="hero-line"&amp;gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;A curated selection of paintings, drawings and graphic work by artists of Galería Coahuilteca.&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/section&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;section class="section"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;h2&amp;gt;Selected Works&amp;lt;/h2&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="artist-group"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="artist-title"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;h3&amp;gt;Fermigrante&amp;lt;/h3&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;a href="https://www.instagram.com/fermigrante/" target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;View artist →&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a class="art-link" href="https://www.instagram.com/fermigrante/" target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;img src="fermigrante1.jpg" alt="Fermigrante acrylic painting"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;p class="caption"&amp;gt;Fermigrante · Acrylic painting&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a class="art-link" href="https://www.instagram.com/fermigrante/" target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;img src="fermigrante2.jpg" alt="Fermigrante acrylic painting"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;p class="caption"&amp;gt;Fermigrante · Acrylic painting&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="artist-group"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="artist-title"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;h3&amp;gt;Indhira&amp;lt;/h3&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;a href="https://www.instagram.com/indhira_art/" target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;View artist →&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="gallery-grid"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;a class="art-link" href="https://www.instagram.com/indhira_art/" target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;          &lt;/span&gt;&amp;lt;img src="indhira-retrato.jpg" alt="Oil portrait by Indhira"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;p class="caption"&amp;gt;Indhira · Oil portrait · Venetian technique&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;a class="art-link" href="https://www.instagram.com/indhira_art/" target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;          &lt;/span&gt;&amp;lt;img src="litografia.jpg" alt="Drawing on lithographic stone by Indhira"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;p class="caption"&amp;gt;Indhira · Drawing on lithographic stone&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;p class="statement"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;Each piece is selected to reflect the dialogue between movement, memory, body and material presence inside the gallery.&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/section&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;section class="section"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="cta"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;h2&amp;gt;Ask about available works&amp;lt;/h2&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;&amp;lt;p&amp;gt;Contact the gallery for current inventory, prices, formats and shipping options.&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a class="button" href="https://wa.me/524152169737?text=Hello%2C%20I%20would%20like%20to%20see%20available%20works%20at%20Galer%C3%ADa%20Coahuilteca." target="_blank"&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;Contact Gallery&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;/a&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/section&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;footer&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;Galería Coahuilteca · San Miguel de Allende · 2026&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/footer&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/body&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;p class="p1"&gt;&amp;lt;/html&amp;gt;&lt;/p&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div class="container">
+
+<header>
+<img src="logo.png">
+<nav>
+<a href="index.html">Home</a>
+<a href="gallery.html">Gallery</a>
+<a href="portraits.html">Portraits</a>
+</nav>
+</header>
+
+<section class="section">
+
+<h2>Fermigrante</h2>
+
+<div class="gallery-grid">
+
+<a class="art-link" href="https://www.instagram.com/fermigrante/" target="_blank">
+<img src="fermigrante1.jpg">
+</a>
+
+<a class="art-link" href="https://www.instagram.com/fermigrante/" target="_blank">
+<img src="fermigrante2.jpg">
+</a>
+
+</div>
+
+<h2 style="margin-top:60px;">Indhira</h2>
+
+<div class="gallery-grid">
+
+<a class="art-link" href="https://www.instagram.com/indhira_art/" target="_blank">
+<img src="indhira-retrato.jpg">
+</a>
+
+<a class="art-link" href="https://www.instagram.com/indhira_art/" target="_blank">
+<img src="litografia.jpg">
+</a>
+
+</div>
+
+</section>
+
+</div>
+
 </body>
 </html>
