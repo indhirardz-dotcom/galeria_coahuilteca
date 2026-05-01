@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Art Experiences | Galería Coahuilteca</title>
-<meta name="description" content="Private art experiences inside Galería Coahuilteca and at a rural art studio near San Miguel de Allende.">
 
 <style>
 body{
@@ -44,8 +43,8 @@ nav a{
   display:flex;
   align-items:center;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.24)),
-    url('experiencia-airbnb.jpg');
+    linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.55) 36%, rgba(0,0,0,.12) 100%),
+    url('experiences_airbnb.jpg');
   background-size:cover;
   background-position:center;
   color:white;
@@ -80,7 +79,6 @@ nav a{
 }
 
 .hero p{
-  margin-top:20px;
   font-size:20px;
   line-height:1.45;
   color:rgba(255,255,255,.9);
@@ -218,39 +216,41 @@ nav a{
   display:block;
 }
 
-.map-link{
-  display:block;
-  margin-top:20px;
+.map-wrapper{
+  position:relative;
+  height:330px;
   border-radius:20px;
   overflow:hidden;
   border:1px solid #ddd;
+  margin-top:25px;
   background:white;
-  text-decoration:none;
-  color:inherit;
 }
 
-.map-card{
-  padding:34px;
-  min-height:240px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.75)),
-    #fff;
+.map-wrapper iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
 }
 
-.map-card h3{
-  font-family:Georgia, serif;
-  font-size:30px;
-  font-weight:400;
-  margin:0 0 12px;
+.map-click{
+  position:absolute;
+  inset:0;
+  z-index:2;
 }
 
-.map-card p{
-  color:#666;
-  line-height:1.6;
-  margin:0;
+.map-label{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  background:white;
+  padding:14px 18px;
+  border-radius:30px;
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  z-index:3;
+  color:#111;
 }
 
 .booking{
@@ -297,8 +297,13 @@ footer{
   }
 
   .hero{
-    min-height:500px;
+    min-height:520px;
     padding:55px 28px;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.45)),
+      url('experiences_airbnb.jpg');
+    background-size:cover;
+    background-position:center;
   }
 
   .hero h1{font-size:46px;}
@@ -423,9 +428,7 @@ footer{
   <h2>Where the experience takes place</h2>
 
   <div class="two">
-    <div>
-      <img class="location-photo" src="enlagale.jpg" alt="Art experience inside Galería Coahuilteca">
-    </div>
+    <img class="location-photo" src="enlagale.jpg" alt="Art experience inside Galería Coahuilteca">
 
     <div class="box">
       <h3>Inside the gallery</h3>
@@ -438,7 +441,7 @@ footer{
       </p>
 
       <p>
-        This option is central, easy, walkable and ideal for visitors who want a beautiful creative experience without leaving downtown.
+        Central, easy, walkable and ideal for visitors who want a beautiful creative experience without leaving downtown.
       </p>
 
       <a class="button" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
@@ -447,13 +450,16 @@ footer{
     </div>
   </div>
 
-  <a class="map-link" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
-    <div class="map-card">
-      <h3>Galería Coahuilteca</h3>
-      <p>Tenerías & Codo · Centro · San Miguel de Allende</p>
-      <p style="margin-top:12px;">Click to open in Google Maps →</p>
-    </div>
-  </a>
+  <div class="map-wrapper">
+    <iframe
+      src="https://www.google.com/maps?q=Galer%C3%ADa%20Coahuilteca%20San%20Miguel%20de%20Allende&output=embed"
+      loading="lazy">
+    </iframe>
+
+    <a class="map-click" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank"></a>
+
+    <div class="map-label">Open gallery map →</div>
+  </div>
 </section>
 
 <section class="section">
@@ -470,7 +476,7 @@ footer{
       </p>
 
       <p>
-        Transportation is not included, but the location is easy to open in Google Maps.
+        Transportation is not included, but the location opens easily in Google Maps.
       </p>
 
       <a class="button" href="https://maps.app.goo.gl/4pzq4JvtVhqvnGKn7" target="_blank">
@@ -478,18 +484,19 @@ footer{
       </a>
     </div>
 
-    <div>
-      <img class="location-photo" src="rancho.jpg" alt="Rural art studio in Corralejo de Arriba">
-    </div>
+    <img class="location-photo" src="rancho.jpg" alt="Rural art studio in Corralejo de Arriba">
   </div>
 
-  <a class="map-link" href="https://maps.app.goo.gl/4pzq4JvtVhqvnGKn7" target="_blank">
-    <div class="map-card">
-      <h3>Private Art Studio</h3>
-      <p>Corralejo de Arriba · Rural community near San Miguel de Allende</p>
-      <p style="margin-top:12px;">Click to open in Google Maps →</p>
-    </div>
-  </a>
+  <div class="map-wrapper">
+    <iframe
+      src="https://www.google.com/maps?q=Corralejo%20de%20Arriba%20San%20Miguel%20de%20Allende%20Guanajuato&output=embed"
+      loading="lazy">
+    </iframe>
+
+    <a class="map-click" href="https://maps.app.goo.gl/4pzq4JvtVhqvnGKn7" target="_blank"></a>
+
+    <div class="map-label">Open studio map →</div>
+  </div>
 </section>
 
 <section class="section">
@@ -528,7 +535,7 @@ footer{
 
     <p style="color:#666; line-height:1.7;">
       You can book through Airbnb, or reserve directly with Galería Coahuilteca by WhatsApp. 
-      For direct bookings, send your preferred date, time, number of guests and chosen experience. We will confirm availability personally.
+      For direct bookings, send your preferred date, time, number of guests and chosen experience.
     </p>
 
     <div class="booking-grid">
