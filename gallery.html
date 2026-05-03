@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact | Galería Coahuilteca</title>
+<title>Gallery | Galería Coahuilteca</title>
 
 <style>
 body{
@@ -41,59 +41,41 @@ nav a{
 
 .section{
   padding:60px 0;
-  text-align:center;
+  border-top:1px solid #ddd;
 }
 
-.hero-img{
-  width:100%;
-  max-height:300px;
-  object-fit:cover;
-  border-radius:20px;
-  margin-bottom:40px;
-}
-
-.contact-grid{
+.gallery-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
-  margin-top:40px;
+  margin-top:30px;
 }
 
-.contact-option{
-  border:1px solid #ddd;
-  padding:30px;
-  text-decoration:none;
-  color:#111;
+.art-link{
+  display:block;
+  overflow:hidden;
   border-radius:20px;
-  transition:.3s;
 }
 
-.contact-option:hover{
-  background:#fff;
+.art-link img{
+  width:100%;
+  transition:.4s;
 }
 
-.small{
-  font-size:14px;
+.art-link:hover img{
+  transform:scale(1.03);
+  opacity:.9;
+}
+
+.caption{
+  font-size:12px;
   color:#666;
   margin-top:10px;
-}
-
-footer{
-  margin-top:80px;
-  padding-top:40px;
-  border-top:1px solid #ddd;
-  font-size:14px;
-  color:#555;
-  line-height:1.6;
-}
-
-footer a{
-  color:#111;
-  text-decoration:none;
+  text-transform:uppercase;
 }
 
 @media(max-width:800px){
-  .contact-grid{
+  .gallery-grid{
     grid-template-columns:1fr;
   }
 }
@@ -115,50 +97,57 @@ footer a{
     <a href="portraits.html">Portraits</a>
     <a href="experiences.html">Experiences</a>
     <a href="visit.html">Visit</a>
-    <a href="contact.html">Contact</a>
+    <a class="contact-link" href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="section">
 
-<img src="indhira-retrato.jpg" class="hero-img">
+<!-- FERMI GRANDE -->
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
 
-<h2>How would you like to connect with the gallery?</h2>
+  <h2 style="margin:0;">Fermigrante</h2>
 
-<p style="max-width:500px; margin:auto; margin-bottom:30px; color:#555;">
-Whether you're looking for a piece to take home or planning a custom commission, we’re happy to assist.
-</p>
+  <a href="https://wa.me/524151196108?text=Hi%2C%20I%20would%20like%20to%20commission%20a%20custom%20piece%20by%20Fermigrante.%20The%20size%20I%20am%20interested%20in%20is%3A%20____.%20The%20shipping%20destination%20is%3A%20____." 
+     target="_blank"
+     style="border:1px solid #111; padding:10px 16px; text-decoration:none; color:#111; font-size:13px; letter-spacing:.08em; margin-top:10px;">
+    
+    CUSTOM COMMISSION
 
-<div class="contact-grid">
+  </a>
 
-<a class="contact-option" 
-href="https://wa.me/524151196108?text=Hi%2C%20I%20would%20like%20to%20commission%20a%20custom%20piece%20by%20Fermigrante.%20The%20size%20I%20am%20interested%20in%20is%3A%20____.%20The%20shipping%20destination%20is%3A%20____." 
-target="_blank">
+</div>
 
-  <strong style="font-size:20px;">WhatsApp</strong>
+<div class="gallery-grid">
 
-  <div class="small">
-    Immediate response · Custom commissions · Available artwork
-  </div>
+  <a class="art-link" href="https://www.instagram.com/fermigrante/" target="_blank">
+    <img src="fermigrante1.jpg" alt="Fermigrante artwork">
+  </a>
 
-</a>
+  <a class="art-link" href="https://www.instagram.com/fermigrante/" target="_blank">
+    <img src="fermigrante2.jpg" alt="Fermigrante artwork">
+  </a>
 
-<a class="contact-option" 
-href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca">
+</div>
 
-  <strong>Email</strong>
+<!-- INDHIRA -->
+<h2 style="margin-top:60px;">Indhira</h2>
 
-  <div class="small">
-    Collectors · Press · Private appointments
-  </div>
+<div class="gallery-grid">
 
-</a>
+  <a class="art-link" href="https://www.instagram.com/indhira_art/" target="_blank">
+    <img src="indhira-retrato.jpg" alt="Indhira artwork">
+  </a>
+
+  <a class="art-link" href="https://www.instagram.com/indhira_art/" target="_blank">
+    <img src="litografia.jpg" alt="Indhira artwork">
+  </a>
 
 </div>
 
 </section>
 
-<footer>
+<footer style="margin-top:80px; padding-top:40px; border-top:1px solid #ddd; font-size:14px; color:#555; line-height:1.6;">
 
   <p>
     <strong>Galería Coahuilteca</strong><br>
@@ -167,14 +156,8 @@ href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%
 
   <p style="margin-top:15px;">
     <strong>Collectors · Press · Commissions · Private appointments</strong><br>
-    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website">
+    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website" style="color:#111; text-decoration:none;">
       hello@galeriacoahuilteca.com
-    </a>
-  </p>
-
-  <p style="margin-top:15px;">
-    <a href="https://wa.me/524151196108" target="_blank">
-      WhatsApp for available artwork & commissions
     </a>
   </p>
 
