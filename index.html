@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Original Art Gallery in San Miguel de Allende | Galería Coahuilteca</title>
-<meta name="description" content="Visit Galería Coahuilteca, a working art gallery in San Miguel de Allende with original paintings, drawings, ceramics, portrait commissions and private art experiences.">
+<meta name="description" content="Visit Galería Coahuilteca, a working art gallery in San Miguel de Allende with original paintings, drawings, ceramics and portrait commissions.">
 
 <style>
 body{
@@ -60,59 +60,10 @@ nav a{
   margin-top:30px;
 }
 
-.hero-content{
-  max-width:560px;
-}
-
-.hero-kicker{
-  font-size:13px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
 .hero h1{
   font-family:Georgia, serif;
-  font-size:72px;
-  line-height:.95;
-  font-weight:400;
+  font-size:64px;
   margin:0;
-}
-
-.hero-line{
-  width:160px;
-  height:1px;
-  background:white;
-  margin:30px 0;
-  opacity:.7;
-}
-
-.hero p{
-  font-size:21px;
-  line-height:1.45;
-  max-width:520px;
-  color:rgba(255,255,255,.88);
-}
-
-.button{
-  display:inline-block;
-  margin-top:20px;
-  padding:15px 25px;
-  border-radius:30px;
-  background:black;
-  color:white;
-  text-decoration:none;
-}
-
-.hero .button{
-  background:transparent;
-  color:white;
-  border:1px solid white;
-  border-radius:0;
-  padding:16px 34px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-size:13px;
 }
 
 .section{
@@ -128,7 +79,7 @@ nav a{
 
 .card img{
   width:100%;
-  height:340px;
+  height:320px;
   object-fit:cover;
   border-radius:15px;
 }
@@ -146,35 +97,6 @@ nav a{
   text-decoration:none;
 }
 
-.workshops-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
-}
-
-.workshops-grid img{
-  width:100%;
-  height:400px;
-  object-fit:cover;
-  border-radius:20px;
-}
-
-.image-link{
-  display:block;
-  overflow:hidden;
-  border-radius:20px;
-}
-
-.image-link img{
-  transition:.4s;
-}
-
-.image-link:hover img{
-  transform:scale(1.03);
-  opacity:.9;
-}
-
 .visit{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -188,107 +110,32 @@ nav a{
   background:white;
 }
 
-.byline{
-  font-size:14px;
-  letter-spacing:.15em;
-  color:#666;
-  text-transform:uppercase;
-  display:inline-block;
-  margin-top:10px;
-}
-
-.portrait-button{
-  width:auto !important;
-  display:inline-block !important;
-  max-width:max-content !important;
-}
-
 footer{
   margin-top:80px;
   padding-top:40px;
   border-top:1px solid #ddd;
   font-size:14px;
   color:#555;
-  line-height:1.6;
-}
-
-footer a{
-  color:#111;
-  text-decoration:none;
-}
-
-.back-to-top{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  width:42px;
-  height:42px;
-  border:1px solid #111;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  color:#111;
-  font-size:18px;
-  background:#f7f4ef;
-  transition:.3s;
-  z-index:1000;
-}
-
-.back-to-top:hover{
-  background:#111;
-  color:#fff;
 }
 
 @media(max-width:800px){
-  .container{
-    padding:22px;
+  .grid{
+    grid-template-columns:1fr;
   }
-
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-  }
-
-  nav{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:8px;
-  }
-
-  nav a{
-    font-size:14px;
-    margin:0;
-  }
-
-  .hero{
-    min-height:560px;
-    padding:60px 28px;
-  }
-
-  .hero h1{
-    font-size:48px;
-  }
-
-  .grid,
-  .visit,
-  .workshops-grid{
+  .visit{
     grid-template-columns:1fr;
   }
 }
 </style>
 </head>
 
-<body id="top">
+<body>
 
 <div class="container">
 
 <header>
   <a href="index.html">
-    <img src="logo.png" alt="Galería Coahuilteca art gallery logo">
+    <img src="logo.png">
   </a>
 
   <nav>
@@ -302,21 +149,7 @@ footer a{
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-kicker">Working gallery · San Miguel de Allende</div>
-
-    <h1>Original Art in<br>San Miguel de Allende</h1>
-
-    <div class="hero-line"></div>
-
-    <p>
-      A working gallery in San Miguel de Allende presenting original paintings, drawings, ceramics, commissioned portraits and private art experiences by local artists.
-    </p>
-
-    <a class="button" href="https://wa.me/524152169737?text=Hi%2C%20I%27m%20visiting%20San%20Miguel%20and%20would%20like%20information%20about%20artworks%20or%20workshops." target="_blank">
-      Available artwork
-    </a>
-  </div>
+  <h1>Original Art in San Miguel de Allende</h1>
 </section>
 
 <section class="section" id="artists">
@@ -324,117 +157,53 @@ footer a{
 
   <div class="grid">
 
-    <a href="https://www.instagram.com/fermigrante/" target="_blank" class="view-more">
+    <a href="https://www.instagram.com/fermigrante/" target="_blank" style="text-decoration:none; color:inherit;">
+      <div class="card">
+        <img src="amarillo.jpg">
+        <h3>Fermigrante</h3>
+        <p>Conceptual painting exploring movement and human presence.</p>
+        <p class="view-more">
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;">
-    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zm5.25-.9a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/>
-  </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;">
+            <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm4.25 3a5 5 0 110 10 5 5 0 010-10z"/>
+          </svg>
 
-  Visit Instagram →
-
-</a>
+          Visit Instagram →
+        </p>
+      </div>
+    </a>
 
     <a href="https://www.instagram.com/indhira_art/" target="_blank" style="text-decoration:none; color:inherit;">
       <div class="card">
-        <img src="pared.jpg" alt="Original artwork by Indhira at Galería Coahuilteca in San Miguel de Allende">
+        <img src="pared.jpg">
         <h3>Indhira</h3>
         <p>Drawing and painting focused on identity and the body.</p>
-        <p class="view-more">View on Instagram →</p>
+        <p class="view-more">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;">
+            <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm4.25 3a5 5 0 110 10 5 5 0 010-10z"/>
+          </svg>
+
+          Visit Instagram →
+        </p>
       </div>
     </a>
 
     <a href="https://www.instagram.com/venus_ceramista/" target="_blank" style="text-decoration:none; color:inherit;">
       <div class="card">
-        <img src="ceramica.jpg" alt="Handmade ceramic art by Venus Ceramista in San Miguel de Allende">
+        <img src="ceramica.jpg">
         <h3>Venus Ceramista</h3>
         <p>Handmade ceramics designed for daily use and collecting.</p>
-        <p class="view-more">View on Instagram →</p>
+        <p class="view-more">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;">
+            <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm4.25 3a5 5 0 110 10 5 5 0 010-10z"/>
+          </svg>
+
+          Visit Instagram →
+        </p>
       </div>
     </a>
-
-  </div>
-</section>
-
-<section class="section" id="portraits">
-  <p style="letter-spacing:.2em; font-size:12px;">
-    COMMISSIONED WORK
-  </p>
-
-  <div class="workshops-grid">
-
-    <div>
-      <a href="portraits.html" class="image-link">
-        <img src="retrato.jpg" alt="Commissioned oil portrait by Indhira in San Miguel de Allende">
-      </a>
-
-      <a href="portraits.html" class="view-more">
-        Explore more →
-      </a>
-    </div>
-
-    <div>
-      <h2>
-        <a href="portraits.html" style="text-decoration:none; color:inherit;">
-          Portrait Paintings<br>
-          <span class="byline">by Indhira</span>
-        </a>
-      </h2>
-
-      <p style="color:#666;">
-        Oil portraits created through a traditional Venetian technique, developed slowly through layered painting.
-      </p>
-
-      <ul>
-        <li>40 × 50 cm — 25,000 MXN — approx. 2 months</li>
-        <li>90 × 120 cm — 80,000 MXN — approx. 4–6 months</li>
-      </ul>
-
-      <p style="color:#666;">
-        Each portrait is created from photographic references and includes pencil studies as part of the process.
-      </p>
-
-      <p style="color:#666;">
-        Only a limited number of portraits are accepted each year.
-      </p>
-
-      <a class="button portrait-button" href="portraits.html">
-        Request a Portrait
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="experiences">
-  <div class="workshops-grid">
-
-    <div>
-      <a href="experiences.html" class="image-link">
-        <img src="workshops.jpg" alt="Private art experience inside Galería Coahuilteca in San Miguel de Allende">
-      </a>
-
-      <a href="experiences.html" class="view-more">
-        Explore more →
-      </a>
-    </div>
-
-    <div>
-      <h2>Create inside a working gallery</h2>
-
-      <p style="color:#666;">
-        Private sessions for visitors and collectors.
-      </p>
-
-      <ul>
-        <li>Paint your own Parroquia</li>
-        <li>Draw your partner</li>
-        <li>Watercolor, charcoal, acrylic</li>
-      </ul>
-
-      <a class="button" href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20book%20an%20art%20experience%20at%20Galer%C3%ADa%20Coahuilteca." target="_blank">
-        Reserve by WhatsApp
-      </a>
-    </div>
 
   </div>
 </section>
@@ -444,58 +213,22 @@ footer a{
 
     <div class="visit-box">
       <h2>Visit us</h2>
-
-      <p>
-        Codo & Tenerías<br>
-        San Miguel de Allende
-      </p>
-
-      <p>
-        10:00 AM – 6:00 PM
-      </p>
-
-      <div style="width:100%; height:350px; border-radius:15px; overflow:hidden; margin-top:20px;">
-        <iframe
-          src="https://www.google.com/maps?q=Galería+Coahuilteca+San+Miguel+de+Allende&output=embed"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-      </div>
-
-      <a class="button" href="https://www.google.com/maps/place/Galería+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
-        Get Directions
-      </a>
+      <p>Codo & Tenerías<br>San Miguel de Allende</p>
+      <p>10:00 AM – 6:00 PM</p>
     </div>
 
     <div class="visit-box">
-      <img src="fachada.jpg" alt="Facade of Galería Coahuilteca art gallery in San Miguel de Allende" style="width:100%;">
+      <img src="fachada.jpg" style="width:100%;">
     </div>
 
   </div>
 </section>
 
 <footer>
-
-  <p>
-    <strong>Galería Coahuilteca</strong><br>
-    San Miguel de Allende · 2026
-  </p>
-
-  <p style="margin-top:15px;">
-    <strong>Collectors · Press · Commissions · Private appointments</strong><br>
-    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website">
-      hello@galeriacoahuilteca.com
-    </a>
-  </p>
-
+  <p><strong>Galería Coahuilteca</strong><br>San Miguel de Allende</p>
 </footer>
 
 </div>
-
-<a href="#top" class="back-to-top">↑</a>
 
 </body>
 </html>
