@@ -13,7 +13,6 @@ body{
   font-family: Helvetica, Arial, sans-serif;
   background:#f7f4ef;
   color:#111;
-
   font-size:18px;
 }
 
@@ -31,20 +30,20 @@ header{
   padding-bottom:20px;
 }
 
-header img{height:40px;}
+header img{
+  height:40px;
+}
+
+nav{
+  display:flex;
+  gap:24px;
+}
 
 nav a{
-  margin-left:20px;
   font-size:16px;
   letter-spacing:.1em;
   color:#555;
   text-decoration:none;
-}
-
-nav a.contact{
-  border:1px solid #111;
-  padding:12px 20px;
-  color:#111;
 }
 
 .hero{
@@ -201,30 +200,45 @@ nav a.contact{
 }
 
 footer{
-  margin-top:40px;
-  padding-top:20px;
+  margin-top:80px;
+  padding-top:40px;
   border-top:1px solid #ddd;
-  font-size:12px;
-  color:#666;
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
 }
 
+footer a{
+  color:#111;
+  text-decoration:none;
+}
+
+/* CELULAR */
 @media(max-width:800px){
   .container{
     padding:22px;
   }
 
   header{
-    display:block;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+
+  header img{
+    height:40px;
   }
 
   nav{
-    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
   }
 
   nav a{
-    display:inline-block;
-    margin:0 14px 12px 0;
-    font-size:12px;
+    font-size:14px;
+    margin:0;
   }
 
   .hero{
@@ -273,7 +287,7 @@ footer{
     <a href="portraits.html">Portraits</a>
     <a href="experiences.html">Experiences</a>
     <a href="visit.html">Visit</a>
-    <a class="contact-link" href="contact.html">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -376,7 +390,7 @@ footer{
   </div>
 </section>
 
-<footer style="margin-top:80px; padding-top:40px; border-top:1px solid #ddd; font-size:14px; color:#555;">
+<footer>
 
   <p>
     <strong>Galería Coahuilteca</strong><br>
@@ -385,12 +399,10 @@ footer{
 
   <p style="margin-top:15px;">
     <strong>Collectors · Press · Commissions · Private appointments</strong><br>
-    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website" style="color:#111; text-decoration:none;">
+    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website">
       hello@galeriacoahuilteca.com
     </a>
   </p>
-
-  
 
 </footer>
 
