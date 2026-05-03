@@ -21,7 +21,7 @@ body{
   padding:30px;
 }
 
-/* HEADER HOMOLOGADO */
+/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -63,7 +63,6 @@ nav a{
 
   nav a{
     font-size:14px;
-    margin:0;
   }
 }
 
@@ -127,10 +126,35 @@ footer a{
   color:#111;
   text-decoration:none;
 }
+
+/* BACK TO TOP */
+.back-to-top{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border:1px solid #111;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#111;
+  font-size:18px;
+  background:#f7f4ef;
+  transition:.3s;
+  z-index:1000;
+}
+
+.back-to-top:hover{
+  background:#111;
+  color:#fff;
+}
 </style>
 </head>
 
-<body>
+<body id="top">
 
 <div class="container">
 
@@ -151,7 +175,7 @@ footer a{
 
 <section class="section">
 
-<img src="sala.jpg" class="hero-img">
+<img src="sala.jpg" class="hero-img" alt="Galería interior">
 
 <h2>How would you like to connect with the gallery?</h2>
 
@@ -184,7 +208,7 @@ Whether you're looking for a piece to take home or planning an art experience, w
 
   <p style="margin-top:15px;">
     <strong>Collectors · Press · Commissions · Private appointments</strong><br>
-    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website">
+    <a href="mailto:hello@galeriacoahuilteca.com">
       hello@galeriacoahuilteca.com
     </a>
   </p>
@@ -192,6 +216,8 @@ Whether you're looking for a piece to take home or planning an art experience, w
 </footer>
 
 </div>
+
+<a href="#top" class="back-to-top">↑</a>
 
 </body>
 </html>
