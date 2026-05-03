@@ -8,203 +8,199 @@
 
 <style>
 body{
-margin:0;
-font-family: Helvetica, Arial, sans-serif;
-background:#f7f4ef;
-color:#111;
+  margin:0;
+  font-family: Helvetica, Arial, sans-serif;
+  background:#f7f4ef;
+  color:#111;
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:30px;
+  max-width:1100px;
+  margin:auto;
+  padding:30px;
 }
 
 /* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #ddd;
-padding-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ddd;
+  padding-bottom:20px;
 }
 
-.logo-group{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo-text{
-display:flex;
-flex-direction:column;
-}
-
-.logo-title{
-font-family:Georgia, serif;
-font-size:18px;
-margin:0;
-}
-
-.logo-subtitle{
-font-size:12px;
-color:#666;
-margin:2px 0 0 0;
-}
-
-/* NAV */
 header img{
-height:40px;
+  height:40px;
+}
+
+nav{
+  display:flex;
+  gap:24px;
 }
 
 nav a{
-margin-left:20px;
-font-size:16px;
-letter-spacing:.1em;
-color:#555;
-text-decoration:none;
+  font-size:16px;
+  letter-spacing:.1em;
+  color:#555;
+  text-decoration:none;
 }
 
 .contact-link{
-border:1px solid #111;
-padding:10px 18px;
-color:#111;
+  border:1px solid #111;
+  padding:10px 18px;
+  color:#111;
 }
 
 /* HERO */
 .hero{
-position:relative;
-height:520px;
-overflow:hidden;
-margin-top:30px;
+  position:relative;
+  height:520px;
+  overflow:hidden;
+  margin-top:30px;
 }
 
 .hero img{
-width:100%;
-height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
-align-items:center;
-background:linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 100%);
-padding-left:50px;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 100%);
+  padding-left:50px;
 }
 
 .hero-text h1{
-color:#fff;
-font-size:60px;
-font-family:Georgia, serif;
-font-weight:400;
-margin:0;
+  color:#fff;
+  font-size:60px;
+  font-family:Georgia, serif;
+  font-weight:400;
+  margin:0;
 }
 
 .hero-text p{
-color:#fff;
-font-size:20px;
-margin-top:8px;
+  color:#fff;
+  font-size:20px;
+  margin-top:8px;
 }
 
 /* INFO */
 .info{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-padding:80px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  padding:80px 0;
 }
 
 .info h2{
-font-family:Georgia, serif;
-font-size:32px;
-font-weight:400;
-margin-bottom:20px;
+  font-family:Georgia, serif;
+  font-size:32px;
+  font-weight:400;
+  margin-bottom:20px;
 }
 
 .info p{
-color:#555;
-line-height:1.6;
+  color:#555;
+  line-height:1.6;
 }
 
 /* MAP */
 .map{
-margin-top:30px;
-border:0;
-width:100%;
-height:380px;
-border-radius:20px;
+  margin-top:30px;
+  border:0;
+  width:100%;
+  height:380px;
+  border-radius:20px;
 }
 
 /* CTA */
 .cta{
-margin-top:30px;
+  margin-top:30px;
 }
 
 .cta a{
-display:inline-block;
-margin-right:15px;
-margin-bottom:12px;
-padding:14px 24px;
-border:1px solid #111;
-text-decoration:none;
-color:#111;
-font-size:13px;
-letter-spacing:.1em;
+  display:inline-block;
+  margin-right:15px;
+  margin-bottom:12px;
+  padding:14px 24px;
+  border:1px solid #111;
+  text-decoration:none;
+  color:#111;
+  font-size:13px;
+  letter-spacing:.1em;
 }
 
 .cta a.primary{
-background:#111;
-color:white;
+  background:#111;
+  color:white;
 }
 
 /* FOOTER */
 footer{
-margin-top:40px;
-padding-top:20px;
-border-top:1px solid #ddd;
-font-size:12px;
-color:#666;
+  margin-top:80px;
+  padding-top:40px;
+  border-top:1px solid #ddd;
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
+}
+
+footer a{
+  color:#111;
+  text-decoration:none;
 }
 
 /* MOBILE */
 @media(max-width:800px){
+  .container{
+    padding:22px;
+  }
 
-header{
-display:block;
-}
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
 
-.logo-group{
-margin-bottom:10px;
-}
+  header img{
+    height:40px;
+  }
 
-nav{
-margin-top:18px;
-}
+  nav{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+  }
 
-nav a{
-display:inline-block;
-margin:0 14px 12px 0;
-font-size:12px;
-}
+  nav a{
+    font-size:14px;
+    margin:0;
+  }
 
-.info{
-grid-template-columns:1fr;
-padding:55px 0;
-}
+  .info{
+    grid-template-columns:1fr;
+    padding:55px 0;
+  }
 
-.hero-text h1{
-font-size:40px;
-}
+  .hero-text h1{
+    font-size:40px;
+  }
 
-.hero{
-height:430px;
-}
+  .hero{
+    height:430px;
+  }
 
+  .overlay{
+    padding-left:28px;
+  }
 }
 </style>
 </head>
@@ -215,32 +211,30 @@ height:430px;
 
 <header>
 
-<div class="logo-group">
-  <a href="index.html">
-    <img src="logo.png" alt="Galería Coahuilteca">
-  </a>
-</div>
+<a href="index.html">
+  <img src="logo.png" alt="Galería Coahuilteca">
+</a>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="gallery.html">Gallery</a>
-<a href="portraits.html">Portraits</a>
-<a href="experiences.html">Experiences</a>
-<a href="visit.html">Visit</a>
-<a class="contact-link" href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="portraits.html">Portraits</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="visit.html">Visit</a>
+  <a class="contact-link" href="contact.html">Contact</a>
 </nav>
 
 </header>
 
 <section class="hero">
-<img src="fachadacoahuilteca.jpg" alt="Galería Coahuilteca exterior">
+  <img src="fachadacoahuilteca.jpg" alt="Galería Coahuilteca exterior">
 
-<div class="overlay">
-  <div class="hero-text">
-    <h1>Art Gallery</h1>
-    <p>San Miguel de Allende</p>
+  <div class="overlay">
+    <div class="hero-text">
+      <h1>Art Gallery</h1>
+      <p>San Miguel de Allende</p>
+    </div>
   </div>
-</div>
 </section>
 
 <section class="info">
@@ -268,13 +262,13 @@ San Miguel de Allende, Guanajuato
 </p>
 
 <div class="cta">
-<a class="primary" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
-Get Directions
-</a>
+  <a class="primary" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
+    Get Directions
+  </a>
 
-<a href="https://wa.me/524152169737" target="_blank">
-WhatsApp
-</a>
+  <a href="https://wa.me/524152169737" target="_blank">
+    WhatsApp
+  </a>
 </div>
 
 </div>
@@ -289,7 +283,7 @@ src="https://www.google.com/maps?q=Galería+Coahuilteca+San+Miguel+de+Allende&ou
 
 </section>
 
-<footer style="margin-top:80px; padding-top:40px; border-top:1px solid #ddd; font-size:14px; color:#555;">
+<footer>
 
   <p>
     <strong>Galería Coahuilteca</strong><br>
@@ -298,13 +292,9 @@ src="https://www.google.com/maps?q=Galería+Coahuilteca+San+Miguel+de+Allende&ou
 
   <p style="margin-top:15px;">
     <strong>Collectors · Press · Commissions · Private appointments</strong><br>
-    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website" style="color:#111; text-decoration:none;">
+    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website">
       hello@galeriacoahuilteca.com
     </a>
-  </p>
-
-  <p style="margin-top:15px;">
-    
   </p>
 
 </footer>
