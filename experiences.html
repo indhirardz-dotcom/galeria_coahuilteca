@@ -21,6 +21,7 @@ body{
   padding:30px;
 }
 
+/* HEADER HOMOLOGADO */
 header{
   display:flex;
   justify-content:space-between;
@@ -43,6 +44,27 @@ nav a{
   letter-spacing:.1em;
   color:#555;
   text-decoration:none;
+}
+
+/* MOBILE HEADER */
+@media(max-width:800px){
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+
+  nav{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+  }
+
+  nav a{
+    font-size:14px;
+    margin:0;
+  }
 }
 
 .hero{
@@ -283,39 +305,23 @@ nav a{
 }
 
 footer{
-  margin-top:40px;
+  margin-top:80px;
+  padding-top:40px;
   border-top:1px solid #ddd;
-  padding-top:20px;
-  font-size:12px;
-  color:#666;
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
 }
 
-/* CELULAR */
+footer a{
+  color:#111;
+  text-decoration:none;
+}
+
+/* CELULAR CONTENIDO */
 @media(max-width:800px){
   .container{
     padding:22px;
-  }
-
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-  }
-
-  header img{
-    height:40px;
-  }
-
-  nav{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:8px;
-  }
-
-  nav a{
-    font-size:14px;
-    margin:0;
   }
 
   .hero{
@@ -351,7 +357,7 @@ footer{
 <div class="container">
 
 <header>
- <a href="index.html">
+  <a href="index.html">
     <img src="logo.png" alt="Galería Coahuilteca">
   </a>
 
@@ -603,16 +609,17 @@ footer{
 </section>
 
 <footer>
-  Galería Coahuilteca · Tenerías & Codo · Centro, San Miguel de Allende · 2026
+  <p>
+    <strong>Galería Coahuilteca</strong><br>
+    Tenerías & Codo · Centro, San Miguel de Allende · 2026
+  </p>
 
-  <div class="email-contact">
-    <p>
-      <strong>Collectors · Press · Commissions · Private appointments</strong><br>
-      <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website" style="color:#111; text-decoration:none;">
-        hello@galeriacoahuilteca.com
-      </a>
-    </p>
-  </div>
+  <p style="margin-top:15px;">
+    <strong>Collectors · Press · Commissions · Private appointments</strong><br>
+    <a href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca%20website">
+      hello@galeriacoahuilteca.com
+    </a>
+  </p>
 </footer>
 
 </div>
