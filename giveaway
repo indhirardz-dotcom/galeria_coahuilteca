@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother’s Weekend Giveaway | Galería Coahuilteca</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Helvetica, Arial, sans-serif;
+  background:#f7f4ef;
+  color:#111;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:50px 24px;
+  text-align:center;
+}
+
+h1{
+  font-family: Georgia, serif;
+  font-size:48px;
+  font-weight:400;
+  margin-bottom:16px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.6;
+  color:#444;
+}
+
+.giveaway-box{
+  margin-top:40px;
+}
+
+a{
+  color:#111;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Mother’s Weekend Giveaway</h1>
+
+  <p>
+    Enter to win an original signed lithograph of<br>
+    <em>La Parroquia de San Miguel Arcángel</em> by Indhira.
+  </p>
+
+  <p>
+    Free drawing sessions for women visitors<br>
+    inside Galería Coahuilteca.
+  </p>
+
+  <div class="giveaway-box">
+
+    <a class="e-widget no-button"
+       href="https://gleam.io/hGWnB/mothers-weekend-giveaway"
+       rel="nofollow">
+       Mother’s Weekend Giveaway
+    </a>
+
+    <script type="text/javascript"
+      src="https://widget.gleamjs.io/e.js"
+      async="true">
+    </script>
+
+  </div>
+
+</div>
+
+</body>
+</html>
