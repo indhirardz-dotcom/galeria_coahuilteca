@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFQLK7BP');
+  </script>
+  <!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Art Gallery in San Miguel de Allende | Galería Coahuilteca</title>
+<title>Art Gallery in San Miguel de Allende | Visit Galería Coahuilteca</title>
+<meta name="description" content="Visit Galería Coahuilteca, an original art gallery in San Miguel de Allende located near Tenerías and Codo. Original paintings, ceramics, portraits and private art experiences.">
 
 <style>
 body{
@@ -20,7 +31,6 @@ body{
   padding:30px;
 }
 
-/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -45,7 +55,6 @@ nav a{
   text-decoration:none;
 }
 
-/* HERO */
 .hero{
   position:relative;
   height:520px;
@@ -85,7 +94,6 @@ nav a{
   margin-top:8px;
 }
 
-/* INFO */
 .info{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -105,7 +113,6 @@ nav a{
   line-height:1.6;
 }
 
-/* MAP */
 .map{
   margin-top:30px;
   border:0;
@@ -114,7 +121,6 @@ nav a{
   border-radius:20px;
 }
 
-/* CTA */
 .cta{
   margin-top:30px;
 }
@@ -136,7 +142,6 @@ nav a{
   color:white;
 }
 
-/* FOOTER */
 footer{
   margin-top:80px;
   padding-top:40px;
@@ -151,7 +156,30 @@ footer a{
   text-decoration:none;
 }
 
-/* MOBILE */
+.back-to-top{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border:1px solid #111;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#111;
+  font-size:18px;
+  background:#f7f4ef;
+  transition:.3s;
+  z-index:1000;
+}
+
+.back-to-top:hover{
+  background:#111;
+  color:#fff;
+}
+
 @media(max-width:800px){
   .container{
     padding:22px;
@@ -199,14 +227,20 @@ footer a{
 </style>
 </head>
 
-<body>
+<body id="top">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFQLK7BP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
 <div class="container">
 
 <header>
 
 <a href="index.html">
-  <img src="logo.png" alt="Galería Coahuilteca">
+  <img src="logo.png" alt="Galería Coahuilteca art gallery logo">
 </a>
 
 <nav>
@@ -221,7 +255,7 @@ footer a{
 </header>
 
 <section class="hero">
-  <img src="fachadacoahuilteca.jpg" alt="Galería Coahuilteca exterior">
+  <img src="fachadacoahuilteca.jpg" alt="Facade of Galería Coahuilteca in San Miguel de Allende">
 
   <div class="overlay">
     <div class="hero-text">
@@ -260,7 +294,7 @@ San Miguel de Allende, Guanajuato
     Get Directions
   </a>
 
-  <a href="https://wa.me/524152169737" target="_blank">
+  <a href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20information%20about%20Galer%C3%ADa%20Coahuilteca." target="_blank">
     WhatsApp
   </a>
 </div>
@@ -270,7 +304,8 @@ San Miguel de Allende, Guanajuato
 <div>
 
 <iframe class="map"
-src="https://www.google.com/maps?q=Galería+Coahuilteca+San+Miguel+de+Allende&output=embed">
+src="https://www.google.com/maps?q=Galer%C3%ADa+Coahuilteca+San+Miguel+de+Allende&output=embed"
+loading="lazy">
 </iframe>
 
 </div>
@@ -294,6 +329,8 @@ src="https://www.google.com/maps?q=Galería+Coahuilteca+San+Miguel+de+Allende&ou
 </footer>
 
 </div>
+
+<a href="#top" class="back-to-top">↑</a>
 
 </body>
 </html>
