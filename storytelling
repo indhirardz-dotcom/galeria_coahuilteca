@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La historia de Galería Coahuilteca</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f4efe7;
+      color: #1f1f1f;
+      line-height: 1.8;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.48)),
+        url("TU-FOTO-GALERIA.jpg") center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 22px;
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 78px);
+      line-height: 1.08;
+      font-weight: normal;
+      margin: 0 0 24px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin-bottom: 36px;
+    }
+
+    .audio-box {
+      background: rgba(255,255,255,.95);
+      color: #1f1f1f;
+      padding: 22px;
+      border-radius: 18px;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 75px 24px;
+    }
+
+    p {
+      font-size: 21px;
+      margin: 0 0 28px;
+    }
+
+    .large {
+      font-size: 30px;
+      line-height: 1.45;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: #1f1f1f;
+      opacity: .35;
+      margin: 55px 0;
+    }
+
+    .cta {
+      background: #1f1f1f;
+      color: #f4efe7;
+      text-align: center;
+      padding: 75px 24px;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: normal;
+      line-height: 1.15;
+      margin: 0 0 24px;
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 0 auto 34px;
+      font-size: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #f4efe7;
+      color: #1f1f1f;
+      font-size: 16px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #f4efe7;
+      border: 1px solid #f4efe7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>¿Por qué una galería de arte lleva el nombre de una tribu nómada?</h1>
+
+      <div class="subtitle">
+        Una historia sobre migración, memoria, familia y arte.
+      </div>
+
+      <div class="audio-box">
+        <strong>Escucha la historia</strong>
+        <audio controls>
+          <source src="AUDIO-GALERIA-COAHUILTECA.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <p class="large">
+      Mucho antes de que existieran los estados.
+      Mucho antes de que existiera la frontera.
+      Mucho antes de que hubiera mapas.
+    </p>
+
+    <p>
+      Pequeños grupos humanos recorrían los territorios que hoy llamamos Coahuila, Nuevo León, Tamaulipas y el sur de Texas.
+    </p>
+
+    <p>
+      Su historia viajaba con ellos.
+      Vivía en la memoria.
+      En los relatos.
+      En las personas.
+    </p>
+
+    <p>
+      Hoy los conocemos como coahuiltecos.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+      Dejamos atrás el norte de México.
+    </p>
+
+    <p>
+      Trajimos nuestras herramientas.
+      Nuestros dibujos.
+      Nuestras pinturas.
+      Nuestros recuerdos.
+    </p>
+
+    <p>
+      Y llegamos a San Miguel de Allende.
+    </p>
+
+    <p>
+      Cuando llegó el momento de nombrar esta galería pensamos en aquellos antiguos viajeros.
+    </p>
+
+    <p>
+      Tal vez porque nosotros también habíamos emprendido nuestro propio recorrido. Habíamos cambiado de ciudad, construido una nueva vida y aprendido a mirar otro paisaje.
+    </p>
+
+    <p>
+      Sin embargo, había algo que seguía intacto.
+    </p>
+
+    <p>
+      La familia.
+      El oficio.
+      La necesidad de crear.
+    </p>
+
+    <p>
+      Galería Coahuilteca nació de esa experiencia. De entender que uno puede recorrer grandes distancias y aun así conservar aquello que le da identidad.
+    </p>
+
+    <p class="large">
+      Porque la memoria también viaja. Y algunas historias encuentran nuevas formas de seguir contándose.
+    </p>
+  </main>
+
+  <section class="cta">
+    <h2>Continúa el recorrido</h2>
+
+    <p>
+      Ahora que conoces el origen de nuestro nombre, te invitamos a descubrir las obras, visitar la galería o escribirnos.
+    </p>
+
+    <div class="buttons">
+      <a class="button" href="https://www.instagram.com/galeria_coahuilteca/" target="_blank">
+        Conocer las obras
+      </a>
+
+      <a class="button secondary" href="https://wa.me/524152169737" target="_blank">
+        Escribirnos
+      </a>
+
+      <a class="button secondary" href="https://maps.google.com/?q=Galeria+Coahuilteca+San+Miguel+de+Allende" target="_blank">
+        Cómo llegar
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Galería Coahuilteca · San Miguel de Allende · México
+  </footer>
+
+</body>
+</html>
