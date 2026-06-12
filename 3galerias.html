@@ -66,7 +66,7 @@
       display: flex;
       align-items: flex-end;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.78)),
+        linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.80)),
         url("artwalk-hero.jpg");
       background-size: cover;
       background-position: center;
@@ -139,7 +139,9 @@
       font-size: 13px;
     }
 
-    .venues, .image-grid, .events {
+    .venues,
+    .image-grid,
+    .events {
       display: grid;
       gap: 22px;
       margin-top: 35px;
@@ -149,13 +151,17 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .image-grid, .events {
+    .image-grid,
+    .events {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .venue, .event, .feature {
+    .venue,
+    .event,
+    .feature {
       background: var(--paper);
       border: 1px solid var(--line);
+      overflow: hidden;
     }
 
     .venue {
@@ -166,7 +172,8 @@
       justify-content: space-between;
     }
 
-    .venue-number, .event-category {
+    .venue-number,
+    .event-category {
       color: var(--accent);
       letter-spacing: 4px;
       font-size: 13px;
@@ -174,12 +181,16 @@
       margin-bottom: 14px;
     }
 
-    .venue h3, .event h3, .feature h3 {
+    .venue h3,
+    .event h3,
+    .feature h3 {
       font-size: 32px;
       margin-bottom: 16px;
     }
 
-    .venue p, .event p, .feature p {
+    .venue p,
+    .event p,
+    .feature p {
       color: var(--muted);
       line-height: 1.5;
     }
@@ -193,7 +204,11 @@
     }
 
     .feature img {
+      width: 100%;
       height: 420px;
+      object-fit: cover;
+      display: block;
+      background: var(--paper);
     }
 
     .feature-content {
@@ -244,7 +259,9 @@
     }
 
     @media (max-width: 800px) {
-      .venues, .events, .image-grid {
+      .venues,
+      .events,
+      .image-grid {
         grid-template-columns: 1fr;
       }
 
@@ -341,72 +358,76 @@
 
 <section>
   <div class="eyebrow">Galería Coahuilteca</div>
-  <h2 class="section-title">Inside the gallery</h2>
+  <h2 class="section-title">Inside the Gallery</h2>
   <p class="intro">
-    A small, intimate space for original art, workshops and encounters with artists in the heart of San Miguel de Allende.
+    An intimate contemporary art space in the historic center of San Miguel de Allende. Original artwork, artist encounters and cultural experiences within walking distance of the city's most iconic landmarks.
   </p>
 
   <div class="image-grid">
+
     <article class="feature">
-      <img src="coahuilteca-fachada.jpg" alt="Galería Coahuilteca facade in San Miguel de Allende">
+      <img src="coahuilteca-fachada.jpg" alt="Galería Coahuilteca on a rainy evening in San Miguel de Allende">
       <div class="feature-content">
-        <h3>The Corner</h3>
-        <p>A walkable cultural stop near Tenerías, Codo and Parque Juárez.</p>
+        <h3>A Rainy Evening in San Miguel</h3>
+        <p>
+          The gallery's historic corner location at Tenerías and Codo.
+        </p>
       </div>
     </article>
 
     <article class="feature">
-      <img src="coahuilteca-puerta.jpg" alt="Galería Coahuilteca entrance">
+      <img src="coahuilteca-taller.jpg" alt="Private drawing and painting workshop at Galería Coahuilteca">
       <div class="feature-content">
-        <h3>The Entrance</h3>
-        <p>An intimate doorway into local art, contemporary objects and artist-led experiences.</p>
+        <h3>Private Art Experiences</h3>
+        <p>
+          Personalized drawing and painting workshops for visitors and collectors.
+        </p>
       </div>
     </article>
+
   </div>
 </section>
 
 <section>
   <div class="eyebrow">Proyecta Galería</div>
-  <h2 class="section-title">Next door: contemporary projects</h2>
+  <h2 class="section-title">Next Door: Contemporary Projects</h2>
   <p class="intro">
-    A neighboring project space that expands the route with experimental exhibitions, objects, installations and contemporary cultural programming.
+    Located next to Galería Coahuilteca, Proyecta contributes a contemporary and experimental perspective to the route through exhibitions, objects, installations and cultural programming.
   </p>
 
   <div class="image-grid">
+
     <article class="feature">
       <img src="proyecta-drone.jpg" alt="Contemporary project at Proyecta Galería">
       <div class="feature-content">
-        <h3>Experimental gestures</h3>
-        <p>Contemporary projects, unexpected objects and exhibition moments within steps of Galería Coahuilteca.</p>
+        <h3>Unexpected Encounters</h3>
+        <p>
+          Contemporary interventions and experimental exhibition formats within steps of Galería Coahuilteca.
+        </p>
       </div>
     </article>
 
     <article class="feature">
       <img src="proyecta-object.jpg" alt="Object detail at Proyecta Galería">
       <div class="feature-content">
-        <h3>Objects and details</h3>
-        <p>A close look at contemporary objects, materials and playful interventions in the local art scene.</p>
+        <h3>Objects & Details</h3>
+        <p>
+          Small gestures, materials and objects that expand the conversation around contemporary art.
+        </p>
       </div>
     </article>
+
   </div>
 </section>
 
 <section>
   <div class="eyebrow">Private Art Experiences</div>
-  <h2 class="section-title">Workshops for travelers</h2>
+  <h2 class="section-title">Workshops for Travelers</h2>
   <p class="intro">
     Personalized drawing and painting sessions for visitors seeking a deeper connection with San Miguel's artistic community.
   </p>
 
-  <div class="image-grid">
-    <article class="feature">
-      <img src="coahuilteca-taller.jpg" alt="Private drawing and painting workshop at Galería Coahuilteca">
-      <div class="feature-content">
-        <h3>Artist-led sessions</h3>
-        <p>Drawing and painting experiences designed for travelers, families and small private groups.</p>
-      </div>
-    </article>
-
+  <div class="events">
     <article class="event">
       <div class="event-category">Workshop</div>
       <h3>Dibuja tu Parroquia</h3>
@@ -415,59 +436,75 @@
       </p>
       <div class="meta">Galería Coahuilteca · By appointment</div>
     </article>
+
+    <article class="event">
+      <div class="event-category">Private Experience</div>
+      <h3>Artist-Led Sessions</h3>
+      <p>
+        Drawing and painting experiences designed for travelers, families and small private groups.
+      </p>
+      <div class="meta">Small groups · English / Spanish</div>
+    </article>
   </div>
 </section>
 
 <section>
   <div class="eyebrow">Private Collections</div>
-  <h2 class="section-title">Art beyond the gallery walls</h2>
+  <h2 class="section-title">Art Beyond the Gallery Walls</h2>
   <p class="intro">
     Works by represented artists living in private homes and architectural spaces, extending the gallery experience into collectors' interiors.
   </p>
 
   <div class="image-grid">
+
     <article class="feature">
       <img src="fermigrante-yellow.jpg" alt="Fermigrante artwork in a private collection">
       <div class="feature-content">
-        <h3>Fermigrante in private collection</h3>
-        <p>Contemporary painting installed in an elegant architectural space.</p>
+        <h3>Fermigrante in Private Collection</h3>
+        <p>
+          Contemporary painting installed in an elegant architectural space.
+        </p>
       </div>
     </article>
 
     <article class="feature">
       <img src="fermigrante-red.jpg" alt="Red Fermigrante artwork in a private collection">
       <div class="feature-content">
-        <h3>Collected works</h3>
-        <p>Original pieces selected by collectors for intimate domestic spaces.</p>
+        <h3>Collected Works</h3>
+        <p>
+          Original pieces selected by collectors for intimate domestic spaces.
+        </p>
       </div>
     </article>
+
   </div>
 </section>
 
 <section>
-  <div class="eyebrow">Today & This Week</div>
-  <h2 class="section-title">Art events near the route</h2>
+  <div class="eyebrow">Final Stop</div>
+  <h2 class="section-title">El Pinche Grabador</h2>
   <p class="intro">
-    Selected exhibitions, openings, workshops and cultural events near the Art Walk route.
+    The route concludes with an independent printmaking and graphic arts space, offering another view into San Miguel's creative community.
   </p>
 
-  <div class="events">
-    <article class="event">
-      <div class="event-category">Workshop</div>
-      <h3>Dibuja tu Parroquia</h3>
-      <p>
-        Artist-led drawing and painting experience at Galería Coahuilteca.
-      </p>
-      <div class="meta">Galería Coahuilteca · By appointment</div>
+  <div class="image-grid">
+    <article class="feature">
+      <img src="pinche-grabador.jpg" alt="El Pinche Grabador printmaking gallery in San Miguel de Allende">
+      <div class="feature-content">
+        <h3>Printmaking & Graphic Arts</h3>
+        <p>
+          A destination for contemporary graphic work, prints and independent visual culture.
+        </p>
+      </div>
     </article>
 
     <article class="event">
-      <div class="event-category">Exhibition</div>
-      <h3>Current Exhibition</h3>
+      <div class="event-category">Route Note</div>
+      <h3>Complete the Walk</h3>
       <p>
-        Add current exhibition title, date, artist and source link here.
+        Visit Galería Coahuilteca and Proyecta first, then continue toward El Pinche Grabador as the final stop.
       </p>
-      <div class="meta">Source: pending</div>
+      <div class="meta">Approx. 6 minute walk</div>
     </article>
   </div>
 </section>
