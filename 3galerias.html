@@ -232,13 +232,24 @@
       margin-bottom: 16px;
     }
 
-    .venue p,
-    .event p,
-    .feature p {
-      color: var(--muted);
-      line-height: 1.5;
-    }
+   .venue h3,
+.venue p {
+  transition: all .35s ease;
+}
 
+.venue:hover h3 {
+  color: #fffaf2;
+  text-shadow: 0 3px 18px rgba(0,0,0,.95);
+}
+
+.venue:hover p {
+  color: #fffaf2;
+  text-shadow: 0 3px 18px rgba(0,0,0,.95);
+  background: rgba(31,26,23,.55);
+  padding: 18px;
+  margin-left: -18px;
+  margin-right: -18px;
+}
     .meta {
       margin-top: 22px;
       font-size: 13px;
