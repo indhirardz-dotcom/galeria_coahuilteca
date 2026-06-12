@@ -16,7 +16,13 @@
     }
 
     * { box-sizing: border-box; }
-
+<script>
+  document.querySelectorAll('.venue').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+    });
+  });
+</script>
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
@@ -237,7 +243,8 @@
   transition: all .35s ease;
 }
 
-.venue:hover h3 {
+.venue:hover h3,
+.venue.active h3 {
   color: #fffaf2;
   text-shadow: 0 3px 18px rgba(0,0,0,.95);
 }
