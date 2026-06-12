@@ -16,13 +16,7 @@
     }
 
     * { box-sizing: border-box; }
-<script>
-  document.querySelectorAll('.venue').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('active');
-    });
-  });
-</script>
+
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
@@ -170,58 +164,70 @@
       overflow: hidden;
     }
 
-   .venue {
-  position: relative;
-  min-height: 520px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    .venue {
+      position: relative;
+      min-height: 520px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: all .4s ease;
+      cursor: pointer;
+    }
 
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
+    .venue::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(247,241,232,.98) 0%,
+          rgba(247,241,232,.90) 28%,
+          rgba(247,241,232,.65) 50%,
+          rgba(31,26,23,.82) 75%,
+          rgba(31,26,23,.95) 100%
+        );
+      z-index: 1;
+      transition: all .35s ease;
+    }
 
-  transition: all .4s ease;
-}
+    .venue:hover::before,
+    .venue.active::before {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(31,26,23,.25) 0%,
+          rgba(31,26,23,.50) 42%,
+          rgba(31,26,23,.96) 100%
+        );
+    }
 
-.venue::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+    .venue:hover,
+    .venue.active {
+      transform: translateY(-4px);
+    }
 
-  background:
-  linear-gradient(
-    to bottom,
-    rgba(247,241,232,.98) 0%,
-    rgba(247,241,232,.90) 28%,
-    rgba(247,241,232,.65) 50%,
-    rgba(31,26,23,.82) 75%,
-    rgba(31,26,23,.95) 100%
-  );
+    .venue > * {
+      position: relative;
+      z-index: 2;
+    }
 
-  z-index: 1;
-}
-.venue:hover {
-  transform: translateY(-4px);
-}
+    .venue:nth-of-type(1) {
+      background-image: url("coahuilteca.jpg");
+    }
 
-.venue > * {
-  position: relative;
-  z-index: 2;
-}
+    .venue:nth-of-type(2) {
+      background-image: url("proyecta.jpg");
+    }
 
-.venue:nth-of-type(1){
-  background-image:url("coahuilteca.jpg");
-}
+    .venue:nth-of-type(3) {
+      background-image: url("pinche.jpg");
+    }
 
-.venue:nth-of-type(2){
-  background-image:url("proyecta.jpg");
-}
-
-.venue:nth-of-type(3){
-  background-image:url("pinche.jpg");
-}
     .venue-number,
     .event-category {
       color: var(--accent);
@@ -238,26 +244,48 @@
       margin-bottom: 16px;
     }
 
-   .venue h3,
-.venue p {
-  transition: all .35s ease;
-}
+    .venue p,
+    .event p,
+    .feature p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
 
-.venue:hover h3,
-.venue.active h3 {
-  color: #fffaf2;
-  text-shadow: 0 3px 18px rgba(0,0,0,.95);
-}
+    .venue h3,
+    .venue p,
+    .venue .meta,
+    .venue .venue-number {
+      transition: all .35s ease;
+    }
 
-.venue:hover p,
-.venue.active p {
-  color: #fffaf2;
-  text-shadow: 0 3px 18px rgba(0,0,0,.95);
-  background: rgba(31,26,23,.55);
-  padding: 18px;
-  margin-left: -18px;
-  margin-right: -18px;
-}
+    .venue:hover h3,
+    .venue.active h3 {
+      color: #fffaf2;
+      text-shadow: 0 3px 18px rgba(0,0,0,.95);
+    }
+
+    .venue:hover .venue-number,
+    .venue.active .venue-number {
+      color: #fffaf2;
+      text-shadow: 0 3px 18px rgba(0,0,0,.95);
+    }
+
+    .venue:hover p,
+    .venue.active p {
+      color: #fffaf2;
+      text-shadow: 0 3px 18px rgba(0,0,0,.95);
+      background: rgba(31,26,23,.62);
+      padding: 18px;
+      margin-left: -18px;
+      margin-right: -18px;
+    }
+
+    .venue:hover .meta,
+    .venue.active .meta {
+      color: #fffaf2;
+      text-shadow: 0 3px 18px rgba(0,0,0,.95);
+    }
+
     .meta {
       margin-top: 22px;
       font-size: 13px;
@@ -355,7 +383,7 @@
 <section class="hero">
   <div class="hero-content">
     <div class="eyebrow">Independent Art Route</div>
-    <h1>3 Galleries<br>in 15 Minutes</h1>
+    <h1>3 Art Stops<br>in 15 Minutes</h1>
     <p>
       A self-guided cultural walk through San Miguel de Allende: two neighboring galleries in the historic center, followed by an independent printmaking studio.
     </p>
@@ -365,10 +393,10 @@
 
 <section id="route">
   <div class="eyebrow">Art Walk Near You</div>
-  <h2 Three Independent Art Spaces</h2>
+  <h2 class="section-title">Three Independent Art Spaces</h2>
 
   <p class="intro">
-    Begin with two neighboring galleries in the historic center: Galería Coahuilteca and Proyecta Galería. Explore contemporary painting, local exhibitions and cultural programming within a few steps of each other. Then continue to El Pinche Grabador to discover contemporary printmaking and graphic arts.
+    Begin at Galería Coahuilteca and continue through two nearby independent art spaces. Discover contemporary Mexican painting, artist-led experiences, experimental contemporary work and printmaking within a short walking route through San Miguel de Allende.
   </p>
 
   <div class="route-card">
@@ -600,6 +628,14 @@
 <a class="whatsapp" href="https://wa.me/524152169737" target="_blank">
   WhatsApp
 </a>
+
+<script>
+document.querySelectorAll('.venue').forEach(card => {
+  card.addEventListener('click', function () {
+    this.classList.toggle('active');
+  });
+});
+</script>
 
 </body>
 </html>
