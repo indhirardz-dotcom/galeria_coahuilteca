@@ -164,14 +164,57 @@
       overflow: hidden;
     }
 
-    .venue {
-      padding: 24px;
-      min-height: 330px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+   .venue {
+  position: relative;
+  min-height: 520px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  transition: all .4s ease;
+}
+
+.venue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(247,241,232,.95) 0%,
+    rgba(247,241,232,.55) 35%,
+    rgba(31,26,23,.88) 100%
+  );
+
+  z-index: 1;
+}
+
+.venue:hover {
+  transform: translateY(-4px);
+}
+
+.venue > * {
+  position: relative;
+  z-index: 2;
+}
+
+.venue:nth-of-type(1){
+  background-image:url("coahuilteca.jpg");
+}
+
+.venue:nth-of-type(2){
+  background-image:url("proyecta.jpg");
+}
+
+.venue:nth-of-type(3){
+  background-image:url("pinche.jpg");
+}
     .venue-number,
     .event-category {
       color: var(--accent);
