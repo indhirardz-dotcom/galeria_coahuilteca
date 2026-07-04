@@ -2,113 +2,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo | Galería Coahuilteca</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      background: #f7f1e8;
-      color: #2b2118;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .catalogo-landing {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
+<title>Territorio de Batalla | Catálogo</title>
 
-    .box {
-      max-width: 720px;
-      background: #fffaf3;
-      padding: 50px 35px;
-      border: 1px solid #d8c7ad;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    }
+<style>
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 35px;
-    }
+body{
 
-    .buttons {
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+background:#f5f1eb;
+font-family:Georgia,"Times New Roman",serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:30px;
 
-    .btn {
-      text-decoration: none;
-      padding: 16px 28px;
-      border: 1px solid #2b2118;
-      font-size: 16px;
-      letter-spacing: 1px;
-      color: #2b2118;
-      transition: 0.3s;
-    }
+}
 
-    .btn:hover {
-      background: #2b2118;
-      color: #fffaf3;
-    }
+.container{
 
-    .btn-dark {
-      background: #2b2118;
-      color: #fffaf3;
-    }
+background:white;
+max-width:760px;
+width:100%;
+padding:70px 60px;
+text-align:center;
+box-shadow:0 12px 40px rgba(0,0,0,.08);
+border:1px solid #ddd;
 
-    .btn-dark:hover {
-      background: transparent;
-      color: #2b2118;
-    }
+}
 
-    .small {
-      margin-top: 30px;
-      font-size: 14px;
-      opacity: 0.75;
-    }
-  </style>
+h1{
+
+font-size:48px;
+font-weight:400;
+margin-bottom:10px;
+letter-spacing:1px;
+
+}
+
+h2{
+
+font-size:24px;
+font-weight:400;
+margin-bottom:35px;
+color:#666;
+
+}
+
+p{
+
+font-size:19px;
+line-height:1.8;
+margin-bottom:45px;
+color:#444;
+
+}
+
+.buttons{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+.button{
+
+padding:18px 34px;
+text-decoration:none;
+border:2px solid #222;
+font-size:18px;
+transition:.3s;
+color:#222;
+
+}
+
+.button:hover{
+
+background:#222;
+color:white;
+
+}
+
+.footer{
+
+margin-top:45px;
+font-size:14px;
+color:#777;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <section class="catalogo-landing">
-    <div class="box">
-      <h1>Galería Coahuilteca</h1>
+<div class="container">
 
-      <p>
-        Consulta nuestro catálogo de obra original, piezas disponibles,
-        comisiones artísticas y experiencias privadas en San Miguel de Allende.
-      </p>
+<h1>Territorio de Batalla</h1>
 
-      <div class="buttons">
-        <a class="btn btn-dark" href="galeria-coahuilteca-catalog-2026.pdf" target="_blank">
-          Ver catálogo
-        </a>
+<h2>Catálogo Digital</h2>
 
-        <a class="btn" href="galeria-coahuilteca-catalog-2026.pdf" download>
-          Descargar PDF
-        </a>
-      </div>
+<p>
 
-      <p class="small">
-        Available for viewing or download.
-      </p>
-    </div>
-  </section>
+Consulta el catálogo completo de la serie,
+descubre las obras y conoce el proyecto.
+
+Puedes verlo en línea o descargarlo en PDF.
+
+</p>
+
+<div class="buttons">
+
+<a class="button"
+href="catalogoTerritorio.pdf"
+target="_blank">
+
+Ver catálogo
+
+</a>
+
+<a class="button"
+href="catalogoTerritorio.pdf"
+download>
+
+Descargar PDF
+
+</a>
+
+</div>
+
+<div class="footer">
+
+Galería Coahuilteca<br>
+
+San Miguel de Allende, México
+
+</div>
+
+</div>
 
 </body>
 </html>
