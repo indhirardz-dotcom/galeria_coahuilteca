@@ -26,53 +26,65 @@ height:100%;
 
 body{
 
-font-family:Georgia,"Times New Roman",serif;
-
 background:#f5f1eb;
 
 background-image:url("invitacion.jpg");
 
 background-repeat:no-repeat;
 
-background-position:center center;
+background-position:center top;
 
 background-size:contain;
 
-display:flex;
+font-family:Georgia,"Times New Roman",serif;
 
-justify-content:center;
+position:relative;
 
-align-items:flex-end;
+overflow:hidden;
 
 }
 
-/* Botones */
+
+/* BOTONES */
 
 .botones{
 
-width:100%;
+position:absolute;
+
+left:50%;
+
+bottom:165px;
+
+transform:translateX(-50%);
+
+width:900px;
+
+max-width:92%;
 
 display:flex;
 
-justify-content:center;
+justify-content:space-between;
 
-gap:20px;
+align-items:center;
 
-padding-bottom:35px;
+z-index:100;
 
-flex-wrap:wrap;
+pointer-events:none;
 
 }
 
-/* Estilo botones */
+
+/* ESTILO BOTONES */
 
 .boton{
 
-background:rgba(255,255,255,.96);
+pointer-events:auto;
+
+display:inline-block;
 
 padding:18px 38px;
 
-border-radius:40px;
+border-radius:60px;
 
 text-decoration:none;
 
@@ -80,25 +92,35 @@ font-size:22px;
 
 font-weight:bold;
 
-color:#111;
+color:white;
 
-box-shadow:0 8px 25px rgba(0,0,0,.25);
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(14px);
+
+-webkit-backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.35);
+
+box-shadow:0 10px 35px rgba(0,0,0,.30);
 
 transition:.25s;
 
 }
 
+
 .boton:hover{
 
-background:white;
+background:rgba(255,255,255,.22);
 
 transform:translateY(-2px);
 
 }
 
-/* Celular */
 
-@media(max-width:800px){
+/* CELULAR */
+
+@media(max-width:900px){
 
 body{
 
@@ -106,19 +128,39 @@ background-size:contain;
 
 background-position:center top;
 
+overflow:auto;
+
 }
 
 .botones{
 
-padding-bottom:18px;
+position:fixed;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:95%;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
 
 }
 
 .boton{
 
+width:100%;
+
+text-align:center;
+
 font-size:18px;
 
-padding:16px 24px;
+padding:16px;
 
 }
 
@@ -133,7 +175,9 @@ padding:16px 24px;
 <div class="botones">
 
 <a class="boton"
+
 href="catalogoTerritorio.pdf"
+
 target="_blank">
 
 📖 Ver catálogo
@@ -141,7 +185,9 @@ target="_blank">
 </a>
 
 <a class="boton"
+
 href="catalogoTerritorio.pdf"
+
 download>
 
 ⬇ Descargar PDF
