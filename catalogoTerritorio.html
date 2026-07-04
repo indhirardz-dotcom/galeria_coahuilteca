@@ -18,85 +18,73 @@ box-sizing:border-box;
 }
 
 html,body{
-height:100%;
-overflow:hidden;
-font-family:Georgia,"Times New Roman",serif;
-}
-
-body{
-
-background:url("invitacion.jpg") center center no-repeat;
-
-background-size:cover;
-
-position:relative;
-
-}
-
-/* oscurece ligeramente la imagen */
-
-body::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-top:0;
 
 width:100%;
 height:100%;
 
-background:rgba(0,0,0,.18);
-
 }
 
-/* botones */
+body{
 
-.botones{
+font-family:Georgia,"Times New Roman",serif;
 
-position:absolute;
+background:#f5f1eb;
 
-left:50%;
-bottom:45px;
+background-image:url("invitacion.jpg");
 
-transform:translateX(-50%);
+background-repeat:no-repeat;
+
+background-position:center center;
+
+background-size:contain;
 
 display:flex;
 
-gap:18px;
-
-z-index:10;
-
-flex-wrap:wrap;
-
 justify-content:center;
+
+align-items:flex-end;
 
 }
 
-/* estilo */
+/* Botones */
+
+.botones{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+padding-bottom:35px;
+
+flex-wrap:wrap;
+
+}
+
+/* Estilo botones */
 
 .boton{
 
-background:rgba(255,255,255,.92);
+background:rgba(255,255,255,.96);
 
-color:#111;
-
-padding:16px 34px;
-
-text-decoration:none;
-
-font-size:18px;
-
-letter-spacing:.5px;
+padding:18px 38px;
 
 border-radius:40px;
 
-transition:.25s;
+text-decoration:none;
 
-box-shadow:0 8px 25px rgba(0,0,0,.35);
+font-size:22px;
 
 font-weight:bold;
+
+color:#111;
+
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+transition:.25s;
 
 }
 
@@ -106,25 +94,31 @@ background:white;
 
 transform:translateY(-2px);
 
-box-shadow:0 14px 35px rgba(0,0,0,.45);
+}
+
+/* Celular */
+
+@media(max-width:800px){
+
+body{
+
+background-size:contain;
+
+background-position:center top;
 
 }
 
-/* celular */
-
-@media(max-width:700px){
-
 .botones{
 
-flex-direction:column;
-
-width:90%;
+padding-bottom:18px;
 
 }
 
 .boton{
 
-text-align:center;
+font-size:18px;
+
+padding:16px 24px;
 
 }
 
