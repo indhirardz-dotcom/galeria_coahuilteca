@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Galería Coahuilteca</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f7f1e8;
+      color: #2b2118;
+    }
+
+    .catalogo-landing {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .box {
+      max-width: 720px;
+      background: #fffaf3;
+      padding: 50px 35px;
+      border: 1px solid #d8c7ad;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 16px 28px;
+      border: 1px solid #2b2118;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #2b2118;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2b2118;
+      color: #fffaf3;
+    }
+
+    .btn-dark {
+      background: #2b2118;
+      color: #fffaf3;
+    }
+
+    .btn-dark:hover {
+      background: transparent;
+      color: #2b2118;
+    }
+
+    .small {
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="catalogo-landing">
+    <div class="box">
+      <h1>Galería Coahuilteca</h1>
+
+      <p>
+        Consulta nuestro catálogo de obra original, piezas disponibles,
+        comisiones artísticas y experiencias privadas en San Miguel de Allende.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-dark" href="galeria-coahuilteca-catalog-2026.pdf" target="_blank">
+          Ver catálogo
+        </a>
+
+        <a class="btn" href="galeria-coahuilteca-catalog-2026.pdf" download>
+          Descargar PDF
+        </a>
+      </div>
+
+      <p class="small">
+        Available for viewing or download.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
