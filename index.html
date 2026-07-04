@@ -8,6 +8,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KFQLK7BP');</script>
 <!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -128,6 +129,72 @@ nav a{
   letter-spacing:.08em;
   color:rgba(255,255,255,.82);
 }
+
+/* NUEVA INVITACIÓN */
+
+.expo-banner{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:0;
+  align-items:stretch;
+  background:#111;
+  color:white;
+  text-decoration:none;
+  overflow:hidden;
+  border:1px solid #222;
+}
+
+.expo-banner img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+.expo-banner-content{
+  padding:55px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.expo-banner-content p{
+  letter-spacing:.18em;
+  font-size:12px;
+  text-transform:uppercase;
+  color:#d8b25a;
+  margin:0 0 18px;
+}
+
+.expo-banner-content h2{
+  font-family:Georgia,serif;
+  font-size:46px;
+  line-height:1;
+  font-weight:400;
+  margin:0 0 22px;
+}
+
+.expo-banner-content div{
+  color:rgba(255,255,255,.78);
+  font-size:19px;
+  line-height:1.5;
+  max-width:480px;
+}
+
+.expo-banner-content span{
+  display:inline-block;
+  width:max-content;
+  margin-top:28px;
+  border:1px solid white;
+  padding:14px 24px;
+  letter-spacing:.12em;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+/* FIN NUEVA INVITACIÓN */
 
 .section{
   padding:60px 0;
@@ -289,6 +356,22 @@ footer a{
     font-size:48px;
   }
 
+  .expo-banner{
+    grid-template-columns:1fr;
+  }
+
+  .expo-banner img{
+    height:auto;
+  }
+
+  .expo-banner-content{
+    padding:32px;
+  }
+
+  .expo-banner-content h2{
+    font-size:36px;
+  }
+
   .grid,
   .visit,
   .workshops-grid{
@@ -338,7 +421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 
     <a class="button" href="https://drive.google.com/file/d/1vVBTipYNDObI6tR7Ty1gwo0bjI6xCeME/view?usp=sharing" target="_blank">
-  Available artwork
+      Available artwork
     </a>
 
     <div class="shipping-note">
@@ -346,6 +429,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+
+<a class="expo-banner" href="catalogoTerritorio.html">
+
+  <img src="invitacion.jpg" alt="Territorio de Batalla exhibition invitation">
+
+  <div class="expo-banner-content">
+    <p>Upcoming exhibition · July 31, 2026</p>
+
+    <h2>Territorio de Batalla</h2>
+
+    <div>
+      Catálogo digital de la exposición individual de Indhira. Consulta la invitación y accede al catálogo completo.
+    </div>
+
+    <span>View catalog →</span>
+  </div>
+
+</a>
 
 <section class="section" id="artists">
   <h2>Artists & work</h2>
@@ -424,8 +525,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Only a limited number of portraits are accepted each year.
       </p>
 
-      <a class="button portrait-button" 
-      href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20request%20a%20portrait.%20Could%20you%20guide%20me%20through%20the%20process%3F%0A%0A-%20Size%3A%0A-%20Shipping%20destination%3A" 
+      <a class="button portrait-button"
+      href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20request%20a%20portrait.%20Could%20you%20guide%20me%20through%20the%20process%3F%0A%0A-%20Size%3A%0A-%20Shipping%20destination%3A"
       target="_blank">
         Request a Portrait
       </a>
