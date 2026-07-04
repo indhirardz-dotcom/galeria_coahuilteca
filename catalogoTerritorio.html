@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -16,89 +17,116 @@ padding:0;
 box-sizing:border-box;
 }
 
+html,body{
+height:100%;
+overflow:hidden;
+font-family:Georgia,"Times New Roman",serif;
+}
+
 body{
 
-background:#f5f1eb;
-font-family:Georgia,"Times New Roman",serif;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:30px;
+background:url("invitacion.jpg") center center no-repeat;
+
+background-size:cover;
+
+position:relative;
 
 }
 
-.container{
+/* oscurece ligeramente la imagen */
 
-background:white;
-max-width:760px;
+body::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+top:0;
+
 width:100%;
-padding:70px 60px;
-text-align:center;
-box-shadow:0 12px 40px rgba(0,0,0,.08);
-border:1px solid #ddd;
+height:100%;
+
+background:rgba(0,0,0,.18);
 
 }
 
-h1{
+/* botones */
 
-font-size:48px;
-font-weight:400;
-margin-bottom:10px;
-letter-spacing:1px;
+.botones{
 
-}
+position:absolute;
 
-h2{
+left:50%;
+bottom:45px;
 
-font-size:24px;
-font-weight:400;
-margin-bottom:35px;
-color:#666;
-
-}
-
-p{
-
-font-size:19px;
-line-height:1.8;
-margin-bottom:45px;
-color:#444;
-
-}
-
-.buttons{
+transform:translateX(-50%);
 
 display:flex;
-justify-content:center;
-gap:25px;
+
+gap:18px;
+
+z-index:10;
+
 flex-wrap:wrap;
 
+justify-content:center;
+
 }
 
-.button{
+/* estilo */
 
-padding:18px 34px;
+.boton{
+
+background:rgba(255,255,255,.92);
+
+color:#111;
+
+padding:16px 34px;
+
 text-decoration:none;
-border:2px solid #222;
+
 font-size:18px;
-transition:.3s;
-color:#222;
+
+letter-spacing:.5px;
+
+border-radius:40px;
+
+transition:.25s;
+
+box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+font-weight:bold;
 
 }
 
-.button:hover{
+.boton:hover{
 
-background:#222;
-color:white;
+background:white;
+
+transform:translateY(-2px);
+
+box-shadow:0 14px 35px rgba(0,0,0,.45);
 
 }
 
-.footer{
+/* celular */
 
-margin-top:45px;
-font-size:14px;
-color:#777;
+@media(max-width:700px){
+
+.botones{
+
+flex-direction:column;
+
+width:90%;
+
+}
+
+.boton{
+
+text-align:center;
+
+}
 
 }
 
@@ -108,50 +136,26 @@ color:#777;
 
 <body>
 
-<div class="container">
+<div class="botones">
 
-<h1>Territorio de Batalla</h1>
-
-<h2>Catálogo Digital</h2>
-
-<p>
-
-Consulta el catálogo completo de la serie,
-descubre las obras y conoce el proyecto.
-
-Puedes verlo en línea o descargarlo en PDF.
-
-</p>
-
-<div class="buttons">
-
-<a class="button"
+<a class="boton"
 href="catalogoTerritorio.pdf"
 target="_blank">
 
-Ver catálogo
+📖 Ver catálogo
 
 </a>
 
-<a class="button"
+<a class="boton"
 href="catalogoTerritorio.pdf"
 download>
 
-Descargar PDF
+⬇ Descargar PDF
 
 </a>
-
-</div>
-
-<div class="footer">
-
-Galería Coahuilteca<br>
-
-San Miguel de Allende, México
-
-</div>
 
 </div>
 
 </body>
+
 </html>
