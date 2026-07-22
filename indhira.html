@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Indhira Pintora | Artista Visual Mexicana</title>
+
+  <meta
+    name="description"
+    content="Indhira es una artista visual mexicana cuya obra explora el cuerpo femenino, la memoria, la identidad y el territorio mediante pintura, dibujo, grabado y cerámica."
+  >
+
+  <meta
+    name="keywords"
+    content="Indhira Pintora, artista mexicana, pintura figurativa, arte feminista, técnica veneciana, retratos al óleo, San Miguel de Allende, Galería Coahuilteca"
+  >
+
+  <meta name="author" content="Indhira Pintora">
+
+  <!-- Open Graph para compartir en redes -->
+  <meta property="og:title" content="Indhira Pintora | Artista Visual Mexicana">
+  <meta
+    property="og:description"
+    content="Pintura figurativa contemporánea, técnica veneciana, retrato, memoria y cuerpo femenino."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="imagenes/indhira-portada.jpg">
+
+  <style>
+    :root {
+      --negro: #111111;
+      --gris-oscuro: #292929;
+      --gris: #77736e;
+      --gris-claro: #e9e5de;
+      --marfil: #f5f2eb;
+      --blanco: #ffffff;
+      --acento: #8e2d2d;
+      --ancho: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--marfil);
+      color: var(--negro);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contenedor {
+      width: min(90%, var(--ancho));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--acento);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .titulo-seccion {
+      max-width: 850px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: 0.98;
+    }
+
+    .texto-grande {
+      max-width: 860px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.3rem, 2.3vw, 2rem);
+      line-height: 1.4;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 14px 24px;
+      border: 1px solid var(--negro);
+      background: transparent;
+      color: var(--negro);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .boton:hover {
+      background: var(--negro);
+      color: var(--blanco);
+    }
+
+    .boton-claro {
+      border-color: var(--blanco);
+      color: var(--blanco);
+    }
+
+    .boton-claro:hover {
+      background: var(--blanco);
+      color: var(--negro);
+    }
+
+    /* NAVEGACIÓN */
+
+    .navegacion {
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 28px 0;
+      color: var(--blanco);
+    }
+
+    .navegacion-interior {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .marca {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .menu a {
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .menu a::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      transition: 0.25s ease;
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    /* PORTADA */
+
+    .portada {
+      position: relative;
+      display: flex;
+      min-height: 100vh;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.78) 0%,
+          rgba(0, 0, 0, 0.32) 52%,
+          rgba(0, 0, 0, 0.12) 100%
+        ),
+        url("imagenes/indhira-portada.jpg") center 28% / cover no-repeat;
+      color: var(--blanco);
+    }
+
+    .portada-contenido {
+      position: relative;
+      z-index: 2;
+      width: min(90%, var(--ancho));
+      margin: 0 auto;
+      padding: 170px 0 80px;
+    }
+
+    .portada h1 {
+      max-width: 1000px;
+      margin-bottom: 25px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(4rem, 11vw, 10rem);
+      font-weight: 400;
+      letter-spacing: -0.06em;
+      line-height: 0.8;
+    }
+
+    .portada h1 span {
+      display: block;
+      margin-top: 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .portada-texto {
+      max-width: 630px;
+      margin-bottom: 35px;
+      font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    }
+
+    /* INTRODUCCIÓN */
+
+    .introduccion {
+      padding: 130px 0;
+    }
+
+    .introduccion-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .introduccion-dato {
+      padding-top: 10px;
+      color: var(--gris);
+      font-size: 0.84rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .introduccion-texto p + p {
+      margin-top: 24px;
+    }
+
+    /* OBRA DESTACADA */
+
+    .obra-destacada {
+      background: var(--negro);
+      color: var(--blanco);
+    }
+
+    .obra-destacada-grid {
+      display: grid;
+      min-height: 760px;
+      grid-template-columns: 1.3fr 0.7fr;
+    }
+
+    .obra-destacada-imagen {
+      min-height: 700px;
+      background:
+        url("imagenes/territorio-de-batalla.jpg")
+        center / cover no-repeat;
+    }
+
+    .obra-destacada-texto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px;
+    }
+
+    .obra-destacada-texto h2 {
+      margin-bottom: 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.7rem, 4vw, 5.5rem);
+      font-weight: 400;
+      line-height: 0.95;
+    }
+
+    .obra-destacada-texto p {
+      margin-bottom: 30px;
+      color: #d0ccc5;
+    }
+
+    /* SERIES */
+
+    .series {
+      padding: 130px 0;
+    }
+
+    .series-encabezado {
+      display: flex;
+      margin-bottom: 65px;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .series-encabezado p {
+      max-width: 390px;
+      color: var(--gris);
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    .serie {
+      position: relative;
+      overflow: hidden;
+      background: #ddd8cf;
+    }
+
+    .serie:nth-child(1) {
+      grid-column: span 7;
+    }
+
+    .serie:nth-child(2) {
+      grid-column: span 5;
+      margin-top: 100px;
+    }
+
+    .serie:nth-child(3) {
+      grid-column: 2 / span 5;
+    }
+
+    .serie:nth-child(4) {
+      grid-column: span 6;
+      margin-top: 80px;
+    }
+
+    .serie-imagen {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+
+    .serie:nth-child(1) .serie-imagen {
+      aspect-ratio: 5 / 4;
+    }
+
+    .serie img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .serie:hover img {
+      transform: scale(1.025);
+    }
+
+    .serie-info {
+      padding: 22px 0 35px;
+      background: var(--marfil);
+    }
+
+    .serie-numero {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--acento);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+
+    .serie h3 {
+      margin-bottom: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 2.5vw, 2.7rem);
+      font-weight: 400;
+    }
+
+    .serie p {
+      max-width: 540px;
+      color: var(--gris);
+    }
+
+    /* STATEMENT */
+
+    .statement {
+      padding: 140px 0;
+      background: var(--gris-claro);
+    }
+
+    .statement-texto {
+      max-width: 1050px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4.3vw, 4.9rem);
+      line-height: 1.08;
+    }
+
+    .statement-texto em {
+      color: var(--acento);
+      font-style: normal;
+    }
+
+    /* BIOGRAFÍA */
+
+    .biografia {
+      padding: 130px 0;
+      background: var(--blanco);
+    }
+
+    .biografia-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .biografia-imagen {
+      position: sticky;
+      top: 40px;
+    }
+
+    .biografia-imagen img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .biografia-texto h2 {
+      margin-bottom: 40px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 400;
+      line-height: 0.9;
+    }
+
+    .biografia-texto p {
+      margin-bottom: 22px;
+      font-size: 1.05rem;
+    }
+
+    .datos {
+      display: grid;
+      margin-top: 50px;
+      padding-top: 35px;
+      border-top: 1px solid #c8c3bb;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+
+    .datos h3 {
+      margin-bottom: 10px;
+      color: var(--acento);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .datos p {
+      margin-bottom: 8px;
+      color: var(--gris-oscuro);
+      font-size: 0.9rem;
+    }
+
+    /* ENCARGOS */
+
+    .encargos {
+      position: relative;
+      padding: 150px 0;
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.78),
+          rgba(0, 0, 0, 0.78)
+        ),
+        url("imagenes/retrato-indhira.jpg")
+        center / cover no-repeat;
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .encargos-contenido {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .encargos h2 {
+      margin-bottom: 30px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 400;
+      line-height: 0.9;
+    }
+
+    .encargos p {
+      max-width: 650px;
+      margin: 0 auto 38px;
+      color: #dedbd5;
+      font-size: 1.15rem;
+    }
+
+    /* CONTACTO */
+
+    .contacto {
+      padding: 120px 0 70px;
+      background: var(--negro);
+      color: var(--blanco);
+    }
+
+    .contacto-grid {
+      display: grid;
+      margin-bottom: 100px;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 80px;
+    }
+
+    .contacto h2 {
+      max-width: 750px;
+      margin-bottom: 25px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      line-height: 0.85;
+    }
+
+    .contacto-texto {
+      color: #bbb7b0;
+      font-size: 1rem;
+    }
+
+    .contacto-enlaces {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .contacto-enlaces a {
+      padding-bottom: 8px;
+      border-bottom: 1px solid #3d3d3d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      transition: color 0.2s ease;
+    }
+
+    .contacto-enlaces a:hover {
+      color: #c67878;
+    }
+
+    .pie {
+      display: flex;
+      padding-top: 30px;
+      border-top: 1px solid #353535;
+      justify-content: space-between;
+      gap: 30px;
+      color: #898989;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      .introduccion-grid,
+      .biografia-grid,
+      .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .obra-destacada-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .obra-destacada-imagen {
+        min-height: 570px;
+      }
+
+      .obra-destacada-texto {
+        padding: 70px 7%;
+      }
+
+      .series-encabezado {
+        display: block;
+      }
+
+      .series-encabezado p {
+        margin-top: 30px;
+      }
+
+      .serie:nth-child(n) {
+        grid-column: span 12;
+        margin-top: 0;
+      }
+
+      .biografia-imagen {
+        position: static;
+      }
+
+      .datos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navegacion {
+        padding: 20px 0;
+      }
+
+      .marca {
+        font-size: 1.15rem;
+      }
+
+      .portada {
+        min-height: 90vh;
+        background-position: 58% center;
+      }
+
+      .portada-contenido {
+        padding-bottom: 50px;
+      }
+
+      .introduccion,
+      .series,
+      .biografia,
+      .statement {
+        padding: 85px 0;
+      }
+
+      .obra-destacada-imagen {
+        min-height: 470px;
+      }
+
+      .obra-destacada-texto {
+        padding: 55px 7%;
+      }
+
+      .encargos {
+        padding: 100px 0;
+      }
+
+      .contacto {
+        padding-top: 90px;
+      }
+
+      .pie {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <header class="navegacion">
+    <div class="contenedor navegacion-interior">
+
+      <a class="marca" href="#inicio">
+        Indhira
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="#obra">Obra</a></li>
+          <li><a href="#series">Series</a></li>
+          <li><a href="#biografia">Biografía</a></li>
+          <li><a href="#encargos">Encargos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+
+          <!-- Cambia index.html si la página principal tiene otro nombre -->
+          <li><a href="index.html">Galería Coahuilteca</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA -->
+    <section class="portada" id="inicio">
+      <div class="portada-contenido">
+
+        <p class="eyebrow">
+          Pintura · Dibujo · Gráfica · Cerámica
+        </p>
+
+        <h1>
+          Indhira
+          <span>Artista visual mexicana</span>
+        </h1>
+
+        <p class="portada-texto">
+          Una práctica figurativa que recupera el cuerpo femenino como
+          territorio político, espacio de memoria y lugar de resistencia.
+        </p>
+
+        <a class="boton boton-claro" href="#obra">
+          Conocer la obra
+        </a>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="introduccion" id="obra">
+      <div class="contenedor introduccion-grid">
+
+        <div>
+          <p class="eyebrow">Práctica artística</p>
+
+          <p class="introduccion-dato">
+            San Miguel de Allende, México
+          </p>
+        </div>
+
+        <div class="introduccion-texto texto-grande">
+          <p>
+            Indhira desarrolla una obra figurativa centrada en la experiencia
+            de las mujeres, la construcción cultural del cuerpo, la memoria
+            colectiva y la relación entre identidad y territorio.
+          </p>
+
+          <p>
+            Su pintura recupera procedimientos históricos —como la grisalla,
+            las veladuras y la técnica veneciana— para confrontar problemáticas
+            contemporáneas desde una imagen precisa, simbólica y profundamente
+            material.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROYECTO PRINCIPAL -->
+    <section class="obra-destacada">
+      <div class="obra-destacada-grid">
+
+        <div
+          class="obra-destacada-imagen"
+          role="img"
+          aria-label="Obra de la serie Territorio de batalla"
+        ></div>
+
+        <div class="obra-destacada-texto">
+
+          <p class="eyebrow">
+            Proyecto actual
+          </p>
+
+          <h2>
+            Territorio<br>de batalla
+          </h2>
+
+          <p>
+            Serie realizada mediante técnica veneciana que examina el cuerpo
+            femenino como un territorio disputado por la mirada, la medicina,
+            la moda, la ideología y el poder.
+          </p>
+
+          <p>
+            El proyecto reúne pintura, investigación escrita y memoria de
+            proceso para construir una reflexión visual sobre autonomía,
+            comodidad, desobediencia y resistencia.
+          </p>
+
+          <a class="boton boton-claro" href="#contacto">
+            Solicitar dossier
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERIES -->
+    <section class="series" id="series">
+      <div class="contenedor">
+
+        <div class="series-encabezado">
+          <div>
+            <p class="eyebrow">Obra seleccionada</p>
+            <h2 class="titulo-seccion">Series y proyectos</h2>
+          </div>
+
+          <p>
+            Una selección de proyectos desarrollados mediante pintura,
+            dibujo, grabado y procesos vinculados con la memoria y la
+            representación.
+          </p>
+        </div>
+
+        <div class="series-grid">
+
+          <!-- SERIE 1 -->
+          <article class="serie">
+            <div class="serie-imagen">
+              <img
+                src="imagenes/territorio-serie.jpg"
+                alt="Pintura de la serie Territorio de batalla"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="serie-info">
+              <span class="serie-numero">01</span>
+
+              <h3>Territorio de batalla</h3>
+
+              <p>
+                Pintura figurativa y técnica veneciana sobre cuerpo,
+                autonomía, feminidad y resistencia.
+              </p>
+            </div>
+          </article>
+
+          <!-- SERIE 2 -->
+          <article class="serie">
+            <div class="serie-imagen">
+              <img
+                src="imagenes/jacarandas.jpg"
+                alt="Retrato de la serie Jacarandas"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="serie-info">
+              <span class="serie-numero">02</span>
+
+              <h3>Jacarandas</h3>
+
+              <p>
+                Retratos de sororidad construidos a partir de historias,
+                encuentros y redes afectivas entre mujeres.
+              </p>
+            </div>
+          </article>
+
+          <!-- SERIE 3 -->
+          <article class="serie">
+            <div class="serie-imagen">
+              <img
+                src="imagenes/retratos.jpg"
+                alt="Retrato al óleo realizado por Indhira"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="serie-info">
+              <span class="serie-numero">03</span>
+
+              <h3>Retratos</h3>
+
+              <p>
+                Retratos al óleo concebidos como obras irrepetibles:
+                presencia, carácter, memoria y continuidad familiar.
+              </p>
+            </div>
+          </article>
+
+          <!-- SERIE 4 -->
+          <article class="serie">
+            <div class="serie-imagen">
+              <img
+                src="imagenes/grafica.jpg"
+                alt="Grabado y obra gráfica de Indhira"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="serie-info">
+              <span class="serie-numero">04</span>
+
+              <h3>Gráfica y territorio</h3>
+
+              <p>
+                Obra sobre papel que registra arquitectura, paisaje urbano,
+                migración, memoria comunitaria y vida cotidiana.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTIST STATEMENT -->
+    <section class="statement">
+      <div class="contenedor">
+
+        <p class="eyebrow">Artist statement</p>
+
+        <p class="statement-texto">
+          Pinto porque la imagen todavía puede disputar aquello que la cultura
+          presenta como natural. Mi obra <em>recupera el cuerpo femenino como
+          territorio político</em>, pero también como experiencia vivida,
+          memoria, materia y presencia.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- BIOGRAFÍA -->
+    <section class="biografia" id="biografia">
+      <div class="contenedor biografia-grid">
+
+        <div class="biografia-imagen">
+          <img
+            src="imagenes/indhira-retrato.jpg"
+            alt="Retrato de la artista Indhira"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="biografia-texto">
+
+          <p class="eyebrow">Biografía</p>
+
+          <h2>Indhira</h2>
+
+          <p>
+            Indhira es una artista visual mexicana nacida en Monclova,
+            Coahuila, y radicada en San Miguel de Allende, Guanajuato.
+            Su práctica comprende pintura, dibujo, gráfica y cerámica.
+          </p>
+
+          <p>
+            Es licenciada en Diseño Gráfico y desarrolló durante una década
+            su formación artística con el maestro Tomás Silvestre en el
+            Taller Puerta Morada. También realizó estudios de posgrado en
+            Desarrollo Cultural en la Universidad Autónoma de Coahuila.
+          </p>
+
+          <p>
+            Participó en una residencia artística en la Escuela Adolfo Prieto
+            de CONARTE y en el Taller Experimental de Gráfica de La Habana.
+            Su trabajo ha sido exhibido en espacios culturales de Coahuila,
+            Guanajuato y otras ciudades de México.
+          </p>
+
+          <p>
+            Entre sus proyectos se encuentran
+            <em>Jacarandas. Retratos de sororidad</em> y
+            <em>Territorio de batalla. En defensa del cuerpo femenino</em>,
+            desarrollado con apoyo del Programa de Estímulos a la Creación y
+            Desarrollo Artístico.
+          </p>
+
+          <div class="datos">
+
+            <div>
+              <h3>Exposiciones seleccionadas</h3>
+
+              <p>Museo Coahuila y Texas, Monclova</p>
+              <p>Centro Cultural Ignacio Ramírez El Nigromante</p>
+              <p>Casa del Diezmo, Celaya</p>
+              <p>Chamacuero Cultural Center, Comonfort</p>
+            </div>
+
+            <div>
+              <h3>Formación seleccionada</h3>
+
+              <p>Licenciatura en Diseño Gráfico</p>
+              <p>Taller Puerta Morada</p>
+              <p>Escuela Adolfo Prieto, CONARTE</p>
+              <p>Taller Experimental de Gráfica de La Habana</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENCARGOS -->
+    <section class="encargos" id="encargos">
+      <div class="contenedor encargos-contenido">
+
+        <p class="eyebrow">Obra por encargo</p>
+
+        <h2>
+          Retratos con permanencia
+        </h2>
+
+        <p>
+          Cada retrato se desarrolla como una obra única, a partir de una
+          sesión de conversación, selección de imágenes, propuesta visual,
+          bocetos y ejecución mediante procedimientos tradicionales al óleo.
+        </p>
+
+        <a class="boton boton-claro" href="#contacto">
+          Solicitar información
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONTACTO -->
+  <footer class="contacto" id="contacto">
+    <div class="contenedor">
+
+      <div class="contacto-grid">
+
+        <div>
+          <p class="eyebrow">
+            Adquisiciones · Exposiciones · Comisiones
+          </p>
+
+          <h2>
+            Hablemos<br>de arte.
+          </h2>
+
+          <p class="contacto-texto">
+            Para consultar disponibilidad de obra, solicitar un dossier,
+            proponer una exposición o encargar un retrato, comunícate
+            directamente con la artista o con Galería Coahuilteca.
+          </p>
+        </div>
+
+        <div class="contacto-enlaces">
+
+          <!-- Sustituye el teléfono por el correcto -->
+          <a
+            href="https://wa.me/5210000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+
+          <!-- Sustituye el correo -->
+          <a href="mailto:correo@indhirapintora.com">
+            correo@indhirapintora.com
+          </a>
+
+          <a
+            href="https://www.instagram.com/indhirapintora/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram @indhirapintora
+          </a>
+
+          <a href="index.html">
+            Galería Coahuilteca
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="pie">
+        <p>
+          © <span id="anio"></span> Indhira Pintora
+        </p>
+
+        <p>
+          San Miguel de Allende · México
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("anio").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
