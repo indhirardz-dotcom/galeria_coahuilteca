@@ -11,6 +11,7 @@
   <title>Indhira Pintora | Artista Visual Mexicana</title>
 
   <meta
+    id="meta-description"
     name="description"
     content="Indhira es una artista visual mexicana cuya obra explora el cuerpo femenino, la memoria, la identidad y el territorio mediante pintura, dibujo, grabado y cerámica."
   >
@@ -22,14 +23,22 @@
 
   <meta name="author" content="Indhira Pintora">
 
-  <!-- Open Graph para compartir en redes -->
-  <meta property="og:title" content="Indhira Pintora | Artista Visual Mexicana">
+  <meta
+    property="og:title"
+    content="Indhira Pintora | Artista Visual Mexicana"
+  >
+
   <meta
     property="og:description"
     content="Pintura figurativa contemporánea, técnica veneciana, retrato, memoria y cuerpo femenino."
   >
+
   <meta property="og:type" content="website">
-  <meta property="og:image" content="imagenes/indhira-portada.jpg">
+
+  <meta
+    property="og:image"
+    content="imagenes/indhira-portada.jpg"
+  >
 
   <style>
     :root {
@@ -54,9 +63,10 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
       background: var(--marfil);
       color: var(--negro);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
@@ -68,6 +78,10 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    button {
+      font: inherit;
     }
 
     .contenedor {
@@ -109,7 +123,9 @@
       font-weight: 700;
       letter-spacing: 0.13em;
       text-transform: uppercase;
-      transition: 0.25s ease;
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
     }
 
     .boton:hover {
@@ -155,11 +171,11 @@
     .menu {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 25px;
       list-style: none;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
     }
 
@@ -176,11 +192,59 @@
       height: 1px;
       background: currentColor;
       content: "";
-      transition: 0.25s ease;
+      transition: width 0.25s ease;
     }
 
     .menu a:hover::after {
       width: 100%;
+    }
+
+    /* SELECTOR DE IDIOMA */
+
+    .selector-idioma {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding-left: 5px;
+    }
+
+    .idioma {
+      padding: 4px 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      opacity: 0.55;
+      transition: opacity 0.2s ease;
+    }
+
+    .idioma:hover,
+    .idioma.activo {
+      opacity: 1;
+    }
+
+    .idioma.activo {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+    }
+
+    /* MENÚ MÓVIL */
+
+    .boton-menu {
+      display: none;
+      padding: 8px 0;
+      border: 0;
+      background: transparent;
+      color: var(--blanco);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
     }
 
     /* PORTADA */
@@ -232,7 +296,7 @@
     }
 
     .portada-texto {
-      max-width: 630px;
+      max-width: 650px;
       margin-bottom: 35px;
       font-size: clamp(1.05rem, 1.7vw, 1.35rem);
     }
@@ -316,7 +380,7 @@
       gap: 40px;
     }
 
-    .series-encabezado p {
+    .series-encabezado > p {
       max-width: 390px;
       color: var(--gris);
     }
@@ -505,7 +569,7 @@
     }
 
     .encargos p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 38px;
       color: #dedbd5;
       font-size: 1.15rem;
@@ -537,6 +601,7 @@
     }
 
     .contacto-texto {
+      max-width: 690px;
       color: #bbb7b0;
       font-size: 1rem;
     }
@@ -574,11 +639,37 @@
 
     /* RESPONSIVO */
 
-    @media (max-width: 900px) {
-      .menu {
-        display: none;
+    @media (max-width: 1050px) {
+      .boton-menu {
+        display: block;
       }
 
+      .menu {
+        position: absolute;
+        top: 78px;
+        right: 5%;
+        display: none;
+        width: min(320px, 90vw);
+        padding: 26px;
+        background: rgba(17, 17, 17, 0.97);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .menu.abierto {
+        display: flex;
+      }
+
+      .selector-idioma {
+        padding-top: 12px;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
       .introduccion-grid,
       .biografia-grid,
       .contacto-grid {
@@ -602,7 +693,7 @@
         display: block;
       }
 
-      .series-encabezado p {
+      .series-encabezado > p {
         margin-top: 30px;
       }
 
@@ -627,6 +718,10 @@
 
       .marca {
         font-size: 1.15rem;
+      }
+
+      .menu {
+        top: 65px;
       }
 
       .portada {
@@ -674,20 +769,86 @@
   <header class="navegacion">
     <div class="contenedor navegacion-interior">
 
-      <a class="marca" href="#inicio">
+      <a
+        class="marca"
+        href="#inicio"
+        aria-label="Indhira"
+      >
         Indhira
       </a>
 
-      <nav aria-label="Navegación principal">
-        <ul class="menu">
-          <li><a href="#obra">Obra</a></li>
-          <li><a href="#series">Series</a></li>
-          <li><a href="#biografia">Biografía</a></li>
-          <li><a href="#encargos">Encargos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+      <button
+        class="boton-menu"
+        id="boton-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+        data-i18n="mobileMenu"
+      >
+        Menú
+      </button>
 
-          <!-- Cambia index.html si la página principal tiene otro nombre -->
-          <li><a href="index.html">Galería Coahuilteca</a></li>
+      <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+
+          <li>
+            <a href="#obra" data-i18n="menuWork">
+              Obra
+            </a>
+          </li>
+
+          <li>
+            <a href="#series" data-i18n="menuSeries">
+              Series
+            </a>
+          </li>
+
+          <li>
+            <a href="#biografia" data-i18n="menuBiography">
+              Biografía
+            </a>
+          </li>
+
+          <li>
+            <a href="#encargos" data-i18n="menuCommissions">
+              Encargos
+            </a>
+          </li>
+
+          <li>
+            <a href="#contacto" data-i18n="menuContact">
+              Contacto
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html" data-i18n="menuGallery">
+              Galería Coahuilteca
+            </a>
+          </li>
+
+          <li class="selector-idioma">
+            <button
+              type="button"
+              class="idioma activo"
+              data-language="es"
+              aria-label="Ver página en español"
+            >
+              ES
+            </button>
+
+            <span aria-hidden="true">/</span>
+
+            <button
+              type="button"
+              class="idioma"
+              data-language="en"
+              aria-label="View page in English"
+            >
+              EN
+            </button>
+          </li>
+
         </ul>
       </nav>
 
@@ -700,21 +861,31 @@
     <section class="portada" id="inicio">
       <div class="portada-contenido">
 
-        <p class="eyebrow">
+        <p class="eyebrow" data-i18n="heroMedia">
           Pintura · Dibujo · Gráfica · Cerámica
         </p>
 
         <h1>
           Indhira
-          <span>Artista visual mexicana</span>
+
+          <span data-i18n="heroProfession">
+            Artista visual mexicana
+          </span>
         </h1>
 
-        <p class="portada-texto">
+        <p
+          class="portada-texto"
+          data-i18n="heroDescription"
+        >
           Una práctica figurativa que recupera el cuerpo femenino como
           territorio político, espacio de memoria y lugar de resistencia.
         </p>
 
-        <a class="boton boton-claro" href="#obra">
+        <a
+          class="boton boton-claro"
+          href="#obra"
+          data-i18n="heroButton"
+        >
           Conocer la obra
         </a>
 
@@ -726,28 +897,34 @@
       <div class="contenedor introduccion-grid">
 
         <div>
-          <p class="eyebrow">Práctica artística</p>
+          <p class="eyebrow" data-i18n="practiceTitle">
+            Práctica artística
+          </p>
 
-          <p class="introduccion-dato">
+          <p
+            class="introduccion-dato"
+            data-i18n="location"
+          >
             San Miguel de Allende, México
           </p>
         </div>
 
         <div class="introduccion-texto texto-grande">
-          <p>
+
+          <p data-i18n="practiceParagraph1">
             Indhira desarrolla una obra figurativa centrada en la experiencia
             de las mujeres, la construcción cultural del cuerpo, la memoria
             colectiva y la relación entre identidad y territorio.
           </p>
 
-          <p>
+          <p data-i18n="practiceParagraph2">
             Su pintura recupera procedimientos históricos —como la grisalla,
             las veladuras y la técnica veneciana— para confrontar problemáticas
             contemporáneas desde una imagen precisa, simbólica y profundamente
             material.
           </p>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -758,32 +935,37 @@
         <div
           class="obra-destacada-imagen"
           role="img"
+          data-i18n-aria="battleImageAlt"
           aria-label="Obra de la serie Territorio de batalla"
         ></div>
 
         <div class="obra-destacada-texto">
 
-          <p class="eyebrow">
+          <p class="eyebrow" data-i18n="currentProject">
             Proyecto actual
           </p>
 
-          <h2>
+          <h2 data-i18n-html="battleTitle">
             Territorio<br>de batalla
           </h2>
 
-          <p>
+          <p data-i18n="battleParagraph1">
             Serie realizada mediante técnica veneciana que examina el cuerpo
             femenino como un territorio disputado por la mirada, la medicina,
             la moda, la ideología y el poder.
           </p>
 
-          <p>
+          <p data-i18n="battleParagraph2">
             El proyecto reúne pintura, investigación escrita y memoria de
             proceso para construir una reflexión visual sobre autonomía,
             comodidad, desobediencia y resistencia.
           </p>
 
-          <a class="boton boton-claro" href="#contacto">
+          <a
+            class="boton boton-claro"
+            href="#contacto"
+            data-i18n="requestDossier"
+          >
             Solicitar dossier
           </a>
 
@@ -796,16 +978,26 @@
       <div class="contenedor">
 
         <div class="series-encabezado">
+
           <div>
-            <p class="eyebrow">Obra seleccionada</p>
-            <h2 class="titulo-seccion">Series y proyectos</h2>
+            <p class="eyebrow" data-i18n="selectedWork">
+              Obra seleccionada
+            </p>
+
+            <h2
+              class="titulo-seccion"
+              data-i18n="seriesTitle"
+            >
+              Series y proyectos
+            </h2>
           </div>
 
-          <p>
+          <p data-i18n="seriesIntroduction">
             Una selección de proyectos desarrollados mediante pintura,
             dibujo, grabado y procesos vinculados con la memoria y la
             representación.
           </p>
+
         </div>
 
         <div class="series-grid">
@@ -816,6 +1008,7 @@
               <img
                 src="imagenes/territorio-serie.jpg"
                 alt="Pintura de la serie Territorio de batalla"
+                data-i18n-alt="seriesBattleAlt"
                 loading="lazy"
               >
             </div>
@@ -823,9 +1016,11 @@
             <div class="serie-info">
               <span class="serie-numero">01</span>
 
-              <h3>Territorio de batalla</h3>
+              <h3 data-i18n="seriesBattleTitle">
+                Territorio de batalla
+              </h3>
 
-              <p>
+              <p data-i18n="seriesBattleText">
                 Pintura figurativa y técnica veneciana sobre cuerpo,
                 autonomía, feminidad y resistencia.
               </p>
@@ -838,6 +1033,7 @@
               <img
                 src="imagenes/jacarandas.jpg"
                 alt="Retrato de la serie Jacarandas"
+                data-i18n-alt="jacarandasAlt"
                 loading="lazy"
               >
             </div>
@@ -845,9 +1041,11 @@
             <div class="serie-info">
               <span class="serie-numero">02</span>
 
-              <h3>Jacarandas</h3>
+              <h3 data-i18n="jacarandasTitle">
+                Jacarandas
+              </h3>
 
-              <p>
+              <p data-i18n="jacarandasText">
                 Retratos de sororidad construidos a partir de historias,
                 encuentros y redes afectivas entre mujeres.
               </p>
@@ -860,6 +1058,7 @@
               <img
                 src="imagenes/retratos.jpg"
                 alt="Retrato al óleo realizado por Indhira"
+                data-i18n-alt="portraitsAlt"
                 loading="lazy"
               >
             </div>
@@ -867,9 +1066,11 @@
             <div class="serie-info">
               <span class="serie-numero">03</span>
 
-              <h3>Retratos</h3>
+              <h3 data-i18n="portraitsTitle">
+                Retratos
+              </h3>
 
-              <p>
+              <p data-i18n="portraitsText">
                 Retratos al óleo concebidos como obras irrepetibles:
                 presencia, carácter, memoria y continuidad familiar.
               </p>
@@ -882,6 +1083,7 @@
               <img
                 src="imagenes/grafica.jpg"
                 alt="Grabado y obra gráfica de Indhira"
+                data-i18n-alt="graphicAlt"
                 loading="lazy"
               >
             </div>
@@ -889,9 +1091,11 @@
             <div class="serie-info">
               <span class="serie-numero">04</span>
 
-              <h3>Gráfica y territorio</h3>
+              <h3 data-i18n="graphicTitle">
+                Gráfica y territorio
+              </h3>
 
-              <p>
+              <p data-i18n="graphicText">
                 Obra sobre papel que registra arquitectura, paisaje urbano,
                 migración, memoria comunitaria y vida cotidiana.
               </p>
@@ -906,9 +1110,14 @@
     <section class="statement">
       <div class="contenedor">
 
-        <p class="eyebrow">Artist statement</p>
+        <p class="eyebrow" data-i18n="statementLabel">
+          Declaración de artista
+        </p>
 
-        <p class="statement-texto">
+        <p
+          class="statement-texto"
+          data-i18n-html="statementText"
+        >
           Pinto porque la imagen todavía puede disputar aquello que la cultura
           presenta como natural. Mi obra <em>recupera el cuerpo femenino como
           territorio político</em>, pero también como experiencia vivida,
@@ -926,37 +1135,40 @@
           <img
             src="imagenes/indhira-retrato.jpg"
             alt="Retrato de la artista Indhira"
+            data-i18n-alt="artistPortraitAlt"
             loading="lazy"
           >
         </div>
 
         <div class="biografia-texto">
 
-          <p class="eyebrow">Biografía</p>
+          <p class="eyebrow" data-i18n="biographyLabel">
+            Biografía
+          </p>
 
           <h2>Indhira</h2>
 
-          <p>
+          <p data-i18n="biographyParagraph1">
             Indhira es una artista visual mexicana nacida en Monclova,
             Coahuila, y radicada en San Miguel de Allende, Guanajuato.
             Su práctica comprende pintura, dibujo, gráfica y cerámica.
           </p>
 
-          <p>
+          <p data-i18n="biographyParagraph2">
             Es licenciada en Diseño Gráfico y desarrolló durante una década
             su formación artística con el maestro Tomás Silvestre en el
             Taller Puerta Morada. También realizó estudios de posgrado en
             Desarrollo Cultural en la Universidad Autónoma de Coahuila.
           </p>
 
-          <p>
+          <p data-i18n="biographyParagraph3">
             Participó en una residencia artística en la Escuela Adolfo Prieto
             de CONARTE y en el Taller Experimental de Gráfica de La Habana.
             Su trabajo ha sido exhibido en espacios culturales de Coahuila,
             Guanajuato y otras ciudades de México.
           </p>
 
-          <p>
+          <p data-i18n-html="biographyParagraph4">
             Entre sus proyectos se encuentran
             <em>Jacarandas. Retratos de sororidad</em> y
             <em>Territorio de batalla. En defensa del cuerpo femenino</em>,
@@ -967,21 +1179,47 @@
           <div class="datos">
 
             <div>
-              <h3>Exposiciones seleccionadas</h3>
+              <h3 data-i18n="exhibitionsTitle">
+                Exposiciones seleccionadas
+              </h3>
 
-              <p>Museo Coahuila y Texas, Monclova</p>
-              <p>Centro Cultural Ignacio Ramírez El Nigromante</p>
-              <p>Casa del Diezmo, Celaya</p>
-              <p>Chamacuero Cultural Center, Comonfort</p>
+              <p data-i18n="exhibition1">
+                Museo Coahuila y Texas, Monclova
+              </p>
+
+              <p data-i18n="exhibition2">
+                Centro Cultural Ignacio Ramírez El Nigromante
+              </p>
+
+              <p data-i18n="exhibition3">
+                Casa del Diezmo, Celaya
+              </p>
+
+              <p data-i18n="exhibition4">
+                Chamacuero Cultural Center, Comonfort
+              </p>
             </div>
 
             <div>
-              <h3>Formación seleccionada</h3>
+              <h3 data-i18n="trainingTitle">
+                Formación seleccionada
+              </h3>
 
-              <p>Licenciatura en Diseño Gráfico</p>
-              <p>Taller Puerta Morada</p>
-              <p>Escuela Adolfo Prieto, CONARTE</p>
-              <p>Taller Experimental de Gráfica de La Habana</p>
+              <p data-i18n="training1">
+                Licenciatura en Diseño Gráfico
+              </p>
+
+              <p data-i18n="training2">
+                Taller Puerta Morada
+              </p>
+
+              <p data-i18n="training3">
+                Escuela Adolfo Prieto, CONARTE
+              </p>
+
+              <p data-i18n="training4">
+                Taller Experimental de Gráfica de La Habana
+              </p>
             </div>
 
           </div>
@@ -993,19 +1231,25 @@
     <section class="encargos" id="encargos">
       <div class="contenedor encargos-contenido">
 
-        <p class="eyebrow">Obra por encargo</p>
+        <p class="eyebrow" data-i18n="commissionLabel">
+          Obra por encargo
+        </p>
 
-        <h2>
+        <h2 data-i18n="commissionTitle">
           Retratos con permanencia
         </h2>
 
-        <p>
+        <p data-i18n="commissionText">
           Cada retrato se desarrolla como una obra única, a partir de una
-          sesión de conversación, selección de imágenes, propuesta visual,
+          conversación inicial, selección de imágenes, propuesta visual,
           bocetos y ejecución mediante procedimientos tradicionales al óleo.
         </p>
 
-        <a class="boton boton-claro" href="#contacto">
+        <a
+          class="boton boton-claro"
+          href="#contacto"
+          data-i18n="commissionButton"
+        >
           Solicitar información
         </a>
 
@@ -1021,15 +1265,18 @@
       <div class="contacto-grid">
 
         <div>
-          <p class="eyebrow">
-            Adquisiciones · Exposiciones · Comisiones
+          <p class="eyebrow" data-i18n="contactLabel">
+            Adquisiciones · Exposiciones · Encargos
           </p>
 
-          <h2>
+          <h2 data-i18n-html="contactTitle">
             Hablemos<br>de arte.
           </h2>
 
-          <p class="contacto-texto">
+          <p
+            class="contacto-texto"
+            data-i18n="contactText"
+          >
             Para consultar disponibilidad de obra, solicitar un dossier,
             proponer una exposición o encargar un retrato, comunícate
             directamente con la artista o con Galería Coahuilteca.
@@ -1038,16 +1285,17 @@
 
         <div class="contacto-enlaces">
 
-          <!-- Sustituye el teléfono por el correcto -->
+          <!-- CAMBIA EL NÚMERO POR TU WHATSAPP -->
           <a
             href="https://wa.me/5210000000000"
             target="_blank"
             rel="noopener noreferrer"
+            data-i18n="whatsappLink"
           >
             WhatsApp
           </a>
 
-          <!-- Sustituye el correo -->
+          <!-- CAMBIA ESTE CORREO POR EL TUYO -->
           <a href="mailto:correo@indhirapintora.com">
             correo@indhirapintora.com
           </a>
@@ -1060,7 +1308,7 @@
             Instagram @indhirapintora
           </a>
 
-          <a href="index.html">
+          <a href="index.html" data-i18n="galleryLink">
             Galería Coahuilteca
           </a>
 
@@ -1073,7 +1321,7 @@
           © <span id="anio"></span> Indhira Pintora
         </p>
 
-        <p>
+        <p data-i18n="footerLocation">
           San Miguel de Allende · México
         </p>
       </div>
@@ -1082,8 +1330,424 @@
   </footer>
 
   <script>
+    const traducciones = {
+      es: {
+        pageTitle: "Indhira Pintora | Artista Visual Mexicana",
+
+        metaDescription:
+          "Indhira es una artista visual mexicana cuya obra explora el cuerpo femenino, la memoria, la identidad y el territorio mediante pintura, dibujo, grabado y cerámica.",
+
+        mobileMenu: "Menú",
+        menuWork: "Obra",
+        menuSeries: "Series",
+        menuBiography: "Biografía",
+        menuCommissions: "Encargos",
+        menuContact: "Contacto",
+        menuGallery: "Galería Coahuilteca",
+
+        heroMedia: "Pintura · Dibujo · Gráfica · Cerámica",
+        heroProfession: "Artista visual mexicana",
+
+        heroDescription:
+          "Una práctica figurativa que recupera el cuerpo femenino como territorio político, espacio de memoria y lugar de resistencia.",
+
+        heroButton: "Conocer la obra",
+
+        practiceTitle: "Práctica artística",
+        location: "San Miguel de Allende, México",
+
+        practiceParagraph1:
+          "Indhira desarrolla una obra figurativa centrada en la experiencia de las mujeres, la construcción cultural del cuerpo, la memoria colectiva y la relación entre identidad y territorio.",
+
+        practiceParagraph2:
+          "Su pintura recupera procedimientos históricos —como la grisalla, las veladuras y la técnica veneciana— para confrontar problemáticas contemporáneas desde una imagen precisa, simbólica y profundamente material.",
+
+        currentProject: "Proyecto actual",
+        battleTitle: "Territorio<br>de batalla",
+
+        battleParagraph1:
+          "Serie realizada mediante técnica veneciana que examina el cuerpo femenino como un territorio disputado por la mirada, la medicina, la moda, la ideología y el poder.",
+
+        battleParagraph2:
+          "El proyecto reúne pintura, investigación escrita y memoria de proceso para construir una reflexión visual sobre autonomía, comodidad, desobediencia y resistencia.",
+
+        requestDossier: "Solicitar dossier",
+
+        battleImageAlt:
+          "Obra de la serie Territorio de batalla",
+
+        selectedWork: "Obra seleccionada",
+        seriesTitle: "Series y proyectos",
+
+        seriesIntroduction:
+          "Una selección de proyectos desarrollados mediante pintura, dibujo, grabado y procesos vinculados con la memoria y la representación.",
+
+        seriesBattleTitle: "Territorio de batalla",
+
+        seriesBattleText:
+          "Pintura figurativa y técnica veneciana sobre cuerpo, autonomía, feminidad y resistencia.",
+
+        seriesBattleAlt:
+          "Pintura de la serie Territorio de batalla",
+
+        jacarandasTitle: "Jacarandas",
+
+        jacarandasText:
+          "Retratos de sororidad construidos a partir de historias, encuentros y redes afectivas entre mujeres.",
+
+        jacarandasAlt:
+          "Retrato de la serie Jacarandas",
+
+        portraitsTitle: "Retratos",
+
+        portraitsText:
+          "Retratos al óleo concebidos como obras irrepetibles: presencia, carácter, memoria y continuidad familiar.",
+
+        portraitsAlt:
+          "Retrato al óleo realizado por Indhira",
+
+        graphicTitle: "Gráfica y territorio",
+
+        graphicText:
+          "Obra sobre papel que registra arquitectura, paisaje urbano, migración, memoria comunitaria y vida cotidiana.",
+
+        graphicAlt:
+          "Grabado y obra gráfica de Indhira",
+
+        statementLabel: "Declaración de artista",
+
+        statementText:
+          "Pinto porque la imagen todavía puede disputar aquello que la cultura presenta como natural. Mi obra <em>recupera el cuerpo femenino como territorio político</em>, pero también como experiencia vivida, memoria, materia y presencia.",
+
+        biographyLabel: "Biografía",
+
+        biographyParagraph1:
+          "Indhira es una artista visual mexicana nacida en Monclova, Coahuila, y radicada en San Miguel de Allende, Guanajuato. Su práctica comprende pintura, dibujo, gráfica y cerámica.",
+
+        biographyParagraph2:
+          "Es licenciada en Diseño Gráfico y desarrolló durante una década su formación artística con el maestro Tomás Silvestre en el Taller Puerta Morada. También realizó estudios de posgrado en Desarrollo Cultural en la Universidad Autónoma de Coahuila.",
+
+        biographyParagraph3:
+          "Participó en una residencia artística en la Escuela Adolfo Prieto de CONARTE y en el Taller Experimental de Gráfica de La Habana. Su trabajo ha sido exhibido en espacios culturales de Coahuila, Guanajuato y otras ciudades de México.",
+
+        biographyParagraph4:
+          "Entre sus proyectos se encuentran <em>Jacarandas. Retratos de sororidad</em> y <em>Territorio de batalla. En defensa del cuerpo femenino</em>, desarrollado con apoyo del Programa de Estímulos a la Creación y Desarrollo Artístico.",
+
+        artistPortraitAlt:
+          "Retrato de la artista Indhira",
+
+        exhibitionsTitle: "Exposiciones seleccionadas",
+        exhibition1: "Museo Coahuila y Texas, Monclova",
+        exhibition2: "Centro Cultural Ignacio Ramírez El Nigromante",
+        exhibition3: "Casa del Diezmo, Celaya",
+        exhibition4: "Chamacuero Cultural Center, Comonfort",
+
+        trainingTitle: "Formación seleccionada",
+        training1: "Licenciatura en Diseño Gráfico",
+        training2: "Taller Puerta Morada",
+        training3: "Escuela Adolfo Prieto, CONARTE",
+        training4: "Taller Experimental de Gráfica de La Habana",
+
+        commissionLabel: "Obra por encargo",
+        commissionTitle: "Retratos con permanencia",
+
+        commissionText:
+          "Cada retrato se desarrolla como una obra única, a partir de una conversación inicial, selección de imágenes, propuesta visual, bocetos y ejecución mediante procedimientos tradicionales al óleo.",
+
+        commissionButton: "Solicitar información",
+
+        contactLabel:
+          "Adquisiciones · Exposiciones · Encargos",
+
+        contactTitle: "Hablemos<br>de arte.",
+
+        contactText:
+          "Para consultar disponibilidad de obra, solicitar un dossier, proponer una exposición o encargar un retrato, comunícate directamente con la artista o con Galería Coahuilteca.",
+
+        whatsappLink: "WhatsApp",
+        galleryLink: "Galería Coahuilteca",
+        footerLocation: "San Miguel de Allende · México"
+      },
+
+      en: {
+        pageTitle: "Indhira Painter | Mexican Visual Artist",
+
+        metaDescription:
+          "Indhira is a Mexican visual artist whose work explores the female body, memory, identity, and territory through painting, drawing, printmaking, and ceramics.",
+
+        mobileMenu: "Menu",
+        menuWork: "Work",
+        menuSeries: "Series",
+        menuBiography: "Biography",
+        menuCommissions: "Commissions",
+        menuContact: "Contact",
+        menuGallery: "Coahuilteca Gallery",
+
+        heroMedia: "Painting · Drawing · Printmaking · Ceramics",
+        heroProfession: "Mexican visual artist",
+
+        heroDescription:
+          "A figurative practice that reclaims the female body as political territory, a space of memory, and a site of resistance.",
+
+        heroButton: "Explore the work",
+
+        practiceTitle: "Artistic practice",
+        location: "San Miguel de Allende, Mexico",
+
+        practiceParagraph1:
+          "Indhira develops a figurative body of work centered on women's experiences, the cultural construction of the body, collective memory, and the relationship between identity and territory.",
+
+        practiceParagraph2:
+          "Her paintings recover historical processes—including grisaille, glazing, and Venetian painting techniques—to confront contemporary issues through images that are precise, symbolic, and deeply material.",
+
+        currentProject: "Current project",
+        battleTitle: "Territory<br>of battle",
+
+        battleParagraph1:
+          "Created through Venetian painting techniques, this series examines the female body as a territory contested by the gaze, medicine, fashion, ideology, and power.",
+
+        battleParagraph2:
+          "The project brings together painting, written research, and process documentation to construct a visual reflection on autonomy, comfort, disobedience, and resistance.",
+
+        requestDossier: "Request dossier",
+
+        battleImageAlt:
+          "Artwork from the Territory of Battle series",
+
+        selectedWork: "Selected work",
+        seriesTitle: "Series and projects",
+
+        seriesIntroduction:
+          "A selection of projects developed through painting, drawing, printmaking, and processes connected to memory and representation.",
+
+        seriesBattleTitle: "Territory of Battle",
+
+        seriesBattleText:
+          "Figurative painting and Venetian techniques addressing the body, autonomy, femininity, and resistance.",
+
+        seriesBattleAlt:
+          "Painting from the Territory of Battle series",
+
+        jacarandasTitle: "Jacarandas",
+
+        jacarandasText:
+          "Portraits of sisterhood constructed from stories, encounters, and networks of affection among women.",
+
+        jacarandasAlt:
+          "Portrait from the Jacarandas series",
+
+        portraitsTitle: "Portraits",
+
+        portraitsText:
+          "Oil portraits conceived as singular works of art: presence, character, memory, and family continuity.",
+
+        portraitsAlt:
+          "Oil portrait painted by Indhira",
+
+        graphicTitle: "Printmaking and Territory",
+
+        graphicText:
+          "Works on paper that record architecture, urban landscapes, migration, community memory, and everyday life.",
+
+        graphicAlt:
+          "Printmaking and works on paper by Indhira",
+
+        statementLabel: "Artist statement",
+
+        statementText:
+          "I paint because images can still dispute what culture presents as natural. My work <em>reclaims the female body as political territory</em>, but also as lived experience, memory, matter, and presence.",
+
+        biographyLabel: "Biography",
+
+        biographyParagraph1:
+          "Indhira is a Mexican visual artist born in Monclova, Coahuila, and based in San Miguel de Allende, Guanajuato. Her practice encompasses painting, drawing, printmaking, and ceramics.",
+
+        biographyParagraph2:
+          "She holds a bachelor's degree in Graphic Design and trained for a decade with artist Tomás Silvestre at Taller Puerta Morada. She also completed postgraduate studies in Cultural Development at the Autonomous University of Coahuila.",
+
+        biographyParagraph3:
+          "She participated in an artist residency at CONARTE's Adolfo Prieto School and trained at the Experimental Printmaking Workshop of Havana. Her work has been exhibited in cultural institutions throughout Coahuila, Guanajuato, and other cities in Mexico.",
+
+        biographyParagraph4:
+          "Her projects include <em>Jacarandas: Portraits of Sisterhood</em> and <em>Territory of Battle: In Defense of the Female Body</em>, developed with support from Mexico's Program for the Encouragement of Artistic Creation and Development.",
+
+        artistPortraitAlt:
+          "Portrait of Mexican artist Indhira",
+
+        exhibitionsTitle: "Selected exhibitions",
+        exhibition1: "Coahuila and Texas Museum, Monclova",
+        exhibition2: "Ignacio Ramírez El Nigromante Cultural Center",
+        exhibition3: "Casa del Diezmo, Celaya",
+        exhibition4: "Chamacuero Cultural Center, Comonfort",
+
+        trainingTitle: "Selected education and training",
+        training1: "Bachelor's degree in Graphic Design",
+        training2: "Taller Puerta Morada",
+        training3: "Adolfo Prieto School, CONARTE",
+        training4: "Experimental Printmaking Workshop of Havana",
+
+        commissionLabel: "Commissioned work",
+        commissionTitle: "Portraits with permanence",
+
+        commissionText:
+          "Each portrait is developed as a unique work of art through an initial conversation, image selection, a visual proposal, preparatory sketches, and execution using traditional oil painting processes.",
+
+        commissionButton: "Request information",
+
+        contactLabel:
+          "Acquisitions · Exhibitions · Commissions",
+
+        contactTitle: "Let’s talk<br>about art.",
+
+        contactText:
+          "For information about available work, exhibition proposals, dossier requests, or portrait commissions, contact the artist directly or reach out through Galería Coahuilteca.",
+
+        whatsappLink: "WhatsApp",
+        galleryLink: "Coahuilteca Gallery",
+        footerLocation: "San Miguel de Allende · Mexico"
+      }
+    };
+
+    const botonesIdioma =
+      document.querySelectorAll(".idioma");
+
+    const metaDescription =
+      document.getElementById("meta-description");
+
+    const botonMenu =
+      document.getElementById("boton-menu");
+
+    const menuPrincipal =
+      document.getElementById("menu-principal");
+
+    function cambiarIdioma(idioma) {
+      const textos = traducciones[idioma];
+
+      if (!textos) {
+        return;
+      }
+
+      document.documentElement.lang = idioma;
+      document.title = textos.pageTitle;
+      metaDescription.setAttribute(
+        "content",
+        textos.metaDescription
+      );
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach((elemento) => {
+          const clave = elemento.dataset.i18n;
+
+          if (textos[clave]) {
+            elemento.textContent = textos[clave];
+          }
+        });
+
+      document
+        .querySelectorAll("[data-i18n-html]")
+        .forEach((elemento) => {
+          const clave = elemento.dataset.i18nHtml;
+
+          if (textos[clave]) {
+            elemento.innerHTML = textos[clave];
+          }
+        });
+
+      document
+        .querySelectorAll("[data-i18n-alt]")
+        .forEach((elemento) => {
+          const clave = elemento.dataset.i18nAlt;
+
+          if (textos[clave]) {
+            elemento.setAttribute(
+              "alt",
+              textos[clave]
+            );
+          }
+        });
+
+      document
+        .querySelectorAll("[data-i18n-aria]")
+        .forEach((elemento) => {
+          const clave = elemento.dataset.i18nAria;
+
+          if (textos[clave]) {
+            elemento.setAttribute(
+              "aria-label",
+              textos[clave]
+            );
+          }
+        });
+
+      botonesIdioma.forEach((boton) => {
+        const estaActivo =
+          boton.dataset.language === idioma;
+
+        boton.classList.toggle(
+          "activo",
+          estaActivo
+        );
+
+        boton.setAttribute(
+          "aria-pressed",
+          estaActivo.toString()
+        );
+      });
+
+      localStorage.setItem(
+        "idioma-indhira",
+        idioma
+      );
+    }
+
+    botonesIdioma.forEach((boton) => {
+      boton.addEventListener("click", () => {
+        cambiarIdioma(
+          boton.dataset.language
+        );
+      });
+    });
+
+    botonMenu.addEventListener("click", () => {
+      const estaAbierto =
+        menuPrincipal.classList.toggle("abierto");
+
+      botonMenu.setAttribute(
+        "aria-expanded",
+        estaAbierto.toString()
+      );
+    });
+
+    document
+      .querySelectorAll("#menu-principal a")
+      .forEach((enlace) => {
+        enlace.addEventListener("click", () => {
+          menuPrincipal.classList.remove("abierto");
+
+          botonMenu.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        });
+      });
+
     document.getElementById("anio").textContent =
       new Date().getFullYear();
+
+    const idiomaGuardado =
+      localStorage.getItem("idioma-indhira");
+
+    const idiomaNavegador =
+      navigator.language
+        .toLowerCase()
+        .startsWith("en")
+        ? "en"
+        : "es";
+
+    cambiarIdioma(
+      idiomaGuardado || idiomaNavegador
+    );
   </script>
 
 </body>
