@@ -184,11 +184,19 @@
       width: 100%;
     }
 
+    .acciones-superior {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
     .selector-idioma {
       display: flex;
       align-items: center;
       gap: 7px;
-      padding-left: 5px;
+      white-space: nowrap;
     }
 
     .idioma {
@@ -643,11 +651,8 @@
         display: flex;
       }
 
-      .selector-idioma {
-        width: 100%;
-        padding-top: 12px;
-        padding-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      .acciones-superior {
+        gap: 18px;
       }
     }
 
@@ -698,8 +703,18 @@
         padding: 20px 0;
       }
 
-      .marca {
-        font-size: 1.15rem;
+      .acciones-superior {
+        gap: 14px;
+      }
+
+      .selector-idioma {
+        gap: 6px;
+      }
+
+      .idioma,
+      .boton-menu {
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
       }
 
       .menu {
@@ -750,21 +765,6 @@
   <header class="navegacion">
     <div class="contenedor navegacion-interior">
 
-      <a class="marca" href="#inicio" aria-label="Indhira">
-        Indhira
-      </a>
-
-      <button
-        class="boton-menu"
-        id="boton-menu"
-        type="button"
-        aria-expanded="false"
-        aria-controls="menu-principal"
-        data-i18n="mobileMenu"
-      >
-        Menú
-      </button>
-
       <nav aria-label="Navegación principal">
         <ul class="menu" id="menu-principal">
 
@@ -775,30 +775,45 @@
           <li><a href="#contacto" data-i18n="menuContact">Contacto</a></li>
           <li><a href="/" data-i18n="menuGallery">Galería Coahuilteca</a></li>
 
-          <li class="selector-idioma">
-            <button
-              type="button"
-              class="idioma activo"
-              data-language="es"
-              aria-label="Ver página en español"
-            >
-              ES
-            </button>
-
-            <span aria-hidden="true">/</span>
-
-            <button
-              type="button"
-              class="idioma"
-              data-language="en"
-              aria-label="View page in English"
-            >
-              EN
-            </button>
-          </li>
-
         </ul>
       </nav>
+
+      <div class="acciones-superior">
+
+        <div class="selector-idioma" aria-label="Selector de idioma">
+          <button
+            type="button"
+            class="idioma activo"
+            data-language="es"
+            aria-label="Ver página en español"
+          >
+            ES
+          </button>
+
+          <span aria-hidden="true">/</span>
+
+          <button
+            type="button"
+            class="idioma"
+            data-language="en"
+            aria-label="View page in English"
+          >
+            EN
+          </button>
+        </div>
+
+        <button
+          class="boton-menu"
+          id="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+          data-i18n="mobileMenu"
+        >
+          Menú
+        </button>
+
+      </div>
 
     </div>
   </header>
