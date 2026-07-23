@@ -184,22 +184,11 @@
       width: 100%;
     }
 
-    .acciones-superior {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-shrink: 0;
-    }
-
     .selector-idioma {
       display: flex;
       align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    .selector-idioma span {
-      opacity: 0.5;
+      gap: 7px;
+      padding-left: 5px;
     }
 
     .idioma {
@@ -334,7 +323,7 @@
     .obra-destacada-imagen {
       min-height: 700px;
       background:
-        url("territorio-de-batalla.jpg")
+        url("sororidad.jpg")
         center / cover no-repeat;
     }
 
@@ -542,7 +531,7 @@
           rgba(0, 0, 0, 0.78),
           rgba(0, 0, 0, 0.78)
         ),
-        url("retrato-indhira.jpg")
+        url("retLuna.jpg")
         center / cover no-repeat;
       color: var(--blanco);
       text-align: center;
@@ -633,19 +622,6 @@
     /* RESPONSIVO */
 
     @media (max-width: 1050px) {
-      .navegacion-interior {
-        gap: 16px;
-      }
-
-      .navegacion-interior > nav {
-        order: 3;
-      }
-
-      .acciones-superior {
-        margin-left: auto;
-        gap: 18px;
-      }
-
       .boton-menu {
         display: block;
       }
@@ -665,6 +641,13 @@
 
       .menu.abierto {
         display: flex;
+      }
+
+      .selector-idioma {
+        width: 100%;
+        padding-top: 12px;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
       }
     }
 
@@ -715,27 +698,8 @@
         padding: 20px 0;
       }
 
-      .navegacion-interior {
-        width: 92%;
-        gap: 12px;
-      }
-
       .marca {
         font-size: 1.15rem;
-      }
-
-      .acciones-superior {
-        gap: 14px;
-      }
-
-      .selector-idioma {
-        gap: 6px;
-      }
-
-      .idioma,
-      .boton-menu {
-        font-size: 0.66rem;
-        letter-spacing: 0.1em;
       }
 
       .menu {
@@ -790,26 +754,51 @@
         Indhira
       </a>
 
+      <button
+        class="boton-menu"
+        id="boton-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+        data-i18n="mobileMenu"
+      >
+        Menú
+      </button>
+
       <nav aria-label="Navegación principal">
         <ul class="menu" id="menu-principal">
+
           <li><a href="#obra" data-i18n="menuWork">Obra</a></li>
           <li><a href="#series" data-i18n="menuSeries">Series</a></li>
           <li><a href="#biografia" data-i18n="menuBiography">Biografía</a></li>
           <li><a href="#encargos" data-i18n="menuCommissions">Encargos</a></li>
           <li><a href="#contacto" data-i18n="menuContact">Contacto</a></li>
           <li><a href="/" data-i18n="menuGallery">Galería Coahuilteca</a></li>
+
+          <li class="selector-idioma">
+            <button
+              type="button"
+              class="idioma activo"
+              data-language="es"
+              aria-label="Ver página en español"
+            >
+              ES
+            </button>
+
+            <span aria-hidden="true">/</span>
+
+            <button
+              type="button"
+              class="idioma"
+              data-language="en"
+              aria-label="View page in English"
+            >
+              EN
+            </button>
+          </li>
+
         </ul>
       </nav>
-
-      <div class="acciones-superior">
-        <div class="selector-idioma" aria-label="Selector de idioma">
-          <button type="button" class="idioma activo" data-language="es" aria-label="Ver página en español">ES</button>
-          <span aria-hidden="true">/</span>
-          <button type="button" class="idioma" data-language="en" aria-label="View page in English">EN</button>
-        </div>
-
-        <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" data-i18n="mobileMenu">Menú</button>
-      </div>
 
     </div>
   </header>
@@ -905,14 +894,12 @@
             comodidad, desobediencia y resistencia.
           </p>
 
-          <a
-            class="boton boton-claro"
-            href="https://galeriacoahuilteca.com/catalogoTerritorio.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="downloadDossier"
-          >
-            Descargar dossier
+          <a   class="boton boton-claro"
+    href="https://galeriacoahuilteca.com/catalogoTerritorio.html"
+    target="_blank"
+    rel="noopener"
+    data-i18n="downloadDossier">
+    Descargar dossier
           </a>
 
         </div>
@@ -993,7 +980,7 @@
           <article class="serie">
             <div class="serie-imagen">
               <img
-                src="retrato-indhira.jpg"
+                src="retratovalle.jpg"
                 alt="Retrato al óleo realizado por Indhira"
                 data-i18n-alt="portraitsAlt"
                 loading="lazy"
@@ -1283,7 +1270,7 @@
           "Serie realizada mediante técnica veneciana que examina el cuerpo femenino como un territorio disputado por la mirada, la medicina, la moda, la ideología y el poder.",
         battleParagraph2:
           "El proyecto reúne pintura, investigación escrita y memoria de proceso para construir una reflexión visual sobre autonomía, comodidad, desobediencia y resistencia.",
-        downloadDossier: "Descargar dossier",
+        requestDossier: "Descargar dossier",
         battleImageAlt: "Obra de la serie Territorio de batalla",
 
         selectedWork: "Obra seleccionada",
@@ -1385,7 +1372,7 @@
           "Created through Venetian painting techniques, this series examines the female body as a territory contested by the gaze, medicine, fashion, ideology, and power.",
         battleParagraph2:
           "The project brings together painting, written research, and process documentation to construct a visual reflection on autonomy, comfort, disobedience, and resistance.",
-        downloadDossier: "Download dossier",
+        requestDossier: "Download dossier",
         battleImageAlt: "Artwork from the Territory of Battle series",
 
         selectedWork: "Selected work",
