@@ -152,6 +152,59 @@ nav a{
   display:block;
 }
 
+.rotator{
+  position:relative;
+  overflow:hidden;
+  background:#eee;
+}
+
+.card .rotator{
+  height:260px;
+}
+
+.location-rotator{
+  height:420px;
+  border-radius:20px;
+}
+
+.rotator img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .8s ease;
+}
+
+.rotator img.is-active{
+  opacity:1;
+}
+
+.rotator-dots{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:14px;
+  display:flex;
+  gap:7px;
+  transform:translateX(-50%);
+}
+
+.rotator-dot{
+  width:8px;
+  height:8px;
+  padding:0;
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:50%;
+  background:rgba(0,0,0,.35);
+  cursor:pointer;
+}
+
+.rotator-dot.is-active{
+  background:white;
+}
+
 .card div{
   padding:22px;
 }
@@ -378,6 +431,16 @@ footer a{
   .location-photo{
     height:auto;
   }
+
+  .location-rotator{
+    height:360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .rotator img{
+    transition:none;
+  }
 }
 </style>
 </head>
@@ -416,10 +479,10 @@ footer a{
     <div class="hero-line"></div>
 
     <p>
-      Private 2-hour art sessions inside Galería Coahuilteca, with the option of deeper studio experiences in the rural community of Corralejo de Arriba.
+      Private 2-hour 15-minute art sessions inside Galería Coahuilteca, with the option of deeper studio experiences in the rural community of Corralejo de Arriba.
     </p>
 
-    <p>From $800 MXN per person.</p>
+    <p>From $1,914 MXN per participant. Airbnb pricing may vary slightly by date.</p>
 
     <a class="button" href="https://www.airbnb.mx/experiences/6132122" target="_blank">
       Book on Airbnb
@@ -432,7 +495,11 @@ footer a{
 
   <div class="grid">
     <div class="card">
-      <img src="experiencia.jpg" alt="Paint and wine art experience at Galería Coahuilteca">
+      <div class="rotator" data-interval="4600" aria-label="Paint and Wine experience photos">
+        <img class="is-active" src="experiencia.jpg" alt="Paint and wine art experience at Galería Coahuilteca">
+        <img src="IMG_5009.jpg" alt="Wine served during a private art experience in San Miguel de Allende">
+        <img src="IMG_5012.jpg" alt="Participant painting during a wine and art experience">
+      </div>
       <div>
         <h3>Paint & Wine</h3>
         <p>A relaxed creative session with wine, materials and guided painting.</p>
@@ -440,7 +507,11 @@ footer a{
     </div>
 
     <div class="card">
-      <img src="experienciaenpareja.jpg" alt="Draw your partner art experience in San Miguel de Allende">
+      <div class="rotator" data-interval="5100" aria-label="Guided group art experience photos">
+        <img class="is-active" src="experienciaenpareja.jpg" alt="Draw your partner art experience in San Miguel de Allende">
+        <img src="IMG_3691.jpg" alt="Guests painting together with watercolor at Galería Coahuilteca">
+        <img src="IMG_3694(2).jpg" alt="Young guests enjoying a guided art session inside the gallery">
+      </div>
       <div>
         <h3>Draw Your Partner</h3>
         <p>A playful guided portrait session for couples, friends or families.</p>
@@ -448,7 +519,10 @@ footer a{
     </div>
 
     <div class="card">
-      <img src="parroquia.jpg" alt="Colors of San Miguel painting experience">
+      <div class="rotator" data-interval="5600" aria-label="Colors of San Miguel experience photos">
+        <img class="is-active" src="parroquia.jpg" alt="Colors of San Miguel painting experience">
+        <img src="IMG_3698.jpg" alt="Guest painting the Parroquia of San Miguel de Allende in watercolor">
+      </div>
       <div>
         <h3>Colors of San Miguel</h3>
         <p>Paint the architecture and colors of San Miguel using your preferred technique.</p>
@@ -458,35 +532,39 @@ footer a{
 </section>
 
 <section class="section">
-  <h2>Prices</h2>
+  <h2>Airbnb Prices</h2>
 
   <div class="price-grid">
     <div class="price-card">
-      <h3>Individual</h3>
-      <p>Private 2-hour session</p>
-      <p class="price">$1,200 MXN</p>
+      <h3>1 participant</h3>
+      <p>Private 2-hour 15-minute session</p>
+      <p class="price">$1,914 MXN</p>
     </div>
 
     <div class="price-card">
-      <h3>Couple</h3>
-      <p>2-hour session for two</p>
-      <p class="price">$2,000 MXN</p>
+      <h3>2 participants</h3>
+      <p>Private session for two</p>
+      <p class="price">$3,828 MXN</p>
     </div>
 
     <div class="price-card">
-      <h3>Group</h3>
-      <p>3–4 people</p>
-      <p class="price">$800 MXN / person</p>
+      <h3>3 participants</h3>
+      <p>Private session for three</p>
+      <p class="price">$5,742 MXN</p>
     </div>
 
     <div class="price-card">
-      <h3>Workshop · Ongoing Classes</h3>
-      <p>One class per week · flexible schedule</p>
-      <p class="price">$2,000 MXN / month</p>
+      <h3>4 participants</h3>
+      <p>Private session for four</p>
+      <p class="price">$7,656 MXN</p>
     </div>
   </div>
 
   <p style="color:#666; margin-top:25px;">
+    Reference prices based on the current Airbnb rate of $1,914 MXN per participant. The final amount shown by Airbnb may vary slightly by date.
+  </p>
+
+  <p style="color:#666; margin-top:15px;">
     All materials are included, along with step-by-step guidance by a professional local artist with over 20 years of experience. Accompanied by Chiapas coffee and a curated selection of light refreshments. Each participant completes and takes home their own artwork, and also receives a small original piece from the gallery, presented in a custom Galería Coahuilteca tote bag.
   </p>
 </section>
@@ -495,7 +573,12 @@ footer a{
   <h2>Where the experience takes place</h2>
 
   <div class="two">
-    <img class="location-photo" src="enlagale.jpg" alt="Art experience inside Galería Coahuilteca">
+    <div class="rotator location-rotator" data-interval="5000" aria-label="Art experiences inside Galería Coahuilteca">
+      <img class="is-active" src="enlagale.jpg" alt="Art experience inside Galería Coahuilteca">
+      <img src="IMG_3691.jpg" alt="Guests painting with watercolor inside Galería Coahuilteca">
+      <img src="IMG_3694(2).jpg" alt="Guided group painting session inside the gallery">
+      <img src="IMG_3698.jpg" alt="Watercolor painting of the Parroquia created during the experience">
+    </div>
 
     <div class="box">
       <h3>Inside the gallery</h3>
@@ -511,7 +594,7 @@ footer a{
         Central, easy, walkable and ideal for visitors who want a beautiful creative experience without leaving downtown.
       </p>
 
-      <a class="button" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
+      <a class="button" href="https://maps.app.goo.gl/EjugoKYd52ANSgWq9" target="_blank" rel="noopener noreferrer">
         Get directions
       </a>
     </div>
@@ -523,7 +606,7 @@ footer a{
       loading="lazy">
     </iframe>
 
-    <a class="map-click" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank"></a>
+    <a class="map-click" href="https://maps.app.goo.gl/EjugoKYd52ANSgWq9" target="_blank" rel="noopener noreferrer" aria-label="Open Galería Coahuilteca in Google Maps"></a>
 
     <div class="map-label">Open gallery map →</div>
   </div>
@@ -551,7 +634,12 @@ footer a{
       </a>
     </div>
 
-    <img class="location-photo" src="rancho.jpg" alt="Rural art studio in Corralejo de Arriba">
+    <div class="rotator location-rotator" data-interval="5500" aria-label="Rural art studio experience photos">
+      <img class="is-active" src="rancho.jpg" alt="Rural art studio in Corralejo de Arriba">
+      <img src="IMG_5009.jpg" alt="Wine served during a creative session at the rural art studio">
+      <img src="IMG_5012.jpg" alt="Participant working with clay during a studio experience">
+      <img src="IMG_5049.jpg" alt="Hands shaping a clay pot during a ceramics experience">
+    </div>
   </div>
 
   <div class="map-wrapper">
@@ -601,8 +689,8 @@ footer a{
     <h2>Booking</h2>
 
     <p style="color:#666; line-height:1.7;">
-      You can book through Airbnb, or reserve directly with Galería Coahuilteca by WhatsApp.
-      For direct bookings, send your preferred date, time, number of guests and chosen experience.
+      You can book through Airbnb, or request a custom private session directly with Galería Coahuilteca by WhatsApp.
+      For direct inquiries, send your preferred date, time, number of guests and chosen experience.
     </p>
 
     <div class="booking-grid">
@@ -621,7 +709,7 @@ footer a{
       <div class="box">
         <h3>Reserve directly</h3>
         <p>
-          Best option for flexible times, private groups, couples, families, custom sessions, or studio-exclusive techniques.
+          Best option for custom sessions, flexible times, private groups, couples, families, or studio-exclusive techniques. We will send a personalized quote.
         </p>
 
         <a class="button" href="https://wa.me/524152169737?text=Hello%2C%20I%20would%20like%20to%20reserve%20an%20art%20experience.%20Preferred%20date%3A%20%0ATime%3A%20%0ANumber%20of%20guests%3A%20%0AExperience%3A%20%0AGallery%20or%20studio%3A%20" target="_blank">
@@ -647,7 +735,7 @@ footer a{
 <footer>
   <p>
     <strong>Galería Coahuilteca</strong><br>
-    Tenerías & Codo · Centro, San Miguel de Allende · 2026
+    Codo & Tenerías · Centro, San Miguel de Allende · 2026
   </p>
 
   <p style="margin-top:15px;">
@@ -661,6 +749,59 @@ footer a{
 </div>
 
 <a href="#top" class="back-to-top">↑</a>
+
+<script>
+  document.querySelectorAll('.rotator').forEach((rotator) => {
+    const images = Array.from(rotator.querySelectorAll('img'));
+    if (images.length < 2) return;
+
+    let current = 0;
+    let timer;
+    const dots = document.createElement('div');
+    dots.className = 'rotator-dots';
+
+    const show = (index) => {
+      images[current].classList.remove('is-active');
+      dots.children[current].classList.remove('is-active');
+      current = index;
+      images[current].classList.add('is-active');
+      dots.children[current].classList.add('is-active');
+    };
+
+    images.forEach((image, index) => {
+      const dot = document.createElement('button');
+      dot.className = `rotator-dot${index === 0 ? ' is-active' : ''}`;
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Show image ${index + 1} of ${images.length}`);
+      dot.addEventListener('click', () => {
+        show(index);
+        restart();
+      });
+      dots.appendChild(dot);
+    });
+
+    rotator.appendChild(dots);
+
+    const start = () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = window.setInterval(
+        () => show((current + 1) % images.length),
+        Number(rotator.dataset.interval) || 5000
+      );
+    };
+
+    const restart = () => {
+      window.clearInterval(timer);
+      start();
+    };
+
+    rotator.addEventListener('mouseenter', () => window.clearInterval(timer));
+    rotator.addEventListener('mouseleave', start);
+    rotator.addEventListener('focusin', () => window.clearInterval(timer));
+    rotator.addEventListener('focusout', start);
+    start();
+  });
+</script>
 
 </body>
 </html>
