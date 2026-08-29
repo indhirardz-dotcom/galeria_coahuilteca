@@ -250,6 +250,15 @@ nav a{
   font-family:Georgia, serif;
   font-size:22px;
   color:#111 !important;
+  margin-bottom:5px;
+}
+
+.price-usd{
+  margin-top:0;
+  font-family:Georgia, serif;
+  color:#333 !important;
+  font-size:19px;
+  font-weight:600;
 }
 
 .two{
@@ -479,7 +488,7 @@ footer a{
     <div class="hero-line"></div>
 
     <p>
-      Private 2-hour 15-minute art sessions inside Galería Coahuilteca, with the option of deeper studio experiences in the rural community of Corralejo de Arriba.
+      Private 2.5-hour art sessions inside Galería Coahuilteca, with the option of deeper studio experiences in the rural community of Corralejo de Arriba.
     </p>
 
     <p>From $1,914 MXN per participant. Airbnb pricing may vary slightly by date.</p>
@@ -537,31 +546,37 @@ footer a{
   <div class="price-grid">
     <div class="price-card">
       <h3>1 participant</h3>
-      <p>Private 2-hour 15-minute session</p>
+      <p>Private 2.5-hour session</p>
       <p class="price">$1,914 MXN</p>
+      <p class="price-usd" data-mxn="1914">Approx. US$113</p>
     </div>
 
     <div class="price-card">
       <h3>2 participants</h3>
       <p>Private session for two</p>
       <p class="price">$3,828 MXN</p>
+      <p class="price-usd" data-mxn="3828">Approx. US$225</p>
     </div>
 
     <div class="price-card">
       <h3>3 participants</h3>
       <p>Private session for three</p>
       <p class="price">$5,742 MXN</p>
+      <p class="price-usd" data-mxn="5742">Approx. US$338</p>
     </div>
 
     <div class="price-card">
       <h3>4 participants</h3>
       <p>Private session for four</p>
       <p class="price">$7,656 MXN</p>
+      <p class="price-usd" data-mxn="7656">Approx. US$451</p>
     </div>
   </div>
 
   <p style="color:#666; margin-top:25px;">
     Reference prices based on the current Airbnb rate of $1,914 MXN per participant. The final amount shown by Airbnb may vary slightly by date.
+    USD amounts are approximate and update daily using an institutional reference exchange rate.
+    <span id="exchange-rate-date"></span>
   </p>
 
   <p style="color:#666; margin-top:15px;">
@@ -751,6 +766,28 @@ footer a{
 <a href="#top" class="back-to-top">↑</a>
 
 <script>
+  const updateUsdPrices = async () => {
+    try {
+      const response = await fetch('https://api.frankfurter.dev/v2/rate/MXN/USD');
+      if (!response.ok) throw new Error('Exchange rate unavailable');
+
+      const data = await response.json();
+      document.querySelectorAll('[data-mxn]').forEach((element) => {
+        const usd = Math.round(Number(element.dataset.mxn) * data.rate);
+        element.textContent = `Approx. US$${usd.toLocaleString('en-US')}`;
+      });
+
+      const rateDate = document.getElementById('exchange-rate-date');
+      if (rateDate && data.date) {
+        rateDate.textContent = ` Exchange rate updated ${data.date}.`;
+      }
+    } catch (error) {
+      console.warn('Daily USD conversion could not be refreshed.', error);
+    }
+  };
+
+  updateUsdPrices();
+
   document.querySelectorAll('.rotator').forEach((rotator) => {
     const images = Array.from(rotator.querySelectorAll('img'));
     if (images.length < 2) return;
