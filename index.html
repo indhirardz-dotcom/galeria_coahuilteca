@@ -290,39 +290,14 @@ footer a{
   font-weight:400;
 }
 
-.newsletter-inline-form{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  min-width:360px;
-}
-
-.newsletter-inline-form input[type="email"]{
+.newsletter-mailerlite{
   flex:1;
-  min-width:0;
-  padding:10px 0;
-  border:0;
-  border-bottom:1px solid #999;
-  background:transparent;
-  color:#111;
-  font:inherit;
-  font-size:14px;
-  outline:none;
+  min-width:360px;
+  max-width:520px;
 }
 
-.newsletter-inline-form input[type="email"]:focus{
-  border-bottom-color:#111;
-}
-
-.newsletter-inline-form button{
-  padding:10px 2px;
-  border:0;
-  background:transparent;
-  color:#111;
-  cursor:pointer;
-  font-size:11px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+.newsletter-mailerlite .ml-embedded{
+  width:100%;
 }
 
 @media(max-width:800px){
@@ -371,13 +346,24 @@ footer a{
     align-items:flex-start;
   }
 
-  .newsletter-inline-form{
+  .newsletter-mailerlite{
     width:100%;
     min-width:0;
+    max-width:none;
   }
 
 }
 </style>
+<!-- MailerLite Universal -->
+<script>
+(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],
+n.parentNode.insertBefore(l,n);})(window,document,'script',
+'https://assets.mailerlite.com/js/universal.js','ml');
+ml('account', '2615427');
+</script>
+<!-- End MailerLite Universal -->
+
 </head>
 
 <body id="top">
@@ -603,15 +589,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Occasional exhibition invitations, new work and collector notes.</p>
   </div>
 
-  <form class="newsletter-inline-form" action="https://formsubmit.co/hello@galeriacoahuilteca.com" method="POST">
-    <label for="newsletterEmail" style="position:absolute; left:-9999px;">Email address</label>
-    <input id="newsletterEmail" name="email" type="email" placeholder="Email address" autocomplete="email" required>
-    <input type="hidden" name="_subject" value="New Galería Coahuilteca newsletter subscription">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://galeriacoahuilteca.com/?subscribed=1">
-    <button type="submit">Subscribe →</button>
-  </form>
+  <div class="newsletter-mailerlite">
+    <div class="ml-embedded" data-form="erMB96"></div>
+  </div>
 </section>
 
 <footer>
