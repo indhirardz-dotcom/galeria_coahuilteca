@@ -364,6 +364,70 @@ ml('account', '2615427');
 </script>
 <!-- End MailerLite Universal -->
 
+
+<style>
+/* Discreet first-visit newsletter popup */
+.gc-newsletter-popup{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  padding:24px;
+  background:rgba(0,0,0,.08);
+  z-index:9999;
+}
+.gc-newsletter-popup.is-visible{display:flex;}
+.gc-newsletter-card{
+  position:relative;
+  width:min(92vw,460px);
+  background:rgba(255,255,255,.98);
+  border:1px solid rgba(0,0,0,.09);
+  box-shadow:0 18px 60px rgba(0,0,0,.14);
+  padding:22px 24px 20px;
+  text-align:left;
+  backdrop-filter:blur(8px);
+}
+.gc-newsletter-card h3{
+  margin:0 32px 7px 0;
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:.01em;
+}
+.gc-newsletter-card p{
+  margin:0 0 14px;
+  font-size:13px;
+  line-height:1.55;
+  opacity:.72;
+}
+.gc-newsletter-close{
+  position:absolute;
+  top:10px;
+  right:12px;
+  border:0;
+  background:transparent;
+  font-size:22px;
+  line-height:1;
+  cursor:pointer;
+  opacity:.55;
+  padding:4px;
+}
+.gc-newsletter-close:hover{opacity:1;}
+.gc-newsletter-card .ml-embedded{
+  margin-top:8px;
+}
+@media (max-width:600px){
+  .gc-newsletter-popup{
+    padding:14px;
+    align-items:flex-end;
+  }
+  .gc-newsletter-card{
+    width:100%;
+    padding:20px 18px 18px;
+  }
+}
+</style>
+
 </head>
 
 <body id="top">
@@ -614,6 +678,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a href="#top" class="back-to-top">↑</a>
 
+
+
+<div class="gc-newsletter-popup" id="gcNewsletterPopup" aria-hidden="true">
+  <div class="gc-newsletter-card" role="dialog" aria-modal="true" aria-label="Gallery newsletter">
+    <button class="gc-newsletter-close" id="gcNewsletterClose" aria-label="Close">×</button>
+    <h3>Stay close to the gallery</h3>
+    <p>Occasional exhibition invitations, new work and collector notes.</p>
+    <div class="ml-embedded" data-form="erMB96"></div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var key='gc_newsletter_seen_v1';
+  var popup=document.getElementById('gcNewsletterPopup');
+  var close=document.getElementById('gcNewsletterClose');
+  if(!popup) return;
+
+  function hidePopup(){
+    popup.classList.remove('is-visible');
+    popup.setAttribute('aria-hidden','true');
+    try{ localStorage.setItem(key,'1'); }catch(e){}
+  }
+
+  try{
+    if(!localStorage.getItem(key)){
+      setTimeout(function(){
+        popup.classList.add('is-visible');
+        popup.setAttribute('aria-hidden','false');
+      }, 2200);
+    }
+  }catch(e){
+    setTimeout(function(){
+      popup.classList.add('is-visible');
+      popup.setAttribute('aria-hidden','false');
+    }, 2200);
+  }
+
+  if(close) close.addEventListener('click', hidePopup);
+  popup.addEventListener('click', function(e){
+    if(e.target===popup) hidePopup();
+  });
+})();
+</script>
 
 </body>
 </html>
