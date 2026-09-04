@@ -130,72 +130,6 @@ nav a{
   color:rgba(255,255,255,.82);
 }
 
-/* NUEVA INVITACIÓN */
-
-.expo-banner{
-  margin-top:30px;
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:0;
-  align-items:stretch;
-  background:#111;
-  color:white;
-  text-decoration:none;
-  overflow:hidden;
-  border:1px solid #222;
-}
-
-.expo-banner img{
-  width:100%;
-  height:420px;
-  object-fit:contain;
-  object-position:center;
-  display:block;
-  background:#111;
-}
-
-.expo-banner-content{
-  padding:55px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.expo-banner-content p{
-  letter-spacing:.18em;
-  font-size:12px;
-  text-transform:uppercase;
-  color:#d8b25a;
-  margin:0 0 18px;
-}
-
-.expo-banner-content h2{
-  font-family:Georgia,serif;
-  font-size:46px;
-  line-height:1;
-  font-weight:400;
-  margin:0 0 22px;
-}
-
-.expo-banner-content div{
-  color:rgba(255,255,255,.78);
-  font-size:19px;
-  line-height:1.5;
-  max-width:480px;
-}
-
-.expo-banner-content span{
-  display:inline-block;
-  width:max-content;
-  margin-top:28px;
-  border:1px solid white;
-  padding:14px 24px;
-  letter-spacing:.12em;
-  font-size:13px;
-  text-transform:uppercase;
-}
-
-/* FIN NUEVA INVITACIÓN */
 
 .section{
   padding:60px 0;
@@ -325,118 +259,70 @@ footer a{
   color:#fff;
 }
 
-/* NEWSLETTER */
-
-.newsletter-modal{
-  position:fixed;
-  inset:0;
-  z-index:3000;
-  display:none;
+/* NEWSLETTER DISCRETO */
+.newsletter-inline{
+  margin-top:50px;
+  padding:24px 0 6px;
+  border-top:1px solid #ddd;
+  display:flex;
   align-items:center;
-  justify-content:center;
-  padding:24px;
-  background:rgba(17,17,17,.58);
-  backdrop-filter:blur(4px);
+  justify-content:space-between;
+  gap:24px;
 }
 
-.newsletter-modal.is-visible{
-  display:flex;
+.newsletter-inline-copy{
+  max-width:520px;
 }
 
-.newsletter-box{
-  position:relative;
-  width:min(860px,100%);
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  background:#f7f4ef;
-  box-shadow:0 24px 70px rgba(0,0,0,.3);
+.newsletter-inline-copy p{
+  margin:0;
+  color:#666;
+  font-size:14px;
+  line-height:1.5;
 }
 
-.newsletter-image{
-  min-height:500px;
-  background:url('amarillo.jpg') center/cover no-repeat;
-}
-
-.newsletter-content{
-  padding:64px 58px 54px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.newsletter-kicker{
-  margin:0 0 18px;
-  color:#8a6b27;
-  font-size:12px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-
-.newsletter-content h2{
-  margin:0 0 18px;
+.newsletter-inline-copy strong{
+  display:block;
+  margin-bottom:5px;
+  color:#111;
   font-family:Georgia,serif;
-  font-size:46px;
-  line-height:1.02;
+  font-size:18px;
   font-weight:400;
 }
 
-.newsletter-content>p:not(.newsletter-kicker){
-  margin:0 0 28px;
-  color:#555;
-  font-size:17px;
-  line-height:1.55;
-}
-
-.newsletter-form{
+.newsletter-inline-form{
   display:flex;
-  gap:10px;
+  align-items:center;
+  gap:8px;
+  min-width:360px;
 }
 
-.newsletter-form input[type="email"]{
-  min-width:0;
+.newsletter-inline-form input[type="email"]{
   flex:1;
-  padding:15px 16px;
-  border:1px solid #aaa;
-  border-radius:0;
-  background:white;
+  min-width:0;
+  padding:10px 0;
+  border:0;
+  border-bottom:1px solid #999;
+  background:transparent;
   color:#111;
   font:inherit;
-  font-size:15px;
+  font-size:14px;
+  outline:none;
 }
 
-.newsletter-form button{
-  padding:15px 22px;
-  border:1px solid #111;
-  border-radius:0;
-  background:#111;
-  color:white;
-  cursor:pointer;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+.newsletter-inline-form input[type="email"]:focus{
+  border-bottom-color:#111;
 }
 
-.newsletter-privacy{
-  margin-top:14px;
-  color:#777;
-  font-size:12px;
-  line-height:1.4;
-}
-
-.newsletter-close{
-  position:absolute;
-  top:16px;
-  right:18px;
-  z-index:2;
-  width:38px;
-  height:38px;
-  padding:0;
+.newsletter-inline-form button{
+  padding:10px 2px;
   border:0;
   background:transparent;
   color:#111;
   cursor:pointer;
-  font-size:28px;
-  line-height:1;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 
 @media(max-width:800px){
@@ -471,22 +357,6 @@ footer a{
     font-size:48px;
   }
 
-  .expo-banner{
-    grid-template-columns:1fr;
-  }
-
-  .expo-banner img{
-    height:auto;
-  }
-
-  .expo-banner-content{
-    padding:32px;
-  }
-
-  .expo-banner-content h2{
-    font-size:36px;
-  }
-
   .grid,
   .visit,
   .workshops-grid{
@@ -496,28 +366,16 @@ footer a{
   .workshops-grid img{
     height:320px;
   }
-
-  .newsletter-box{
-    grid-template-columns:1fr;
-    max-height:90vh;
-    overflow:auto;
-  }
-
-  .newsletter-image{
-    min-height:210px;
-  }
-
-  .newsletter-content{
-    padding:38px 28px 32px;
-  }
-
-  .newsletter-content h2{
-    font-size:36px;
-  }
-
-  .newsletter-form{
+  .newsletter-inline{
     flex-direction:column;
+    align-items:flex-start;
   }
+
+  .newsletter-inline-form{
+    width:100%;
+    min-width:0;
+  }
+
 }
 </style>
 </head>
@@ -527,36 +385,6 @@ footer a{
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFQLK7BP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<div class="newsletter-modal" id="newsletterModal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle" aria-hidden="true">
-  <div class="newsletter-box">
-    <button class="newsletter-close" id="newsletterClose" type="button" aria-label="Close newsletter invitation">×</button>
-
-    <div class="newsletter-image" role="img" aria-label="Artwork at Galería Coahuilteca"></div>
-
-    <div class="newsletter-content">
-      <p class="newsletter-kicker">Galería Coahuilteca · Newsletter</p>
-      <h2 id="newsletterTitle">Stay close to the art</h2>
-      <p>
-        Receive exhibition invitations and news from the gallery.
-      </p>
-
-      <form class="newsletter-form" id="newsletterForm" action="https://formsubmit.co/hello@galeriacoahuilteca.com" method="POST">
-        <label for="newsletterEmail" style="position:absolute; left:-9999px;">Email address</label>
-        <input id="newsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
-        <input type="hidden" name="_subject" value="New Galería Coahuilteca newsletter subscription">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://galeriacoahuilteca.com/?subscribed=1">
-        <button type="submit">Subscribe</button>
-      </form>
-
-      <div class="newsletter-privacy">
-        Occasional emails. Unsubscribe at any time.
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="container">
 
@@ -597,23 +425,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<a class="expo-banner" href="catalogoTerritorio.html">
-
-  <img src="invitacion.jpg" alt="Territorio de Batalla exhibition invitation">
-
-  <div class="expo-banner-content">
-    <p>Upcoming exhibition · July 31, 2026</p>
-
-    <h2>Territorio de Batalla</h2>
-
-    <div>
-      Catálogo digital de la exposición individual de Indhira. Consulta la invitación y accede al catálogo completo.
-    </div>
-
-    <span>View catalog →</span>
-  </div>
-
-</a>
 
 <section class="section" id="artists">
   <h2>Artists & work</h2>
@@ -785,6 +596,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+
+<section class="newsletter-inline" aria-label="Newsletter">
+  <div class="newsletter-inline-copy">
+    <strong>Stay close to the gallery</strong>
+    <p>Occasional exhibition invitations, new work and collector notes.</p>
+  </div>
+
+  <form class="newsletter-inline-form" action="https://formsubmit.co/hello@galeriacoahuilteca.com" method="POST">
+    <label for="newsletterEmail" style="position:absolute; left:-9999px;">Email address</label>
+    <input id="newsletterEmail" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+    <input type="hidden" name="_subject" value="New Galería Coahuilteca newsletter subscription">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://galeriacoahuilteca.com/?subscribed=1">
+    <button type="submit">Subscribe →</button>
+  </form>
+</section>
+
 <footer>
 
   <p>
@@ -805,70 +634,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a href="#top" class="back-to-top">↑</a>
 
-<script>
-(function(){
-  const modal = document.getElementById('newsletterModal');
-  const closeButton = document.getElementById('newsletterClose');
-  const form = document.getElementById('newsletterForm');
-  const storageKey = 'coahuiltecaNewsletterSeen';
-  const params = new URLSearchParams(window.location.search);
-
-  function hasSeenNewsletter(){
-    try{
-      return localStorage.getItem(storageKey) === 'yes';
-    }catch(error){
-      return false;
-    }
-  }
-
-  function rememberNewsletter(){
-    try{
-      localStorage.setItem(storageKey,'yes');
-    }catch(error){}
-  }
-
-  function openNewsletter(){
-    modal.classList.add('is-visible');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    document.getElementById('newsletterEmail').focus();
-  }
-
-  function closeNewsletter(){
-    modal.classList.remove('is-visible');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-    rememberNewsletter();
-  }
-
-  if(params.get('subscribed') === '1'){
-    rememberNewsletter();
-    params.delete('subscribed');
-    const cleanQuery = params.toString();
-    history.replaceState({},'',window.location.pathname + (cleanQuery ? '?' + cleanQuery : '') + window.location.hash);
-  }
-
-  if(!hasSeenNewsletter()){
-    window.setTimeout(openNewsletter,1800);
-  }
-
-  closeButton.addEventListener('click',closeNewsletter);
-
-  modal.addEventListener('click',function(event){
-    if(event.target === modal){
-      closeNewsletter();
-    }
-  });
-
-  document.addEventListener('keydown',function(event){
-    if(event.key === 'Escape' && modal.classList.contains('is-visible')){
-      closeNewsletter();
-    }
-  });
-
-  form.addEventListener('submit',rememberNewsletter);
-})();
-</script>
 
 </body>
 </html>
