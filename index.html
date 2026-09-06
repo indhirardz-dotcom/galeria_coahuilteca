@@ -649,8 +649,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="newsletter-inline" aria-label="Newsletter">
   <div class="newsletter-inline-copy">
-    <strong>Stay close to the gallery</strong>
-    <p>Occasional exhibition invitations, new work and collector notes.</p>
+    <strong>Subscribe to our newsletter</strong>
+    <p>Receive a complimentary printable artwork, plus occasional exhibition invitations and collector notes.</p>
   </div>
 
   <div class="newsletter-mailerlite">
@@ -681,10 +681,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="gc-newsletter-popup" id="gcNewsletterPopup" aria-hidden="true">
-  <div class="gc-newsletter-card" role="dialog" aria-modal="true" aria-label="Gallery newsletter">
+  <div class="gc-newsletter-card" role="dialog" aria-modal="true" aria-labelledby="gcNewsletterTitle">
     <button class="gc-newsletter-close" id="gcNewsletterClose" aria-label="Close">×</button>
-    <h3>Stay close to the gallery</h3>
-    <p>Occasional exhibition invitations, new work and collector notes.</p>
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#772b25;margin-bottom:7px;">A gift from the gallery</div>
+    <h3 id="gcNewsletterTitle">Subscribe to our newsletter</h3>
+    <p>Receive a complimentary printable artwork, plus occasional exhibition invitations and collector notes.<br><span lang="es">Suscríbete a nuestro boletín y recibe de regalo una obra imprimible.</span></p>
     <div class="ml-embedded" data-form="erMB96"></div>
   </div>
 </div>
@@ -692,7 +693,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function(){
-  var key='gc_newsletter_seen_v1';
+  var key='gc_printable_subscription_seen_v2';
   var popup=document.getElementById('gcNewsletterPopup');
   var close=document.getElementById('gcNewsletterClose');
   if(!popup) return;
@@ -703,18 +704,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     try{ localStorage.setItem(key,'1'); }catch(e){}
   }
 
-  try{
-    if(!localStorage.getItem(key)){
-      setTimeout(function(){
-        popup.classList.add('is-visible');
-        popup.setAttribute('aria-hidden','false');
-      }, 2200);
-    }
-  }catch(e){
-    setTimeout(function(){
-      popup.classList.add('is-visible');
-      popup.setAttribute('aria-hidden','false');
-    }, 2200);
+  var shown=false;
+  var eligible=true;
+  try{ eligible=!localStorage.getItem(key); }catch(e){}
+
+  function showPopup(){
+    if(!eligible || shown) return;
+    shown=true;
+    popup.classList.add('is-visible');
+    popup.setAttribute('aria-hidden','false');
+  }
+
+  if(eligible){
+    setTimeout(showPopup,15000);
+    window.addEventListener('scroll',function onScroll(){
+      var pageHeight=document.documentElement.scrollHeight-window.innerHeight;
+      if(pageHeight>0 && window.scrollY/pageHeight>=0.20){
+        showPopup();
+        window.removeEventListener('scroll',onScroll);
+      }
+    },{passive:true});
   }
 
   if(close) close.addEventListener('click', hidePopup);
