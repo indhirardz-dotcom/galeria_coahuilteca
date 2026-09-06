@@ -620,11 +620,30 @@
       padding-top: 30px;
       border-top: 1px solid #353535;
       justify-content: space-between;
+      align-items: center;
       gap: 30px;
       color: #898989;
       font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .volver-arriba {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      border: 1px solid #535353;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanco);
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .volver-arriba:hover {
+      border-color: var(--blanco);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     /* RESPONSIVO */
@@ -909,11 +928,11 @@
             comodidad, desobediencia y resistencia.
           </p>
 
-          <a   class="boton boton-claro"
+          <a class="boton boton-claro"
     href="https://galeriacoahuilteca.com/catalogoTerritorio.html"
     target="_blank"
     rel="noopener"
-    data-i18n="downloadDossier">
+    data-i18n="requestDossier">
     Descargar dossier
           </a>
 
@@ -1246,6 +1265,15 @@
         <p data-i18n="footerLocation">
           San Miguel de Allende · México
         </p>
+
+        <a
+          class="volver-arriba"
+          href="#inicio"
+          aria-label="Volver al inicio de la página"
+          title="Volver arriba"
+        >
+          ↑
+        </a>
       </div>
 
     </div>
