@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shop | Galería Coahuilteca</title>
-<meta name="description" content="Explore original art, ceramics and portrait commissions from Galería Coahuilteca in San Miguel de Allende.">
+
+<meta name="description"
+content="Explore original art, ceramics and portrait commissions from Galería Coahuilteca in San Miguel de Allende.">
+
 <style>
+
 :root{
   --bg:#f6f2ec;
   --paper:#fffdf9;
@@ -13,15 +18,29 @@
   --muted:#6b6862;
   --line:#d9d3ca;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
   font-family:Helvetica,Arial,sans-serif;
 }
-a{color:inherit}
-.wrap{max-width:1320px;margin:auto;padding:28px 34px 70px}
+
+a{
+  color:inherit;
+}
+
+.wrap{
+  max-width:1320px;
+  margin:auto;
+  padding:28px 34px 70px;
+}
+
+/* HEADER */
 
 header{
   display:flex;
@@ -30,7 +49,11 @@ header{
   padding:4px 0 20px;
   border-bottom:1px solid var(--line);
 }
-header img{height:42px}
+
+header img{
+  height:42px;
+}
+
 nav a{
   margin-left:24px;
   text-decoration:none;
@@ -40,6 +63,8 @@ nav a{
   color:#56524d;
 }
 
+/* HERO */
+
 .hero{
   padding:90px 0 70px;
   display:grid;
@@ -47,6 +72,7 @@ nav a{
   gap:60px;
   align-items:end;
 }
+
 .kicker{
   font-size:11px;
   letter-spacing:.24em;
@@ -54,11 +80,13 @@ nav a{
   color:#77716a;
   margin-bottom:18px;
 }
+
 h1{
   font:400 clamp(52px,7vw,94px)/.92 Georgia,serif;
   margin:0;
   letter-spacing:-.035em;
 }
+
 .hero p{
   font-size:18px;
   line-height:1.65;
@@ -66,6 +94,7 @@ h1{
   margin:0;
   max-width:500px;
 }
+
 .meta{
   margin-top:26px;
   font-size:11px;
@@ -74,10 +103,13 @@ h1{
   color:#77716a;
 }
 
+/* SECTIONS */
+
 .section{
   border-top:1px solid var(--line);
   padding:58px 0;
 }
+
 .section-head{
   display:flex;
   justify-content:space-between;
@@ -85,10 +117,12 @@ h1{
   margin-bottom:28px;
   gap:25px;
 }
+
 .section-head h2{
   font:400 42px Georgia,serif;
   margin:0;
 }
+
 .section-head p{
   margin:0;
   color:var(--muted);
@@ -97,121 +131,264 @@ h1{
   font-size:14px;
 }
 
+/* ARTIST CARDS */
+
 .collections{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
+
 .collection{
+  position:relative;
+
   background:var(--paper);
+
   border:1px solid var(--line);
   border-radius:18px;
+
   padding:28px;
+
   text-decoration:none;
+
   min-height:255px;
+
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  transition:.25s ease;
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
 }
+
+/* ARTWORK WATERMARK */
+
+.collection::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background-image:var(--art);
+  background-size:cover;
+  background-position:center;
+
+  opacity:.11;
+
+  filter:
+    grayscale(18%)
+    contrast(.95);
+
+  transform:scale(1.01);
+
+  transition:
+    opacity .4s ease,
+    transform .6s ease;
+}
+
+/* SOFT CREAM VEIL */
+
+.collection::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,249,.87) 0%,
+      rgba(255,253,249,.72) 52%,
+      rgba(255,253,249,.48) 100%
+    );
+
+  z-index:1;
+}
+
+/* TEXT ABOVE IMAGE */
+
+.collection > *{
+  position:relative;
+  z-index:2;
+}
+
 .collection:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 35px rgba(0,0,0,.06);
+  transform:translateY(-3px);
+  box-shadow:0 14px 38px rgba(0,0,0,.07);
 }
+
+.collection:hover::before{
+  opacity:.20;
+  transform:scale(1.035);
+}
+
 .collection .num{
   font-size:11px;
   letter-spacing:.16em;
-  color:#8a847d;
+  color:#77716a;
 }
+
 .collection h3{
   font:400 32px Georgia,serif;
   margin:36px 0 8px;
 }
+
 .collection p{
   font-size:14px;
   line-height:1.6;
-  color:var(--muted);
+  color:#5f5b55;
   margin:0;
 }
+
 .collection .link{
   margin-top:28px;
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
 }
+
 .collection .coming{
   display:inline-block;
   margin-top:14px;
+
   font-size:10px;
   letter-spacing:.16em;
   text-transform:uppercase;
+
   color:#77716a;
 }
 
+/* PRIVATE EDIT */
+
 .footer-cta{
   margin-top:64px;
+
   border:1px solid var(--line);
   background:var(--paper);
+
   border-radius:22px;
+
   padding:34px;
+
   display:flex;
   justify-content:space-between;
   gap:30px;
   align-items:center;
 }
+
 .footer-cta h2{
   font:400 34px Georgia,serif;
   margin:0 0 8px;
 }
+
 .footer-cta p{
   margin:0;
   color:var(--muted);
   font-size:14px;
   line-height:1.6;
 }
+
 .btn{
   display:inline-block;
+
   background:#171717;
   color:#fff;
+
   text-decoration:none;
+
   border-radius:999px;
+
   padding:15px 24px;
+
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
+
   white-space:nowrap;
 }
+
+/* FOOTER */
+
 footer{
   padding-top:34px;
   margin-top:52px;
+
   border-top:1px solid var(--line);
+
   font-size:11px;
   color:#777;
+
   display:flex;
   justify-content:space-between;
   gap:20px;
 }
 
+/* MOBILE */
+
 @media(max-width:850px){
-  .wrap{padding:20px 20px 65px}
-  header{display:block}
-  nav{margin-top:18px}
-  nav a{display:inline-block;margin:0 14px 10px 0}
-  .hero{grid-template-columns:1fr;padding:65px 0 48px;gap:28px}
-  .collections{grid-template-columns:1fr}
-  .section-head,.footer-cta{display:block}
-  .section-head p{margin-top:12px}
-  .footer-cta .btn{margin-top:20px}
+
+  .wrap{
+    padding:20px 20px 65px;
+  }
+
+  header{
+    display:block;
+  }
+
+  nav{
+    margin-top:18px;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:0 14px 10px 0;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:65px 0 48px;
+    gap:28px;
+  }
+
+  .collections{
+    grid-template-columns:1fr;
+  }
+
+  .section-head,
+  .footer-cta{
+    display:block;
+  }
+
+  .section-head p{
+    margin-top:12px;
+  }
+
+  .footer-cta .btn{
+    margin-top:20px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 <div class="wrap">
 
+
+<!-- HEADER -->
+
 <header>
+
   <a href="index.html">
-    <img src="logo.png" alt="Galería Coahuilteca">
+    <img
+      src="logo.png"
+      alt="Galería Coahuilteca">
   </a>
 
   <nav>
@@ -220,97 +397,222 @@ footer{
     <a href="experiences.html">Experiences</a>
     <a href="visit.html">Visit</a>
   </nav>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-  <div>
-    <div class="kicker">Galería Coahuilteca · San Miguel de Allende</div>
-    <h1>Collect<br>something original.</h1>
-  </div>
 
   <div>
+
+    <div class="kicker">
+      Galería Coahuilteca · San Miguel de Allende
+    </div>
+
+    <h1>
+      Collect<br>
+      something original.
+    </h1>
+
+  </div>
+
+
+  <div>
+
     <p>
-      Discover original painting, drawing, ceramics and commissioned portraiture
-      from the artists of Galería Coahuilteca.
+      Discover original painting, drawing, ceramics
+      and commissioned portraiture from the artists
+      of Galería Coahuilteca.
     </p>
+
     <div class="meta">
       Original work · Private assistance · Worldwide shipping
     </div>
+
   </div>
+
 </section>
+
+
+<!-- ARTISTS -->
 
 <section class="section">
 
   <div class="section-head">
-    <h2>Artists & collections</h2>
+
+    <h2>
+      Artists & collections
+    </h2>
+
     <p>
-      Enter each artist’s catalogue or commission page to explore the work in greater depth.
+      Enter each artist’s catalogue or commission page
+      to explore the work in greater depth.
     </p>
+
   </div>
+
 
   <div class="collections">
 
-    <a class="collection" href="fermigrante.html">
-      <div class="num">01 · PAINTING</div>
-      <div>
-        <h3>Fermigrante</h3>
-        <p>
-          Migration, movement and collective human presence through a graphic,
-          highly recognizable pictorial language.
-        </p>
+
+    <!-- FERMIGRANTE -->
+
+    <a
+      class="collection"
+      href="fermigrante.html"
+      style="--art:url('images/fermigrante-obra-01.webp');"
+    >
+
+      <div class="num">
+        01 · PAINTING
       </div>
-      <div class="link">View catalogue →</div>
+
+      <div>
+
+        <h3>
+          Fermigrante
+        </h3>
+
+        <p>
+          Migration, movement and collective human presence
+          through a graphic, highly recognizable pictorial language.
+        </p>
+
+      </div>
+
+      <div class="link">
+        View catalogue →
+      </div>
+
     </a>
 
-    <a class="collection" href="retratos-indhira.html">
-      <div class="num">02 · PORTRAIT COMMISSIONS</div>
-      <div>
-        <h3>Indhira</h3>
-        <p>
-          Original oil portraits developed through drawing, layered painting
-          and close observation. Private commissions available.
-        </p>
+
+
+    <!-- INDHIRA -->
+
+    <a
+      class="collection"
+      href="retratos-indhira.html"
+      style="--art:url('retrato.jpg');"
+    >
+
+      <div class="num">
+        02 · PORTRAIT COMMISSIONS
       </div>
-      <div class="link">Commission a portrait →</div>
+
+      <div>
+
+        <h3>
+          Indhira
+        </h3>
+
+        <p>
+          Original oil portraits developed through drawing,
+          layered painting and close observation.
+          Private commissions available.
+        </p>
+
+      </div>
+
+      <div class="link">
+        Commission a portrait →
+      </div>
+
     </a>
 
-    <a class="collection" href="edd.html">
-      <div class="num">03 · CERAMICS</div>
-      <div>
-        <h3>Edd</h3>
-        <p>
-          A hand-built ceramic chess set populated by small character pieces,
-          currently in development at the gallery.
-        </p>
-        <span class="coming">Coming soon</span>
+
+
+    <!-- EDD -->
+
+    <a
+      class="collection"
+      href="edd.html"
+      style="--art:url('images/edd-ajedrez-ceramico-personajes-01.jpg');"
+    >
+
+      <div class="num">
+        03 · CERAMICS
       </div>
-      <div class="link">Preview project →</div>
+
+      <div>
+
+        <h3>
+          Edd
+        </h3>
+
+        <p>
+          A hand-built ceramic chess set populated by small
+          character pieces, currently in development at the gallery.
+        </p>
+
+        <span class="coming">
+          Coming soon
+        </span>
+
+      </div>
+
+      <div class="link">
+        Preview project →
+      </div>
+
     </a>
+
 
   </div>
+
 </section>
 
+
+
+<!-- PRIVATE EDIT -->
+
 <div class="footer-cta">
+
   <div>
-    <h2>Prefer a private edit?</h2>
+
+    <h2>
+      Prefer a private edit?
+    </h2>
+
     <p>
-      Send a photo and approximate wall dimensions. The gallery can prepare
-      a personal selection of three works for your space.
+      Send a photo and approximate wall dimensions.
+      The gallery can prepare a personal selection
+      of three works for your space.
     </p>
+
   </div>
 
-  <a class="btn"
-     href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20a%20private%20selection%20of%20works%20from%20Galer%C3%ADa%20Coahuilteca."
-     target="_blank">
-     Request private edit
+
+  <a
+    class="btn"
+    href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20a%20private%20selection%20of%20works%20from%20Galer%C3%ADa%20Coahuilteca."
+    target="_blank"
+  >
+    Request private edit
   </a>
+
 </div>
+
+
+
+<!-- FOOTER -->
 
 <footer>
-  <span>Galería Coahuilteca · San Miguel de Allende · México</span>
-  <span>Worldwide shipping</span>
+
+  <span>
+    Galería Coahuilteca · San Miguel de Allende · México
+  </span>
+
+  <span>
+    Worldwide shipping
+  </span>
+
 </footer>
 
+
 </div>
+
 </body>
 </html>
