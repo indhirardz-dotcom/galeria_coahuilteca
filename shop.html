@@ -15,13 +15,11 @@ content="Explore original art, ceramics and portrait commissions from Galería C
   --bg:#f6f2ec;
   --paper:#fffdf9;
   --ink:#161616;
-  --muted:#6b6862;
+  --muted:#5f5b55;
   --line:#d9d3ca;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -30,9 +28,7 @@ body{
   font-family:Helvetica,Arial,sans-serif;
 }
 
-a{
-  color:inherit;
-}
+a{color:inherit}
 
 .wrap{
   max-width:1320px;
@@ -50,9 +46,7 @@ header{
   border-bottom:1px solid var(--line);
 }
 
-header img{
-  height:42px;
-}
+header img{height:42px}
 
 nav a{
   margin-left:24px;
@@ -103,7 +97,7 @@ h1{
   color:#77716a;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
   border-top:1px solid var(--line);
@@ -141,34 +135,28 @@ h1{
 
 .collection{
   position:relative;
-
-  background:var(--paper);
-
   border:1px solid var(--line);
   border-radius:18px;
-
   padding:28px;
-
   text-decoration:none;
-
-  min-height:255px;
+  min-height:270px;
 
   display:flex;
   flex-direction:column;
   justify-content:space-between;
 
   overflow:hidden;
+  background:#e9e3da;
 
   transition:
-    transform .25s ease,
-    box-shadow .25s ease;
+    transform .3s ease,
+    box-shadow .3s ease;
 }
 
-/* ARTWORK WATERMARK */
+/* ACTUAL ARTWORK */
 
 .collection::before{
   content:"";
-
   position:absolute;
   inset:0;
 
@@ -176,39 +164,38 @@ h1{
   background-size:cover;
   background-position:center;
 
-  opacity:.11;
+  opacity:.32;
 
   filter:
-    grayscale(18%)
+    saturate(.82)
     contrast(.95);
 
-  transform:scale(1.01);
+  transform:scale(1.015);
 
   transition:
     opacity .4s ease,
-    transform .6s ease;
+    transform .7s ease;
 }
 
-/* SOFT CREAM VEIL */
+/* CREAM VEIL FOR READABILITY */
 
 .collection::after{
   content:"";
-
   position:absolute;
   inset:0;
 
   background:
     linear-gradient(
       90deg,
-      rgba(255,253,249,.87) 0%,
-      rgba(255,253,249,.72) 52%,
-      rgba(255,253,249,.48) 100%
+      rgba(255,253,249,.88) 0%,
+      rgba(255,253,249,.78) 43%,
+      rgba(255,253,249,.59) 100%
     );
 
   z-index:1;
 }
 
-/* TEXT ABOVE IMAGE */
+/* TEXT ABOVE ART */
 
 .collection > *{
   position:relative;
@@ -216,31 +203,33 @@ h1{
 }
 
 .collection:hover{
-  transform:translateY(-3px);
-  box-shadow:0 14px 38px rgba(0,0,0,.07);
+  transform:translateY(-4px);
+  box-shadow:0 16px 42px rgba(0,0,0,.09);
 }
 
 .collection:hover::before{
-  opacity:.20;
-  transform:scale(1.035);
+  opacity:.45;
+  transform:scale(1.045);
 }
 
 .collection .num{
   font-size:11px;
   letter-spacing:.16em;
-  color:#77716a;
+  color:#66615b;
 }
 
 .collection h3{
-  font:400 32px Georgia,serif;
+  font:400 34px Georgia,serif;
   margin:36px 0 8px;
+  color:#111;
 }
 
 .collection p{
   font-size:14px;
   line-height:1.6;
-  color:#5f5b55;
+  color:#4f4b46;
   margin:0;
+  max-width:95%;
 }
 
 .collection .link{
@@ -248,29 +237,25 @@ h1{
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
+  color:#111;
 }
 
 .collection .coming{
   display:inline-block;
   margin-top:14px;
-
   font-size:10px;
   letter-spacing:.16em;
   text-transform:uppercase;
-
-  color:#77716a;
+  color:#5e5953;
 }
 
 /* PRIVATE EDIT */
 
 .footer-cta{
   margin-top:64px;
-
   border:1px solid var(--line);
   background:var(--paper);
-
   border-radius:22px;
-
   padding:34px;
 
   display:flex;
@@ -293,20 +278,14 @@ h1{
 
 .btn{
   display:inline-block;
-
   background:#171717;
   color:#fff;
-
   text-decoration:none;
-
   border-radius:999px;
-
   padding:15px 24px;
-
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
-
   white-space:nowrap;
 }
 
@@ -315,9 +294,7 @@ h1{
 footer{
   padding-top:34px;
   margin-top:52px;
-
   border-top:1px solid var(--line);
-
   font-size:11px;
   color:#777;
 
@@ -369,26 +346,21 @@ footer{
   .footer-cta .btn{
     margin-top:20px;
   }
-
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="wrap">
-
 
 <!-- HEADER -->
 
 <header>
 
   <a href="index.html">
-    <img
-      src="logo.png"
-      alt="Galería Coahuilteca">
+    <img src="logo.png" alt="Galería Coahuilteca">
   </a>
 
   <nav>
@@ -417,7 +389,6 @@ footer{
     </h1>
 
   </div>
-
 
   <div>
 
@@ -489,13 +460,12 @@ footer{
     </a>
 
 
-
     <!-- INDHIRA -->
 
     <a
       class="collection"
       href="retratos-indhira.html"
-      style="--art:url('retrato.jpg');"
+      style="--art:url('retrato-indhira.jpg');"
     >
 
       <div class="num">
@@ -521,7 +491,6 @@ footer{
       </div>
 
     </a>
-
 
 
     <!-- EDD -->
@@ -559,11 +528,9 @@ footer{
 
     </a>
 
-
   </div>
 
 </section>
-
 
 
 <!-- PRIVATE EDIT -->
@@ -584,7 +551,6 @@ footer{
 
   </div>
 
-
   <a
     class="btn"
     href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20a%20private%20selection%20of%20works%20from%20Galer%C3%ADa%20Coahuilteca."
@@ -594,7 +560,6 @@ footer{
   </a>
 
 </div>
-
 
 
 <!-- FOOTER -->
@@ -610,7 +575,6 @@ footer{
   </span>
 
 </footer>
-
 
 </div>
 
