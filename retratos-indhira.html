@@ -278,9 +278,111 @@
       .final .btn{margin-top:22px}
       footer{flex-direction:column}
     }
+
+    /* VISUAL DETAILS */
+    .visual-story{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
+      margin-top:34px;
+    }
+    .visual-story figure,
+    .detail-strip figure{
+      margin:0;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#ddd6cc;
+    }
+    .visual-story img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      display:block;
+    }
+    .visual-story .process-photo img{
+      object-position:center 55%;
+    }
+    .detail-strip{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .detail-strip img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      display:block;
+    }
+    .visual-caption{
+      padding:13px 15px 14px;
+      background:var(--paper);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#77716a;
+    }
+
+    .commission-terms{
+      margin-top:22px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:center;
+      gap:36px;
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#625d57;
+    }
+    .commission-terms span + span::before{
+      content:"·";
+      margin-right:36px;
+      color:#aaa39a;
+    }
+
+    .back-to-top{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:42px;
+      height:42px;
+      border:1px solid #111;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#111;
+      font-size:18px;
+      background:#f7f4ef;
+      transition:.3s;
+      z-index:1000;
+    }
+    .back-to-top:hover{
+      background:#111;
+      color:#fff;
+    }
+
+    @media(max-width:900px){
+      .visual-story{grid-template-columns:1fr}
+      .visual-story img{height:460px}
+      .detail-strip{grid-template-columns:1fr}
+      .detail-strip img{height:390px}
+    }
+    @media(max-width:650px){
+      .visual-story img,
+      .detail-strip img{height:360px}
+      .commission-terms{display:block;line-height:2}
+      .commission-terms span{display:block}
+      .commission-terms span + span::before{content:"";margin:0}
+    }
+
   </style>
 </head>
-<body>
+<body id="top">
 
 <div class="wrap">
 
@@ -363,6 +465,18 @@
         <p>Color, depth and skin are built gradually through a slow layered process until the portrait reaches its final presence.</p>
       </div>
     </div>
+
+    <div class="visual-story">
+      <figure>
+        <img src="lunaen parque.jpg" alt="Finished oil portrait by Indhira">
+        <figcaption class="visual-caption">Finished portrait · Oil painting</figcaption>
+      </figure>
+
+      <figure class="process-photo">
+        <img src="primeraCapa.jpeg" alt="Portrait in progress in Indhira's studio">
+        <figcaption class="visual-caption">In the studio · First painted layers</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="quote">
@@ -373,8 +487,8 @@
     <div class="section-head">
       <h2>Commission sizes.</h2>
       <p class="section-intro">
-        Each portrait is quoted individually according to size, number of figures and complexity.
-        The gallery confirms timing, shipping and final price before the commission begins.
+        Choose one of the standard formats below, or contact the gallery to discuss
+        a different size, composition or number of figures.
       </p>
     </div>
 
@@ -382,23 +496,44 @@
       <div class="size">
         <h3>Intimate portrait</h3>
         <p>Ideal for one figure.</p>
-        <p>Approximately 40 × 50 cm.</p>
-        <p class="price">From 30,000 MXN</p>
+        <p><strong>40 × 50 cm</strong></p>
+        <p>15.7 × 19.7 in</p>
+        <p>Approx. 3 months</p>
+        <p class="price">30,000 MXN</p>
       </div>
 
       <div class="size">
         <h3>Collector portrait</h3>
-        <p>Greater scale and presence.</p>
-        <p>Custom dimensions available.</p>
-        <p class="price">Quoted individually</p>
+        <p>A larger portrait with greater scale and presence.</p>
+        <p><strong>90 × 120 cm</strong></p>
+        <p>35.4 × 47.2 in</p>
+        <p>Approx. 6 months</p>
+        <p class="price">80,000 MXN</p>
       </div>
 
       <div class="size">
-        <h3>Large format</h3>
-        <p>For major residential or architectural spaces.</p>
-        <p>Single or multiple figures.</p>
-        <p class="price">From 50,000 MXN</p>
+        <h3>Bespoke portrait</h3>
+        <p>Other dimensions, compositions or multiple figures.</p>
+        <p>Format, timeline and price are determined personally with the artist before work begins.</p>
+        <p class="price">Price on request</p>
       </div>
+    </div>
+
+    <div class="commission-terms">
+      <span>50% deposit to begin</span>
+      <span>50% before delivery</span>
+    </div>
+
+    <div class="detail-strip">
+      <figure>
+        <img src="Captura de pantalla 2026-06-25 a la(s) 8.02.46.png" alt="Detail of an oil painting by Indhira">
+        <figcaption class="visual-caption">Painted detail · Layer, color and gesture</figcaption>
+      </figure>
+
+      <figure>
+        <img src="IMG_9709.png" alt="Indhira painting in her studio">
+        <figcaption class="visual-caption">The artist at work · San Miguel de Allende</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -458,6 +593,8 @@
   </footer>
 
 </div>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
 </body>
 </html>
