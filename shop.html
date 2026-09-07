@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Shop | Galería Coahuilteca</title>
 
-<meta name="description"
-content="Explore original art, ceramics and portrait commissions from Galería Coahuilteca in San Miguel de Allende.">
+<meta
+  name="description"
+  content="Explore original art, ceramics and portrait commissions from Galería Coahuilteca in San Miguel de Allende."
+>
 
 <style>
 
@@ -178,25 +182,18 @@ h1{
   inset:0;
 
   background-image:var(--art);
-
   background-size:cover;
-
-  /* cada artista puede tener su propia posición */
   background-position:var(--position, center center);
-
   background-repeat:no-repeat;
 
-  /*
-    45%:
-    ahora la obra sí debe percibirse claramente
-  */
+  /* artwork visibility */
   opacity:.45;
 
   filter:
-    saturate(.88)
-    contrast(1.02);
+    saturate(.92)
+    contrast(1.03);
 
-  transform:scale(1.015);
+  transform:scale(1.01);
 
   transition:
     opacity .4s ease,
@@ -204,7 +201,7 @@ h1{
 }
 
 
-/* LIGHT CREAM VEIL */
+/* CREAM OVERLAY */
 
 .collection::after{
   content:"";
@@ -212,17 +209,12 @@ h1{
   position:absolute;
   inset:0;
 
-  /*
-    Mucho más transparente que antes.
-    Conserva legibilidad sin borrar la obra.
-  */
-
   background:
     linear-gradient(
       90deg,
-      rgba(255,253,249,.76) 0%,
-      rgba(255,253,249,.63) 48%,
-      rgba(255,253,249,.39) 100%
+      rgba(255,253,249,.64) 0%,
+      rgba(255,253,249,.50) 48%,
+      rgba(255,253,249,.27) 100%
     );
 
   z-index:1;
@@ -245,7 +237,7 @@ h1{
 
 .collection:hover::before{
   opacity:.58;
-  transform:scale(1.045);
+  transform:scale(1.035);
 }
 
 
@@ -406,6 +398,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 
@@ -419,19 +412,37 @@ footer{
 <header>
 
   <a href="index.html">
+
     <img
       src="logo.png"
-      alt="Galería Coahuilteca">
+      alt="Galería Coahuilteca"
+    >
+
   </a>
 
+
   <nav>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="experiences.html">Experiences</a>
-    <a href="visit.html">Visit</a>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="shop.html">
+      Shop
+    </a>
+
+    <a href="experiences.html">
+      Experiences
+    </a>
+
+    <a href="visit.html">
+      Visit
+    </a>
+
   </nav>
 
 </header>
+
 
 
 <!-- HERO -->
@@ -469,6 +480,7 @@ footer{
 </section>
 
 
+
 <!-- ARTISTS -->
 
 <section class="section">
@@ -487,17 +499,19 @@ footer{
   </div>
 
 
+
   <div class="collections">
 
 
-    <!-- FERMIGRANTE -->
+    <!-- ========================= -->
+    <!-- FERMIGRANTE                -->
+    <!-- ========================= -->
 
     <a
       class="collection"
       href="fermigrante.html"
-
       style="
-        --art:url('images/fermigrante-obra-01.webp');
+        --art:url('fermigrante-yellow.jpg');
         --position:center center;
       "
     >
@@ -505,6 +519,7 @@ footer{
       <div class="num">
         01 · PAINTING
       </div>
+
 
       <div>
 
@@ -519,6 +534,7 @@ footer{
 
       </div>
 
+
       <div class="link">
         View catalogue →
       </div>
@@ -527,27 +543,23 @@ footer{
 
 
 
-    <!-- INDHIRA -->
+    <!-- ========================= -->
+    <!-- INDHIRA · LUNA PORTRAIT    -->
+    <!-- ========================= -->
 
     <a
       class="collection"
       href="retratos-indhira.html"
-
       style="
-        --art:url('retrato-indhira.jpg');
-
-        /*
-        desplazamos la foto para que
-        la cara tenga protagonismo
-        */
-
-        --position:center 28%;
+        --art:url('luna-retratos .jpg');
+        --position:center 30%;
       "
     >
 
       <div class="num">
         02 · PORTRAIT COMMISSIONS
       </div>
+
 
       <div>
 
@@ -563,6 +575,7 @@ footer{
 
       </div>
 
+
       <div class="link">
         Commission a portrait →
       </div>
@@ -571,14 +584,15 @@ footer{
 
 
 
-    <!-- EDD -->
+    <!-- ========================= -->
+    <!-- EDD                        -->
+    <!-- ========================= -->
 
     <a
       class="collection"
       href="edd.html"
-
       style="
-        --art:url('images/edd-ajedrez-ceramico-gatos-01.jpg');
+        --art:url('images/edd-ajedrez-ceramico-personajes-03.jpg');
         --position:center center;
       "
     >
@@ -586,6 +600,7 @@ footer{
       <div class="num">
         03 · CERAMICS
       </div>
+
 
       <div>
 
@@ -603,6 +618,7 @@ footer{
         </span>
 
       </div>
+
 
       <div class="link">
         Preview project →
@@ -643,7 +659,9 @@ footer{
 
     target="_blank"
   >
+
     Request private edit
+
   </a>
 
 </div>
@@ -668,4 +686,5 @@ footer{
 </div>
 
 </body>
+
 </html>
