@@ -48,9 +48,32 @@ header{display:block} nav{margin-top:18px} nav a{display:inline-block;margin:0 1
 .footer-cta .btn{margin-top:20px}
 footer{display:block}
 }
+
+.back-to-top{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border:1px solid #111;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#111;
+  font-size:18px;
+  background:#f7f4ef;
+  transition:.3s;
+  z-index:1000;
+}
+.back-to-top:hover{
+  background:#111;
+  color:#fff;
+}
 </style>
 </head>
-<body>
+<body id="top">
 <div class="wrap">
 <header>
   <a href="index.html"><img src="logo.png" alt="Galería Coahuilteca"></a>
@@ -74,7 +97,7 @@ footer{display:block}
 </section>
 
 <div class="toolbar">
-  <span>55 works in catalogue</span>
+  <span>54 works in catalogue</span>
   <a href="shop.html">← Back to shop</a>
 </div>
 
@@ -212,11 +235,6 @@ footer{display:block}
 <figure class="work" data-page="31">
       <button class="work-image" type="button" onclick="openLightbox('images/fermigrante-obra-27.webp')" aria-label="View Fermigrante artwork 27 details">
         <img src="images/fermigrante-obra-27.webp" loading="lazy" alt="Fermigrante available artwork 27, catalogue artwork with dimensions and price">
-      </button>
-    </figure>
-<figure class="work" data-page="32">
-      <button class="work-image" type="button" onclick="openLightbox('images/fermigrante-obra-28.webp')" aria-label="View Fermigrante artwork 28 details">
-        <img src="images/fermigrante-obra-28.webp" loading="lazy" alt="Fermigrante available artwork 28, catalogue artwork with dimensions and price">
       </button>
     </figure>
 <figure class="work" data-page="33">
@@ -369,6 +387,9 @@ footer{display:block}
   <span>Fermigrante · Available works</span>
 </footer>
 </div>
+
+
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <button class="close" onclick="closeLightbox(event)" aria-label="Close">×</button>
