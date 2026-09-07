@@ -19,7 +19,9 @@ content="Explore original art, ceramics and portrait commissions from Galería C
   --line:#d9d3ca;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -28,13 +30,16 @@ body{
   font-family:Helvetica,Arial,sans-serif;
 }
 
-a{color:inherit}
+a{
+  color:inherit;
+}
 
 .wrap{
   max-width:1320px;
   margin:auto;
   padding:28px 34px 70px;
 }
+
 
 /* HEADER */
 
@@ -46,7 +51,9 @@ header{
   border-bottom:1px solid var(--line);
 }
 
-header img{height:42px}
+header img{
+  height:42px;
+}
 
 nav a{
   margin-left:24px;
@@ -56,6 +63,7 @@ nav a{
   text-transform:uppercase;
   color:#56524d;
 }
+
 
 /* HERO */
 
@@ -97,6 +105,7 @@ h1{
   color:#77716a;
 }
 
+
 /* SECTION */
 
 .section{
@@ -125,6 +134,7 @@ h1{
   font-size:14px;
 }
 
+
 /* ARTIST CARDS */
 
 .collections{
@@ -135,10 +145,14 @@ h1{
 
 .collection{
   position:relative;
+
   border:1px solid var(--line);
   border-radius:18px;
+
   padding:28px;
+
   text-decoration:none;
+
   min-height:270px;
 
   display:flex;
@@ -146,29 +160,41 @@ h1{
   justify-content:space-between;
 
   overflow:hidden;
-  background:#e9e3da;
+
+  background:#e8e1d8;
 
   transition:
     transform .3s ease,
     box-shadow .3s ease;
 }
 
-/* ACTUAL ARTWORK */
+
+/* ARTWORK BACKGROUND */
 
 .collection::before{
   content:"";
+
   position:absolute;
   inset:0;
 
   background-image:var(--art);
-  background-size:cover;
-  background-position:center;
 
-  opacity:.32;
+  background-size:cover;
+
+  /* cada artista puede tener su propia posición */
+  background-position:var(--position, center center);
+
+  background-repeat:no-repeat;
+
+  /*
+    45%:
+    ahora la obra sí debe percibirse claramente
+  */
+  opacity:.45;
 
   filter:
-    saturate(.82)
-    contrast(.95);
+    saturate(.88)
+    contrast(1.02);
 
   transform:scale(1.015);
 
@@ -177,25 +203,33 @@ h1{
     transform .7s ease;
 }
 
-/* CREAM VEIL FOR READABILITY */
+
+/* LIGHT CREAM VEIL */
 
 .collection::after{
   content:"";
+
   position:absolute;
   inset:0;
+
+  /*
+    Mucho más transparente que antes.
+    Conserva legibilidad sin borrar la obra.
+  */
 
   background:
     linear-gradient(
       90deg,
-      rgba(255,253,249,.88) 0%,
-      rgba(255,253,249,.78) 43%,
-      rgba(255,253,249,.59) 100%
+      rgba(255,253,249,.76) 0%,
+      rgba(255,253,249,.63) 48%,
+      rgba(255,253,249,.39) 100%
     );
 
   z-index:1;
 }
 
-/* TEXT ABOVE ART */
+
+/* TEXT ABOVE ARTWORK */
 
 .collection > *{
   position:relative;
@@ -204,18 +238,21 @@ h1{
 
 .collection:hover{
   transform:translateY(-4px);
-  box-shadow:0 16px 42px rgba(0,0,0,.09);
+
+  box-shadow:
+    0 16px 42px rgba(0,0,0,.10);
 }
 
 .collection:hover::before{
-  opacity:.45;
+  opacity:.58;
   transform:scale(1.045);
 }
+
 
 .collection .num{
   font-size:11px;
   letter-spacing:.16em;
-  color:#66615b;
+  color:#5e5953;
 }
 
 .collection h3{
@@ -227,35 +264,44 @@ h1{
 .collection p{
   font-size:14px;
   line-height:1.6;
-  color:#4f4b46;
+  color:#403c38;
   margin:0;
   max-width:95%;
 }
 
 .collection .link{
   margin-top:28px;
+
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
+
   color:#111;
 }
 
 .collection .coming{
   display:inline-block;
+
   margin-top:14px;
+
   font-size:10px;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:#5e5953;
+
+  color:#4f4a45;
 }
+
 
 /* PRIVATE EDIT */
 
 .footer-cta{
   margin-top:64px;
+
   border:1px solid var(--line);
   background:var(--paper);
+
   border-radius:22px;
+
   padding:34px;
 
   display:flex;
@@ -278,23 +324,32 @@ h1{
 
 .btn{
   display:inline-block;
+
   background:#171717;
   color:#fff;
+
   text-decoration:none;
+
   border-radius:999px;
+
   padding:15px 24px;
+
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
+
   white-space:nowrap;
 }
+
 
 /* FOOTER */
 
 footer{
   padding-top:34px;
   margin-top:52px;
+
   border-top:1px solid var(--line);
+
   font-size:11px;
   color:#777;
 
@@ -302,6 +357,7 @@ footer{
   justify-content:space-between;
   gap:20px;
 }
+
 
 /* MOBILE */
 
@@ -346,21 +402,26 @@ footer{
   .footer-cta .btn{
     margin-top:20px;
   }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
 <div class="wrap">
+
 
 <!-- HEADER -->
 
 <header>
 
   <a href="index.html">
-    <img src="logo.png" alt="Galería Coahuilteca">
+    <img
+      src="logo.png"
+      alt="Galería Coahuilteca">
   </a>
 
   <nav>
@@ -389,6 +450,7 @@ footer{
     </h1>
 
   </div>
+
 
   <div>
 
@@ -433,7 +495,11 @@ footer{
     <a
       class="collection"
       href="fermigrante.html"
-      style="--art:url('fermigrante-yellow.jpg');"
+
+      style="
+        --art:url('images/fermigrante-obra-01.webp');
+        --position:center center;
+      "
     >
 
       <div class="num">
@@ -460,12 +526,23 @@ footer{
     </a>
 
 
+
     <!-- INDHIRA -->
 
     <a
       class="collection"
       href="retratos-indhira.html"
-      style="--art:url('luna-retratos .jpg');"
+
+      style="
+        --art:url('retrato-indhira.jpg');
+
+        /*
+        desplazamos la foto para que
+        la cara tenga protagonismo
+        */
+
+        --position:center 28%;
+      "
     >
 
       <div class="num">
@@ -493,12 +570,17 @@ footer{
     </a>
 
 
+
     <!-- EDD -->
 
     <a
       class="collection"
       href="edd.html"
-      style="--art:url('edd-ajedrez-ceramico-gatos-01.jpg');"
+
+      style="
+        --art:url('images/edd-ajedrez-ceramico-gatos-01.jpg');
+        --position:center center;
+      "
     >
 
       <div class="num">
@@ -528,9 +610,11 @@ footer{
 
     </a>
 
+
   </div>
 
 </section>
+
 
 
 <!-- PRIVATE EDIT -->
@@ -551,15 +635,19 @@ footer{
 
   </div>
 
+
   <a
     class="btn"
+
     href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20a%20private%20selection%20of%20works%20from%20Galer%C3%ADa%20Coahuilteca."
+
     target="_blank"
   >
     Request private edit
   </a>
 
 </div>
+
 
 
 <!-- FOOTER -->
@@ -575,6 +663,7 @@ footer{
   </span>
 
 </footer>
+
 
 </div>
 
