@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portrait Commissions by Indhira | Galería Coahuilteca</title>
+  <meta name="description" content="Commission an original oil portrait by Mexican artist Indhira. Traditional layered painting, private process and worldwide shipping from Galería Coahuilteca in San Miguel de Allende.">
+  <style>
+    :root{
+      --bg:#f4f0ea;
+      --paper:#fffdf9;
+      --ink:#161616;
+      --muted:#6a655f;
+      --line:#d8d1c8;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Helvetica,Arial,sans-serif;
+    }
+    a{color:inherit}
+    .wrap{max-width:1380px;margin:auto;padding:28px 34px 70px}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:4px 0 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      font:400 23px Georgia,serif;
+      text-decoration:none;
+      letter-spacing:-.02em;
+    }
+    nav{display:flex;gap:24px;align-items:center}
+    nav a{
+      text-decoration:none;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#58534e;
+    }
+
+    .hero{
+      min-height:78vh;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:36px;
+      align-items:center;
+      padding:52px 0 64px;
+    }
+    .kicker{
+      font-size:10px;
+      letter-spacing:.23em;
+      text-transform:uppercase;
+      color:#77716a;
+      margin-bottom:18px;
+    }
+    h1{
+      font:400 clamp(54px,7.4vw,104px)/.9 Georgia,serif;
+      letter-spacing:-.05em;
+      margin:0 0 26px;
+      max-width:760px;
+    }
+    .hero-copy{
+      max-width:620px;
+      font-size:18px;
+      line-height:1.7;
+      color:#514d48;
+      margin:0 0 28px;
+    }
+    .hero-media{
+      min-height:680px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#ded8cf;
+    }
+    .hero-media img{
+      width:100%;
+      height:100%;
+      min-height:680px;
+      object-fit:cover;
+      display:block;
+    }
+    .btn{
+      display:inline-block;
+      background:#171717;
+      color:#fff;
+      text-decoration:none;
+      border-radius:999px;
+      padding:16px 25px;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .subcta{
+      display:inline-block;
+      margin-left:18px;
+      font-size:11px;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      text-decoration:none;
+      border-bottom:1px solid #999;
+      padding-bottom:3px;
+    }
+    .micro{
+      margin-top:16px;
+      font-size:11px;
+      line-height:1.6;
+      letter-spacing:.06em;
+      color:#77716a;
+    }
+
+    .band{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:22px 0;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      text-align:center;
+    }
+    .band div{
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#69635d;
+    }
+
+    .section{
+      padding:78px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .section-head{
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:60px;
+      align-items:start;
+      margin-bottom:42px;
+    }
+    .section h2{
+      font:400 clamp(38px,5vw,62px)/1 Georgia,serif;
+      margin:0;
+      letter-spacing:-.035em;
+    }
+    .section-intro{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width:680px;
+      margin:0;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .step{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:25px;
+      min-height:220px;
+    }
+    .step-num{
+      font-size:10px;
+      letter-spacing:.18em;
+      color:#88817a;
+      margin-bottom:42px;
+    }
+    .step h3{
+      font:400 27px Georgia,serif;
+      margin:0 0 10px;
+    }
+    .step p{
+      margin:0;
+      font-size:13px;
+      line-height:1.65;
+      color:var(--muted);
+    }
+
+    .sizes{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .size{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px;
+    }
+    .size h3{
+      font:400 30px Georgia,serif;
+      margin:0 0 12px;
+    }
+    .size p{
+      margin:0 0 7px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .price{
+      margin-top:22px!important;
+      color:#171717!important;
+      font-size:14px!important;
+    }
+
+    .quote{
+      padding:95px 0;
+      text-align:center;
+    }
+    .quote p{
+      max-width:980px;
+      margin:0 auto;
+      font:400 clamp(38px,5.5vw,70px)/1.08 Georgia,serif;
+      letter-spacing:-.035em;
+    }
+
+    .final{
+      margin-top:30px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:50px;
+      display:flex;
+      justify-content:space-between;
+      gap:35px;
+      align-items:center;
+    }
+    .final h2{
+      font:400 42px Georgia,serif;
+      margin:0 0 10px;
+    }
+    .final p{
+      margin:0;
+      max-width:650px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    footer{
+      padding-top:32px;
+      margin-top:52px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#77716a;
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;min-height:auto}
+      .hero-media,.hero-media img{min-height:520px}
+      .band{grid-template-columns:1fr 1fr}
+      .section-head{grid-template-columns:1fr;gap:24px}
+      .process{grid-template-columns:1fr 1fr}
+      .sizes{grid-template-columns:1fr}
+    }
+    @media(max-width:650px){
+      .wrap{padding:20px 18px 55px}
+      header{display:block}
+      nav{margin-top:18px;flex-wrap:wrap;gap:14px}
+      .hero{padding:48px 0}
+      .hero-media,.hero-media img{min-height:430px}
+      .subcta{display:block;width:max-content;margin:16px 0 0}
+      .band{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr}
+      .final{display:block;padding:30px}
+      .final .btn{margin-top:22px}
+      footer{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <a class="brand" href="index.html">Galería Coahuilteca</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="indhira.html">Artist profile</a>
+      <a href="visit.html">Visit</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="kicker">Portrait commissions · Indhira</div>
+      <h1>A portrait made to outlive the photograph.</h1>
+
+      <p class="hero-copy">
+        Commission an original oil portrait by Mexican artist Indhira.
+        Each work is developed slowly through drawing, layered painting and careful observation,
+        creating an image intended to hold presence, memory and character beyond a single photograph.
+      </p>
+
+      <a class="btn"
+         href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20commission%20a%20portrait%20by%20Indhira.%20Could%20you%20guide%20me%20through%20the%20process%3F"
+         target="_blank">Request your portrait</a>
+
+      <a class="subcta" href="indhira.html">View artist profile →</a>
+
+      <div class="micro">
+        Limited commissions each year · Worldwide shipping · Private guidance from the gallery
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="retrato.jpg" alt="Commissioned oil portrait by Indhira">
+    </div>
+  </section>
+
+  <div class="band">
+    <div>Original oil painting</div>
+    <div>Traditional layered process</div>
+    <div>Certificate of authenticity</div>
+    <div>Worldwide shipping</div>
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>From photograph to painting.</h2>
+      <p class="section-intro">
+        The commission is built as a work of art, not as a photographic copy.
+        Indhira begins by selecting the strongest references, studies the structure of the face,
+        develops the drawing and gradually builds the painting through multiple layers.
+      </p>
+    </div>
+
+    <div class="process">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Conversation</h3>
+        <p>You share who the portrait is for, the feeling you want the work to carry and the space where it may live.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>References</h3>
+        <p>The gallery helps select photographic references with the right light, expression and presence for the painting.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Drawing</h3>
+        <p>The portrait begins with structure, proportion and studies before the final painted layers are developed.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Painting</h3>
+        <p>Color, depth and skin are built gradually through a slow layered process until the portrait reaches its final presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <p>Not simply a likeness. A painting meant to become part of a family’s visual history.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Commission sizes.</h2>
+      <p class="section-intro">
+        Each portrait is quoted individually according to size, number of figures and complexity.
+        The gallery confirms timing, shipping and final price before the commission begins.
+      </p>
+    </div>
+
+    <div class="sizes">
+      <div class="size">
+        <h3>Intimate portrait</h3>
+        <p>Ideal for one figure.</p>
+        <p>Approximately 40 × 50 cm.</p>
+        <p class="price">From 30,000 MXN</p>
+      </div>
+
+      <div class="size">
+        <h3>Collector portrait</h3>
+        <p>Greater scale and presence.</p>
+        <p>Custom dimensions available.</p>
+        <p class="price">Quoted individually</p>
+      </div>
+
+      <div class="size">
+        <h3>Large format</h3>
+        <p>For major residential or architectural spaces.</p>
+        <p>Single or multiple figures.</p>
+        <p class="price">From 50,000 MXN</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What you receive.</h2>
+      <p class="section-intro">
+        Each finished commission is delivered as an original artwork with gallery documentation
+        and personal support for packing and shipping.
+      </p>
+    </div>
+
+    <div class="process">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Original work</h3>
+        <p>An original oil portrait created specifically for the collector.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Documentation</h3>
+        <p>Certificate of authenticity and complete technical information for the work.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Private process</h3>
+        <p>Direct communication with the gallery throughout the commission.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Delivery</h3>
+        <p>Professional packing and worldwide shipping options coordinated by the gallery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div>
+      <h2>Begin with a photograph.</h2>
+      <p>
+        Send the gallery one or two reference images and the approximate size you are considering.
+        We will guide you through the next step personally, with no commitment.
+      </p>
+    </div>
+
+    <a class="btn"
+       href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20commission%20a%20portrait%20by%20Indhira.%20I%20can%20send%20reference%20photos%20and%20the%20approximate%20size%20I%20am%20considering."
+       target="_blank">Start your commission</a>
+  </section>
+
+  <footer>
+    <span>Galería Coahuilteca · San Miguel de Allende · México</span>
+    <span>Portrait commissions by Indhira</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
