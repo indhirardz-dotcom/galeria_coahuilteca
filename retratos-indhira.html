@@ -114,6 +114,30 @@
       color:#77716a;
     }
 
+    .page-toolbar{
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+    }
+    .page-toolbar span{
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#77716a;
+    }
+    .page-toolbar a{
+      font-size:11px;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      text-decoration:none;
+      border-bottom:1px solid #999;
+      padding-bottom:3px;
+    }
+
     .band{
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
@@ -260,6 +284,7 @@
       .hero{grid-template-columns:1fr;min-height:auto}
       .hero-media,.hero-media img{min-height:520px}
       .band{grid-template-columns:1fr 1fr}
+      .page-toolbar{flex-wrap:wrap}
       .section-head{grid-template-columns:1fr;gap:24px}
       .process{grid-template-columns:1fr 1fr}
       .sizes{grid-template-columns:1fr}
@@ -401,12 +426,17 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
-      <a href="portraits.html">Portraits</a>
+      <a href="retratos-indhira.html">Portraits</a>
       <a href="experiences.html">Experiences</a>
       <a href="visit.html">Visit</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
+  <div class="page-toolbar" aria-label="Collection navigation">
+    <a href="shop.html">← Back to shop</a>
+    <span>Portrait commissions · Indhira</span>
+  </div>
 
   <section class="hero">
     <div>
@@ -599,6 +629,11 @@
        href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20commission%20a%20portrait%20by%20Indhira.%20I%20can%20send%20reference%20photos%20and%20the%20approximate%20size%20I%20am%20considering."
        target="_blank">Start your commission</a>
   </section>
+
+  <div class="page-toolbar" style="margin-top:52px;" aria-label="Return to gallery shop">
+    <a href="shop.html">← Back to shop</a>
+    <span>Explore more work from Galería Coahuilteca</span>
+  </div>
 
   <footer>
     <span>Galería Coahuilteca · San Miguel de Allende · México</span>
