@@ -397,12 +397,183 @@
 
   <header>
     <a class="brand" href="index.html">Galería Coahuilteca</a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="indhira.html">Artist profile</a>
-      <a href="visit.html">Visit</a>
-    </nav>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edd | Ceramic Chess | Galería Coahuilteca</title>
+<meta name="description" content="Ceramic Chess by Edd at Galería Coahuilteca, San Miguel de Allende. Hand-built ceramic chess set with individually modeled characters. Coming soon.">
+<style>
+:root{
+  --bg:#f6f2ec;
+  --paper:#fffdf9;
+  --ink:#171717;
+  --muted:#6f6a64;
+  --line:#d9d2c8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Helvetica,Arial,sans-serif}
+a{color:inherit}
+.wrap{max-width:1320px;margin:auto;padding:28px 34px 70px}
+header{display:flex;align-items:center;justify-content:space-between;padding:4px 0 20px;border-bottom:1px solid var(--line)}
+header img{height:42px}
+nav a{margin-left:24px;text-decoration:none;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#56524d}
+.hero{padding:88px 0 62px;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end}
+.kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#7b756e;margin-bottom:17px}
+h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.045em}
+.intro{font-size:18px;line-height:1.65;color:var(--muted);max-width:520px;margin:0}
+.meta{margin-top:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#79736c;line-height:1.7}
+.status{display:inline-block;margin-top:18px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.section{padding:58px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
+.section-head h2{font:400 42px Georgia,serif;margin:0}
+.section-head p{max-width:530px;margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.card img{width:100%;height:100%;display:block;object-fit:cover}
+.heroimg{aspect-ratio:4/5}
+.detail{aspect-ratio:4/5}
+.caption{padding:13px 15px 15px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#777}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.process-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.process-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+.footer-cta{margin-top:64px;padding:38px;border:1px solid var(--line);background:var(--paper);border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.footer-cta h2{font:400 34px Georgia,serif;margin:0 0 8px}
+.footer-cta p{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:650px}
+.btn{display:inline-block;background:#171717;color:white;text-decoration:none;border-radius:999px;padding:15px 24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-size:11px;color:#777;display:flex;justify-content:space-between;gap:20px}
+.back-to-top{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border:1px solid #111;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#111;
+  font-size:18px;
+  background:#f7f4ef;
+  transition:.3s;
+  z-index:1000;
+}
+.back-to-top:hover{
+  background:#111;
+  color:#fff;
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:28px}
+  .grid{grid-template-columns:1fr 1fr}
+  .grid .card:first-child{grid-column:1/-1}
+  .process-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+  .wrap{padding:20px 18px 60px}
+  header{display:block}
+  nav{margin-top:18px}
+  nav a{display:inline-block;margin:0 14px 10px 0}
+  .hero{padding:64px 0 45px}
+  .grid,.process-grid{grid-template-columns:1fr}
+  .grid .card:first-child{grid-column:auto}
+  .section-head,.footer-cta{display:block}
+  .section-head p{margin-top:12px}
+  .footer-cta .btn{margin-top:20px}
+  footer{display:block}
+}
+</style>
+</head>
+<body id="top">
+<div class="wrap">
+
+<header>
+  <a href="index.html"><img src="logo.png" alt="Galería Coahuilteca"></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="visit.html">Visit</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Galería Coahuilteca · Ceramics</div>
+    <h1>Edd</h1>
+  </div>
+  <div>
+    <p class="intro">Ceramic Chess — a hand-built chess set composed of individually modeled characters. Each figure is made by hand, giving the set the character of a small sculptural world rather than a conventional game object.</p>
+    <div class="status">Coming soon</div>
+    <div class="meta">Hand-built ceramic · Unique project · San Miguel de Allende</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Ceramic Chess</h2>
+    <p>The project is currently in development. The gallery is presenting selected studio images while the final set is completed.</p>
+  </div>
+
+  <div class="grid">
+    <figure class="card">
+      <img class="heroimg" src="images/edd-ajedrez-ceramico-proceso-01.jpg" alt="Ceramic chess board and handmade characters by Edd">
+      <figcaption class="caption">Ceramic Chess · Work in progress</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img class="detail" src="images/edd-ajedrez-ceramico-gatos-02.jpg" alt="Hand-built ceramic cat chess characters by Edd">
+      <figcaption class="caption">Hand-modeled characters</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img class="detail" src="images/edd-ajedrez-ceramico-personajes-02.jpg" alt="Ceramic chess characters by Edd">
+      <figcaption class="caption">Individually modeled pieces</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Studio process</h2>
+    <p>Details from the making process reveal the individual modeling, painting and character development behind the set.</p>
+  </div>
+
+  <div class="process-grid">
+    <figure class="process-card">
+      <img src="images/edd-ajedrez-ceramico-proceso-02.jpg" alt="Ceramic chess set in progress by Edd" loading="lazy">
+    </figure>
+    <figure class="process-card">
+      <img src="images/edd-ajedrez-ceramico-personajes-01.jpg" alt="Ceramic chess figures by Edd" loading="lazy">
+    </figure>
+    <figure class="process-card">
+      <img src="images/edd-ajedrez-ceramico-personajes-03.jpg" alt="Ceramic chess figures and animal characters by Edd" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div>
+    <h2>Interested in the finished set?</h2>
+    <p>The ceramic chess set will be presented by the gallery once completed. You can ask to be contacted when final images, dimensions and price are available.</p>
+  </div>
+  <a class="btn" href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20know%20when%20Edd%27s%20Ceramic%20Chess%20set%20is%20available." target="_blank">Notify me</a>
+</section>
+
+<footer>
+  <span>Galería Coahuilteca · San Miguel de Allende · México</span>
+  <span>Edd · Ceramic Chess · Coming soon</span>
+</footer>
+
+</div>
+
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+</body>
+</html>
   </header>
 
   <section class="hero">
