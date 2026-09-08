@@ -45,6 +45,28 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .footer-cta p{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:650px}
 .btn{display:inline-block;background:#171717;color:white;text-decoration:none;border-radius:999px;padding:15px 24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-size:11px;color:#777;display:flex;justify-content:space-between;gap:20px}
+.back-to-top{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border:1px solid #111;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#111;
+  font-size:18px;
+  background:#f7f4ef;
+  transition:.3s;
+  z-index:1000;
+}
+.back-to-top:hover{
+  background:#111;
+  color:#fff;
+}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;gap:28px}
   .grid{grid-template-columns:1fr 1fr}
@@ -66,7 +88,7 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 }
 </style>
 </head>
-<body>
+<body id="top">
 <div class="wrap">
 
 <header>
@@ -99,17 +121,17 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 
   <div class="grid">
     <figure class="card">
-      <img class="heroimg" src="images/edd-ajedrez-ceramico-proceso-01.webp" alt="Ceramic chess board and handmade characters by Edd">
+      <img class="heroimg" src="images/edd-ajedrez-ceramico-proceso-01.jpg" alt="Ceramic chess board and handmade characters by Edd">
       <figcaption class="caption">Ceramic Chess · Work in progress</figcaption>
     </figure>
 
     <figure class="card">
-      <img class="detail" src="images/edd-ajedrez-ceramico-gatos-02.webp" alt="Hand-built ceramic cat chess characters by Edd">
+      <img class="detail" src="images/edd-ajedrez-ceramico-gatos-02.jpg" alt="Hand-built ceramic cat chess characters by Edd">
       <figcaption class="caption">Hand-modeled characters</figcaption>
     </figure>
 
     <figure class="card">
-      <img class="detail" src="images/edd-ajedrez-ceramico-personajes-02.webp" alt="Ceramic chess characters by Edd">
+      <img class="detail" src="images/edd-ajedrez-ceramico-personajes-02.jpg" alt="Ceramic chess characters by Edd">
       <figcaption class="caption">Individually modeled pieces</figcaption>
     </figure>
   </div>
@@ -123,13 +145,13 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 
   <div class="process-grid">
     <figure class="process-card">
-      <img src="images/edd-ajedrez-ceramico-proceso-02.webp" alt="Ceramic chess set in progress by Edd" loading="lazy">
+      <img src="images/edd-ajedrez-ceramico-proceso-02.jpg" alt="Ceramic chess set in progress by Edd" loading="lazy">
     </figure>
     <figure class="process-card">
-      <img src="images/edd-ajedrez-ceramico-personajes-01.webp" alt="Ceramic chess figures by Edd" loading="lazy">
+      <img src="images/edd-ajedrez-ceramico-personajes-01.jpg" alt="Ceramic chess figures by Edd" loading="lazy">
     </figure>
     <figure class="process-card">
-      <img src="images/edd-ajedrez-ceramico-personajes-03.webp" alt="Ceramic chess figures and animal characters by Edd" loading="lazy">
+      <img src="images/edd-ajedrez-ceramico-personajes-03.jpg" alt="Ceramic chess figures and animal characters by Edd" loading="lazy">
     </figure>
   </div>
 </section>
@@ -148,5 +170,8 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 </footer>
 
 </div>
+
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
 </body>
 </html>
