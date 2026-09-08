@@ -15,14 +15,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contact | Galería Coahuilteca</title>
+<meta name="description" content="Contact Galería Coahuilteca in San Miguel de Allende for available artwork, portrait commissions, private art experiences, press inquiries and private appointments.">
 
 <style>
+:root{
+  --bg:#f7f4ef;
+  --paper:#fffdf9;
+  --ink:#111;
+  --muted:#666;
+  --line:#ddd;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
 body{
   margin:0;
-  font-family: Helvetica, Arial, sans-serif;
-  background:#f7f4ef;
-  color:#111;
-  font-size:18px;
+  font-family:Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
 }
 
 .container{
@@ -35,43 +46,27 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #ddd;
+  border-bottom:1px solid var(--line);
   padding-bottom:20px;
 }
 
 header img{
   height:40px;
+  display:block;
 }
 
 nav{
   display:flex;
   gap:24px;
+  align-items:center;
 }
 
 nav a{
-  font-size:16px;
-  letter-spacing:.1em;
-  color:#555;
+  font-size:12px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:#56524d;
   text-decoration:none;
-}
-
-@media(max-width:800px){
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-  }
-
-  nav{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:8px;
-  }
-
-  nav a{
-    font-size:14px;
-  }
 }
 
 .section{
@@ -81,10 +76,26 @@ nav a{
 
 .hero-img{
   width:100%;
-  max-height:300px;
+  max-height:320px;
   object-fit:cover;
   border-radius:20px;
-  margin-bottom:40px;
+  margin-bottom:46px;
+  display:block;
+}
+
+.section h1{
+  max-width:760px;
+  margin:0 auto 18px;
+  font:400 clamp(38px,5vw,58px)/1.05 Georgia,serif;
+  letter-spacing:-.03em;
+}
+
+.intro{
+  max-width:560px;
+  margin:0 auto 36px;
+  color:#555;
+  font-size:16px;
+  line-height:1.7;
 }
 
 .contact-grid{
@@ -95,41 +106,44 @@ nav a{
 }
 
 .contact-option{
-  border:1px solid #ddd;
-  padding:30px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.18);
+  padding:34px 30px;
   text-decoration:none;
-  color:#111;
+  color:var(--ink);
   border-radius:20px;
-  transition:.3s;
+  transition:.25s ease;
 }
 
 .contact-option:hover{
-  background:#fff;
+  background:var(--paper);
+  transform:translateY(-2px);
+}
+
+.contact-option strong{
+  display:block;
+  font:400 28px Georgia,serif;
 }
 
 .small{
-  font-size:14px;
-  color:#666;
+  font-size:12px;
+  line-height:1.6;
+  letter-spacing:.05em;
+  color:var(--muted);
   margin-top:10px;
-}
-
-@media(max-width:800px){
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
 }
 
 footer{
   margin-top:80px;
   padding-top:40px;
-  border-top:1px solid #ddd;
+  border-top:1px solid var(--line);
   font-size:14px;
   color:#555;
   line-height:1.6;
 }
 
 footer a{
-  color:#111;
+  color:var(--ink);
   text-decoration:none;
 }
 
@@ -156,6 +170,41 @@ footer a{
   background:#111;
   color:#fff;
 }
+
+@media(max-width:800px){
+  .container{
+    padding:22px;
+  }
+
+  header{
+    display:block;
+  }
+
+  nav{
+    margin-top:18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:0 14px 10px 0;
+    font-size:11px;
+  }
+
+  .section{
+    padding:48px 0;
+  }
+
+  .hero-img{
+    margin-bottom:34px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
@@ -176,8 +225,8 @@ footer a{
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="portraits.html">Portraits</a>
+    <a href="shop.html">Shop</a>
+    <a href="retratos-indhira.html">Portraits</a>
     <a href="experiences.html">Experiences</a>
     <a href="visit.html">Visit</a>
     <a href="contact.html">Contact</a>
@@ -186,22 +235,26 @@ footer a{
 
 <section class="section">
 
-<img src="sala.jpg" class="hero-img" alt="Galería interior">
+<img src="sala.jpg" class="hero-img" alt="Interior of Galería Coahuilteca in San Miguel de Allende">
 
-<h2>How would you like to connect with the gallery?</h2>
+<h1>How would you like to connect with the gallery?</h1>
 
-<p style="max-width:500px; margin:auto; margin-bottom:30px; color:#555;">
-Whether you're looking for a piece to take home or planning an art experience, we’re happy to assist.
+<p class="intro">
+Whether you are looking for a work to take home, considering a portrait commission or planning a private art experience, we are happy to assist personally.
 </p>
 
 <div class="contact-grid">
 
-<a class="contact-option" href="https://wa.me/524152169737?text=Hi%20I%20would%20like%20information%20about%20available%20artwork%20or%20experiences" target="_blank">
-  <strong style="font-size:20px;">WhatsApp</strong>
-  <div class="small">Immediate response · Available artwork · Reservations</div>
+<a class="contact-option"
+   href="https://wa.me/524152169737?text=Hi%20I%20would%20like%20information%20about%20available%20artwork%20or%20experiences"
+   target="_blank"
+   rel="noopener">
+  <strong>WhatsApp</strong>
+  <div class="small">Available artwork · Reservations · Commissions</div>
 </a>
 
-<a class="contact-option" href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca">
+<a class="contact-option"
+   href="mailto:hello@galeriacoahuilteca.com?subject=Inquiry%20from%20Galer%C3%ADa%20Coahuilteca">
   <strong>Email</strong>
   <div class="small">Collectors · Press · Commissions · Private appointments</div>
 </a>
@@ -228,7 +281,8 @@ Whether you're looking for a piece to take home or planning an art experience, w
 
 </div>
 
-<a href="#top" class="back-to-top">↑</a>
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
 </body>
 </html>
+
