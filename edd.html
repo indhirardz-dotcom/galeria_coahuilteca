@@ -21,6 +21,30 @@ a{color:inherit}
 header{display:flex;align-items:center;justify-content:space-between;padding:4px 0 20px;border-bottom:1px solid var(--line)}
 header img{height:42px}
 nav a{margin-left:24px;text-decoration:none;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#56524d}
+
+.page-toolbar{
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+}
+.page-toolbar span{
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#77716a;
+}
+.page-toolbar a{
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:1px solid #999;
+  padding-bottom:3px;
+}
+
 .hero{padding:88px 0 62px;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end}
 .kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#7b756e;margin-bottom:17px}
 h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.045em}
@@ -63,15 +87,13 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
   transition:.3s;
   z-index:1000;
 }
-.back-to-top:hover{
-  background:#111;
-  color:#fff;
-}
+.back-to-top:hover{background:#111;color:#fff}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;gap:28px}
   .grid{grid-template-columns:1fr 1fr}
   .grid .card:first-child{grid-column:1/-1}
   .process-grid{grid-template-columns:1fr 1fr}
+  .page-toolbar{flex-wrap:wrap}
 }
 @media(max-width:650px){
   .wrap{padding:20px 18px 60px}
@@ -93,15 +115,20 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 
 <header>
   <a href="index.html"><img src="logo.png" alt="Galería Coahuilteca"></a>
- <nav>
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="portraits.html">Portraits</a>
-  <a href="experiences.html">Experiences</a>
-  <a href="visit.html">Visit</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="retratos-indhira.html">Portraits</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="visit.html">Visit</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
+
+<div class="page-toolbar" aria-label="Collection navigation">
+  <a href="shop.html">← Back to shop</a>
+  <span>Edd · Ceramic Chess · Preview</span>
+</div>
 
 <section class="hero">
   <div>
@@ -163,8 +190,13 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
     <h2>Interested in the finished set?</h2>
     <p>The ceramic chess set will be presented by the gallery once completed. You can ask to be contacted when final images, dimensions and price are available.</p>
   </div>
-  <a class="btn" href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20know%20when%20Edd%27s%20Ceramic%20Chess%20set%20is%20available." target="_blank">Notify me</a>
+  <a class="btn" href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20know%20when%20Edd%27s%20Ceramic%20Chess%20set%20is%20available." target="_blank" rel="noopener">Notify me</a>
 </section>
+
+<div class="page-toolbar" style="margin-top:52px;" aria-label="Return to gallery shop">
+  <a href="shop.html">← Back to shop</a>
+  <span>Explore more work from Galería Coahuilteca</span>
+</div>
 
 <footer>
   <span>Galería Coahuilteca · San Miguel de Allende · México</span>
