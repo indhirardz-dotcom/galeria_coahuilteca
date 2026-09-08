@@ -20,7 +20,7 @@
 <style>
 body{
   margin:0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family:Helvetica,Arial,sans-serif;
   background:#f7f4ef;
   color:#111;
 }
@@ -39,9 +39,7 @@ header{
   padding-bottom:20px;
 }
 
-header img{
-  height:40px;
-}
+header img{height:40px}
 
 nav{
   display:flex;
@@ -49,9 +47,10 @@ nav{
 }
 
 nav a{
-  font-size:16px;
-  letter-spacing:.1em;
-  color:#555;
+  font-size:12px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:#56524d;
   text-decoration:none;
 }
 
@@ -60,6 +59,7 @@ nav a{
   height:520px;
   overflow:hidden;
   margin-top:30px;
+  border-radius:20px;
 }
 
 .hero img{
@@ -70,20 +70,17 @@ nav a{
 
 .overlay{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   display:flex;
   align-items:center;
-  background:linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 100%);
+  background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,0) 100%);
   padding-left:50px;
 }
 
 .hero-text h1{
   color:#fff;
   font-size:60px;
-  font-family:Georgia, serif;
+  font-family:Georgia,serif;
   font-weight:400;
   margin:0;
 }
@@ -102,7 +99,7 @@ nav a{
 }
 
 .info h2{
-  font-family:Georgia, serif;
+  font-family:Georgia,serif;
   font-size:32px;
   font-weight:400;
   margin-bottom:20px;
@@ -113,6 +110,25 @@ nav a{
   line-height:1.6;
 }
 
+.visit-detail{
+  padding:18px 0;
+  border-top:1px solid #ddd;
+  margin-top:24px;
+}
+
+.visit-detail + .visit-detail{
+  margin-top:0;
+}
+
+.visit-label{
+  display:block;
+  margin-bottom:7px;
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#777;
+}
+
 .map{
   margin-top:30px;
   border:0;
@@ -121,9 +137,7 @@ nav a{
   border-radius:20px;
 }
 
-.cta{
-  margin-top:30px;
-}
+.cta{margin-top:30px}
 
 .cta a{
   display:inline-block;
@@ -133,8 +147,9 @@ nav a{
   border:1px solid #111;
   text-decoration:none;
   color:#111;
-  font-size:13px;
-  letter-spacing:.1em;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
 .cta a.primary{
@@ -181,48 +196,37 @@ footer a{
 }
 
 @media(max-width:800px){
-  .container{
-    padding:22px;
-  }
+  .container{padding:22px}
 
   header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
+    display:block;
   }
 
-  header img{
-    height:40px;
-  }
+  header img{height:40px}
 
   nav{
+    margin-top:18px;
     display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:8px;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:0;
   }
 
   nav a{
-    font-size:14px;
-    margin:0;
+    display:inline-block;
+    margin:0 14px 10px 0;
+    font-size:11px;
   }
 
   .info{
     grid-template-columns:1fr;
     padding:55px 0;
+    gap:30px;
   }
 
-  .hero-text h1{
-    font-size:40px;
-  }
-
-  .hero{
-    height:430px;
-  }
-
-  .overlay{
-    padding-left:28px;
-  }
+  .hero-text h1{font-size:40px}
+  .hero{height:430px}
+  .overlay{padding-left:28px}
 }
 </style>
 </head>
@@ -238,20 +242,18 @@ footer a{
 <div class="container">
 
 <header>
-
 <a href="index.html">
   <img src="logo.png" alt="Galería Coahuilteca art gallery logo">
 </a>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="portraits.html">Portraits</a>
+  <a href="shop.html">Shop</a>
+  <a href="retratos-indhira.html">Portraits</a>
   <a href="experiences.html">Experiences</a>
   <a href="visit.html">Visit</a>
   <a href="contact.html">Contact</a>
 </nav>
-
 </header>
 
 <section class="hero">
@@ -268,7 +270,6 @@ footer a{
 <section class="info">
 
 <div>
-
 <h2>Galería Coahuilteca</h2>
 
 <p>
@@ -279,41 +280,41 @@ A working gallery located in the historic center of San Miguel de Allende.
 Discover original paintings, drawings, ceramics, commissioned portraits and private art experiences in an intimate space where art is created and exhibited.
 </p>
 
-<p>
-📍 Tenerías & Codo, Centro<br>
-San Miguel de Allende, Guanajuato
-</p>
+<div class="visit-detail">
+  <span class="visit-label">Location</span>
+  Tenerías &amp; Codo, Centro<br>
+  San Miguel de Allende, Guanajuato
+</div>
 
-<p>
-🕒 Open daily<br>
-10:00 AM — 6:00 PM
-</p>
+<div class="visit-detail">
+  <span class="visit-label">Hours</span>
+  Open daily<br>
+  10:00 AM — 6:00 PM
+</div>
 
 <div class="cta">
-  <a class="primary" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank">
+  <a class="primary" href="https://www.google.com/maps/place/Galer%C3%ADa+Coahuilteca/@20.890851,-100.653445,15z/data=!4m6!3m5!1s0x842b51aab8d6103b:0x3b9d108536725a38!8m2!3d20.9115952!4d-100.7458325!16s%2Fg%2F11x7m68q1l" target="_blank" rel="noopener">
     Get Directions
   </a>
 
-  <a href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20information%20about%20Galer%C3%ADa%20Coahuilteca." target="_blank">
+  <a href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20information%20about%20Galer%C3%ADa%20Coahuilteca." target="_blank" rel="noopener">
     WhatsApp
   </a>
 </div>
-
 </div>
 
 <div>
-
 <iframe class="map"
 src="https://www.google.com/maps?q=Galer%C3%ADa+Coahuilteca+San+Miguel+de+Allende&output=embed"
-loading="lazy">
+loading="lazy"
+title="Map showing Galería Coahuilteca in San Miguel de Allende"
+referrerpolicy="no-referrer-when-downgrade">
 </iframe>
-
 </div>
 
 </section>
 
 <footer>
-
   <p>
     <strong>Galería Coahuilteca</strong><br>
     San Miguel de Allende, México
@@ -325,12 +326,11 @@ loading="lazy">
       hello@galeriacoahuilteca.com
     </a>
   </p>
-
 </footer>
 
 </div>
 
-<a href="#top" class="back-to-top">↑</a>
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
 </body>
 </html>
