@@ -471,7 +471,7 @@ footer a{
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="shop.html">Shop</a>
     <a href="portraits.html">Portraits</a>
     <a href="experiences.html">Experiences</a>
     <a href="visit.html">Visit</a>
@@ -547,35 +547,35 @@ footer a{
     <div class="price-card">
       <h3>1 participant</h3>
       <p>Private 2.5-hour session</p>
-      <p class="price">$1,914 MXN</p>
+      <p class="price">$1,914 MXN per participant</p>
       <p class="price-usd" data-mxn="1914">Approx. US$113</p>
     </div>
 
     <div class="price-card">
       <h3>2 participants</h3>
-      <p>10% group discount · $1,722.60 per person</p>
-      <p class="price">$3,445.20 MXN</p>
-      <p class="price-usd" data-mxn="3445.20">Approx. US$203</p>
+      <p>Couples offer · 15% group discount</p>
+      <p class="price">$1,627 MXN per participant</p>
+      <p class="price-usd" data-mxn="3254">Approx. US$192 total</p>
     </div>
 
     <div class="price-card">
       <h3>3 participants</h3>
-      <p>15% group discount · $1,626.90 per person</p>
-      <p class="price">$4,880.70 MXN</p>
-      <p class="price-usd" data-mxn="4880.70">Approx. US$288</p>
+      <p>15% group discount</p>
+      <p class="price">$1,627 MXN per participant</p>
+      <p class="price-usd" data-mxn="4881">Approx. US$288 total</p>
     </div>
 
     <div class="price-card">
       <h3>4 participants</h3>
-      <p>15% group discount · $1,626.90 per person</p>
-      <p class="price">$6,507.60 MXN</p>
-      <p class="price-usd" data-mxn="6507.60">Approx. US$383</p>
+      <p>Family offer · 4th participant complimentary</p>
+      <p>25% group discount</p>
+      <p class="price">$1,436 MXN per participant</p>
+      <p class="price-usd" data-mxn="5744">Approx. US$339 total</p>
     </div>
   </div>
 
   <p style="color:#666; margin-top:25px;">
-    Reference totals match Airbnb's current base price, group discounts and taxes: no discount for one participant, 10% for two, and 15% for three or four. The final amount shown by Airbnb may vary slightly by date.
-    USD amounts are approximate and update daily using an institutional reference exchange rate.
+    Airbnb prices may vary slightly by date. USD amounts are approximate and update daily using an institutional reference exchange rate.
     <span id="exchange-rate-date"></span>
   </p>
 
@@ -774,7 +774,8 @@ footer a{
       const data = await response.json();
       document.querySelectorAll('[data-mxn]').forEach((element) => {
         const usd = Math.round(Number(element.dataset.mxn) * data.rate);
-        element.textContent = `Approx. US$${usd.toLocaleString('en-US')}`;
+        const suffix = element.textContent.toLowerCase().includes('total') ? ' total' : '';
+        element.textContent = `Approx. US$${usd.toLocaleString('en-US')}${suffix}`;
       });
 
       const rateDate = document.getElementById('exchange-rate-date');
