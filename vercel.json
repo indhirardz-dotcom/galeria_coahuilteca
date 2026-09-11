@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/storytelling",
+      "destination": "/story",
+      "permanent": true
+    },
+    {
+      "source": "/storytelling.html",
+      "destination": "/story",
+      "permanent": true
+    }
+  ]
+}
