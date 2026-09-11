@@ -1,0 +1,19 @@
+{
+  "name": "Qué hacer en San Miguel · Galería Coahuilteca",
+  "short_name": "Agenda SMA",
+  "description": "Agenda cultural verificada de San Miguel de Allende.",
+  "start_url": "/agenda",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ef",
+  "theme_color": "#772b25",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "/pwa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
