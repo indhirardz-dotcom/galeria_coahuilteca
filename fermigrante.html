@@ -30,8 +30,39 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}
 .ship{display:block;font-size:11px;line-height:1.55;color:#5f5a54}
 .other{display:block;font-size:10px;line-height:1.5;color:#888;margin-top:3px}
+.quote-link{text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .buy{display:inline-block;background:#171717;color:#fff;text-decoration:none;border-radius:999px;padding:12px 17px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
 .samplebar{padding:16px 18px 18px;border-top:1px solid var(--line)}
+
+.custom-work{
+  margin-top:64px;
+  padding:38px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px
+}
+
+.custom-work h2{
+  font:400 34px Georgia,serif;
+  margin:0 0 8px
+}
+
+.custom-work p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+  max-width:680px
+}
+
+.custom-work .btn{
+  flex-shrink:0
+}
+
 .footer-cta{margin-top:64px;padding:38px;border:1px solid var(--line);background:var(--paper);border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .footer-cta h2{font:400 34px Georgia,serif;margin:0 0 8px}.footer-cta p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
 .btn{display:inline-block;background:#171717;color:white;text-decoration:none;border-radius:999px;padding:15px 24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
@@ -41,10 +72,12 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 .close{position:fixed;top:18px;right:22px;background:white;border:0;border-radius:999px;width:42px;height:42px;font-size:24px;cursor:pointer}
 .back-to-top{position:fixed;bottom:25px;right:25px;width:42px;height:42px;border:1px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#111;font-size:18px;background:#f7f4ef;z-index:1000}
 @media(max-width:980px){.catalogue{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.wrap{padding:20px 18px 60px}header{display:block}nav{margin-top:18px}nav a{display:inline-block;margin:0 14px 10px 0}.hero{grid-template-columns:1fr;padding:64px 0 45px;gap:28px}.catalogue{grid-template-columns:1fr;gap:16px}.toolbar,.footer-cta{display:block}.toolbar a{display:inline-block;margin-top:10px}.footer-cta .btn{margin-top:20px}footer{display:block}.buybar{grid-template-columns:1fr}.buy{justify-self:start}}
+@media(max-width:700px){.wrap{padding:20px 18px 60px}header{display:block}nav{margin-top:18px}nav a{display:inline-block;margin:0 14px 10px 0}.hero{grid-template-columns:1fr;padding:64px 0 45px;gap:28px}.catalogue{grid-template-columns:1fr;gap:16px}.toolbar,.footer-cta,.custom-work{display:block}.toolbar a{display:inline-block;margin-top:10px}.footer-cta .btn,.custom-work .btn{margin-top:20px}footer{display:block}.buybar{grid-template-columns:1fr}.buy{justify-self:start}}
 </style>
 </head>
+
 <body id="top"><div class="wrap">
+
 <header><a href="index.html"><img src="logo.png" alt="Galería Coahuilteca"></a><nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="retratos-indhira.html">Portraits</a><a href="experiences.html">Experiences</a><a href="visit.html">Visit</a><a href="contact.html">Contact</a></nav></header>
 
 <section class="hero"><div><div class="kicker">Available Works · Galería Coahuilteca</div><h1>Fermigrante</h1></div><div><p class="intro">Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.</p><div class="meta">Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available</div></div></section>
@@ -55,59 +88,171 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 
 <main class="catalogue" id="catalogue"></main>
 
+
+<section class="custom-work">
+
+<div>
+
+<h2>Looking for something made for your space?</h2>
+
+<p>
+Fermigrante can create an original work in custom dimensions and a color palette selected for your space. Tell us the size and colors you have in mind.
+</p>
+
+</div>
+
+<a
+class="btn"
+id="customWorkButton"
+href="#"
+target="_blank"
+rel="noopener">
+Request a custom work
+</a>
+
+</section>
+
+
 <section class="footer-cta"><div><h2>Need assistance?</h2><p>Send the gallery the work reference and your destination. We will confirm availability, final shipping and payment options.</p></div><a class="btn" href="contact.html">Contact the gallery</a></section>
 
 <footer><span>Galería Coahuilteca · San Miguel de Allende · México</span><span>Fermigrante · Available works</span></footer></div>
 
 <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)"><button class="close" onclick="closeLightbox(event)" aria-label="Close">×</button><img id="lightboxImage" alt="Fermigrante artwork details"></div>
 
+
 <script>
+
 const works=[]; for(let i=1;i<=55;i++){ if(i===28) continue; works.push(i); }
+
 const catalogue=document.getElementById('catalogue');
+
 
 const canvasSizes={
   2:[100,120],3:[100,120],4:[100,120],5:[100,120],
   6:[120,120],7:[130,150],8:[100,70],
   9:[106,106],10:[71,71],11:[44,44],12:[70,80],55:[90,150]
 };
-function round500(v){return Math.max(1000,Math.round(v/500)*500)}
-function shippingFor(n){
-  if(n>=13 && n<=54) return {mx:2800,us:4000};
-  const size=canvasSizes[n] || [80,80];
-  const equivalent=Math.sqrt(size[0]*size[1]);
-  return {mx:round500(100*equivalent-1500),us:round500(75*equivalent-500)};
+
+
+function round500(v){
+  return Math.max(1000,Math.round(v/500)*500)
 }
-function money(v){ return '$'+v.toLocaleString('en-US')+' MXN'; }
+
+
+function shippingFor(n){
+
+  if(n>=13 && n<=54) return {mx:2800,us:4000};
+
+  const size=canvasSizes[n] || [80,80];
+
+  const equivalent=Math.sqrt(size[0]*size[1]);
+
+  return {
+    mx:round500(100*equivalent-1500),
+    us:round500(75*equivalent-500)
+  };
+
+}
+
+
+function money(v){
+  return '$'+v.toLocaleString('en-US')+' MXN';
+}
+
 
 works.forEach((n,index)=>{
+
   const file=`images/fermigrante-obra-${String(n).padStart(2,'0')}.webp`;
+
   const displayNumber=index;
+
   const ref=`Fermigrante · Work ${String(displayNumber).padStart(2,'0')}`;
+
   const fig=document.createElement('figure');
+
   fig.className='work';
 
+
   if(index===0){
+
     fig.innerHTML=`<button class="work-image" type="button" aria-label="View shipping information" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="Fermigrante shipping information"></button><div class="samplebar"><span class="ref">Shipping information</span></div>`;
+
     catalogue.appendChild(fig);
+
     return;
+
   }
 
+
   const ship=shippingFor(n);
+
+
   const shippingHTML=`<span class="ship">Mexico shipping · ${money(ship.mx)}</span><span class="ship">USA shipping · ${money(ship.us)}</span>`;
 
-  const artworkUrl=`https://galeriacoahuilteca.com/${file}`;
-  const msg=encodeURIComponent(`Hello, I am interested in ${ref}.\n\nArtwork image: ${artworkUrl}\n\nPlease confirm availability and shipping to my destination.`);
-  const inquiry=`https://wa.me/524151196108?text=${msg}`;
 
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<span class="other">Other countries · Request quote</span></div><a class="buy" href="${inquiry}" target="_blank" rel="noopener">Ask about this work / Consultar</a></div>`;
+  const inquiry=`contact.html?work=${encodeURIComponent(ref)}&image=${encodeURIComponent(file)}`;
+
+
+  const artworkUrl=`https://galeriacoahuilteca.com/${file}`;
+
+
+  const quoteMessage=`Hello, I am interested in ${ref}.
+
+Artwork image: ${artworkUrl}
+
+I would like a shipping quote to another country.`;
+
+
+  const quoteLink=`https://wa.me/524151196108?text=${encodeURIComponent(quoteMessage)}`;
+
+
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${inquiry}">Purchase / Comprar</a></div>`;
+
 
   catalogue.appendChild(fig);
+
 });
 
-function openLightbox(src){document.getElementById('lightboxImage').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden'}
-function closeLightbox(e){if(e.target.id==='lightboxImage')return;document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}});
+
+const customMessage=`Hello, I am interested in commissioning a custom Fermigrante work.
+
+I would like to discuss custom dimensions and colors for my space.
+
+Approximate dimensions:
+
+Preferred colors:
+
+Destination:`;
+
+
+document.getElementById('customWorkButton').href=
+`https://wa.me/524151196108?text=${encodeURIComponent(customMessage)}`;
+
+
+function openLightbox(src){
+  document.getElementById('lightboxImage').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden'
+}
+
+
+function closeLightbox(e){
+  if(e.target.id==='lightboxImage')return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow=''
+}
+
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow=''
+  }
+});
+
 </script>
+
 </body>
 </html>
