@@ -66,11 +66,17 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 const works=[]; for(let i=1;i<=55;i++){ if(i===28) continue; works.push(i); }
 const catalogue=document.getElementById('catalogue');
 
+const canvasSizes={
+  2:[100,120],3:[100,120],4:[100,120],5:[100,120],
+  6:[120,120],7:[130,150],8:[100,70],
+  9:[106,106],10:[71,71],11:[44,44],12:[70,80],55:[90,150]
+};
+function round500(v){return Math.max(1000,Math.round(v/500)*500)}
 function shippingFor(n){
-  // Exact rate known from the catalogue/user data for cotton-paper works.
-  if(n>=13 && n<=54) return {mx:2800, us:4000, exact:true};
-  // Canvas works vary substantially in size. Keep quote-based until the gallery fixes a rate table/formula.
-  return {mx:null, us:null, exact:false};
+  if(n>=13 && n<=54) return {mx:2800,us:4000};
+  const size=canvasSizes[n] || [80,80];
+  const equivalent=Math.sqrt(size[0]*size[1]);
+  return {mx:round500(100*equivalent-1500),us:round500(75*equivalent-500)};
 }
 function money(v){ return '$'+v.toLocaleString('en-US')+' MXN'; }
 
@@ -88,13 +94,13 @@ works.forEach((n,index)=>{
   }
 
   const ship=shippingFor(n);
-  const shippingHTML=ship.exact
-    ? `<span class="ship">Mexico shipping · ${money(ship.mx)}</span><span class="ship">USA shipping · ${money(ship.us)}</span>`
-    : `<span class="ship">Mexico shipping · Calculated by size</span><span class="ship">USA shipping · Calculated by size</span>`;
+  const shippingHTML=`<span class="ship">Mexico shipping · ${money(ship.mx)}</span><span class="ship">USA shipping · ${money(ship.us)}</span>`;
 
-  const inquiry=`contact.html?work=${encodeURIComponent(ref)}&image=${encodeURIComponent(file)}`;
+  const artworkUrl=`https://galeriacoahuilteca.com/${file}`;
+  const msg=encodeURIComponent(`Hello, I am interested in ${ref}.\n\nArtwork image: ${artworkUrl}\n\nPlease confirm availability and shipping to my destination.`);
+  const inquiry=`https://wa.me/524151196108?text=${msg}`;
 
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<span class="other">Other countries · Request quote</span></div><a class="buy" href="${inquiry}">Purchase / Comprar</a></div>`;
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<span class="other">Other countries · Request quote</span></div><a class="buy" href="${inquiry}" target="_blank" rel="noopener">Ask about this work / Consultar</a></div>`;
 
   catalogue.appendChild(fig);
 });
