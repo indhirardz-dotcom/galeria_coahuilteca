@@ -1,310 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indhira | Galería Coahuilteca</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indhira | Galería Coahuilteca</title>
 
-  <style>
-    :root {
-      --bg: #f6f2ec;
-      --paper: #fffdf9;
-      --ink: #171717;
-      --muted: #6d6963;
-      --line: #d9d3ca;
-    }
+<style>
+:root{
+  --bg:#f6f2ec;
+  --paper:#fffdf9;
+  --ink:#171717;
+  --muted:#6d6963;
+  --line:#d9d3ca;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Helvetica, Arial, sans-serif;
-    }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Helvetica,Arial,sans-serif;
+}
 
-    a {
-      color: inherit;
-    }
+.wrap{
+  max-width:1240px;
+  margin:auto;
+  padding:28px 34px 70px;
+}
 
-    .wrap {
-      max-width: 1240px;
-      margin: auto;
-      padding: 28px 34px 70px;
-    }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-    }
+header img{height:42px}
 
-    header img {
-      height: 42px;
-    }
+nav a{
+  margin-left:24px;
+  color:#56524d;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:12px;
+}
 
-    nav a {
-      margin-left: 24px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-      font-size: 12px;
-      color: #56524d;
-    }
+.hero{
+  padding:100px 0 70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:end;
+}
 
-    .hero {
-      padding: 100px 0 70px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: end;
-    }
+.eyebrow{
+  color:#77716a;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
 
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: #77716a;
-    }
+h1{
+  margin:18px 0 0;
+  font:400 clamp(60px,9vw,120px)/.9 Georgia,serif;
+}
 
-    h1 {
-      font: 400 clamp(60px, 9vw, 120px)/.9 Georgia, serif;
-      letter-spacing: -.05em;
-      margin: 18px 0 0;
-    }
+.hero p{
+  max-width:490px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
 
-    .hero p {
-      max-width: 490px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 0;
-    }
+.es{
+  margin-top:18px !important;
+  font-size:14px !important;
+}
 
-    .es {
-      margin-top: 18px !important;
-      font-size: 14px !important;
-    }
+.options{
+  border-top:1px solid var(--line);
+  padding:58px 0;
+}
 
-    .options {
-      border-top: 1px solid var(--line);
-      padding: 58px 0;
-    }
+.options h2{
+  margin:0 0 12px;
+  font:400 42px Georgia,serif;
+}
 
-    .options h2 {
-      font: 400 42px Georgia, serif;
-      margin: 0 0 12px;
-    }
+.intro{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:30px;
+}
 
-    .intro {
-      color: var(--muted);
-      line-height: 1.6;
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+}
 
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 38px;
-      min-height: 330px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.card-media{
+  display:block;
+  width:100%;
+  height:390px;
+  overflow:hidden;
+}
 
-    .card h3 {
-      font: 400 38px Georgia, serif;
-      margin: 18px 0 12px;
-    }
+.card-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s ease;
+}
 
-    .card p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-    }
+.card-media:hover img{
+  transform:scale(1.03);
+}
 
-    .button {
-      display: inline-block;
-      align-self: flex-start;
-      margin-top: 30px;
-      padding: 15px 24px;
-      border-radius: 999px;
-      background: var(--ink);
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-      font-size: 11px;
-    }
+.card-content{
+  padding:34px 38px 38px;
+}
 
-    footer {
-      border-top: 1px solid var(--line);
-      padding-top: 28px;
-      color: #77716a;
-      font-size: 11px;
-      display: flex;
-      justify-content: space-between;
-    }
+.card h3{
+  margin:18px 0 12px;
+  font:400 38px Georgia,serif;
+}
 
-    @media (max-width: 760px) {
-      .wrap {
-        padding: 20px;
-      }
+.card p{
+  color:var(--muted);
+  line-height:1.7;
+  margin:0;
+}
 
-      header,
-      .hero,
-      .cards,
-      footer {
-        display: block;
-      }
+.button{
+  display:inline-block;
+  margin-top:28px;
+  padding:15px 24px;
+  border-radius:999px;
+  background:var(--ink);
+  color:white;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:11px;
+}
 
-      nav {
-        margin-top: 18px;
-      }
+footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:50px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+  color:#77716a;
+  font-size:11px;
+}
 
-      nav a {
-        display: inline-block;
-        margin: 0 16px 10px 0;
-      }
-
-      .hero {
-        padding: 70px 0 52px;
-      }
-
-      .hero > div + div {
-        margin-top: 35px;
-      }
-
-      .card + .card {
-        margin-top: 22px;
-      }
-
-      footer span {
-        display: block;
-        margin-bottom: 8px;
-      }
-    }
-  </style>
+@media(max-width:760px){
+  .wrap{padding:20px}
+  header,.hero,footer{display:block}
+  nav{margin-top:18px}
+  nav a{
+    display:inline-block;
+    margin:0 16px 10px 0;
+  }
+  .hero{
+    padding:70px 0 52px;
+  }
+  .hero>div+div{
+    margin-top:35px;
+  }
+  .card-media{
+    height:260px;
+  }
+  footer span{
+    display:block;
+    margin-bottom:8px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <header>
-      <a href="index.html">
-        <img src="logo.png" alt="Galería Coahuilteca">
+<div class="wrap">
+
+<header>
+  <a href="index.html">
+    <img src="logo.png" alt="Galería Coahuilteca">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="visit.html">Visit</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Artist · Galería Coahuilteca</div>
+    <h1>Indhira</h1>
+  </div>
+
+  <div>
+    <p>
+      Figurative painting, drawing and portraiture exploring identity,
+      memory and the female body.
+    </p>
+
+    <p class="es">
+      Pintura figurativa, dibujo y retrato sobre identidad, memoria
+      y cuerpo femenino.
+    </p>
+  </div>
+</section>
+
+<section class="options">
+
+  <h2>Choose how to connect</h2>
+
+  <p class="intro">
+    Explore Jacarandas or request a private oil portrait commission.
+  </p>
+
+  <div class="cards">
+
+    <article class="card" id="jacarandas">
+
+      <a
+        class="card-media"
+        href="https://indhira15.gumroad.com/l/jacarandas-collection"
+        target="_blank"
+        rel="noopener">
+        <img
+          src="pared.jpg"
+          alt="Jacarandas artwork by Indhira">
       </a>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="experiences.html">Experiences</a>
-        <a href="visit.html">Visit</a>
-      </nav>
-    </header>
+      <div class="card-content">
+        <div class="eyebrow">Printable collection</div>
 
-    <main>
+        <h3>Jacarandas</h3>
 
-      <section class="hero">
-        <div>
-          <div class="eyebrow">Artist · Galería Coahuilteca</div>
-          <h1>Indhira</h1>
-        </div>
-
-        <div>
-          <p>
-            Figurative painting, drawing and portraiture exploring identity,
-            memory and the female body.
-          </p>
-
-          <p class="es">
-            Pintura figurativa, dibujo y retrato sobre identidad, memoria
-            y cuerpo femenino.
-          </p>
-        </div>
-      </section>
-
-      <section class="options">
-        <h2>Choose how to connect</h2>
-
-        <p class="intro">
-          Download the Jacarandas collection or request a private oil portrait.
+        <p>
+          A bilingual digital catalogue and downloadable printable artwork
+          from Indhira’s Jacarandas series.
         </p>
 
-        <div class="cards">
+        <p class="es">
+          Catálogo digital bilingüe y obra imprimible descargable de la
+          serie Jacarandas.
+        </p>
 
-          <article class="card">
-            <div>
-              <div class="eyebrow">Printable collection</div>
-              <h3>Jacarandas</h3>
+        <a
+          class="button"
+          href="https://indhira15.gumroad.com/l/jacarandas-collection"
+          target="_blank"
+          rel="noopener">
+          Open Jacarandas shop
+        </a>
+      </div>
 
-              <p>
-                A bilingual digital catalogue and downloadable printable artwork
-                from Indhira’s Jacarandas series.
-              </p>
+    </article>
 
-              <p class="es">
-                Catálogo digital bilingüe y obra imprimible descargable de la
-                serie Jacarandas.
-              </p>
-            </div>
+    <article class="card" id="commission">
 
-            <a
-              class="button"
-              href="https://indhira15.gumroad.com/l/jacarandas-collection"
-              target="_blank"
-              rel="noopener">
-              Download Jacarandas
-            </a>
-          </article>
+      <a
+        class="card-media"
+        href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20request%20an%20oil%20portrait%20commission%20with%20Indhira."
+        target="_blank"
+        rel="noopener">
+        <img
+          src="retLuna.jpg"
+          alt="Oil portrait commission by Indhira">
+      </a>
 
-          <article class="card">
-            <div>
-              <div class="eyebrow">Private commission</div>
-              <h3>Oil portrait</h3>
+      <div class="card-content">
+        <div class="eyebrow">Private commission</div>
 
-              <p>
-                Request a custom portrait developed in oil paint, created
-                specifically for you or someone you love.
-              </p>
+        <h3>Oil portrait</h3>
 
-              <p class="es">
-                Solicita un retrato personalizado al óleo, creado especialmente
-                para ti o para alguien importante.
-              </p>
-            </div>
+        <p>
+          Request a custom portrait developed in oil paint, created
+          specifically for you or someone you love.
+        </p>
 
-            <a
-              class="button"
-              href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20request%20an%20oil%20portrait%20commission%20with%20Indhira."
-              target="_blank"
-              rel="noopener">
-              Request a commission
-            </a>
-          </article>
+        <p class="es">
+          Solicita un retrato personalizado al óleo, creado especialmente
+          para ti o para alguien importante.
+        </p>
 
-        </div>
-      </section>
+        <a
+          class="button"
+          href="https://wa.me/524152169737?text=Hi%2C%20I%20would%20like%20to%20request%20an%20oil%20portrait%20commission%20with%20Indhira."
+          target="_blank"
+          rel="noopener">
+          Request a commission
+        </a>
+      </div>
 
-    </main>
-
-    <footer>
-      <span>Galería Coahuilteca · San Miguel de Allende · México</span>
-      <span>Worldwide shipping · Private commissions</span>
-    </footer>
+    </article>
 
   </div>
+</section>
+
+</main>
+
+<footer>
+  <span>Galería Coahuilteca · San Miguel de Allende · México</span>
+  <span>Worldwide shipping · Private commissions</span>
+</footer>
+
+</div>
+
 </body>
 </html>
