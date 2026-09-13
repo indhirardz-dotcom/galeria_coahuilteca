@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Indhira | Galería Coahuilteca</title>
+
+<style>
+:root{
+  --bg:#f6f2ec;
+  --paper:#fffdf9;
+  --ink:#171717;
+  --muted:#6d6963;
+  --line:#d9d3ca;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Helvetica,Arial,sans-serif;
+}
+
+.wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:28px 34px 70px;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
+}
+
+header img{height:42px}
+
+nav a{
+  margin-left:24px;
+  color:#56524d;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:12px;
+}
+
+.hero{
+  padding:100px 0 70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:end;
+}
+
+.eyebrow{
+  color:#77716a;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:18px 0 0;
+  font:400 clamp(60px,9vw,120px)/.9 Georgia,serif;
+}
+
+.hero p{
+  max-width:500px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+
+.options{
+  border-top:1px solid var(--line);
+  padding:58px 0;
+}
+
+.options h2{
+  margin:0 0 12px;
+  font:400 42px Georgia,serif;
+}
+
+.intro{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.card{
+  min-height:330px;
+  padding:38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+}
+
+.card h3{
+  margin:18px 0 12px;
+  font:400 38px Georgia,serif;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.button{
+  display:inline-block;
+  align-self:flex-start;
+  margin-top:28px;
+  padding:15px 24px;
+  border-radius:999px;
+  background:var(--ink);
+  color:white;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:11px;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding-top:28px;
+  color:#77716a;
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+}
+
+@media(max-width:760px){
+  .wrap{padding:20px}
+  header,.hero,.cards,footer{display:block}
+  nav{margin-top:18px}
+  nav a{
+    display:inline-block;
+    margin:0 16px 10px 0;
+  }
+  .hero{padding:70px 0 50px}
+  .hero > div + div{margin-top:35px}
+  .card + .card{margin-top:22px}
+  footer span{
+    display:block;
+    margin-bottom:8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <a href="index.html">
+    <img src="logo.png" alt="Galería Coahuilteca">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="visit.html">Visit</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Indhira · Galería Coahuilteca</div>
+    <h1>Choose<br>your path.</h1>
+  </div>
+
+  <div>
+    <p>
+      Download the Jacarandas collection or explore a private oil portrait
+      commission by Indhira.
+    </p>
+  </div>
+</section>
+
+<section class="options">
+
+  <h2>Choose how to connect</h2>
+
+  <p class="intro">
+    Select the option that interests you.
+  </p>
+
+  <div class="cards">
+
+    <article class="card">
+      <div>
+        <div class="eyebrow">Printable collection</div>
+        <h3>Jacarandas</h3>
+
+        <p>
+          Bilingual digital catalogue and downloadable printable artwork from
+          Indhira’s Jacarandas series.
+        </p>
+      </div>
+
+      <a
+        class="button"
+        href="https://indhira15.gumroad.com/l/jacarandas-collection"
+        target="_blank"
+        rel="noopener">
+        Go to Jacarandas shop
+      </a>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="eyebrow">Private commission</div>
+        <h3>Oil portrait</h3>
+
+        <p>
+          Discover the process and request a custom oil portrait created by
+          Indhira.
+        </p>
+      </div>
+
+      <a
+        class="button"
+        href="retratos-indhira.html">
+        View commission page
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <span>Galería Coahuilteca · San Miguel de Allende · México</span>
+  <span>Worldwide shipping</span>
+</footer>
+
+</div>
+
+</body>
+</html>
