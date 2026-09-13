@@ -155,6 +155,71 @@ h1{
   gap:18px;
 }
 
+.prints-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.print-card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  background:var(--paper);
+  text-decoration:none;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.print-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 36px rgba(0,0,0,.12);
+}
+
+.print-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.print-card-body{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  padding:18px;
+}
+
+.print-card .num{
+  color:#77716a;
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.print-card h3{
+  margin:11px 0 7px;
+  font:400 24px/1.05 Georgia,serif;
+}
+
+.print-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.45;
+}
+
+.print-card .link{
+  margin-top:auto;
+  padding-top:18px;
+  color:#111;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
 .collection{
   position:relative;
 
@@ -494,6 +559,10 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .prints-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
   .section-head,
   .footer-cta{
     display:block;
@@ -505,6 +574,14 @@ footer{
 
   .footer-cta .btn{
     margin-top:20px;
+  }
+
+}
+
+@media(max-width:520px){
+
+  .prints-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -598,6 +675,114 @@ footer{
     <div class="meta">
       Original work · Private assistance · Worldwide shipping
     </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     JACARANDAS PRINTABLE EDITIONS
+     ============================== -->
+
+<section class="section" id="jacarandas">
+
+  <div class="section-head">
+
+    <h2>
+      Jacarandas · Printable editions
+    </h2>
+
+    <p>
+      High-resolution downloadable prints from Indhira’s Jacarandas series.
+      Each card opens the corresponding Gumroad product.
+    </p>
+
+  </div>
+
+  <div class="footer-cta" style="margin:0 0 28px;">
+    <div>
+      <h2>Choose your Jacarandas experience</h2>
+      <p>Download a printable edition or request a commissioned portrait by Indhira.</p>
+    </div>
+    <div>
+      <a class="btn" href="#jacarandas-downloads">Jacarandas descargables →</a>
+      <a class="btn" href="retratos-indhira.html" style="margin-left:8px;">Commission a portrait →</a>
+    </div>
+  </div>
+
+
+  <div class="prints-grid" id="jacarandas-downloads">
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/qrmpmsz" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-01-mujer-frente-al-muro.png" alt="Mujer frente al muro">
+      <div class="print-card-body">
+        <div class="num">01 · PRINTABLE ART</div>
+        <h3>Mujer frente al muro</h3>
+        <p>Printable art · Arte imprimible</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/ppeeud" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-02-el-puno-verde.jpg" alt="El puño verde">
+      <div class="print-card-body">
+        <div class="num">02 · PRINTABLE ART</div>
+        <h3>El puño verde</h3>
+        <p>Printable art · The Green Fist</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/akkwwvr" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-03-joven-frente-a-la-barricada.jpg" alt="Joven frente a la barricada">
+      <div class="print-card-body">
+        <div class="num">03 · PRINTABLE ART</div>
+        <h3>Joven frente a la barricada</h3>
+        <p>Printable art · Young Woman at the Barricade</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/yqftf" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-04-libres.jpg" alt="Libres">
+      <div class="print-card-body">
+        <div class="num">04 · PRINTABLE ART</div>
+        <h3>Libres</h3>
+        <p>Printable art · Free</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/trrixk" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-05-abrazo-colectivo.jpg" alt="Abrazo colectivo">
+      <div class="print-card-body">
+        <div class="num">05 · PRINTABLE ART</div>
+        <h3>Abrazo colectivo</h3>
+        <p>Printable art · Collective Embrace</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/zvvoya" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-06-ser-libre.jpg" alt="Ser libre o no ser">
+      <div class="print-card-body">
+        <div class="num">06 · PRINTABLE ART</div>
+        <h3>Ser libre o no ser</h3>
+        <p>Printable art · To Be Free or Not to Be</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
+
+    <a class="print-card" href="https://indhira15.gumroad.com/l/mckax" target="_blank" rel="noopener">
+      <img src="images/jacarandas/jacarandas-07-viva-la-vulva.jpg" alt="Viva la vulva">
+      <div class="print-card-body">
+        <div class="num">07 · PRINTABLE ART</div>
+        <h3>Viva la vulva</h3>
+        <p>Feminismo · Equidad</p>
+        <div class="link">View on Gumroad →</div>
+      </div>
+    </a>
 
   </div>
 
