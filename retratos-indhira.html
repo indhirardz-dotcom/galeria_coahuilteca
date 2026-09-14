@@ -49,7 +49,7 @@ nav a{
 }
 
 .hero{
-  padding:100px 0 70px;
+  padding:58px 0 44px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:70px;
@@ -82,7 +82,7 @@ h1{
 
 .options{
   border-top:1px solid var(--line);
-  padding:58px 0;
+  padding:38px 0;
 }
 
 .options h2{
@@ -98,7 +98,7 @@ h1{
 
 .cards{
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:28px;
 }
 
@@ -112,7 +112,7 @@ h1{
 .card-media{
   display:block;
   width:100%;
-  height:390px;
+  height:260px;
   overflow:hidden;
 }
 
@@ -176,7 +176,11 @@ footer{
     margin:0 16px 10px 0;
   }
   .hero{
-    padding:70px 0 52px;
+    padding:55px 0 42px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
   }
   .hero>div+div{
     margin-top:35px;
