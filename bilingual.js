@@ -165,7 +165,16 @@
     "View artist profile →": "Ver perfil de la artista →",
     "Original oil painting": "Pintura original al óleo",
     "Traditional layered process": "Proceso tradicional por capas",
-    "Certificate of authenticity": "Certificado de autenticidad"
+    "Certificate of authenticity": "Certificado de autenticidad",
+    "Collect": "Colecciona",
+    "something original.": "algo original.",
+    "Original work · Private assistance · Worldwide shipping": "Obra original · Atención privada · Envíos a todo el mundo",
+    "01 · PAINTING": "01 · PINTURA",
+    "02 · PORTRAIT COMMISSIONS": "02 · RETRATOS POR ENCARGO",
+    "03 · CERAMICS": "03 · CERÁMICA",
+    "PAINTING": "PINTURA",
+    "PORTRAIT COMMISSIONS": "RETRATOS POR ENCARGO",
+    "CERAMICS": "CERÁMICA"
   };
 
   const originals = new WeakMap();
