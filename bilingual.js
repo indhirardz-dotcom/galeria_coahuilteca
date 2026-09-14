@@ -233,7 +233,7 @@
       button.classList.toggle("is-active", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}
+    try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}\n    document.documentElement.style.visibility = "";
   }
 
   function buildSelector() {
