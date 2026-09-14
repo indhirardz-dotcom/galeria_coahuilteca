@@ -80,4 +80,4 @@ function icsFor(card){
 document.querySelectorAll(".event").forEach((card,i)=>{const b=card.querySelector(".save");if(!b)return;const key="agenda-sma-"+card.querySelector("h2").textContent;if(localStorage.getItem(key)){b.classList.add("saved");b.textContent="♥ Guardado"}b.addEventListener("click",()=>{localStorage.setItem(key,"1");b.classList.add("saved");b.textContent="♥ Guardado · calendario";const blob=new Blob([icsFor(card)],{type:"text/calendar;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=card.querySelector("h2").textContent.replace(/[^a-z0-9]+/gi,"-")+".ics";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)})});
 </script>
 <a href="#top" class="back-to-top" aria-label="Volver arriba">↑</a>
-  <script src="bilingual.js" defer></script>\n</body></html>
+  <script src="bilingual.js?v=20260914-3" defer></script>\n</body></html>
