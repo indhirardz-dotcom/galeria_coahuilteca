@@ -176,7 +176,125 @@
     "PORTRAIT COMMISSIONS": "RETRATOS POR ENCARGO",
     "CERAMICS": "CERÁMICA",
     "Working gallery · San Miguel de Allende": "Galería en activo · San Miguel de Allende",
-    "WORKING GALLERY · SAN MIGUEL DE ALLENDE": "GALERÍA EN ACTIVO · SAN MIGUEL DE ALLENDE"
+    "WORKING GALLERY · SAN MIGUEL DE ALLENDE": "GALERÍA EN ACTIVO · SAN MIGUEL DE ALLENDE",
+    "Indhira Pintora | Mexican Visual Artist": "Indhira Pintora | Artista Visual Mexicana",
+    "Work": "Obra",
+    "Biography": "Biografía",
+    "Commissions": "Encargos",
+    "Menu": "Menú",
+    "Painting · Printmaking · Ceramics": "Pintura · Gráfica · Cerámica",
+    "Mexican visual artist": "Artista visual mexicana",
+    "A figurative practice that reclaims the female body as political territory, a space of memory and a site of resistance.": "Una práctica figurativa que recupera el cuerpo femenino como territorio político, espacio de memoria y lugar de resistencia.",
+    "Explore the work": "Conocer la obra",
+    "Artistic practice": "Práctica artística",
+    "San Miguel de Allende, Mexico": "San Miguel de Allende, México",
+    "Indhira develops a figurative practice centered on women’s experiences, the cultural construction of the body, collective memory, and the relationship between identity and territory.": "Indhira desarrolla una obra figurativa centrada en la experiencia de las mujeres, la construcción cultural del cuerpo, la memoria colectiva y la relación entre identidad y territorio.",
+    "Her painting recovers historical processes —such as grisaille, glazing, and the Venetian technique— to confront contemporary issues through precise, symbolic, and deeply material images.": "Su pintura recupera procedimientos históricos —como la grisalla, las veladuras y la técnica veneciana— para confrontar problemáticas contemporáneas desde una imagen precisa, simbólica y profundamente material.",
+    "A series created using the Venetian technique that examines the female body as a territory contested by the gaze, medicine, fashion, ideology, and power.": "Serie realizada mediante técnica veneciana que examina el cuerpo femenino como un territorio disputado por la mirada, la medicina, la moda, la ideología y el poder.",
+    "The project brings together painting, written research, and process memory to construct a visual reflection on autonomy, comfort, disobedience, and resistance.": "El proyecto reúne pintura, investigación escrita y memoria de proceso para construir una reflexión visual sobre autonomía, comodidad, desobediencia y resistencia.",
+    "Selected work": "Obra seleccionada",
+    "A selection of projects developed through painting, drawing, printmaking, and processes connected with memory and representation.": "Una selección de proyectos desarrollados mediante pintura, dibujo, grabado y procesos vinculados con la memoria y la representación.",
+    "Figurative painting and Venetian technique addressing body, autonomy, femininity, and resistance.": "Pintura figurativa y técnica veneciana sobre cuerpo, autonomía, feminidad y resistencia.",
+    "Portraits of sisterhood constructed from stories, encounters, and networks of affection among women.": "Retratos de sororidad construidos a partir de historias, encuentros y redes afectivas entre mujeres.",
+    "Oil portraits conceived as singular works of art: presence, character, memory, and family continuity.": "Retratos al óleo concebidos como obras irrepetibles: presencia, carácter, memoria y continuidad familiar.",
+    "Original work on paper": "Obra original sobre papel",
+    "Work on paper recording architecture, urban landscape, migration, community memory, and everyday life.": "Obra sobre papel que registra arquitectura, paisaje urbano, migración, memoria comunitaria y vida cotidiana.",
+    "Artist statement": "Declaración de artista",
+    "I paint because images can still challenge what culture presents as natural. My work": "Pinto porque la imagen todavía puede disputar aquello que la cultura presenta como natural. Mi obra",
+    "reclaims the female body as political territory": "recupera el cuerpo femenino como territorio político",
+    ", but also as lived experience, memory, matter, and presence.": ", pero también como experiencia vivida, memoria, materia y presencia.",
+    "Indhira is a Mexican visual artist born in Monclova, Coahuila, and based in San Miguel de Allende, Guanajuato. Her practice encompasses painting, drawing, printmaking, and ceramics.": "Indhira es una artista visual mexicana nacida en Monclova, Coahuila, y radicada en San Miguel de Allende, Guanajuato. Su práctica comprende pintura, dibujo, gráfica y cerámica.",
+    "She holds a degree in Graphic Design and developed her artistic training for a decade with master Tomás Silvestre at Taller Puerta Morada. She also completed postgraduate studies in Cultural Development at the Autonomous University of Coahuila.": "Es licenciada en Diseño Gráfico y desarrolló durante una década su formación artística con el maestro Tomás Silvestre en el Taller Puerta Morada. También realizó estudios de posgrado en Desarrollo Cultural en la Universidad Autónoma de Coahuila.",
+    "She participated in an artistic residency at CONARTE’s Escuela Adolfo Prieto and at the Experimental Printmaking Workshop of Havana. Her work has been exhibited in cultural venues across Coahuila, Guanajuato, and other cities in Mexico.": "Participó en una residencia artística en la Escuela Adolfo Prieto de CONARTE y en el Taller Experimental de Gráfica de La Habana. Su trabajo ha sido exhibido en espacios culturales de Coahuila, Guanajuato y otras ciudades de México.",
+    "Jacarandas. Portraits of Sisterhood": "Jacarandas. Retratos de sororidad",
+    "Territory of Battle. In Defense of the Female Body": "Territorio de batalla. En defensa del cuerpo femenino",
+    ", developed with support from the Program of Stimulus for Artistic Creation and Development.": ", desarrollado con apoyo del Programa de Estímulos a la Creación y Desarrollo Artístico.",
+    "Selected training": "Formación seleccionada",
+    "Bachelor’s Degree in Graphic Design": "Licenciatura en Diseño Gráfico",
+    "Commissioned work": "Obra por encargo",
+    "Portraits with permanence": "Retratos con permanencia",
+    "Each portrait is developed as a unique work through an initial conversation, image selection, visual proposal, sketches, and execution using traditional oil-painting processes.": "Cada retrato se desarrolla como una obra única, a partir de una conversación inicial, selección de imágenes, propuesta visual, bocetos y ejecución mediante procedimientos tradicionales al óleo.",
+    "Request information": "Solicitar información",
+    "Acquisitions · Exhibitions · Commissions": "Adquisiciones · Exposiciones · Encargos",
+    "To inquire about available work, request a dossier, propose an exhibition, or commission a portrait, contact the artist or Galería Coahuilteca directly.": "Para consultar disponibilidad de obra, solicitar un dossier, proponer una exposición o encargar un retrato, comunícate directamente con la artista o con Galería Coahuilteca.",
+    "What to do in": "Qué hacer en",
+    "A cultural agenda for visitors. We publish only activities with a date, time, venue, and a source you can open and verify.": "Agenda cultural para visitantes. Publicamos solamente actividades con fecha, hora, sede y una fuente que puedes abrir y comprobar.",
+    "Create art inside a gallery": "Crea arte dentro de una galería",
+    "A private 2.5-hour experience at Galería Coahuilteca, just steps away from events in the historic center.": "Una experiencia privada de 2.5 horas en Galería Coahuilteca, a unos pasos de los eventos del Centro.",
+    "Manuel Álvarez Bravo: Collaborations": "Manuel Álvarez Bravo: Colaboraciones",
+    "Instituto Allende House Museum · Free admission · Exhibition through November 9": "Instituto Allende Casa Museo · Entrada libre · exposición hasta el 9 de noviembre",
+    "Music": "Música",
+    "Mexican Music · Operísima México": "Música Mexicana · Operísima México",
+    "Casa Europa México · San Francisco 23, Centro · Tickets required": "Casa Europa México · San Francisco 23, Centro · Boletos requeridos",
+    "Traditional Mexican music": "Música tradicional mexicana",
+    "Courtyard · Biblioteca Pública A.C.": "Patio · Biblioteca Pública A.C.",
+    "Music · Benefit": "Música · Beneficio",
+    "Yambu Gallery · Las Palmas 11, San Antonio · Tickets required": "Yambu Gallery · Las Palmas 11, San Antonio · Boletos requeridos",
+    "Music · Dance": "Música · Danza",
+    "Casa de Sierra Nevada · Hospicio 35 · Reservation required": "Casa de Sierra Nevada · Hospicio 35 · Reservación requerida",
+    "El Sindicato · Recreo 4 · Screening and conversation": "El Sindicato · Recreo 4 · Proyección y conversación",
+    "Artist creating in situ · Saturday": "Artista creando in situ · Sábado",
+    "Galería Coahuilteca · Tenerías at Codo · Watch the artistic process inside the gallery": "Galería Coahuilteca · Tenerías esquina Codo · Observa el proceso artístico dentro de la galería",
+    "Location and visit ↗": "Ubicación y visita ↗",
+    "Tradition": "Tradición",
+    "Defense of Chapultepec Castle and sacrifice of the Niños Héroes": "Defensa del Castillo de Chapultepec y sacrificio de los Niños Héroes",
+    "Artist creating in situ · Sunday": "Artista creando in situ · Domingo",
+    "Opera · Tradition": "Ópera · Tradición",
+    "Mexican celebration benefiting Operísima México": "Fiesta mexicana a beneficio de Operísima México",
+    "Viñedos Patria · Opera, mariachi, and equestrian show · Reservations": "Viñedos Patria · Ópera, mariachi y espectáculo ecuestre · Reservaciones",
+    "View information and reservations ↗": "Ver información y reservas ↗",
+    "Mexican music": "Música mexicana",
+    "Independence Day celebration · Disidente Norteño and Grupo Malo": "Fiesta del Grito · Disidente Norteño y Grupo Malo",
+    "Create mojigangas with reed and cardboard": "Crear mojigangas con carrizo y cartón",
+    "Live music": "Música en vivo",
+    "Andy Aristizábal at La Baha": "Andy Aristizábal en La Baha",
+    "Cinema and analysis: Serpent and the Rainbow": "Cine y análisis: Serpent and the Rainbow",
+    "Music · Gospel": "Música · Gospel",
+    "Teatro Santa Ana · Biblioteca Pública · Tickets required": "Teatro Santa Ana · Biblioteca Pública · Boletos requeridos",
+    "Rubén Barrera: Mexican music of the 20th century": "Rubén Barrera: Música mexicana del siglo XX",
+    "Classical music": "Música clásica",
+    "Templo de la Tercera Orden · Presented by Casa Europa México · Tickets": "Templo de la Tercera Orden · Presentado por Casa Europa México · Boletos",
+    "Michael Parks · An evening with the music of Bach": "Michael Parks · Una noche con la música de Bach",
+    "Templo de la Tercera Orden · Presented by Casa Europa México · Free admission": "Templo de la Tercera Orden · Presentado por Casa Europa México · Entrada libre",
+    "View official information ↗": "Ver información oficial ↗",
+    "The Prince of Nanawa · Part One": "El príncipe de Nanawa · Primera parte",
+    "Miguel Omaña: Emotions of Latin America": "Miguel Omaña: Emociones de Latinoamérica",
+    "Guanajuato and participating venues · International program of music, theater, dance, and visual arts": "Guanajuato y sedes participantes · Programa internacional de música, teatro, danza y artes visuales",
+    "Art Walk · Fábrica La Aurora": "Art Walk · Fábrica La Aurora",
+    "Fábrica La Aurora · Tour of galleries and studios": "Fábrica La Aurora · Recorrido por galerías y estudios",
+    "TEDxSanMiguelDeAllende · Threshold of the Future": "TEDxSanMiguelDeAllende · Umbral del Futuro",
+    "Buy tickets ↗": "Comprar boletos ↗",
+    "Schedule to be confirmed": "Horario por confirmar",
+    "Casa Europa México · Anna Komusiński, cello · Joanna Sochacka, piano": "Casa Europa México · Anna Komusiński, violonchelo · Joanna Sochacka, piano",
+    "Independent agenda curated by Galería Coahuilteca · Tenerías at Codo · Centro · San Miguel de Allende": "Agenda independiente curada por Galería Coahuilteca · Tenerías esq. Codo · Centro · San Miguel de Allende",
+    "View catalogue": "📖 Ver catálogo",
+    "Subscribe to our newsletter and receive a printable artwork as a gift.": "Suscríbete a nuestro boletín y recibe de regalo una obra imprimible.",
+    "Audio in Spanish": "Audio en Español",
+    "Purchase": "Comprar",
+    "English + Spanish": "Inglés + Español",
+    "Payment opens on this page through Gumroad’s secure system.": "El pago se abre sobre esta misma página mediante el sistema seguro de Gumroad.",
+    "The file will be available for immediate download after the purchase is confirmed.": "El archivo estará disponible para descarga inmediatamente después de confirmar la compra.",
+    "You may print the artwork for your personal space. Commercial reproduction rights are not included.": "Puedes imprimir la obra para tu espacio personal. No incluye derechos de reproducción comercial.",
+    "Woman Facing the Wall": "Mujer frente al muro",
+    "Young Woman at the Barricade": "Joven frente a la barricada",
+    "Free": "Libres",
+    "Collective Embrace": "Abrazo colectivo",
+    "To Be Free or Not to Be": "Ser libre o no ser",
+    "Long Live the Vulva": "Viva la vulva",
+    "Women Raising Their Voices": "Mujeres alzando la voz",
+    "Not One Woman Less": "Ni una menos",
+    "Girl at the March": "Niña en la marcha",
+    "Women’s March": "Marcha de mujeres",
+    "They Took So Much from Us That They Took Away Our Fear": "Nos quitaron tanto que nos quitaron el miedo",
+    "I March Because I Am Alive, but I Don’t Know for How Long": "Me marcho porque estoy viva, pero no sé hasta cuándo",
+    "Bandanas and Raised Fists": "Pañuelos y puños en alto",
+    "I Am Neither Hysterical nor Menstruating": "Ni soy histérica ni estoy menstruando",
+    "Abortion Is Also Taking Responsibility": "Abortar también es hacerse cargo",
+    "Women Occupying Space": "Mujeres ocupando el espacio",
+    "We Are the Cry of Those No Longer Here": "Somos el grito de las que ya no están",
+    "International Women’s Day 2020": "8M 2020",
+    "Digital products are for personal use only. Due to the nature of downloadable files, purchases are final. Prices in Mexican pesos are approximate; the final amount will depend on the exchange rate applied during payment.": "Digital products are for personal use only. Due to the nature of downloadable files, purchases are final. Los precios en pesos son aproximados; el importe final dependerá del tipo de cambio aplicado durante el pago.",
+    "Galería Coahuilteca · San Miguel de Allende · Mexico": "Galería Coahuilteca · San Miguel de Allende · México",
   };
 
   /* AUDIT_COMPLETE_TRANSLATIONS */
@@ -333,21 +451,21 @@
   "Visit the gallery website →": "Visitar el sitio de la galería →"
 });
 
+  const reverseDictionary = Object.fromEntries(
+    Object.entries(dictionary).map(([english, spanish]) => [spanish, english])
+  );
   const originals = new WeakMap();
 
   function translateTextNode(node, language) {
     if (!originals.has(node)) originals.set(node, node.nodeValue);
     const original = originals.get(node);
-    if (language === "en") {
-      node.nodeValue = original;
-      return;
-    }
     const trimmed = original.trim().replace(/\s+/g, " ");
-    const translated = dictionary[trimmed];
-    if (!translated) return;
+    const translated = language === "es"
+      ? dictionary[trimmed]
+      : reverseDictionary[trimmed];
     const leading = original.match(/^\s*/)[0];
     const trailing = original.match(/\s*$/)[0];
-    node.nodeValue = leading + translated + trailing;
+    node.nodeValue = leading + (translated || trimmed) + trailing;
   }
 
   function applyLanguage(language) {
