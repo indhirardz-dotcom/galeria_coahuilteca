@@ -33,7 +33,9 @@ h1{margin:15px 0 22px;font:400 clamp(58px,8vw,104px)/.92 Georgia,serif;letter-sp
 .product-body{padding:30px 32px 34px;display:flex;flex-direction:column;flex:1}
 .product-top{display:flex;justify-content:space-between;gap:20px;align-items:start}
 .product h3{font:400 34px Georgia,serif;margin:10px 0 12px}
-.price{font:400 25px Georgia,serif;white-space:nowrap;margin-top:8px}
+.price{text-align:right;white-space:nowrap;margin-top:8px}
+.price strong{display:block;font:400 25px Georgia,serif}
+.price small{display:block;margin-top:6px;color:var(--muted);font-size:12px;font-weight:400}
 .product p{color:var(--muted);line-height:1.65;margin:0 0 10px}
 .small{font-size:13px}
 .button{display:inline-block;align-self:flex-start;margin-top:auto;padding:15px 24px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.13em;font-size:11px}
@@ -91,11 +93,11 @@ footer span{display:block;margin-bottom:8px}
 <div class="eyebrow">Complete collection</div>
 <h3>Jacarandas — Bilingual catalogue</h3>
 </div>
-<div class="price">USD $39</div>
+<div class="price"><strong>USD $39</strong><small>≈ MXN $663</small></div>
 </div>
 <p>Digital bilingual catalogue presenting the complete Jacarandas series.</p>
 <p class="small">Catálogo digital bilingüe con la serie completa Jacarandas.</p>
-<a class="button" href="https://indhira15.gumroad.com/l/jacarandas-collection" target="_blank" rel="noopener">Purchase catalogue</a>
+<a class="button" href="https://indhira15.gumroad.com/l/jacarandas-collection" data-gumroad-overlay-checkout="true">Purchase catalogue</a>
 </div>
 </article>
 
@@ -107,11 +109,11 @@ footer span{display:block;margin-bottom:8px}
 <div class="eyebrow">Printable artwork · 01</div>
 <h3>Mujer frente al muro</h3>
 </div>
-<div class="price">USD $8</div>
+<div class="price"><strong>USD $8</strong><small>≈ MXN $136</small></div>
 </div>
 <p>High-resolution printable artwork from the Jacarandas series.</p>
 <p class="small">Obra digital de alta resolución para impresión personal.</p>
-<a class="button" href="https://indhira15.gumroad.com/l/qrmpmsz" target="_blank" rel="noopener">Purchase artwork</a>
+<a class="button" href="https://indhira15.gumroad.com/l/qrmpmsz" data-gumroad-overlay-checkout="true">Purchase artwork</a>
 </div>
 </article>
 </div>
@@ -122,8 +124,9 @@ footer span{display:block;margin-bottom:8px}
 
 <footer>
 <span>Galería Coahuilteca · San Miguel de Allende · México</span>
-<span>Digital art · Secure checkout</span>
+<span>Digital art · Secure checkout · Immediate delivery</span>
 </footer>
 </div>
+<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
