@@ -163,40 +163,9 @@
     "← Back to shop": "← Volver a la tienda",
     "Portrait commissions · Indhira": "Retratos por encargo · Indhira",
     "View artist profile →": "Ver perfil de la artista →",
-    "Limited commissions each year · Worldwide shipping · Private guidance from the gallery": "Encargos limitados cada año · Envíos a todo el mundo · Atención privada de la galería",
     "Original oil painting": "Pintura original al óleo",
     "Traditional layered process": "Proceso tradicional por capas",
-    "Certificate of authenticity": "Certificado de autenticidad",
-    "Conversation": "Conversación",
-    "References": "Referencias",
-    "Drawing": "Dibujo",
-    "Painting": "Pintura",
-    "DEVELOPING THE IMAGE": "DESARROLLO DE LA IMAGEN",
-    "AN EARLIER STAGE": "UNA ETAPA ANTERIOR",
-    "50% deposit to begin": "50% de anticipo para comenzar",
-    "50% before delivery": "50% antes de la entrega",
-    "Painted detail · Layer, color and gesture": "Detalle pictórico · Capa, color y gesto",
-    "The artist at work · San Miguel de Allende": "La artista trabajando · San Miguel de Allende",
-    "Delivery": "Entrega",
-    "Send the gallery one or two reference images and the approximate size you are considering. If you are in San Miguel de Allende, Indhira can also photograph you personally for the portrait once the commission is confirmed. We will guide you through each step personally.": "Envía a la galería una o dos imágenes de referencia y el tamaño aproximado que estás considerando. Si estás en San Miguel de Allende, Indhira también puede fotografiarte personalmente una vez confirmado el encargo. Te guiaremos personalmente en cada paso.",
-    "Explore more work from Galería Coahuilteca": "Explora más obra de Galería Coahuilteca",
-    "Portrait commissions by Indhira": "Retratos por encargo de Indhira",
-    "Working gallery · San Miguel de Allende": "Galería en activo · San Miguel de Allende",
-    "A gift from the gallery": "Un regalo de la galería",
-    "Collectors · Press · Commissions · Private appointments": "Coleccionistas · Prensa · Encargos · Citas privadas",
-    "The story behind our name": "La historia detrás de nuestro nombre",
-    "Listen to the story": "Escucha la historia",
-    "Audio in English": "Audio en inglés",
-    "Long before states existed. Long before borders existed. Long before there were maps.": "Mucho antes de que existieran los estados. Mucho antes de que existieran las fronteras. Mucho antes de que hubiera mapas.",
-    "Small human groups moved through the territories we now call Coahuila, Nuevo León, Tamaulipas and South Texas.": "Pequeños grupos humanos recorrían los territorios que hoy llamamos Coahuila, Nuevo León, Tamaulipas y el sur de Texas.",
-    "Their history traveled with them. It lived in memory. In stories. In people.": "Su historia viajaba con ellos. Vivía en la memoria. En los relatos. En las personas.",
-    "When the time came to name this gallery, we thought of those ancient travelers.": "Cuando llegó el momento de nombrar esta galería, pensamos en aquellos antiguos viajeros.",
-    "Perhaps because we, too, had begun our own journey. We had changed cities, built a new life and learned to look at a different landscape.": "Quizá porque nosotros también habíamos comenzado nuestro propio viaje. Habíamos cambiado de ciudad, construido una nueva vida y aprendido a mirar un paisaje distinto.",
-    "Yet something remained intact.": "Sin embargo, algo permaneció intacto.",
-    "Galería Coahuilteca was born from that experience. From understanding that one can travel great distances and still preserve what gives them identity.": "Galería Coahuilteca nació de esa experiencia: de comprender que podemos recorrer grandes distancias y conservar aquello que nos da identidad.",
-    "Because memory also travels. And some stories find new ways to keep being told.": "Porque la memoria también viaja. Y algunas historias encuentran nuevas maneras de seguir siendo contadas.",
-    "Now that you know the origin of our name, we invite you to discover the artwork, visit the gallery or write to us.": "Ahora que conoces el origen de nuestro nombre, te invitamos a descubrir la obra, visitar la galería o escribirnos.",
-    "Write to us": "Escríbenos"
+    "Certificate of authenticity": "Certificado de autenticidad"
   };
 
   const originals = new WeakMap();
@@ -233,7 +202,7 @@
       button.classList.toggle("is-active", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}\n    document.documentElement.style.visibility = "";
+    try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}
   }
 
   function buildSelector() {
@@ -241,7 +210,7 @@
     const host = document.querySelector("header nav") || document.body;
     const selector = document.createElement("div");
     selector.className = "gc-language-switch";
-    selector.classList.add(host.matches && host.matches("nav") ? "gc-language-under-menu" : "gc-language-floating");
+    selector.classList.add(host.tagName === "NAV" ? "gc-language-under-menu" : "gc-language-floating");
     selector.setAttribute("aria-label", "Idioma / Language");
     selector.innerHTML = '<button type="button" class="gc-language-button" data-language="es">ES</button><span aria-hidden="true">/</span><button type="button" class="gc-language-button" data-language="en">EN</button>';
     host.appendChild(selector);
@@ -251,8 +220,10 @@
   }
 
   const style = document.createElement("style");
-  style.textContent = '.gc-language-switch{display:flex;align-items:center;gap:6px;font:700 11px/1 Arial,sans-serif;letter-spacing:.12em;color:#555;white-space:nowrap;z-index:1001}.gc-language-under-menu{position:absolute;right:0;top:calc(100% + 9px);padding:5px 0}.gc-language-floating{position:fixed;right:20px;top:20px;padding:9px 11px;background:rgba(255,255,255,.94);border:1px solid rgba(0,0,0,.12);border-radius:999px}.gc-language-button{border:0;background:transparent;color:inherit;padding:5px 2px;cursor:pointer;opacity:.42}.gc-language-button.is-active{opacity:1;text-decoration:underline;text-underline-offset:4px}header nav{position:relative}.back-to-top{right:20px!important;bottom:20px!important;width:38px!important;height:38px!important;border-radius:50%!important}@media(max-width:800px){.gc-language-under-menu{top:calc(100% + 7px)}.back-to-top{right:14px!important;bottom:14px!important;width:36px!important;height:36px!important}}';
+  style.textContent = '.gc-language-switch{display:flex;align-items:center;gap:6px;font:700 11px/1 Arial,sans-serif;letter-spacing:.12em;color:#555;white-space:nowrap;z-index:1001}.gc-language-under-menu{position:absolute;right:0;top:calc(100% + 9px);padding:5px 0}.gc-language-floating{position:fixed;right:20px;top:20px;padding:10px 12px;background:rgba(255,255,255,.94);border:1px solid rgba(0,0,0,.12);border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.10);backdrop-filter:blur(8px)}.gc-language-button{border:0;background:transparent;color:inherit;padding:6px 2px;cursor:pointer;opacity:.45}.gc-language-button.is-active{opacity:1;text-decoration:underline;text-underline-offset:4px}@media(max-width:800px){.gc-language-floating{right:14px;bottom:14px;padding:9px 11px}}';
   document.head.appendChild(style);
+  const nav = document.querySelector("header nav");
+  if (nav) nav.style.position = "relative";
 
   function start() {
     buildSelector();
