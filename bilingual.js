@@ -174,7 +174,9 @@
     "03 · CERAMICS": "03 · CERÁMICA",
     "PAINTING": "PINTURA",
     "PORTRAIT COMMISSIONS": "RETRATOS POR ENCARGO",
-    "CERAMICS": "CERÁMICA"
+    "CERAMICS": "CERÁMICA",
+    "Working gallery · San Miguel de Allende": "Galería en activo · San Miguel de Allende",
+    "WORKING GALLERY · SAN MIGUEL DE ALLENDE": "GALERÍA EN ACTIVO · SAN MIGUEL DE ALLENDE"
   };
 
   const originals = new WeakMap();
