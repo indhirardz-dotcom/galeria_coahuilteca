@@ -105,9 +105,11 @@
 
   function buildSelector() {
     if (document.querySelector(".gc-language-switch")) return;
-    const host = document.querySelector("header") || document.body;
+    const header = document.querySelector("header");
+    const host = header || document.body;
     const selector = document.createElement("div");
     selector.className = "gc-language-switch";
+    if (!header) selector.classList.add("gc-language-floating");
     selector.setAttribute("aria-label", "Idioma / Language");
     selector.innerHTML = '<button type="button" class="gc-language-button" data-language="es">ES</button><span aria-hidden="true">/</span><button type="button" class="gc-language-button" data-language="en">EN</button>';
     host.appendChild(selector);
@@ -117,7 +119,7 @@
   }
 
   const style = document.createElement("style");
-  style.textContent = '.gc-language-switch{display:flex;align-items:center;gap:6px;margin-left:auto;font:700 11px/1 Arial,sans-serif;letter-spacing:.12em;color:#666;white-space:nowrap}.gc-language-button{border:0;background:transparent;color:inherit;padding:6px 2px;cursor:pointer;opacity:.45}.gc-language-button.is-active{opacity:1;text-decoration:underline;text-underline-offset:4px}@media(max-width:800px){.gc-language-switch{position:absolute;top:18px;right:20px}}';
+  style.textContent = '.gc-language-switch{display:flex;align-items:center;gap:6px;margin-left:auto;font:700 11px/1 Arial,sans-serif;letter-spacing:.12em;color:#666;white-space:nowrap;z-index:1001}.gc-language-floating{position:fixed;top:18px;right:20px;padding:9px 11px;background:rgba(255,255,255,.9);border:1px solid rgba(0,0,0,.1)}.gc-language-button{border:0;background:transparent;color:inherit;padding:6px 2px;cursor:pointer;opacity:.45}.gc-language-button.is-active{opacity:1;text-decoration:underline;text-underline-offset:4px}@media(max-width:800px){header .gc-language-switch{position:absolute;top:18px;right:20px}}';
   document.head.appendChild(style);
 
   function start() {
