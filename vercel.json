@@ -2,6 +2,16 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/gallery",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/gallery.html",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
       "source": "/storytelling",
       "destination": "/story",
       "permanent": true

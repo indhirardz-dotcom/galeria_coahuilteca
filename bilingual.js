@@ -363,6 +363,9 @@
   "Open daily": "Abierto todos los días",
   "Available artwork · Reservations · Commissions": "Obra disponible · Reservaciones · Encargos",
   "Email": "Correo electrónico",
+  "Newsletter": "Boletín",
+  "Signup for news and special offers!": "¡Suscríbete para recibir noticias y ofertas especiales!",
+  "Sign up for news and special offers!": "¡Suscríbete para recibir noticias y ofertas especiales!",
   "Available Works · Galería Coahuilteca": "Obra disponible · Galería Coahuilteca",
   "Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.": "Pinturas originales que exploran la migración, el movimiento y la presencia humana colectiva. Los precios y medidas aparecen en cada ficha del catálogo.",
   "Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available": "Obra original · San Miguel de Allende · Envíos a México y EE. UU. · Cotizaciones internacionales disponibles",
@@ -455,6 +458,9 @@
     Object.entries(dictionary).map(([english, spanish]) => [spanish, english])
   );
   const originals = new WeakMap();
+  const originalAttributes = new WeakMap();
+  let currentLanguage = "en";
+  let translationScheduled = false;
 
   function translateTextNode(node, language) {
     if (!originals.has(node)) originals.set(node, node.nodeValue);
@@ -469,6 +475,7 @@
   }
 
   function applyLanguage(language) {
+    currentLanguage = language;
     document.documentElement.lang = language;
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -480,6 +487,22 @@
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(node => translateTextNode(node, language));
+    document.querySelectorAll("input[placeholder], button[aria-label]").forEach(element => {
+      if (!originalAttributes.has(element)) {
+        originalAttributes.set(element, {
+          placeholder: element.getAttribute("placeholder"),
+          ariaLabel: element.getAttribute("aria-label")
+        });
+      }
+      const source = originalAttributes.get(element);
+      ["placeholder", "ariaLabel"].forEach(key => {
+        const original = source[key];
+        if (!original) return;
+        const translated = language === "es" ? dictionary[original] : reverseDictionary[original];
+        const attribute = key === "ariaLabel" ? "aria-label" : "placeholder";
+        element.setAttribute(attribute, translated || original);
+      });
+    });
     document.querySelectorAll(".gc-language-button").forEach(button => {
       const active = button.dataset.language === language;
       button.classList.toggle("is-active", active);
@@ -514,6 +537,16 @@
     try { language = localStorage.getItem(STORAGE_KEY) || ""; } catch (error) {}
     if (!language) language = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
     applyLanguage(language);
+    const observer = new MutationObserver(mutations => {
+      if (!mutations.some(mutation => mutation.addedNodes.length)) return;
+      if (translationScheduled) return;
+      translationScheduled = true;
+      setTimeout(() => {
+        translationScheduled = false;
+        applyLanguage(currentLanguage);
+      }, 50);
+    });
+    observer.observe(document.body, {childList:true, subtree:true});
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
