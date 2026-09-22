@@ -572,6 +572,7 @@
     try { language = localStorage.getItem(STORAGE_KEY) || ""; } catch (error) {}
     if (!language) language = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
     applyLanguage(language);
+    document.documentElement.classList.add("gc-language-ready");
     const observer = new MutationObserver(mutations => {
       if (!mutations.some(mutation => mutation.addedNodes.length)) return;
       if (translationScheduled) return;
