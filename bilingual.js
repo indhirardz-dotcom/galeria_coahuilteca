@@ -1,7 +1,7 @@
 (function () {
   const STORAGE_KEY = "gc-language";
   const dictionary = {
-    "Original Art in": "Arte original en",
+    "Original Art in": "Arte original en",\n    "Digital collection": "Colección digital",\n    "Explore Jacarandas": "Ver Jacarandas",\n    "Digital prints from MXN $30 · Bilingual catalogue MXN $150": "Obras descargables desde $30 MXN · Catálogo bilingüe $150 MXN",\n    "Secure payment": "Pago seguro",\n    "Immediate delivery": "Entrega inmediata",\n    "Personal use": "Uso personal",\n    "Payment opens securely on this page through Gumroad.": "El pago se abre de forma segura en esta misma página mediante Gumroad.",\n    "Download your file immediately after your purchase is confirmed.": "Descarga tu archivo inmediatamente después de confirmar la compra.",\n    "Print the artwork for your personal space. Commercial reproduction rights are not included.": "Imprime la obra para tu espacio personal. No incluye derechos de reproducción comercial.",
     "Create inside": "Crea dentro de",
     "a working gallery.": "una galería en activo.",
     "Private 2.5-hour art sessions inside Galería Coahuilteca, with the option of deeper studio experiences in the rural community of Corralejo de Arriba.": "Sesiones artísticas privadas de 2.5 horas dentro de Galería Coahuilteca, con la opción de experiencias más profundas en el estudio rural de Corralejo de Arriba.",
