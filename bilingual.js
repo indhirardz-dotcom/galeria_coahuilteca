@@ -430,7 +430,6 @@
   "Printable artwork · 30": "Obra imprimible · 30",
   "Printable artwork · 31": "Obra imprimible · 31",
   "Woman Facing the Wall — high-resolution printable artwork.": "Mujer frente al muro — obra imprimible de alta resolución.",
-  "The Green Fist — high-resolution printable artwork.": "El puño verde — obra imprimible de alta resolución.",
   "May Our Voice Become a Hurricane — high-resolution printable artwork.": "Que nuestra voz sea un huracán — obra imprimible de alta resolución.",
   "Young Women Marching — high-resolution printable artwork.": "Jóvenes en marcha — obra imprimible de alta resolución.",
   "Woman and Daughter Defending Their Rights — high-resolution printable artwork.": "Mujer e hija defendiendo sus derechos — obra imprimible de alta resolución.",
