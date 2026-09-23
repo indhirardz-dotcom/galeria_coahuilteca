@@ -769,7 +769,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     new MutationObserver(function(){
       var success=embedded.querySelector('.ml-form-successBody, .ml-form-successContent');
       if(success && success.getClientRects().length && getComputedStyle(success).visibility!=='hidden'){
-        hidePopup();
+        // Keep MailerLite's success message and gift download visible.
+        try{ localStorage.setItem(key,'1'); }catch(e){}
       }
     }).observe(embedded,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
   }
