@@ -444,6 +444,14 @@ ml('account', '2615427');
 .gc-newsletter-card .ml-embedded{
   margin-top:8px;
 }
+.newsletter-mailerlite button{
+  padding:12px 22px;
+  border:1px solid #772b25;
+  background:#772b25;
+  color:#fff;
+  font:inherit;
+  cursor:pointer;
+}
 @media (max-width:600px){
   .gc-newsletter-popup{
     padding:14px;
@@ -698,7 +706,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="newsletter-mailerlite">
-    <div class="ml-embedded" data-form="erMB96"></div>
+    <button type="button" id="gcNewsletterOpen">Subscribe</button>
   </div>
 </section>
 
@@ -741,6 +749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var key='gc_printable_subscription_seen_v2';
   var popup=document.getElementById('gcNewsletterPopup');
   var close=document.getElementById('gcNewsletterClose');
+  var open=document.getElementById('gcNewsletterOpen');
   if(!popup) return;
 
   function hidePopup(){
@@ -758,6 +767,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     shown=true;
     popup.classList.add('is-visible');
     popup.setAttribute('aria-hidden','false');
+  }
+
+  if(open) open.addEventListener('click',function(){
+    popup.classList.add('is-visible');
+    popup.setAttribute('aria-hidden','false');
+    shown=true;
+  });
+
+  var embedded=popup.querySelector('.ml-embedded');
+  if(embedded){
+    new MutationObserver(function(){
+      var success=embedded.querySelector('.ml-form-successBody, .ml-form-successContent');
+      if(success && success.getClientRects().length && getComputedStyle(success).visibility!=='hidden'){
+        hidePopup();
+      }
+    }).observe(embedded,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
   }
 
   if(eligible){
