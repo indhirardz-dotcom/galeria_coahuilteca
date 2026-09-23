@@ -442,6 +442,9 @@ footer a{
 .gc-newsletter-card button[type=submit]{width:100%;margin-top:8px}
 .gc-newsletter-card input[type=email]{padding:12px;border:1px solid #bbb;font:inherit}
 .gc-newsletter-card button[type=submit]{padding:12px 20px;border:0;background:#772b25;color:#fff;font:inherit;cursor:pointer}
+.gc-newsletter-result{font:14px/1.5 Arial,sans-serif;color:#222}
+.gc-newsletter-result a{display:inline-block;margin-top:10px;color:#772b25;text-decoration:underline;font-weight:600}
+.gc-newsletter-error{color:#9b302a;font:13px/1.4 Arial,sans-serif;margin-top:8px}
 @media (max-width:600px){
   .gc-newsletter-popup{
     padding:14px;
@@ -702,8 +705,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="_subject" value="New Galería Coahuilteca newsletter subscription">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://galeriacoahuilteca.com/regalo.html">
       <button type="submit">Subscribe</button>
+      <p class="gc-newsletter-error" role="alert" hidden></p>
     </form>
   </div>
 </section>
@@ -755,7 +758,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function hidePopup(){
     popup.classList.remove('is-visible');
     popup.setAttribute('aria-hidden','true');
-    inlineForm.appendChild(embedded);
+    if(embedded.isConnected) inlineForm.appendChild(embedded);
     try{ localStorage.setItem(key,'1'); }catch(e){}
   }
 
@@ -770,6 +773,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     popup.classList.add('is-visible');
     popup.setAttribute('aria-hidden','false');
   }
+
+  embedded.addEventListener('submit',async function(event){
+    event.preventDefault();
+    var button=embedded.querySelector('button[type=submit]');
+    var error=embedded.querySelector('.gc-newsletter-error');
+    button.disabled=true;
+    error.hidden=true;
+    try{
+      var response=await fetch('https://formsubmit.co/ajax/hello@galeriacoahuilteca.com',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          email:embedded.elements.email.value,
+          _subject:'New Galería Coahuilteca newsletter subscription',
+          _template:'table',
+          _captcha:'false'
+        })
+      });
+      var data=await response.json();
+      if(!response.ok || data.success===false || data.success==='false') throw new Error('Submission failed');
+      var result=document.createElement('div');
+      result.className='gc-newsletter-result';
+      result.innerHTML='<strong>Gracias por suscribirte / Thank you for joining us.</strong><br><a href="https://storage.googleapis.com/mailerlite-uploads-prod/l2615427/CzlDJX6nr7fdp1D1oCU4IymSn449qBM2jVoCKMlw.pdf" target="_blank" rel="noopener">Descargar regalo / Download your artwork · PDF</a>';
+      embedded.replaceWith(result);
+      shown=true;
+      try{localStorage.setItem(key,'1')}catch(e){}
+    }catch(e){
+      error.textContent='No se pudo enviar. Inténtalo de nuevo. / Could not submit. Please try again.';
+      error.hidden=false;
+      button.disabled=false;
+    }
+  });
 
   if(eligible){
     setTimeout(showPopup,15000);
