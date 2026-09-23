@@ -444,14 +444,6 @@ ml('account', '2615427');
 .gc-newsletter-card .ml-embedded{
   margin-top:8px;
 }
-.newsletter-mailerlite button{
-  padding:12px 22px;
-  border:1px solid #772b25;
-  background:#772b25;
-  color:#fff;
-  font:inherit;
-  cursor:pointer;
-}
 @media (max-width:600px){
   .gc-newsletter-popup{
     padding:14px;
@@ -706,7 +698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="newsletter-mailerlite">
-    <button type="button" id="gcNewsletterOpen">Subscribe</button>
+    <div class="ml-embedded" data-form="erMB96"></div>
   </div>
 </section>
 
@@ -739,7 +731,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#772b25;margin-bottom:7px;">A gift from the gallery</div>
     <h3 id="gcNewsletterTitle">Subscribe to our newsletter</h3>
     <p>Receive a complimentary printable artwork, plus occasional exhibition invitations and collector notes.</p>
-    <div class="ml-embedded" data-form="erMB96"></div>
+    <div id="gcNewsletterPopupForm"></div>
   </div>
 </div>
 
@@ -749,12 +741,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var key='gc_printable_subscription_seen_v2';
   var popup=document.getElementById('gcNewsletterPopup');
   var close=document.getElementById('gcNewsletterClose');
-  var open=document.getElementById('gcNewsletterOpen');
+  var inlineForm=document.querySelector('.newsletter-mailerlite');
+  var popupForm=document.getElementById('gcNewsletterPopupForm');
+  var embedded=inlineForm.querySelector('.ml-embedded');
   if(!popup) return;
 
   function hidePopup(){
     popup.classList.remove('is-visible');
     popup.setAttribute('aria-hidden','true');
+    inlineForm.appendChild(embedded);
     try{ localStorage.setItem(key,'1'); }catch(e){}
   }
 
@@ -765,17 +760,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function showPopup(){
     if(!eligible || shown) return;
     shown=true;
+    popupForm.appendChild(embedded);
     popup.classList.add('is-visible');
     popup.setAttribute('aria-hidden','false');
   }
 
-  if(open) open.addEventListener('click',function(){
-    popup.classList.add('is-visible');
-    popup.setAttribute('aria-hidden','false');
-    shown=true;
-  });
-
-  var embedded=popup.querySelector('.ml-embedded');
   if(embedded){
     new MutationObserver(function(){
       var success=embedded.querySelector('.ml-form-successBody, .ml-form-successContent');
