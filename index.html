@@ -382,17 +382,6 @@ footer a{
 
 }
 </style>
-<!-- MailerLite Universal -->
-<script>
-(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
-l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],
-n.parentNode.insertBefore(l,n);})(window,document,'script',
-'https://assets.mailerlite.com/js/universal.js','ml');
-ml('account', '2615427');
-</script>
-<!-- End MailerLite Universal -->
-
-
 <style>
 /* Discreet first-visit newsletter popup */
 .gc-newsletter-popup{
@@ -444,6 +433,15 @@ ml('account', '2615427');
 .gc-newsletter-card .ml-embedded{
   margin-top:8px;
 }
+.newsletter-mailerlite form{display:flex;gap:10px;flex-wrap:wrap}
+.newsletter-mailerlite input[type=email]{flex:1;min-width:190px;padding:12px;border:1px solid #bbb;font:inherit}
+.newsletter-mailerlite button{padding:12px 20px;border:0;background:#772b25;color:#fff;font:inherit;cursor:pointer}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.gc-newsletter-card form{display:block}
+.gc-newsletter-card input[type=email],
+.gc-newsletter-card button[type=submit]{width:100%;margin-top:8px}
+.gc-newsletter-card input[type=email]{padding:12px;border:1px solid #bbb;font:inherit}
+.gc-newsletter-card button[type=submit]{padding:12px 20px;border:0;background:#772b25;color:#fff;font:inherit;cursor:pointer}
 @media (max-width:600px){
   .gc-newsletter-popup{
     padding:14px;
@@ -698,7 +696,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="newsletter-mailerlite">
-    <div class="ml-embedded" data-form="erMB96"></div>
+    <form action="https://formsubmit.co/hello@galeriacoahuilteca.com" method="POST" id="gcNewsletterForm">
+      <label for="gcNewsletterEmail" class="sr-only">Email address</label>
+      <input id="gcNewsletterEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+      <input type="hidden" name="_subject" value="New Galería Coahuilteca newsletter subscription">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://galeriacoahuilteca.com/regalo.html">
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
 </section>
 
@@ -743,7 +749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var close=document.getElementById('gcNewsletterClose');
   var inlineForm=document.querySelector('.newsletter-mailerlite');
   var popupForm=document.getElementById('gcNewsletterPopupForm');
-  var embedded=inlineForm.querySelector('.ml-embedded');
+  var embedded=document.getElementById('gcNewsletterForm');
   if(!popup) return;
 
   function hidePopup(){
@@ -763,16 +769,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     popupForm.appendChild(embedded);
     popup.classList.add('is-visible');
     popup.setAttribute('aria-hidden','false');
-  }
-
-  if(embedded){
-    new MutationObserver(function(){
-      var success=embedded.querySelector('.ml-form-successBody, .ml-form-successContent');
-      if(success && success.getClientRects().length && getComputedStyle(success).visibility!=='hidden'){
-        // Keep MailerLite's success message and gift download visible.
-        try{ localStorage.setItem(key,'1'); }catch(e){}
-      }
-    }).observe(embedded,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
   }
 
   if(eligible){
