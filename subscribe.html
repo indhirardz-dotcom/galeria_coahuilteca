@@ -160,15 +160,15 @@
     <h1>Stay close<br>to the art</h1>
     <p class="intro">Receive exhibition invitations and important news from Galería Coahuilteca.</p>
 
-    <form action="https://formsubmit.co/hello@galeriacoahuilteca.com" method="POST">
+    <form action="https://formsubmit.co/hello@galeriacoahuilteca.com" method="POST" id="subscribeForm">
       <label for="email" style="position:absolute;left:-9999px;">Email address</label>
       <input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
       <input type="hidden" name="_subject" value="New Galería Coahuilteca newsletter subscription">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://galeriacoahuilteca.com/?subscribed=1">
       <button type="submit">Subscribe</button>
     </form>
+    <div id="subscribeResult" role="status" style="display:none;margin:22px 0;line-height:1.6"></div>
 
     <div class="divider">or</div>
 
@@ -180,5 +180,33 @@
 
     <a class="back" href="index.html">Visit the gallery website →</a>
   </main>
+  <script>
+  (function(){
+    var form=document.getElementById('subscribeForm');
+    var result=document.getElementById('subscribeResult');
+    form.addEventListener('submit',async function(event){
+      event.preventDefault();
+      var button=form.querySelector('button[type=submit]');
+      button.disabled=true;
+      try{
+        var response=await fetch('https://formsubmit.co/ajax/hello@galeriacoahuilteca.com',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({email:form.elements.email.value,_subject:'New Galería Coahuilteca newsletter subscription',_template:'table',_captcha:'false'})
+        });
+        var data=await response.json();
+        if(!response.ok || data.success===false || data.success==='false') throw new Error('Submission failed');
+        form.style.display='none';
+        result.style.display='block';
+        result.innerHTML='<strong>Gracias por suscribirte / Thank you for joining us.</strong><br><a href="https://storage.googleapis.com/mailerlite-uploads-prod/l2615427/CzlDJX6nr7fdp1D1oCU4IymSn449qBM2jVoCKMlw.pdf" target="_blank" rel="noopener">Descargar regalo / Download your artwork · PDF</a>';
+        try{localStorage.setItem('gc_printable_subscription_seen_v2','1')}catch(e){}
+      }catch(e){
+        result.textContent='No se pudo enviar. Inténtalo de nuevo. / Could not submit. Please try again.';
+        result.style.display='block';
+        button.disabled=false;
+      }
+    });
+  })();
+  </script>
   <script src="bilingual.js" defer></script>\n</body>
 </html>
