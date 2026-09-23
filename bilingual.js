@@ -1,7 +1,8 @@
 (function () {
   const STORAGE_KEY = "gc-language";
   const dictionary = {
-    "Original Art in": "Arte original en",\n    "Digital collection": "Colección digital",
+    "Original Art in": "Arte original en",
+    "Digital collection": "Colección digital",
     "Explore Jacarandas": "Ver Jacarandas",
     "Digital prints from MXN $30 · Bilingual catalogue MXN $99": "Obras descargables desde $30 MXN · Catálogo bilingüe $99 MXN",
     "Secure payment": "Pago seguro",
