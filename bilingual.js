@@ -4,6 +4,10 @@
     "Original Art in": "Arte original en",
     "Digital collection": "Colección digital",
     "Private viewing": "Visita privada",
+    "Art Gallery in San Miguel de Allende | Visit Galería Coahuilteca": "Galería de arte en San Miguel de Allende | Visita Galería Coahuilteca",
+    "Discover contemporary Mexican art, original paintings, drawings, ceramics, commissioned portraits and private art experiences in the historic center of San Miguel de Allende, near Parque Benito Juárez and the Jardín Principal.": "Descubre arte contemporáneo mexicano, pintura, dibujo, cerámica, retratos por encargo y experiencias artísticas privadas en el centro histórico de San Miguel de Allende, cerca del Parque Benito Juárez y el Jardín Principal.",
+    "Tenerías & Codo, Centro": "Tenerías y Codo, Centro",
+    "10:00 AM — 6:00 PM": "10:00 a. m. — 6:00 p. m.",
     "Explore original works with personal guidance from the gallery. Tell us when you would like to visit, and we will confirm an available time.": "Conoce obras originales con atención personal de la galería. Dinos cuándo te gustaría venir y confirmaremos un horario disponible.",
     "Arrange a private viewing": "Solicitar una visita privada",
     "Jacarandas — Feminist Art by Indhira": "Jacarandas — Arte feminista de Indhira",
@@ -501,6 +505,7 @@
   );
   const originals = new WeakMap();
   const originalAttributes = new WeakMap();
+  const originalTitle = document.title;
   let currentLanguage = "en";
   let translationScheduled = false;
 
@@ -519,6 +524,7 @@
   function applyLanguage(language) {
     currentLanguage = language;
     document.documentElement.lang = language;
+    document.title = language === "es" ? (dictionary[originalTitle] || originalTitle) : originalTitle;
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const parent = node.parentElement;
@@ -549,6 +555,9 @@
       const active = button.dataset.language === language;
       button.classList.toggle("is-active", active);
       button.setAttribute("aria-pressed", String(active));
+    });
+    document.querySelectorAll("a[data-href-es][data-href-en]").forEach(link => {
+      link.href = link.dataset[language === "es" ? "hrefEs" : "hrefEn"];
     });
     try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}
   }
