@@ -3,6 +3,9 @@
   const dictionary = {
     "Original Art in": "Arte original en",
     "Digital collection": "Colección digital",
+    "Private viewing": "Visita privada",
+    "Explore original works with personal guidance from the gallery. Tell us when you would like to visit, and we will confirm an available time.": "Conoce obras originales con atención personal de la galería. Dinos cuándo te gustaría venir y confirmaremos un horario disponible.",
+    "Arrange a private viewing": "Solicitar una visita privada",
     "Jacarandas — Feminist Art by Indhira": "Jacarandas — Arte feminista de Indhira",
     "Explore original feminist drawings by Mexican artist Indhira, available as digital prints for personal printing and in a bilingual catalogue.": "Descubre dibujos feministas originales de la artista mexicana Indhira, disponibles como obras digitales para impresión personal y en un catálogo bilingüe.",
     "Your email address": "Tu correo electrónico",
