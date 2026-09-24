@@ -3,6 +3,9 @@
   const dictionary = {
     "Original Art in": "Arte original en",
     "Digital collection": "Colección digital",
+    "Jacarandas — Feminist Art by Indhira": "Jacarandas — Arte feminista de Indhira",
+    "Explore original feminist drawings by Mexican artist Indhira, available as digital prints for personal printing and in a bilingual catalogue.": "Descubre dibujos feministas originales de la artista mexicana Indhira, disponibles como obras digitales para impresión personal y en un catálogo bilingüe.",
+    "Your email address": "Tu correo electrónico",
     "Explore Jacarandas": "Ver Jacarandas",
     "Digital prints from MXN $30 · Bilingual catalogue MXN $99": "Obras descargables desde $30 MXN · Catálogo bilingüe $99 MXN",
     "Secure payment": "Pago seguro",
@@ -120,7 +123,7 @@
     "Visit Instagram →": "Visitar Instagram →",
     "COMMISSIONED WORK": "OBRA POR ENCARGO",
     "Portrait Commissions": "Retratos por encargo",
-    "by Indhira pintora": "por Indhira pintora",
+    "by Indhira pintora": "de Indhira pintora",
     "Explore more →": "Explorar más →",
     "Request a Portrait": "Solicitar un retrato",
     "Create inside a working gallery": "Crea dentro de una galería en activo",
