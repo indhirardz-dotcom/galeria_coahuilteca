@@ -299,7 +299,9 @@
     </style>
     <style id="gc-agenda-language-fix">
       #langSwitch { display: none !important; }
-      .agenda-language {display:flex;align-items:center;gap:6px;margin-left:12px}
+      [data-agenda-language]{display:none}html[lang="es"] [data-agenda-language="es"],html[lang="en"] [data-agenda-language="en"]{display:initial}
+      header nav { position:relative; }
+      .agenda-language {display:flex;align-items:center;gap:6px;position:absolute;right:0;top:calc(100% + 9px);white-space:nowrap}
       .agenda-language button{border:0;background:transparent;color:#772b25;font-weight:700;cursor:pointer;padding:5px}
       .agenda-language button[aria-pressed="true"]{text-decoration:underline;text-underline-offset:4px}
       .gc-language-under-menu {
@@ -313,23 +315,17 @@
     <div class="wrap">
       <header>
         <a href="/"><img src="logo.png" alt="Galería Coahuilteca" /></a>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="shop.html">Shop</a>
-          <a href="portraits.html">Portraits</a>
-          <a href="experiences.html">Experiences</a>
-          <a href="agenda.html">Cultural agenda</a>
-          <a href="visit.html">Visit</a>
-          <a href="contact.html">Contact</a>
-          <span class="agenda-language" role="group" aria-label="Idioma / Language"><button type="button" data-agenda-lang="es">ES</button><span>/</span><button type="button" data-agenda-lang="en">EN</button></span><button
-            class="lang"
-            id="langSwitch"
-            type="button"
-            aria-label="Change language"
-          >
-            EN
-          </button>
-        </nav>
+        <nav aria-label="Main navigation">
+<a href="index.html"><span data-agenda-language="en">Home</span><span data-agenda-language="es">Inicio</span></a>
+<a href="shop.html"><span data-agenda-language="en">Shop</span><span data-agenda-language="es">Tienda</span></a>
+<a href="portraits.html"><span data-agenda-language="en">Portraits</span><span data-agenda-language="es">Retratos</span></a>
+<a href="experiences.html"><span data-agenda-language="en">Experiences</span><span data-agenda-language="es">Experiencias</span></a>
+<a href="agenda.html"><span data-agenda-language="en">Cultural agenda</span><span data-agenda-language="es">Agenda cultural</span></a>
+<a href="visit.html"><span data-agenda-language="en">Visit</span><span data-agenda-language="es">Visita</span></a>
+<a href="press.html"><span data-agenda-language="en">Press</span><span data-agenda-language="es">Prensa</span></a>
+<a href="contact.html"><span data-agenda-language="en">Contact</span><span data-agenda-language="es">Contacto</span></a>
+<span class="agenda-language" role="group" aria-label="Idioma / Language"><button type="button" data-agenda-lang="es">ES</button><span>/</span><button type="button" data-agenda-lang="en">EN</button></span><button class="lang" id="langSwitch" type="button" aria-label="Change language">EN</button>
+</nav>
       </header>
       <section class="intro">
         <button class="install" id="installApp">Instalar esta agenda</button>

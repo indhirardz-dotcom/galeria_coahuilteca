@@ -122,6 +122,7 @@
     "Experiences": "Experiencias",
     "Cultural agenda": "Agenda cultural",
     "Visit": "Visita",
+    "Press": "Prensa",
     "Contact": "Contacto",
     "Available artwork": "Obra disponible",
     "Worldwide shipping": "Envíos a todo el mundo",

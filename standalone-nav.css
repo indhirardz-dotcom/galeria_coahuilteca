@@ -1,0 +1,7 @@
+/* Shared navigation for standalone pages with no gallery header layout. */
+.gc-standalone-header{position:absolute;z-index:20;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px max(24px,calc((100vw - 1200px)/2));background:rgba(247,244,239,.96);font:14px/1.4 Helvetica,Arial,sans-serif;border-bottom:1px solid rgba(0,0,0,.1)}
+.gc-standalone-header>a img{height:38px;width:auto;display:block}
+.gc-standalone-header nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 18px}
+.gc-standalone-header nav a{color:#333;text-decoration:none;white-space:nowrap}
+.gc-standalone-header nav a:hover{text-decoration:underline}
+@media(max-width:800px){.gc-standalone-header{position:relative;display:block;padding:18px 24px}.gc-standalone-header nav{justify-content:flex-start;margin-top:16px;gap:8px 14px}.gc-standalone-header nav a{font-size:13px}}
