@@ -298,9 +298,10 @@
       }
     </style>
     <style id="gc-agenda-language-fix">
-      #langSwitch {
-        display: none !important;
-      }
+      #langSwitch { display: none !important; }
+      .agenda-language {display:flex;align-items:center;gap:6px;margin-left:12px}
+      .agenda-language button{border:0;background:transparent;color:#772b25;font-weight:700;cursor:pointer;padding:5px}
+      .agenda-language button[aria-pressed="true"]{text-decoration:underline;text-underline-offset:4px}
       .gc-language-under-menu {
         top: calc(100% + 18px) !important;
         right: 0 !important;
@@ -320,7 +321,7 @@
           <a href="agenda.html">Cultural agenda</a>
           <a href="visit.html">Visit</a>
           <a href="contact.html">Contact</a>
-          <button
+          <span class="agenda-language" role="group" aria-label="Idioma / Language"><button type="button" data-agenda-lang="es">ES</button><span>/</span><button type="button" data-agenda-lang="en">EN</button></span><button
             class="lang"
             id="langSwitch"
             type="button"
@@ -546,13 +547,16 @@
             lang === "en" ? "Cambiar a español" : "Switch to English",
           );
         localStorage.setItem("agenda-language", lang);
+        try { localStorage.setItem("gc-language", lang); } catch(e) {}
+        document.querySelectorAll("[data-agenda-lang]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.agendaLang === lang)));
       }
+      document.querySelectorAll("[data-agenda-lang]").forEach(button => button.addEventListener("click", () => translatePage(button.dataset.agendaLang)));
       const langSwitch = document.getElementById("langSwitch");
       langSwitch.addEventListener("click", () =>
         translatePage(document.documentElement.lang === "en" ? "es" : "en"),
       );
       translatePage(
-        localStorage.getItem("agenda-language") === "en" ? "en" : "es",
+        (localStorage.getItem("gc-language") || localStorage.getItem("agenda-language")) === "en" ? "en" : "es",
       );
 
       if ("serviceWorker" in navigator)
