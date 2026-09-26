@@ -557,7 +557,7 @@
 
   function translateDynamicText(text, language) {
     if (language !== "es") return null;
-    let match = text.match(/^WORK (\d{2})$/);
+    let match = text.match(/^WORK (\d{2})$/i);
     if (match) return "OBRA " + match[1];
     match = text.match(/^Mexico shipping · (.+)$/i);
     if (match) return "Envío a México · " + match[1];
@@ -565,13 +565,13 @@
     if (match) return "Envío a EE. UU. · " + match[1];
     if (/^Other countries · Request quote$/i.test(text)) return "Otros países · Solicitar cotización";
     if (/^Shipping information$/i.test(text)) return "INFORMACIÓN DE ENVÍO";
-    match = text.match(/^\$(.+) MXN per participant$/);
+    match = text.match(/^\$(.+) MXN per participant$/i);
     if (match) return "$" + match[1] + " MXN por participante";
-    match = text.match(/^\$(.+) MXN total$/);
+    match = text.match(/^\$(.+) MXN total$/i);
     if (match) return "$" + match[1] + " MXN en total";
-    match = text.match(/^Approx\. US\$(.+?)( total)?$/);
+    match = text.match(/^Approx\. US\$(.+?)( total)?$/i);
     if (match) return "Aprox. US$" + match[1] + (match[2] || "");
-    match = text.match(/^Exchange rate updated (\d{4})-(\d{2})-(\d{2})\.$/);
+    match = text.match(/^Exchange rate updated (\d{4})-(\d{2})-(\d{2})\.$/i);
     if (match) {
       const months = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
       return "Tipo de cambio actualizado: " + Number(match[3]) + " de " + months[Number(match[2])-1] + " de " + match[1] + ".";
