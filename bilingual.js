@@ -503,7 +503,12 @@
   "Subscribe": "Suscribirme",
   "Continue with WhatsApp": "Continuar por WhatsApp",
   "Choose one option. Occasional messages only. You can unsubscribe at any time.": "Elige una opción. Sólo enviaremos mensajes ocasionales. Puedes cancelar tu suscripción en cualquier momento.",
-  "Visit the gallery website →": "Visitar el sitio de la galería →"
+  "Visit the gallery website →": "Visitar el sitio de la galería →",
+  "Original Art Gallery in San Miguel de Allende | Galería Coahuilteca": "Galería de arte en San Miguel de Allende | Galería Coahuilteca",
+  "Original art": "Arte original",
+  "Explore original paintings by Fermigrante, available through Galería Coahuilteca.": "Descubre las pinturas originales de Fermigrante, disponibles en Galería Coahuilteca.",
+  "Explore Fermigrante": "Conoce la obra de Fermigrante",
+  "Codo & Tenerías": "Codo y Tenerías"
 });
 
   const reverseDictionary = Object.fromEntries(
