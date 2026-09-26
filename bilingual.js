@@ -511,6 +511,7 @@
   "Codo & Tenerías": "Codo y Tenerías",
   "10:00 AM – 6:00 PM": "10:00 a. m. – 6:00 p. m.",
   "OR": "O",
+  "or": "o",
   "Contact Galería Coahuilteca | Art Gallery in San Miguel de Allende": "Contacto | Galería Coahuilteca · Galería de arte en San Miguel de Allende",
   "Edd | Ceramic Chess | Galería Coahuilteca": "Edd | Ajedrez de cerámica | Galería Coahuilteca",
   "Private Art Classes in San Miguel de Allende | Galería Coahuilteca": "Experiencias artísticas privadas en San Miguel de Allende | Galería Coahuilteca",
@@ -558,12 +559,12 @@
     if (language !== "es") return null;
     let match = text.match(/^WORK (\d{2})$/);
     if (match) return "OBRA " + match[1];
-    match = text.match(/^Mexico shipping · (.+)$/);
+    match = text.match(/^Mexico shipping · (.+)$/i);
     if (match) return "Envío a México · " + match[1];
-    match = text.match(/^USA shipping · (.+)$/);
+    match = text.match(/^USA shipping · (.+)$/i);
     if (match) return "Envío a EE. UU. · " + match[1];
-    if (text === "Other countries · Request quote") return "Otros países · Solicitar cotización";
-    if (text === "SHIPPING INFORMATION") return "INFORMACIÓN DE ENVÍO";
+    if (/^Other countries · Request quote$/i.test(text)) return "Otros países · Solicitar cotización";
+    if (/^Shipping information$/i.test(text)) return "INFORMACIÓN DE ENVÍO";
     match = text.match(/^\$(.+) MXN per participant$/);
     if (match) return "$" + match[1] + " MXN por participante";
     match = text.match(/^\$(.+) MXN total$/);
