@@ -232,7 +232,7 @@ I would like a shipping quote to another country.`;
   const quoteLink=`https://wa.me/524151196108?text=${encodeURIComponent(quoteMessage)}`;
 
 
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase / Comprar</a></div>`;
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase</a></div>`;
 
 
   catalogue.appendChild(fig);
