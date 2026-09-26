@@ -169,7 +169,7 @@
     "Jacarandas digital shop": "Tienda digital Jacarandas",
     "Complete collection": "Colección completa",
     "Printable artwork": "Obra imprimible",
-    "Purchase / Comprar": "Comprar / Purchase",
+    "Purchase":"Comprar",
     "Price on Gumroad": "Precio en Gumroad",
   "Secure payment": "Pago seguro",
     "Immediate delivery": "Entrega inmediata",
@@ -509,7 +509,40 @@
   "Explore original paintings by Fermigrante, available through Galería Coahuilteca.": "Descubre las pinturas originales de Fermigrante, disponibles en Galería Coahuilteca.",
   "Explore Fermigrante": "Conoce la obra de Fermigrante",
   "Codo & Tenerías": "Codo y Tenerías",
-  "10:00 AM – 6:00 PM": "10:00 a. m. – 6:00 p. m."
+  "10:00 AM – 6:00 PM": "10:00 a. m. – 6:00 p. m.",
+  "OR": "O",
+  "Contact Galería Coahuilteca | Art Gallery in San Miguel de Allende": "Contacto | Galería Coahuilteca · Galería de arte en San Miguel de Allende",
+  "Edd | Ceramic Chess | Galería Coahuilteca": "Edd | Ajedrez de cerámica | Galería Coahuilteca",
+  "Private Art Classes in San Miguel de Allende | Galería Coahuilteca": "Experiencias artísticas privadas en San Miguel de Allende | Galería Coahuilteca",
+  "Fermigrante | Available Works | Galería Coahuilteca": "Fermigrante | Obra disponible | Galería Coahuilteca",
+  "Jacarandas | Printable Feminist Art & Digital Prints by Indhira": "Jacarandas | Arte feminista imprimible y obras digitales de Indhira",
+  "Custom Oil Portrait Commissions | Indhira, San Miguel de Allende": "Encargos de retratos al óleo | Indhira, San Miguel de Allende",
+  "Your gift · Galería Coahuilteca": "Tu regalo · Galería Coahuilteca",
+  "Original Art for Sale in San Miguel de Allende | Galería Coahuilteca": "Obra original en venta en San Miguel de Allende | Galería Coahuilteca",
+  "The Story Behind Our Name | Galería Coahuilteca": "La historia detrás de nuestro nombre | Galería Coahuilteca",
+  "Join the Gallery List | Galería Coahuilteca": "Únete a la lista de la galería | Galería Coahuilteca",
+  "Battle Territory | Catalogue": "Territorio de Batalla | Catálogo",
+  "Download PDF": "⬇ Descargar PDF",
+  "From the gallery · A publication": "De la galería · Una publicación",
+  "Grandes Maestras · Illustrated book": "Grandes Maestras · Libro ilustrado",
+  "The first known author in history": "La primera autora conocida de la historia",
+  "An illustrated book introducing young readers, families and educators to Enheduanna, the earliest known named author. Written by Indhira and illustrated by Edd.": "Libro ilustrado que acerca a niñas, familias y docentes a Enheduanna, la primera autora conocida. Escrito por Indhira e ilustrado por Edd.",
+  "Discover the book on Amazon  ↗": "Descubre el libro en Amazon  ↗",
+  "Thank you for joining us. Enjoy this digital artwork by Fermigrante, prepared for personal printing at 30 × 30 cm.": "Gracias por suscribirte. Disfruta esta obra digital de Fermigrante, preparada para impresión personal en 30 × 30 cm.",
+  "Download your artwork · PDF": "Descarga tu obra · PDF",
+  "For personal use only · © Fermigrante": "Solo para uso personal · © Fermigrante",
+  "Girl at the March — high-resolution printable artwork.": "Niña en la marcha — obra imprimible de alta resolución.",
+  "Women’s March — high-resolution printable artwork.": "Marcha de mujeres — obra imprimible de alta resolución.",
+  "They Took So Much from Us That They Took Away Our Fear — high-resolution printable artwork.": "Nos quitaron tanto que nos quitaron el miedo — obra imprimible de alta resolución.",
+  "I March Because I Am Alive, but I Don’t Know for How Long — high-resolution printable artwork.": "Me marcho porque estoy viva, pero no sé hasta cuándo — obra imprimible de alta resolución.",
+  "Bandanas and Raised Fists — high-resolution printable artwork.": "Pañuelos y puños en alto — obra imprimible de alta resolución.",
+  "I Am Neither Hysterical nor Menstruating — high-resolution printable artwork.": "Ni soy histérica ni estoy menstruando — obra imprimible de alta resolución.",
+  "Abortion Is Also Taking Responsibility — high-resolution printable artwork.": "Abortar también es hacerse cargo — obra imprimible de alta resolución.",
+  "Women Occupying Space — high-resolution printable artwork.": "Mujeres ocupando el espacio — obra imprimible de alta resolución.",
+  "We Are the Cry of Those No Longer Here — high-resolution printable artwork.": "Somos el grito de las que ya no están — obra imprimible de alta resolución.",
+  "International Women’s Day 2020 — high-resolution printable artwork.": "8 de marzo de 2020 — obra imprimible de alta resolución.",
+  "Abortion Is Our Right": "Abortar es nuestro derecho",
+  "Printable art · Secure payment · Immediate delivery ·": "Arte imprimible · Pago seguro · Entrega inmediata ·"
 });
 
   const reverseDictionary = Object.fromEntries(
@@ -521,12 +554,36 @@
   let currentLanguage = "en";
   let translationScheduled = false;
 
+  function translateDynamicText(text, language) {
+    if (language !== "es") return null;
+    let match = text.match(/^WORK (\d{2})$/);
+    if (match) return "OBRA " + match[1];
+    match = text.match(/^Mexico shipping · (.+)$/);
+    if (match) return "Envío a México · " + match[1];
+    match = text.match(/^USA shipping · (.+)$/);
+    if (match) return "Envío a EE. UU. · " + match[1];
+    if (text === "Other countries · Request quote") return "Otros países · Solicitar cotización";
+    if (text === "SHIPPING INFORMATION") return "INFORMACIÓN DE ENVÍO";
+    match = text.match(/^\$(.+) MXN per participant$/);
+    if (match) return "$" + match[1] + " MXN por participante";
+    match = text.match(/^\$(.+) MXN total$/);
+    if (match) return "$" + match[1] + " MXN en total";
+    match = text.match(/^Approx\. US\$(.+?)( total)?$/);
+    if (match) return "Aprox. US$" + match[1] + (match[2] || "");
+    match = text.match(/^Exchange rate updated (\d{4})-(\d{2})-(\d{2})\.$/);
+    if (match) {
+      const months = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+      return "Tipo de cambio actualizado: " + Number(match[3]) + " de " + months[Number(match[2])-1] + " de " + match[1] + ".";
+    }
+    return null;
+  }
+
   function translateTextNode(node, language) {
     if (!originals.has(node)) originals.set(node, node.nodeValue);
     const original = originals.get(node);
     const trimmed = original.trim().replace(/\s+/g, " ");
     const translated = language === "es"
-      ? dictionary[trimmed]
+      ? (dictionary[trimmed] || translateDynamicText(trimmed, language))
       : reverseDictionary[trimmed];
     const leading = original.match(/^\s*/)[0];
     const trailing = original.match(/\s*$/)[0];
@@ -536,7 +593,7 @@
   function applyLanguage(language) {
     currentLanguage = language;
     document.documentElement.lang = language;
-    document.title = language === "es" ? (dictionary[originalTitle] || originalTitle) : originalTitle;
+    document.title = language === "es" ? (dictionary[originalTitle] || originalTitle) : (reverseDictionary[originalTitle] || originalTitle);
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const parent = node.parentElement;
