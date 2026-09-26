@@ -543,7 +543,9 @@
   "We Are the Cry of Those No Longer Here — high-resolution printable artwork.": "Somos el grito de las que ya no están — obra imprimible de alta resolución.",
   "International Women’s Day 2020 — high-resolution printable artwork.": "8 de marzo de 2020 — obra imprimible de alta resolución.",
   "Abortion Is Our Right": "Abortar es nuestro derecho",
-  "Printable art · Secure payment · Immediate delivery ·": "Arte imprimible · Pago seguro · Entrega inmediata ·"
+  "Printable art · Secure payment · Immediate delivery ·": "Arte imprimible · Pago seguro · Entrega inmediata ·",
+  "Mexico": "México",
+  "Galería Coahuilteca · San Miguel de Allende, Mexico": "Galería Coahuilteca · San Miguel de Allende, México"
 });
 
   const reverseDictionary = Object.fromEntries(
