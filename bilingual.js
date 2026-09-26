@@ -508,7 +508,8 @@
   "Original art": "Arte original",
   "Explore original paintings by Fermigrante, available through Galería Coahuilteca.": "Descubre las pinturas originales de Fermigrante, disponibles en Galería Coahuilteca.",
   "Explore Fermigrante": "Conoce la obra de Fermigrante",
-  "Codo & Tenerías": "Codo y Tenerías"
+  "Codo & Tenerías": "Codo y Tenerías",
+  "10:00 AM – 6:00 PM": "10:00 a. m. – 6:00 p. m."
 });
 
   const reverseDictionary = Object.fromEntries(
