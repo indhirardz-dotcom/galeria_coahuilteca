@@ -197,6 +197,7 @@
         });
         var data=await response.json();
         if(!response.ok || data.success===false || data.success==='false') throw new Error('Submission failed');
+        if(window.gcTrackAnalyticsEvent) window.gcTrackAnalyticsEvent('sign_up',{method:'email',form_location:'subscribe_page'});
         form.style.display='none';
         result.style.display='block';
         result.innerHTML='<strong>Gracias por suscribirte / Thank you for joining us.</strong><br><a href="https://storage.googleapis.com/mailerlite-uploads-prod/l2615427/CzlDJX6nr7fdp1D1oCU4IymSn449qBM2jVoCKMlw.pdf" target="_blank" rel="noopener">Descargar regalo / Download your artwork · PDF</a>';
@@ -210,5 +211,6 @@
   })();
   </script>
   <script src="bilingual.js?v=20260926-5" defer></script>
+  <script src="/analytics-events.js" defer></script>
 </body>
 </html>
