@@ -1,7 +1,9 @@
 /* GA4 events for meaningful actions on Galería Coahuilteca. */
 (function () {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
   function track(eventName, parameters) {
-    if (typeof window.gtag !== 'function') return;
     window.gtag('event', eventName, Object.assign({ transport_type: 'beacon' }, parameters || {}));
   }
 
@@ -31,6 +33,37 @@
       track('generate_lead', { method: 'whatsapp', lead_type: leadType });
     }
   }, true);
+
+  document.querySelectorAll('audio').forEach(function (audio, index) {
+    var started = false;
+    var sentProgress = {};
+    var source = audio.querySelector('source');
+    var label = audio.previousElementSibling;
+    var language = label ? label.textContent.replace(/^Audio\s*(in|en)\s*/i, '').trim() : 'unknown';
+    var audioName = source ? source.getAttribute('src').split('/').pop() : 'audio-' + (index + 1);
+    var parameters = { audio_title: document.title, audio_language: language, audio_file: audioName };
+
+    audio.addEventListener('play', function () {
+      if (started) return;
+      started = true;
+      track('audio_start', parameters);
+    });
+
+    audio.addEventListener('timeupdate', function () {
+      if (!started || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
+      var percent = Math.floor((audio.currentTime / audio.duration) * 100);
+      [25, 50, 75].forEach(function (threshold) {
+        if (percent >= threshold && !sentProgress[threshold]) {
+          sentProgress[threshold] = true;
+          track('audio_progress', Object.assign({ audio_percent: threshold }, parameters));
+        }
+      });
+    });
+
+    audio.addEventListener('ended', function () {
+      if (started) track('audio_complete', Object.assign({ audio_percent: 100 }, parameters));
+    });
+  });
 
   window.gcTrackAnalyticsEvent = track;
 })();
