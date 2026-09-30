@@ -29,7 +29,7 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .work img{width:100%;height:auto;display:block;transition:transform .3s ease}
 .work:hover img{transform:scale(1.008)}
 .buybar{padding:16px 18px 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
-.ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}
+.ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}.work-name{display:block;font:400 18px/1.25 Georgia,serif;margin:0 0 9px}.work-name small{display:block;color:#777;font:400 12px/1.4 Helvetica,Arial,sans-serif;margin-top:3px}
 .ship{display:block;font-size:11px;line-height:1.55;color:#5f5a54}
 .other{display:block;font-size:10px;line-height:1.5;color:#888;margin-top:3px}
 .quote-link{text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -100,7 +100,7 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 
 <section class="hero"><div><div class="kicker">Available Works · Galería Coahuilteca</div><h1>Fermigrante</h1></div><div><p class="intro">Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.</p><div class="meta">Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available</div></div></section>
 
-<div class="toolbar"><span>53 works available in catalogue</span><a href="shop.html">← Back to shop</a></div>
+<div class="toolbar"><span>45 works available in catalogue</span><a href="shop.html">← Back to shop</a></div>
 
 <p class="shipping-note">Shipping is shown with each work. Canvas works are carefully protected and shipped rolled, without wooden stretcher bars. Works on cotton paper are shipped carefully protected. Other destinations, stretched-canvas shipping and framed shipping are quoted individually.</p>
 
@@ -142,110 +142,89 @@ Request a custom work
 
 <script>
 
-const works=[]; for(let i=1;i<=55;i++){ if(i===28) continue; works.push(i); }
+const works = [
+  { es: 'Movimiento Rojo', en: 'Red Movement' },
+  { es: 'Día Soleado', en: 'Sunny Day' },
+  { es: 'Día Dorado', en: 'Golden Day' },
+  { es: 'Encuentros Esperados', en: 'Expected Meetings' },
+  { es: 'Cielo Turquesa Oscuro', en: 'Dark Turquoise Sky' },
+  { es: 'Cielo Turquesa Claro', en: 'Light Turquoise Sky' },
+  { es: 'Sol Naranja', en: 'Orange Sun' },
+  { es: 'Destinos Amarillos', en: 'Yellow Destinations' },
+  { es: 'Flores Tejidas', en: 'Woven Flowers' },
+  { es: 'Tarde Roja', en: 'Red Afternoon' },
+  { es: 'Rosas Corales', en: 'Coral Roses' },
+  { es: 'Olas', en: 'Surf' },
+  { es: 'Cruzando los Mares', en: 'Crossing the Seas' },
+  { es: 'Durazno', en: 'Peach' },
+  { es: 'Hormigas', en: 'Ants' },
+  { es: 'Rompiendo los Mares', en: 'Breaking Through the Seas' },
+  { es: 'Encuentros', en: 'Meeting' },
+  { es: 'Grises', en: 'Gray' },
+  { es: 'Cielos Claros', en: 'Clear Skies' },
+  { es: 'Río', en: 'River' },
+  { es: 'Trigo', en: 'Wheat' },
+  { es: 'Azul', en: 'Blue' },
+  { es: 'Ambos Lados', en: 'Both Sides' },
+  { es: 'Naranja', en: 'Orange' },
+  { es: 'Arriba y Abajo', en: 'Up and Down' },
+  { es: 'Sin Fronteras', en: 'Without Borders' },
+  { es: 'Campo Blanco', en: 'White Field' },
+  { es: 'Llegando a un Jardín', en: 'Arriving at a Garden' },
+  { es: 'Ve por el Sol', en: 'Go for the Sun' },
+  { es: 'Ve por el Jardín', en: 'Go for the Garden' },
+  { es: 'Puesta de Sol Roja', en: 'Red Sunset' },
+  { es: 'Sombras Plata', en: 'Silver Shadows' },
+  { es: 'Encuentro', en: 'Meeting' },
+  { es: 'Rumbo al Sol 3', en: 'Heading to the Sun 3' },
+  { es: 'Tierras Rosas', en: 'Pink Lands' },
+  { es: 'Desierto y Mar', en: 'Desert and Sea' },
+  { es: 'Sol Rosa', en: 'Pink Sun' },
+  { es: 'Café y Campo Rosa', en: 'Coffee and Pink Fields' },
+  { es: 'Café con Ríos Azules', en: 'Coffee and Blue Rivers' },
+  { es: 'Café con Amanecer', en: 'Coffee at Sunrise' },
+  { es: 'Campo de Café', en: 'Coffee Field' },
+  { es: 'Campo de Café 2', en: 'Coffee Field 2' },
+  { es: 'Tazas de Café', en: 'Coffee Cups' },
+  { es: 'Flor de Café 2', en: 'Coffee Flower 2' },
+  { es: 'Flor de Café 3', en: 'Coffee Flower 3' }
+];
 
 const catalogue=document.getElementById('catalogue');
+const canvasSizes=[[120,100],[100,120],[100,120],[100,120],[80,80],[80,80],[120,120],[100,70],[70,80]];
 
-
-const canvasSizes={
-  2:[100,120],3:[100,120],4:[100,120],5:[100,120],
-  6:[120,120],7:[130,150],8:[100,70],
-  9:[106,106],10:[71,71],11:[44,44],12:[70,80],55:[90,150]
-};
-
-
-function round500(v){
-  return Math.max(1000,Math.round(v/500)*500)
-}
-
-
-function shippingFor(n){
-
-  if(n>=13 && n<=54) return {mx:2800,us:4000};
-
-  const size=canvasSizes[n] || [80,80];
-
+function round500(v){ return Math.max(1000,Math.round(v/500)*500); }
+function money(v){ return '$'+v.toLocaleString('en-US')+' MXN'; }
+function shippingFor(index){
+  if(index>=9) return {mx:2800,us:4000};
+  const size=canvasSizes[index] || [80,80];
   const equivalent=Math.sqrt(size[0]*size[1]);
-
-  return {
-    mx:round500(100*equivalent-1500),
-    us:round500(75*equivalent-500)
-  };
-
+  return {mx:round500(100*equivalent-1500),us:round500(75*equivalent-500)};
 }
 
+const shippingFile='images/fermigrante-obra-01.webp';
+const shippingCard=document.createElement('figure');
+shippingCard.className='work';
+shippingCard.innerHTML=`<button class="work-image" type="button" aria-label="View shipping information" onclick="openLightbox('${shippingFile}')"><img src="${shippingFile}" loading="lazy" alt="Fermigrante shipping information"></button><div class="samplebar"><span class="ref">Shipping information</span></div>`;
+catalogue.appendChild(shippingCard);
 
-function money(v){
-  return '$'+v.toLocaleString('en-US')+' MXN';
-}
-
-
-works.forEach((n,index)=>{
-
+works.forEach((item,index)=>{
+  const n=index+2;
   const file=`images/fermigrante-obra-${String(n).padStart(2,'0')}.webp`;
-
-  const displayNumber=index;
-
-  const ref=`Fermigrante · Work ${String(displayNumber).padStart(2,'0')}`;
-
+  const ref=`${item.es} / ${item.en}`;
+  const cardNumber=String(index+1).padStart(2,'0');
   const fig=document.createElement('figure');
-
   fig.className='work';
-
-
-  if(index===0){
-
-    fig.innerHTML=`<button class="work-image" type="button" aria-label="View shipping information" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="Fermigrante shipping information"></button><div class="samplebar"><span class="ref">Shipping information</span></div>`;
-
-    catalogue.appendChild(fig);
-
-    return;
-
-  }
-
-
-  const ship=shippingFor(n);
-
-
+  const ship=shippingFor(index);
   const shippingHTML=`<span class="ship">Mexico shipping · ${money(ship.mx)}</span><span class="ship">USA shipping · ${money(ship.us)}</span>`;
-
-
   const artworkUrl=`https://galeriacoahuilteca.com/${file}`;
-
-
-  /* PURCHASE WHATSAPP */
-
-  const purchaseMessage=`Hello, I would like to purchase ${ref}.
-
-Artwork image:
-${artworkUrl}
-
-Please confirm availability, total price and shipping to my destination: `;
-
-
+  const purchaseMessage=`Hello, I would like to purchase ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nPlease confirm availability, total price and shipping to my destination: `;
   const purchaseLink=`https://wa.me/524151196108?text=${encodeURIComponent(purchaseMessage)}`;
-
-
-  /* INTERNATIONAL SHIPPING QUOTE */
-
-  const quoteMessage=`Hello, I am interested in ${ref}.
-
-Artwork image:
-${artworkUrl}
-
-I would like a shipping quote to another country.`;
-
-
+  const quoteMessage=`Hello, I am interested in ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nI would like a shipping quote to another country.`;
   const quoteLink=`https://wa.me/524151196108?text=${encodeURIComponent(quoteMessage)}`;
-
-
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, available original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${String(displayNumber).padStart(2,'0')}</span>${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase</a></div>`;
-
-
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name">${item.es}<small>${item.en}</small></span>${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase</a></div>`;
   catalogue.appendChild(fig);
-
 });
-
 
 const customMessage=`Hello, I am interested in commissioning a custom Fermigrante work.
 
