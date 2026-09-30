@@ -25,11 +25,11 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .shipping-note{margin:30px 0 0;font-size:12px;line-height:1.65;color:var(--muted);max-width:940px}
 .catalogue{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:30px 0 10px}
 .work{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.work-image{display:block;padding:0;border:0;background:none;width:100%;cursor:zoom-in}
-.work img{width:100%;height:auto;display:block;transition:transform .3s ease}
+.work-image{display:block;padding:0;border:0;background:none;width:100%;aspect-ratio:6/5;overflow:hidden;cursor:zoom-in}
+.work-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}.shipping-card .work-image{aspect-ratio:1275/1650}.shipping-card .work-image img{object-fit:contain}
 .work:hover img{transform:scale(1.008)}
 .buybar{padding:16px 18px 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
-.ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}.work-name{display:block;font:400 18px/1.25 Georgia,serif;margin:0 0 9px}.work-name small{display:block;color:#777;font:400 12px/1.4 Helvetica,Arial,sans-serif;margin-top:3px}
+.ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}.work-name{display:block;font:400 18px/1.25 Georgia,serif;margin:0 0 9px}.work-name small{display:block;color:#777;font:400 12px/1.4 Helvetica,Arial,sans-serif;margin-top:3px}.price{display:block;margin:0 0 9px}.price strong{display:block;font-size:13px;font-weight:600}.price small{display:block;color:#777;font-size:11px;margin-top:2px}
 .ship{display:block;font-size:11px;line-height:1.55;color:#5f5a54}
 .other{display:block;font-size:10px;line-height:1.5;color:#888;margin-top:3px}
 .quote-link{text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -70,7 +70,7 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .btn{display:inline-block;background:#171717;color:white;text-decoration:none;border-radius:999px;padding:15px 24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-size:11px;color:#777;display:flex;justify-content:space-between;gap:20px}
 .lightbox{position:fixed;inset:0;display:none;background:rgba(20,18,16,.88);z-index:1000;padding:24px;align-items:center;justify-content:center}
-.lightbox.open{display:flex}.lightbox img{max-width:min(96vw,1500px);max-height:95vh;object-fit:contain;box-shadow:0 20px 70px rgba(0,0,0,.32)}
+.lightbox.open{display:flex}.lightbox img{height:min(78vh,75vw,900px);width:auto;aspect-ratio:6/5;max-width:94vw;object-fit:cover;box-shadow:0 20px 70px rgba(0,0,0,.32)}.lightbox img.shipping-info{width:auto;height:auto;aspect-ratio:auto;max-width:min(96vw,1500px);max-height:95vh;object-fit:contain}
 .close{position:fixed;top:18px;right:22px;background:white;border:0;border-radius:999px;width:42px;height:42px;font-size:24px;cursor:pointer}
 .back-to-top{position:fixed;bottom:25px;right:25px;width:42px;height:42px;border:1px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#111;font-size:18px;background:#f7f4ef;z-index:1000}
 @media(max-width:980px){.catalogue{grid-template-columns:repeat(2,1fr)}}
@@ -143,51 +143,51 @@ Request a custom work
 <script>
 
 const works = [
-  { es: 'Movimiento Rojo', en: 'Red Movement' },
-  { es: 'Día Soleado', en: 'Sunny Day' },
-  { es: 'Día Dorado', en: 'Golden Day' },
-  { es: 'Encuentros Esperados', en: 'Expected Meetings' },
-  { es: 'Cielo Turquesa Oscuro', en: 'Dark Turquoise Sky' },
-  { es: 'Cielo Turquesa Claro', en: 'Light Turquoise Sky' },
-  { es: 'Sol Naranja', en: 'Orange Sun' },
-  { es: 'Destinos Amarillos', en: 'Yellow Destinations' },
-  { es: 'Flores Tejidas', en: 'Woven Flowers' },
-  { es: 'Tarde Roja', en: 'Red Afternoon' },
-  { es: 'Rosas Corales', en: 'Coral Roses' },
-  { es: 'Olas', en: 'Surf' },
-  { es: 'Cruzando los Mares', en: 'Crossing the Seas' },
-  { es: 'Durazno', en: 'Peach' },
-  { es: 'Hormigas', en: 'Ants' },
-  { es: 'Rompiendo los Mares', en: 'Breaking Through the Seas' },
-  { es: 'Encuentros', en: 'Meeting' },
-  { es: 'Grises', en: 'Gray' },
-  { es: 'Cielos Claros', en: 'Clear Skies' },
-  { es: 'Río', en: 'River' },
-  { es: 'Trigo', en: 'Wheat' },
-  { es: 'Azul', en: 'Blue' },
-  { es: 'Ambos Lados', en: 'Both Sides' },
-  { es: 'Naranja', en: 'Orange' },
-  { es: 'Arriba y Abajo', en: 'Up and Down' },
-  { es: 'Sin Fronteras', en: 'Without Borders' },
-  { es: 'Campo Blanco', en: 'White Field' },
-  { es: 'Llegando a un Jardín', en: 'Arriving at a Garden' },
-  { es: 'Ve por el Sol', en: 'Go for the Sun' },
-  { es: 'Ve por el Jardín', en: 'Go for the Garden' },
-  { es: 'Puesta de Sol Roja', en: 'Red Sunset' },
-  { es: 'Sombras Plata', en: 'Silver Shadows' },
-  { es: 'Encuentro', en: 'Meeting' },
-  { es: 'Rumbo al Sol 3', en: 'Heading to the Sun 3' },
-  { es: 'Tierras Rosas', en: 'Pink Lands' },
-  { es: 'Desierto y Mar', en: 'Desert and Sea' },
-  { es: 'Sol Rosa', en: 'Pink Sun' },
-  { es: 'Café y Campo Rosa', en: 'Coffee and Pink Fields' },
-  { es: 'Café con Ríos Azules', en: 'Coffee and Blue Rivers' },
-  { es: 'Café con Amanecer', en: 'Coffee at Sunrise' },
-  { es: 'Campo de Café', en: 'Coffee Field' },
-  { es: 'Campo de Café 2', en: 'Coffee Field 2' },
-  { es: 'Tazas de Café', en: 'Coffee Cups' },
-  { es: 'Flor de Café 2', en: 'Coffee Flower 2' },
-  { es: 'Flor de Café 3', en: 'Coffee Flower 3' }
+  { es: 'Movimiento Rojo', en: 'Red Movement', priceMXN: 30000 },
+  { es: 'Día Soleado', en: 'Sunny Day', priceMXN: 30000 },
+  { es: 'Día Dorado', en: 'Golden Day', priceMXN: 30000 },
+  { es: 'Encuentros Esperados', en: 'Expected Meetings', priceMXN: 30000 },
+  { es: 'Cielo Turquesa Oscuro', en: 'Dark Turquoise Sky', priceMXN: 18000 },
+  { es: 'Cielo Turquesa Claro', en: 'Light Turquoise Sky', priceMXN: 18000 },
+  { es: 'Sol Naranja', en: 'Orange Sun', priceMXN: 35000 },
+  { es: 'Destinos Amarillos', en: 'Yellow Destinations', priceMXN: 15000 },
+  { es: 'Flores Tejidas', en: 'Woven Flowers', priceMXN: 15000 },
+  { es: 'Tarde Roja', en: 'Red Afternoon', priceMXN: 7000 },
+  { es: 'Rosas Corales', en: 'Coral Roses', priceMXN: 7000 },
+  { es: 'Olas', en: 'Surf', priceMXN: 7000 },
+  { es: 'Cruzando los Mares', en: 'Crossing the Seas', priceMXN: 7000 },
+  { es: 'Durazno', en: 'Peach', priceMXN: 7000 },
+  { es: 'Hormigas', en: 'Ants', priceMXN: 7000 },
+  { es: 'Rompiendo los Mares', en: 'Breaking Through the Seas', priceMXN: 7000 },
+  { es: 'Encuentros', en: 'Meeting', priceMXN: 7000 },
+  { es: 'Grises', en: 'Gray', priceMXN: 7000 },
+  { es: 'Cielos Claros', en: 'Clear Skies', priceMXN: 7000 },
+  { es: 'Río', en: 'River', priceMXN: 7000 },
+  { es: 'Trigo', en: 'Wheat', priceMXN: 7000 },
+  { es: 'Azul', en: 'Blue', priceMXN: 7000 },
+  { es: 'Ambos Lados', en: 'Both Sides', priceMXN: 7000 },
+  { es: 'Naranja', en: 'Orange', priceMXN: 7000 },
+  { es: 'Arriba y Abajo', en: 'Up and Down', priceMXN: 7000 },
+  { es: 'Sin Fronteras', en: 'Without Borders', priceMXN: 7000 },
+  { es: 'Campo Blanco', en: 'White Field', priceMXN: 7000 },
+  { es: 'Llegando a un Jardín', en: 'Arriving at a Garden', priceMXN: 7000 },
+  { es: 'Ve por el Sol', en: 'Go for the Sun', priceMXN: 7000 },
+  { es: 'Ve por el Jardín', en: 'Go for the Garden', priceMXN: 7000 },
+  { es: 'Puesta de Sol Roja', en: 'Red Sunset', priceMXN: 7000 },
+  { es: 'Sombras Plata', en: 'Silver Shadows', priceMXN: 7000 },
+  { es: 'Encuentro', en: 'Meeting', priceMXN: 7000 },
+  { es: 'Rumbo al Sol 3', en: 'Heading to the Sun 3', priceMXN: 7000 },
+  { es: 'Tierras Rosas', en: 'Pink Lands', priceMXN: 7000 },
+  { es: 'Desierto y Mar', en: 'Desert and Sea', priceMXN: 7000 },
+  { es: 'Sol Rosa', en: 'Pink Sun', priceMXN: 7000 },
+  { es: 'Café y Campo Rosa', en: 'Coffee and Pink Fields', priceMXN: 7000 },
+  { es: 'Café con Ríos Azules', en: 'Coffee and Blue Rivers', priceMXN: 7000 },
+  { es: 'Café con Amanecer', en: 'Coffee at Sunrise', priceMXN: 7000 },
+  { es: 'Campo de Café', en: 'Coffee Field', priceMXN: 7000 },
+  { es: 'Campo de Café 2', en: 'Coffee Field 2', priceMXN: 7000 },
+  { es: 'Tazas de Café', en: 'Coffee Cups', priceMXN: 7000 },
+  { es: 'Flor de Café 2', en: 'Coffee Flower 2', priceMXN: 7000 },
+  { es: 'Flor de Café 3', en: 'Coffee Flower 3', priceMXN: 7000 }
 ];
 
 const catalogue=document.getElementById('catalogue');
@@ -195,6 +195,8 @@ const canvasSizes=[[120,100],[100,120],[100,120],[100,120],[80,80],[80,80],[120,
 
 function round500(v){ return Math.max(1000,Math.round(v/500)*500); }
 function money(v){ return '$'+v.toLocaleString('en-US')+' MXN'; }
+function artPrice(v){ return 'MXN $'+v.toLocaleString('en-US'); }
+function approximateUSD(v){ return Math.round(v*1.65/30); }
 function shippingFor(index){
   if(index>=9) return {mx:2800,us:4000};
   const size=canvasSizes[index] || [80,80];
@@ -204,7 +206,7 @@ function shippingFor(index){
 
 const shippingFile='images/fermigrante-obra-01.webp';
 const shippingCard=document.createElement('figure');
-shippingCard.className='work';
+shippingCard.className='work shipping-card';
 shippingCard.innerHTML=`<button class="work-image" type="button" aria-label="View shipping information" onclick="openLightbox('${shippingFile}')"><img src="${shippingFile}" loading="lazy" alt="Fermigrante shipping information"></button><div class="samplebar"><span class="ref">Shipping information</span></div>`;
 catalogue.appendChild(shippingCard);
 
@@ -216,13 +218,14 @@ works.forEach((item,index)=>{
   const fig=document.createElement('figure');
   fig.className='work';
   const ship=shippingFor(index);
+  const priceHTML=`<span class="price"><strong>${artPrice(item.priceMXN)}</strong><small>Aprox. USD $${approximateUSD(item.priceMXN).toLocaleString('en-US')}</small></span>`;
   const shippingHTML=`<span class="ship">Mexico shipping · ${money(ship.mx)}</span><span class="ship">USA shipping · ${money(ship.us)}</span>`;
   const artworkUrl=`https://galeriacoahuilteca.com/${file}`;
   const purchaseMessage=`Hello, I would like to purchase ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nPlease confirm availability, total price and shipping to my destination: `;
   const purchaseLink=`https://wa.me/524151196108?text=${encodeURIComponent(purchaseMessage)}`;
   const quoteMessage=`Hello, I am interested in ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nI would like a shipping quote to another country.`;
   const quoteLink=`https://wa.me/524151196108?text=${encodeURIComponent(quoteMessage)}`;
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name">${item.es}<small>${item.en}</small></span>${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase</a></div>`;
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name">${item.es}<small>${item.en}</small></span>${priceHTML}${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase</a></div>`;
   catalogue.appendChild(fig);
 });
 
@@ -242,7 +245,9 @@ document.getElementById('customWorkButton').href=
 
 
 function openLightbox(src){
-  document.getElementById('lightboxImage').src=src;
+  const image=document.getElementById('lightboxImage');
+  image.src=src;
+  image.classList.toggle('shipping-info',src.includes('obra-01.webp'));
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow='hidden'
 }
