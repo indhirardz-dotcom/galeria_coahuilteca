@@ -22,6 +22,7 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .toolbar{padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}
 .toolbar span,.toolbar a{font-size:11px;letter-spacing:.13em;text-transform:uppercase}
 .toolbar span{color:#777}.toolbar a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:3px}
+.catalogue-shortcut{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:19px 0;border-bottom:1px solid var(--line)}.catalogue-shortcut p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}.catalogue-shortcut .catalogue-link{display:inline-block;background:#171717;color:#fff;text-decoration:none;border:1px solid #171717;border-radius:999px;padding:13px 18px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}.catalogue-shortcut .catalogue-link:hover{background:transparent;color:#171717}
 .shipping-note{margin:30px 0 0;font-size:12px;line-height:1.65;color:var(--muted);max-width:940px}
 .catalogue{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:30px 0 10px}
 .work{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
@@ -74,7 +75,7 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 .close{position:fixed;top:18px;right:22px;background:white;border:0;border-radius:999px;width:42px;height:42px;font-size:24px;cursor:pointer}
 .back-to-top{position:fixed;bottom:25px;right:25px;width:42px;height:42px;border:1px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#111;font-size:18px;background:#f7f4ef;z-index:1000}
 @media(max-width:980px){.catalogue{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.wrap{padding:20px 18px 60px}header{display:block}nav{margin-top:18px}nav a{display:inline-block;margin:0 14px 10px 0}.hero{grid-template-columns:1fr;padding:64px 0 45px;gap:28px}.catalogue{grid-template-columns:1fr;gap:16px}.toolbar,.footer-cta,.custom-work{display:block}.toolbar a{display:inline-block;margin-top:10px}.footer-cta .btn,.custom-work .btn{margin-top:20px}footer{display:block}.buybar{grid-template-columns:1fr}.buy{justify-self:start}}
+@media(max-width:700px){.wrap{padding:20px 18px 60px}.catalogue-shortcut{display:block;padding:17px 0}.catalogue-shortcut .catalogue-link{margin-top:12px;white-space:normal}header{display:block}nav{margin-top:18px}nav a{display:inline-block;margin:0 14px 10px 0}.hero{grid-template-columns:1fr;padding:64px 0 45px;gap:28px}.catalogue{grid-template-columns:1fr;gap:16px}.toolbar,.footer-cta,.custom-work{display:block}.toolbar a{display:inline-block;margin-top:10px}.footer-cta .btn,.custom-work .btn{margin-top:20px}footer{display:block}.buybar{grid-template-columns:1fr}.buy{justify-self:start}}
 </style>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KFQLK7BP');</script>
@@ -101,6 +102,8 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 </nav></header>
 
 <section class="hero"><div><div class="kicker">Available Works · Galería Coahuilteca</div><h1>Fermigrante</h1></div><div><p class="intro">Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.</p><div class="meta">Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available</div></div></section>
+
+<section class="catalogue-shortcut" aria-label="Catalogue options"><p>Find works in the gallery below, or go straight to the full catalogue.</p><a class="catalogue-link" href="https://drive.google.com/file/d/1whmveMqqKoc9FXPI3P0bvsWpVN3VrTGe/view?usp=sharing" target="_blank" rel="noopener">Open full catalogue · PDF ↗</a></section>
 
 <div class="toolbar"><span>43 works available in catalogue</span><a href="shop.html">← Back to shop</a></div>
 
