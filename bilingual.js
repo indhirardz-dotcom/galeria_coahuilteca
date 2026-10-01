@@ -545,7 +545,11 @@
   "Abortion Is Our Right": "Abortar es nuestro derecho",
   "Printable art · Secure payment · Immediate delivery ·": "Arte imprimible · Pago seguro · Entrega inmediata ·",
   "Mexico": "México",
-  "Galería Coahuilteca · San Miguel de Allende, Mexico": "Galería Coahuilteca · San Miguel de Allende, México"
+  "Galería Coahuilteca · San Miguel de Allende, Mexico": "Galería Coahuilteca · San Miguel de Allende, México",
+  "Find works in the gallery below, or go straight to the full catalogue.": "Busca las obras disponibles aquí abajo o ve directo al catálogo completo.",
+  "Open full catalogue · PDF ↗": "Abrir catálogo completo · PDF ↗",
+  "43 works available in catalogue": "43 obras disponibles en el catálogo",
+  "← Back to shop": "← Volver a la tienda"
 });
 
   const reverseDictionary = Object.fromEntries(
