@@ -102,7 +102,7 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
 
 <section class="hero"><div><div class="kicker">Available Works · Galería Coahuilteca</div><h1>Fermigrante</h1></div><div><p class="intro">Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.</p><div class="meta">Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available</div></div></section>
 
-<div class="toolbar"><span>45 works available in catalogue</span><a href="shop.html">← Back to shop</a></div>
+<div class="toolbar"><span>43 works available in catalogue</span><a href="shop.html">← Back to shop</a></div>
 
 <p class="shipping-note">Shipping is shown with each work. Canvas works are carefully protected and shipped rolled, without wooden stretcher bars. Works on cotton paper are shipped carefully protected. Other destinations, stretched-canvas shipping and framed shipping are quoted individually.</p>
 
@@ -157,7 +157,6 @@ const works = [
   { es: 'Tarde Roja', en: 'Red Afternoon', priceMXN: 7000 },
   { es: 'Rosas Corales', en: 'Coral Roses', priceMXN: 7000 },
   { es: 'Olas', en: 'Surf', priceMXN: 7000 },
-  { es: 'Cruzando los Mares', en: 'Crossing the Seas', priceMXN: 7000 },
   { es: 'Durazno', en: 'Peach', priceMXN: 7000 },
   { es: 'Hormigas', en: 'Ants', priceMXN: 7000 },
   { es: 'Rompiendo los Mares', en: 'Breaking Through the Seas', priceMXN: 7000 },
@@ -165,7 +164,6 @@ const works = [
   { es: 'Grises', en: 'Gray', priceMXN: 7000 },
   { es: 'Cielos Claros', en: 'Clear Skies', priceMXN: 7000 },
   { es: 'Río', en: 'River', priceMXN: 7000 },
-  { es: 'Trigo', en: 'Wheat', priceMXN: 7000 },
   { es: 'Azul', en: 'Blue', priceMXN: 7000 },
   { es: 'Ambos Lados', en: 'Both Sides', priceMXN: 7000 },
   { es: 'Naranja', en: 'Orange', priceMXN: 7000 },
@@ -212,8 +210,9 @@ shippingCard.className='work shipping-card';
 shippingCard.innerHTML=`<button class="work-image" type="button" aria-label="View shipping information" onclick="openLightbox('${shippingFile}')"><img src="${shippingFile}" loading="lazy" alt="Fermigrante shipping information"></button><div class="samplebar"><span class="ref">Shipping information</span></div>`;
 catalogue.appendChild(shippingCard);
 
+const availableImageNumbers=works.map((_,index)=>index+2).filter(number=>number!==14&&number!==22);
 works.forEach((item,index)=>{
-  const n=index+2;
+  const n=availableImageNumbers[index];
   const file=`images/fermigrante-obra-${String(n).padStart(2,'0')}.webp`;
   const ref=`${item.es} / ${item.en}`;
   const cardNumber=String(index+1).padStart(2,'0');
