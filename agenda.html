@@ -253,27 +253,55 @@
           gap: 9px 14px;
         }
         .event {
-          grid-template-columns: 82px 1fr;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 12px;
+          align-items: start;
         }
-        .event-figure {
-          grid-column: 1/-1;
-          width: 100%;
+        .event > * {
+          min-width: 0;
         }
         .event-photo {
           width: 100%;
-          height: 190px;
+          height: min(62vw, 260px);
         }
         .event > a,
         .event > .save {
-          grid-column: 2;
+          grid-column: 1;
           width: max-content;
+          max-width: 100%;
+          white-space: normal;
         }
-        .bar,
-        .pick {
+        .bar {
           flex-direction: column;
           align-items: flex-start;
+          gap: 10px;
         }
-      }
+        .bar > span {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4px 8px;
+        }
+        .pick {
+          grid-template-columns: minmax(0, 96px) minmax(0, 1fr);
+          gap: 14px;
+          align-items: start;
+          padding: 18px;
+        }
+        .pick > * {
+          min-width: 0;
+        }
+        .pick img {
+          width: 100%;
+          height: 100px;
+        }
+        .pick h2 {
+          font-size: 23px;
+        }
+        .pick a {
+          grid-column: 1 / -1;
+          width: fit-content;
+          max-width: 100%;
+        }
     </style>
     <style id="gc-uniform-scroll-arrow">
       html {
