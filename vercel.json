@@ -20,6 +20,11 @@
       "source": "/storytelling.html",
       "destination": "/story",
       "permanent": true
+    },
+    {
+      "source": "/subscribe.html",
+      "destination": "/subscribe",
+      "permanent": true
     }
   ]
 }
