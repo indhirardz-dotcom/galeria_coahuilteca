@@ -25,6 +25,81 @@
       "source": "/subscribe.html",
       "destination": "/subscribe",
       "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shop.html",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/portraits.html",
+      "destination": "/portraits",
+      "permanent": true
+    },
+    {
+      "source": "/experiences.html",
+      "destination": "/experiences",
+      "permanent": true
+    },
+    {
+      "source": "/agenda.html",
+      "destination": "/agenda",
+      "permanent": true
+    },
+    {
+      "source": "/visit.html",
+      "destination": "/visit",
+      "permanent": true
+    },
+    {
+      "source": "/press.html",
+      "destination": "/press",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/indhira.html",
+      "destination": "/indhira",
+      "permanent": true
+    },
+    {
+      "source": "/fermigrante.html",
+      "destination": "/fermigrante",
+      "permanent": true
+    },
+    {
+      "source": "/jacarandas.html",
+      "destination": "/jacarandas",
+      "permanent": true
+    },
+    {
+      "source": "/retratos-indhira.html",
+      "destination": "/retratos-indhira",
+      "permanent": true
+    },
+    {
+      "source": "/edd.html",
+      "destination": "/edd",
+      "permanent": true
+    },
+    {
+      "source": "/regalo.html",
+      "destination": "/regalo",
+      "permanent": true
+    },
+    {
+      "source": "/catalogoTerritorio.html",
+      "destination": "/catalogoTerritorio",
+      "permanent": true
     }
   ]
 }
