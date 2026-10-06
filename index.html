@@ -443,8 +443,10 @@ footer a{
 .gc-newsletter-card input[type=email]{padding:12px;border:1px solid #bbb;font:inherit}
 .gc-newsletter-card button[type=submit]{padding:12px 20px;border:0;background:#772b25;color:#fff;font:inherit;cursor:pointer}
 .gc-newsletter-result{font:14px/1.5 Arial,sans-serif;color:#222}
-.gc-newsletter-result a{display:inline-block;margin-top:10px;color:#772b25;text-decoration:underline;font-weight:600}
+.gc-newsletter-result .download-gift-button{display:inline-flex;justify-content:center;align-items:center;margin-top:14px;padding:13px 20px;background:#772b25;color:#fff;border:1px solid #772b25;text-decoration:none;font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:600}
+.gc-newsletter-result .download-gift-button:hover{background:#111;border-color:#111}
 .gc-newsletter-error{color:#9b302a;font:13px/1.4 Arial,sans-serif;margin-top:8px}
+.gc-newsletter-progress{color:#666;font:12px/1.5 Arial,sans-serif;margin-top:8px}
 @media (max-width:600px){
   .gc-newsletter-popup{
     padding:14px;
@@ -722,6 +724,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <button type="submit">Subscribe</button>
+      <p class="gc-newsletter-progress" role="status" hidden>Sending your request. Please wait here for your digital gift.</p>
       <p class="gc-newsletter-error" role="alert" hidden></p>
     </form>
   </div>
@@ -794,11 +797,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     event.preventDefault();
     var button=embedded.querySelector('button[type=submit]');
     var error=embedded.querySelector('.gc-newsletter-error');
+    var progress=embedded.querySelector('.gc-newsletter-progress');
     button.disabled=true;
+    button.textContent='Sending…';
+    progress.hidden=false;
     error.hidden=true;
+    var timeoutId;
+    var controller=new AbortController();
+    timeoutId=setTimeout(function(){controller.abort()},30000);
     try{
       var response=await fetch('https://formsubmit.co/ajax/hello@galeriacoahuilteca.com',{
         method:'POST',
+        signal:controller.signal,
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({
           email:embedded.elements.email.value,
@@ -809,16 +819,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
       var data=await response.json();
       if(!response.ok || data.success===false || data.success==='false') throw new Error('Submission failed');
+      clearTimeout(timeoutId);
+      progress.hidden=true;
       if(window.gcTrackAnalyticsEvent) window.gcTrackAnalyticsEvent('sign_up',{method:'email',form_location:'homepage_popup'});
       var result=document.createElement('div');
       result.className='gc-newsletter-result';
-      result.innerHTML='<strong>Gracias por suscribirte / Thank you for joining us.</strong><br><a href="https://storage.googleapis.com/mailerlite-uploads-prod/l2615427/CzlDJX6nr7fdp1D1oCU4IymSn449qBM2jVoCKMlw.pdf" target="_blank" rel="noopener">Descargar regalo / Download your artwork · PDF</a>';
+      result.innerHTML='<strong>Thank you for subscribing.</strong><br><a class="download-gift-button" href="https://storage.googleapis.com/mailerlite-uploads-prod/l2615427/CzlDJX6nr7fdp1D1oCU4IymSn449qBM2jVoCKMlw.pdf" download="Galeria-Coahuilteca-regalo-digital.pdf">Download your digital gift</a>';
       embedded.replaceWith(result);
       shown=true;
       try{localStorage.setItem(key,'1')}catch(e){}
     }catch(e){
-      error.textContent='No se pudo enviar. Inténtalo de nuevo. / Could not submit. Please try again.';
+      clearTimeout(timeoutId);
+      progress.hidden=true;
+      error.textContent='Could not submit. Please try again.';
       error.hidden=false;
+      button.textContent='Subscribe';
       button.disabled=false;
     }
   });
@@ -841,7 +856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
-  <script src="bilingual.js?v=20260926-5" defer></script>
+  <script src="bilingual.js?v=20261006-1" defer></script>
   <script src="/analytics-events.js" defer></script>
 </body>
 </html>
