@@ -601,6 +601,13 @@
   "← Back to shop": "← Volver a la tienda"
 });
 
+    "Original drawings": "Dibujos originales",
+    "Parish Drawings": "Parroquias de San Miguel",
+    "Original charcoal drawings by Mexican artist Indhira, inspired by the Parroquia, rooftops and streets of San Miguel de Allende.": "Dibujos originales al carboncillo de la artista mexicana Indhira, inspirados en la Parroquia, las azoteas y las calles de San Miguel de Allende.",
+    "The collection will grow to include watercolors and other views of the city.": "La colección crecerá para incluir acuarelas y otras vistas de la ciudad.",
+    "Original art · San Miguel de Allende": "Obra original · San Miguel de Allende",
+    "Explore Parroquias": "Explorar parroquias",
+
   const reverseDictionary = Object.fromEntries(
     Object.entries(dictionary).map(([english, spanish]) => [spanish, english])
   );
