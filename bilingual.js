@@ -627,7 +627,7 @@
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(node => translateTextNode(node, language));
-    document.querySelectorAll("input[placeholder], button[aria-label]").forEach(element => {
+    document.querySelectorAll("input[placeholder], button[aria-label], a[aria-label]").forEach(element => {
       if (!originalAttributes.has(element)) {
         originalAttributes.set(element, {
           placeholder: element.getAttribute("placeholder"),
