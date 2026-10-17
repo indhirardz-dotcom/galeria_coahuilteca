@@ -100,6 +100,11 @@
       "source": "/catalogoTerritorio.html",
       "destination": "/catalogoTerritorio",
       "permanent": true
+    },
+    {
+      "source": "/trazos-san-miguel.html",
+      "destination": "/trazos-san-miguel",
+      "permanent": true
     }
   ]
 }
