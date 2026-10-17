@@ -394,6 +394,9 @@
   "Sign up for news and special offers!": "¡Suscríbete para recibir noticias y ofertas especiales!",
   "Available Works · Galería Coahuilteca": "Obra disponible · Galería Coahuilteca",
   "Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.": "Pinturas originales que exploran la migración, el movimiento y la presencia humana colectiva. Los precios y medidas aparecen en cada ficha del catálogo.",
+  "Original paintings exploring migration, movement and collective human presence. Each available work below shows its price and shipping to Mexico or the United States; contact us for a quote to other destinations.": "Pinturas originales que exploran la migración, el movimiento y la presencia humana colectiva. Cada obra disponible indica su precio y envío a México o Estados Unidos; consulta los costos para otros destinos.",
+  "To start a purchase, choose an available work and select Purchase via WhatsApp. The gallery will confirm availability, final shipping and payment options.": "Para iniciar una compra, elige una obra disponible y selecciona Comprar por WhatsApp. La galería confirmará la disponibilidad, el costo final del envío y las opciones de pago.",
+  "Purchase via WhatsApp": "Comprar por WhatsApp",
   "Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available": "Obra original · San Miguel de Allende · Envíos a México y EE. UU. · Cotizaciones internacionales disponibles",
   "53 works available in catalogue": "53 obras disponibles en el catálogo",
   "Shipping is shown with each work. Canvas works are carefully protected and shipped rolled, without wooden stretcher bars. Works on cotton paper are shipped carefully protected. Other destinations, stretched-canvas shipping and framed shipping are quoted individually.": "El envío se indica en cada obra. Los lienzos se protegen y envían enrollados, sin bastidor. Las obras sobre papel de algodón se envían protegidas. Otros destinos y los envíos con bastidor o marco se cotizan individualmente.",
@@ -571,6 +574,8 @@
   function translateDynamicText(text, language) {
     if (language !== "es") return null;
     let match = text.match(/^WORK (\d{2})$/i);
+    match = text.match(/^(\d+) works available in catalogue$/i);
+    if (match) return match[1] + " obras disponibles en el catálogo";
     if (match) return "OBRA " + match[1];
     match = text.match(/^Mexico shipping · (.+)$/i);
     if (match) return "Envío a México · " + match[1];
