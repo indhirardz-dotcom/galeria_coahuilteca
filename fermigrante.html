@@ -18,6 +18,7 @@ header img{height:42px}nav a{margin-left:24px;text-decoration:none;font-size:12p
 .kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#7b756e;margin-bottom:17px}
 h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.045em}
 .intro{font-size:18px;line-height:1.65;color:var(--muted);max-width:540px;margin:0}
+.purchase-note{max-width:560px;margin:22px 0 0;padding:14px 16px;border-left:2px solid #8b7965;background:rgba(255,253,249,.72);font-size:13px;line-height:1.6;color:#5f5a54}.purchase-note strong{color:#171717;font-weight:600}
 .meta{margin-top:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#79736c;line-height:1.7}
 .toolbar{padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}
 .toolbar span,.toolbar a{font-size:11px;letter-spacing:.13em;text-transform:uppercase}
@@ -101,7 +102,7 @@ footer{padding-top:34px;margin-top:50px;border-top:1px solid var(--line);font-si
   <a href="/contact">Contact</a>
 </nav></header>
 
-<section class="hero"><div><div class="kicker">Available Works · Galería Coahuilteca</div><h1>Fermigrante</h1></div><div><p class="intro">Original paintings exploring migration, movement and collective human presence. Prices and dimensions appear on each catalogue sheet.</p><div class="meta">Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available</div></div></section>
+<section class="hero"><div><div class="kicker">Available Works · Galería Coahuilteca</div><h1>Fermigrante</h1></div><div><p class="intro">Original paintings exploring migration, movement and collective human presence. Each available work below shows its price and shipping to Mexico or the United States; contact us for a quote to other destinations.</p><div class="meta">Original work · San Miguel de Allende · Mexico & USA shipping · International quotes available</div><p class="purchase-note">To start a purchase, choose an available work and select <strong>Purchase via WhatsApp</strong>. The gallery will confirm availability, final shipping and payment options.</p></div></section>
 
 <section class="catalogue-shortcut" aria-label="Catalogue options"><p>Find works in the gallery below, or go straight to the full catalogue.</p><a class="catalogue-link" href="https://drive.google.com/file/d/1whmveMqqKoc9FXPI3P0bvsWpVN3VrTGe/view?usp=sharing" target="_blank" rel="noopener">Open full catalogue · PDF ↗</a></section>
 
@@ -227,11 +228,11 @@ visibleWorks.forEach(({item,index},visibleIndex)=>{
   const priceHTML=`<span class="price"><strong>${artPrice(item.priceMXN)}</strong><small>Aprox. USD $${approximateUSD(item.priceMXN).toLocaleString('en-US')}</small></span>`;
   const shippingHTML=`<span class="ship">Mexico shipping · ${money(ship.mx)}</span><span class="ship">USA shipping · ${money(ship.us)}</span>`;
   const artworkUrl=`https://galeriacoahuilteca.com/${file}`;
-  const purchaseMessage=`Hello, I would like to purchase ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nPlease confirm availability, total price and shipping to my destination: `;
-  const purchaseLink=`https://wa.me/524151196108?text=${encodeURIComponent(purchaseMessage)}`;
+  const purchaseMessage=`Hello, I would like to purchase ${ref} (${money(item.priceMXN)}).\n\nArtwork image:\n${artworkUrl}\n\nPlease confirm availability, final total and shipping to my destination: `;
+  const purchaseLink=`https://wa.me/524152169737?text=${encodeURIComponent(purchaseMessage)}`;
   const quoteMessage=`Hello, I am interested in ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nI would like a shipping quote to another country.`;
-  const quoteLink=`https://wa.me/524151196108?text=${encodeURIComponent(quoteMessage)}`;
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name">${item.es}<small>${item.en}</small></span>${priceHTML}${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase</a></div>`;
+  const quoteLink=`https://wa.me/524152169737?text=${encodeURIComponent(quoteMessage)}`;
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name">${item.es}<small>${item.en}</small></span>${priceHTML}${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase via WhatsApp</a></div>`;
   catalogue.appendChild(fig);
 });
 
@@ -247,7 +248,7 @@ Destination:`;
 
 
 document.getElementById('customWorkButton').href=
-`https://wa.me/524151196108?text=${encodeURIComponent(customMessage)}`;
+`https://wa.me/524152169737?text=${encodeURIComponent(customMessage)}`;
 
 
 function openLightbox(src){
