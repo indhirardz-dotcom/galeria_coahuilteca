@@ -31,7 +31,7 @@ h1{font:400 clamp(58px,8vw,104px)/.88 Georgia,serif;margin:0;letter-spacing:-.04
 .work-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}.shipping-card .work-image{aspect-ratio:1275/1650}.shipping-card .work-image img{object-fit:contain}
 .work:hover img{transform:scale(1.008)}
 .buybar{padding:16px 18px 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
-.ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}.work-name{display:block;font:400 18px/1.25 Georgia,serif;margin:0 0 9px}.work-name small{display:block;color:#777;font:400 12px/1.4 Helvetica,Arial,sans-serif;margin-top:3px}.price{display:block;margin:0 0 9px}.price strong{display:block;font-size:13px;font-weight:600}.price small{display:block;color:#777;font-size:11px;margin-top:2px}
+.ref{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-bottom:7px}.work-name{display:block;font:400 18px/1.25 Georgia,serif;margin:0 0 9px}.work-name small{display:block;color:#777;font:400 12px/1.4 Helvetica,Arial,sans-serif;margin-top:3px}.name-es{display:block}.name-en{display:block}html[lang="es"] .name-en{display:none}html[lang="en"] .name-es{display:none}.price{display:block;margin:0 0 9px}.price strong{display:block;font-size:13px;font-weight:600}.price small{display:block;color:#777;font-size:11px;margin-top:2px}
 .ship{display:block;font-size:11px;line-height:1.55;color:#5f5a54}
 .other{display:block;font-size:10px;line-height:1.5;color:#888;margin-top:3px}
 .quote-link{text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -232,7 +232,7 @@ visibleWorks.forEach(({item,index},visibleIndex)=>{
   const purchaseLink=`https://wa.me/524152169737?text=${encodeURIComponent(purchaseMessage)}`;
   const quoteMessage=`Hello, I am interested in ${ref}.\n\nArtwork image:\n${artworkUrl}\n\nI would like a shipping quote to another country.`;
   const quoteLink=`https://wa.me/524152169737?text=${encodeURIComponent(quoteMessage)}`;
-  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name">${item.es}<small>${item.en}</small></span>${priceHTML}${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase via WhatsApp</a></div>`;
+  fig.innerHTML=`<button class="work-image" type="button" aria-label="View ${ref}" onclick="openLightbox('${file}')"><img src="${file}" loading="lazy" alt="${ref}, Fermigrante original artwork with dimensions and price"></button><div class="buybar"><div><span class="ref">Work ${cardNumber} · Original work</span><span class="work-name"><span class="name-es">${item.es}</span><small class="name-en">${item.en}</small></span>${priceHTML}${shippingHTML}<a class="other quote-link" href="${quoteLink}" target="_blank" rel="noopener">Other countries · Request quote</a></div><a class="buy" href="${purchaseLink}" target="_blank" rel="noopener">Purchase via WhatsApp</a></div>`;
   catalogue.appendChild(fig);
 });
 
@@ -276,7 +276,7 @@ document.addEventListener('keydown',e=>{
 
 </script>
 
-  <script src="bilingual.js?v=20261016-2" defer></script>
+  <script src="bilingual.js?v=20261016-3" defer></script>
   <script src="/analytics-events.js" defer></script>
 </body>
 </html>
