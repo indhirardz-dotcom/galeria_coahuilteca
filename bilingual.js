@@ -191,6 +191,7 @@
   "Original charcoal drawings by Mexican artist Indhira, inspired by the Parroquia, rooftops and streets of San Miguel de Allende.": "Dibujos originales al carboncillo de la artista mexicana Indhira, inspirados en la Parroquia, las azoteas y las calles de San Miguel de Allende.",
   "The collection will grow to include watercolors and other views of the city.": "La colección crecerá para incluir acuarelas y otras vistas de la ciudad.",
   "Explore the drawings": "Explorar los dibujos de la Parroquia",
+  "Original art · San Miguel de Allende": "Obra original · San Miguel de Allende",
   "← Back to shop": "← Volver a la tienda",
     "Portrait commissions · Indhira": "Retratos por encargo · Indhira",
     "View artist profile →": "Ver perfil de la artista →",
