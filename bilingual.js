@@ -321,7 +321,6 @@
     "International Women’s Day 2020": "8M 2020",
     "Digital products are for personal use only. Due to the nature of downloadable files, purchases are final. Prices in Mexican pesos are approximate; the final amount will depend on the exchange rate applied during payment.": "Digital products are for personal use only. Due to the nature of downloadable files, purchases are final. Los precios en pesos son aproximados; el importe final dependerá del tipo de cambio aplicado durante el pago.",
     "Galería Coahuilteca · San Miguel de Allende · Mexico": "Galería Coahuilteca · San Miguel de Allende · México",
-  ,
   "Trazos de San Miguel | Original Artwork | Galería Coahuilteca": "Trazos de San Miguel | Obra original | Galería Coahuilteca",
   "Original drawings and paintings · San Miguel de Allende": "Dibujo y pintura originales · San Miguel de Allende",
   "A growing collection inspired by San Miguel de Allende—its parish, rooftops and changing streets. Charcoal drawings begin the collection; watercolors and other views will join them.": "Una colección en crecimiento inspirada en San Miguel de Allende: su parroquia, sus azoteas y sus calles. Comienza con dibujos en carboncillo; después se sumarán acuarelas y otras vistas.",
@@ -353,7 +352,12 @@
   "These are original, one-of-a-kind works. Contact the gallery for availability, shipping and framing details.": "Son obras originales y únicas. Consulta con la galería su disponibilidad, envío y opciones de enmarcado.",
   "Original charcoal drawings from San Miguel de Allende, with watercolors and other views to come.": "Dibujos originales en carboncillo de San Miguel de Allende; próximamente, acuarelas y otras vistas.",
   "Explore the collection →": "Explora la colección →",
-  "04 · DRAWINGS & WATERCOLERS": "04 · DIBUJO Y ACUARELA"
+  "04 · DRAWINGS & WATERCOLERS": "04 · DIBUJO Y ACUARELA",
+  "Original charcoal drawings": "Dibujos originales en carboncillo",
+  "Explore Trazos de San Miguel": "Ver Trazos de San Miguel",
+  "A collection of original drawings and paintings inspired by San Miguel de Allende, alongside Jacarandas and portrait commissions.": "Una colección de dibujos y pinturas originales inspirados en San Miguel de Allende, junto a Jacarandas y los retratos por encargo.",
+  "Explore Jacarandas, Trazos de San Miguel or request a private oil portrait commission.": "Explora Jacarandas, Trazos de San Miguel o solicita un retrato privado al óleo.",
+  "← Back to Indhira": "← Volver a Indhira",
   };
 
   /* AUDIT_COMPLETE_TRANSLATIONS */
