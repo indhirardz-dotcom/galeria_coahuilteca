@@ -561,6 +561,7 @@
   "Visit the gallery website →": "Visitar el sitio de la galería →",
   "Original Art Gallery in San Miguel de Allende | Galería Coahuilteca": "Galería de arte en San Miguel de Allende | Galería Coahuilteca",
   "Original art": "Arte original",
+  "Migrations": "Migraciones",
   "Explore original paintings by Fermigrante, available through Galería Coahuilteca.": "Descubre las pinturas originales de Fermigrante, disponibles en Galería Coahuilteca.",
   "Explore Fermigrante": "Conoce la obra de Fermigrante",
   "Codo & Tenerías": "Codo y Tenerías",
