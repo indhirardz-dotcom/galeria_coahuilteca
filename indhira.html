@@ -1210,7 +1210,7 @@
           bocetos y ejecución mediante procedimientos tradicionales al óleo.
         </p>
 
-        <a class="boton boton-claro" href="#contacto" data-i18n="commissionButton">
+        <a class="boton boton-claro" href="https://wa.me/524152169737?text=Hola%2C%20quisiera%20informaci%C3%B3n%20para%20encargar%20un%20retrato%20a%20Indhira." data-href-es="https://wa.me/524152169737?text=Hola%2C%20quisiera%20informaci%C3%B3n%20para%20encargar%20un%20retrato%20a%20Indhira." data-href-en="https://wa.me/524152169737?text=Hello%2C%20I%20would%20like%20information%20about%20commissioning%20a%20portrait%20from%20Indhira." target="_blank" rel="noopener noreferrer" data-i18n="commissionButton">
           Solicitar información
         </a>
 
@@ -1546,6 +1546,10 @@
         if (textos[clave]) {
           elemento.setAttribute("aria-label", textos[clave]);
         }
+      });
+
+      document.querySelectorAll("a[data-href-es][data-href-en]").forEach((enlace) => {
+        enlace.href = idioma === "es" ? enlace.dataset.hrefEs : enlace.dataset.hrefEn;
       });
 
       botonesIdioma.forEach((boton) => {
