@@ -158,6 +158,75 @@ nav a{
   color:rgba(255,255,255,.82);
 }
 
+.exhibition-announcement{
+  margin:26px 0 0;
+  padding:30px;
+  display:grid;
+  grid-template-columns:minmax(100px,150px) minmax(0,1fr) auto;
+  gap:26px;
+  align-items:center;
+  background:#fffdf9;
+  border:1px solid #ded7ce;
+  border-left:4px solid #772b25;
+}
+.exhibition-date{
+  border-right:1px solid #ded7ce;
+  text-align:center;
+  padding-right:20px;
+  color:#772b25;
+}
+.exhibition-date strong{
+  display:block;
+  font:400 58px/.9 Georgia,serif;
+}
+.exhibition-date span{
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  letter-spacing:.18em;
+}
+.exhibition-copy .eyebrow{
+  margin:0 0 8px;
+  color:#772b25;
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.exhibition-copy h2{
+  margin:0 0 7px;
+  font:400 34px/1.1 Georgia,serif;
+}
+.exhibition-copy p{
+  margin:7px 0;
+  color:#5b5853;
+  font-size:15px;
+  line-height:1.5;
+}
+.exhibition-free{
+  display:inline-block;
+  margin-top:5px;
+  padding:5px 8px;
+  border:1px solid #2f6b45;
+  color:#2f6b45;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.exhibition-link{
+  display:inline-block;
+  padding:13px 17px;
+  border:1px solid #772b25;
+  color:#772b25;
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.exhibition-link:hover{background:#772b25;color:#fff;}
+
+
 
 .section{
   padding:60px 0;
@@ -351,6 +420,16 @@ footer a{
     margin:0;
   }
 
+  .exhibition-announcement{
+    grid-template-columns:82px minmax(0,1fr);
+    gap:16px;
+    padding:20px;
+  }
+  .exhibition-date{padding-right:14px;}
+  .exhibition-date strong{font-size:44px;}
+  .exhibition-date span{font-size:10px;letter-spacing:.12em;}
+  .exhibition-copy h2{font-size:28px;}
+  .exhibition-link{grid-column:2;justify-self:start;white-space:normal;}
   .hero{
     min-height:560px;
     padding:60px 28px;
@@ -517,7 +596,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-
+<section class="exhibition-announcement" aria-labelledby="geografias-title">
+  <div class="exhibition-date" aria-label="December 11">
+    <strong>11</strong>
+    <span>DECEMBER</span>
+  </div>
+  <div class="exhibition-copy">
+    <p class="eyebrow">Free admission · First figurative exhibition at Galería Proyecta</p>
+    <h2 id="geografias-title">Geografías</h2>
+    <p>Figurative art exhibition · Friday, December 11, 10:00 am–7:00 pm</p>
+    <p>Galería Proyecta · Codo 2, Centro, San Miguel de Allende</p>
+    <p>Elvia Samaniego · Pierre Valls · Roy Carrum · Indhira · Anak</p>
+    <span class="exhibition-free">Free admission</span>
+  </div>
+  <a class="exhibition-link" href="/agenda">Cultural agenda ↗</a>
+</section>
 
 <section class="section" id="trazos-san-miguel-collection" aria-label="Featured collections" style="border-top:1px solid #ddd4c8;">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:stretch;">
