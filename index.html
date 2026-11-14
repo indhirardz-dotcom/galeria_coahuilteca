@@ -162,7 +162,7 @@ nav a{
   margin:26px 0 0;
   padding:30px;
   display:grid;
-  grid-template-columns:minmax(100px,150px) minmax(0,1fr) auto;
+  grid-template-columns:100px minmax(0,1fr) minmax(180px,230px);
   gap:26px;
   align-items:center;
   background:#fffdf9;
@@ -213,6 +213,7 @@ nav a{
   letter-spacing:.08em;
   text-transform:uppercase;
 }
+.exhibition-image{display:block;width:100%;height:190px;object-fit:cover;object-position:50% 38%;}
 .exhibition-link{
   display:inline-block;
   padding:13px 17px;
@@ -429,6 +430,10 @@ footer a{
   .exhibition-date strong{font-size:44px;}
   .exhibition-date span{font-size:10px;letter-spacing:.12em;}
   .exhibition-copy h2{font-size:28px;}
+  .exhibition-image{
+    grid-column:1 / -1;
+    height:220px;
+  }
   .exhibition-link{grid-column:2;justify-self:start;white-space:normal;}
   .hero{
     min-height:560px;
@@ -608,8 +613,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Galería Proyecta · Codo 2, Centro, San Miguel de Allende</p>
     <p>Elvia Samaniego · Pierre Valls · Roy Carrum · Indhira · Anak</p>
     <span class="exhibition-free">Free admission</span>
+    <a class="exhibition-link" href="/agenda#geografias">Cultural agenda ↗</a>
   </div>
-  <a class="exhibition-link" href="/agenda">Cultural agenda ↗</a>
+  <img class="exhibition-image" src="/geografias-pierre-valls.webp" alt="Pierre Valls painting his work for Geografías" loading="lazy" decoding="async">
 </section>
 
 <section class="section" id="trazos-san-miguel-collection" aria-label="Featured collections" style="border-top:1px solid #ddd4c8;">
